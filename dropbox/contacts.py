@@ -31,7 +31,7 @@ class DeleteManualContactsArg(bb.Struct):
     email_addresses = bb.Attribute("email_addresses")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteManualContactsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteManualContactsArg_validator = bv.Struct(DeleteManualContactsArg)
 
@@ -59,7 +59,7 @@ class DeleteManualContactsError(bb.Union):
         :param list of [str] val:
         :rtype: DeleteManualContactsError
         """
-        return cls('contacts_not_found', val)
+        pass
 
     def is_contacts_not_found(self):
         """
@@ -67,7 +67,7 @@ class DeleteManualContactsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'contacts_not_found'
+        pass
 
     def is_other(self):
         """
@@ -75,7 +75,7 @@ class DeleteManualContactsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_contacts_not_found(self):
         """
@@ -86,12 +86,10 @@ class DeleteManualContactsError(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_contacts_not_found():
-            raise AttributeError("tag 'contacts_not_found' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteManualContactsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteManualContactsError_validator = bv.Union(DeleteManualContactsError)
 

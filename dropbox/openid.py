@@ -29,7 +29,7 @@ class OpenIdError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'incorrect_openid_scopes'
+        pass
 
     def is_other(self):
         """
@@ -37,10 +37,10 @@ class OpenIdError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(OpenIdError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 OpenIdError_validator = bv.Union(OpenIdError)
 
@@ -58,7 +58,7 @@ class UserInfoArgs(bb.Struct):
         pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserInfoArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserInfoArgs_validator = bv.Struct(UserInfoArgs)
 
@@ -82,7 +82,7 @@ class UserInfoError(bb.Union):
         :param OpenIdError val:
         :rtype: UserInfoError
         """
-        return cls('openid_error', val)
+        pass
 
     def is_openid_error(self):
         """
@@ -90,7 +90,7 @@ class UserInfoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'openid_error'
+        pass
 
     def is_other(self):
         """
@@ -98,7 +98,7 @@ class UserInfoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_openid_error(self):
         """
@@ -106,12 +106,10 @@ class UserInfoError(bb.Union):
 
         :rtype: OpenIdError
         """
-        if not self.is_openid_error():
-            raise AttributeError("tag 'openid_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserInfoError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserInfoError_validator = bv.Union(UserInfoError)
 
@@ -183,7 +181,7 @@ class UserInfoResult(bb.Struct):
     sub = bb.Attribute("sub")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserInfoResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserInfoResult_validator = bv.Struct(UserInfoResult)
 

@@ -60,7 +60,7 @@ class AddPropertiesArg(bb.Struct):
     property_groups = bb.Attribute("property_groups")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddPropertiesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddPropertiesArg_validator = bv.Struct(AddPropertiesArg)
 
@@ -91,7 +91,7 @@ class TemplateError(bb.Union):
         :param str val:
         :rtype: TemplateError
         """
-        return cls('template_not_found', val)
+        pass
 
     def is_template_not_found(self):
         """
@@ -99,7 +99,7 @@ class TemplateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'template_not_found'
+        pass
 
     def is_restricted_content(self):
         """
@@ -107,7 +107,7 @@ class TemplateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_content'
+        pass
 
     def is_other(self):
         """
@@ -115,7 +115,7 @@ class TemplateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_template_not_found(self):
         """
@@ -125,12 +125,10 @@ class TemplateError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_template_not_found():
-            raise AttributeError("tag 'template_not_found' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TemplateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TemplateError_validator = bv.Union(TemplateError)
 
@@ -156,7 +154,7 @@ class PropertiesError(TemplateError):
         :param LookupError val:
         :rtype: PropertiesError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -164,7 +162,7 @@ class PropertiesError(TemplateError):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_unsupported_folder(self):
         """
@@ -172,7 +170,7 @@ class PropertiesError(TemplateError):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_folder'
+        pass
 
     def get_path(self):
         """
@@ -180,12 +178,10 @@ class PropertiesError(TemplateError):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesError_validator = bv.Union(PropertiesError)
 
@@ -218,7 +214,7 @@ class InvalidPropertyGroupError(PropertiesError):
 
         :rtype: bool
         """
-        return self._tag == 'property_field_too_large'
+        pass
 
     def is_does_not_fit_template(self):
         """
@@ -226,7 +222,7 @@ class InvalidPropertyGroupError(PropertiesError):
 
         :rtype: bool
         """
-        return self._tag == 'does_not_fit_template'
+        pass
 
     def is_duplicate_property_groups(self):
         """
@@ -234,10 +230,10 @@ class InvalidPropertyGroupError(PropertiesError):
 
         :rtype: bool
         """
-        return self._tag == 'duplicate_property_groups'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InvalidPropertyGroupError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InvalidPropertyGroupError_validator = bv.Union(InvalidPropertyGroupError)
 
@@ -260,10 +256,10 @@ class AddPropertiesError(InvalidPropertyGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'property_group_already_exists'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddPropertiesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddPropertiesError_validator = bv.Union(AddPropertiesError)
 
@@ -312,7 +308,7 @@ class PropertyGroupTemplate(bb.Struct):
     fields = bb.Attribute("fields")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertyGroupTemplate, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertyGroupTemplate_validator = bv.Struct(PropertyGroupTemplate)
 
@@ -332,7 +328,7 @@ class AddTemplateArg(PropertyGroupTemplate):
                                              fields)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddTemplateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddTemplateArg_validator = bv.Struct(AddTemplateArg)
 
@@ -361,7 +357,7 @@ class AddTemplateResult(bb.Struct):
     template_id = bb.Attribute("template_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddTemplateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddTemplateResult_validator = bv.Struct(AddTemplateResult)
 
@@ -390,7 +386,7 @@ class GetTemplateArg(bb.Struct):
     template_id = bb.Attribute("template_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemplateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemplateArg_validator = bv.Struct(GetTemplateArg)
 
@@ -410,7 +406,7 @@ class GetTemplateResult(PropertyGroupTemplate):
                                                 fields)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemplateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemplateResult_validator = bv.Struct(GetTemplateResult)
 
@@ -439,7 +435,7 @@ class ListTemplateResult(bb.Struct):
     template_ids = bb.Attribute("template_ids")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTemplateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTemplateResult_validator = bv.Struct(ListTemplateResult)
 
@@ -467,7 +463,7 @@ class LogicalOperator(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'or_operator'
+        pass
 
     def is_other(self):
         """
@@ -475,10 +471,10 @@ class LogicalOperator(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LogicalOperator, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LogicalOperator_validator = bv.Union(LogicalOperator)
 
@@ -504,7 +500,7 @@ class LookUpPropertiesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'property_group_not_found'
+        pass
 
     def is_other(self):
         """
@@ -512,10 +508,10 @@ class LookUpPropertiesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LookUpPropertiesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LookUpPropertiesError_validator = bv.Union(LookUpPropertiesError)
 
@@ -557,7 +553,7 @@ class LookupError(bb.Union):
         :param str val:
         :rtype: LookupError
         """
-        return cls('malformed_path', val)
+        pass
 
     def is_malformed_path(self):
         """
@@ -565,7 +561,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'malformed_path'
+        pass
 
     def is_not_found(self):
         """
@@ -573,7 +569,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_not_file(self):
         """
@@ -581,7 +577,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_file'
+        pass
 
     def is_not_folder(self):
         """
@@ -589,7 +585,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_folder'
+        pass
 
     def is_restricted_content(self):
         """
@@ -597,7 +593,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_content'
+        pass
 
     def is_other(self):
         """
@@ -605,7 +601,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_malformed_path(self):
         """
@@ -613,12 +609,10 @@ class LookupError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_malformed_path():
-            raise AttributeError("tag 'malformed_path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LookupError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LookupError_validator = bv.Union(LookupError)
 
@@ -655,7 +649,7 @@ class ModifyTemplateError(TemplateError):
 
         :rtype: bool
         """
-        return self._tag == 'conflicting_property_names'
+        pass
 
     def is_too_many_properties(self):
         """
@@ -663,7 +657,7 @@ class ModifyTemplateError(TemplateError):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_properties'
+        pass
 
     def is_too_many_templates(self):
         """
@@ -671,7 +665,7 @@ class ModifyTemplateError(TemplateError):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_templates'
+        pass
 
     def is_template_attribute_too_large(self):
         """
@@ -679,10 +673,10 @@ class ModifyTemplateError(TemplateError):
 
         :rtype: bool
         """
-        return self._tag == 'template_attribute_too_large'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ModifyTemplateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ModifyTemplateError_validator = bv.Union(ModifyTemplateError)
 
@@ -719,7 +713,7 @@ class OverwritePropertyGroupArg(bb.Struct):
     property_groups = bb.Attribute("property_groups")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(OverwritePropertyGroupArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 OverwritePropertyGroupArg_validator = bv.Struct(OverwritePropertyGroupArg)
 
@@ -754,7 +748,7 @@ class PropertiesSearchArg(bb.Struct):
     template_filter = bb.Attribute("template_filter", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchArg_validator = bv.Struct(PropertiesSearchArg)
 
@@ -783,7 +777,7 @@ class PropertiesSearchContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchContinueArg_validator = bv.Struct(PropertiesSearchContinueArg)
 
@@ -811,7 +805,7 @@ class PropertiesSearchContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -819,10 +813,10 @@ class PropertiesSearchContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchContinueError_validator = bv.Union(PropertiesSearchContinueError)
 
@@ -846,7 +840,7 @@ class PropertiesSearchError(bb.Union):
         :param LookUpPropertiesError val:
         :rtype: PropertiesSearchError
         """
-        return cls('property_group_lookup', val)
+        pass
 
     def is_property_group_lookup(self):
         """
@@ -854,7 +848,7 @@ class PropertiesSearchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'property_group_lookup'
+        pass
 
     def is_other(self):
         """
@@ -862,7 +856,7 @@ class PropertiesSearchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_property_group_lookup(self):
         """
@@ -870,12 +864,10 @@ class PropertiesSearchError(bb.Union):
 
         :rtype: LookUpPropertiesError
         """
-        if not self.is_property_group_lookup():
-            raise AttributeError("tag 'property_group_lookup' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchError_validator = bv.Union(PropertiesSearchError)
 
@@ -931,7 +923,7 @@ class PropertiesSearchMatch(bb.Struct):
     property_groups = bb.Attribute("property_groups")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchMatch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchMatch_validator = bv.Struct(PropertiesSearchMatch)
 
@@ -958,7 +950,7 @@ class PropertiesSearchMode(bb.Union):
         :param str val:
         :rtype: PropertiesSearchMode
         """
-        return cls('field_name', val)
+        pass
 
     def is_field_name(self):
         """
@@ -966,7 +958,7 @@ class PropertiesSearchMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'field_name'
+        pass
 
     def is_other(self):
         """
@@ -974,7 +966,7 @@ class PropertiesSearchMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_field_name(self):
         """
@@ -984,12 +976,10 @@ class PropertiesSearchMode(bb.Union):
 
         :rtype: str
         """
-        if not self.is_field_name():
-            raise AttributeError("tag 'field_name' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchMode_validator = bv.Union(PropertiesSearchMode)
 
@@ -1035,7 +1025,7 @@ class PropertiesSearchQuery(bb.Struct):
     logical_operator = bb.Attribute("logical_operator", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchQuery, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchQuery_validator = bv.Struct(PropertiesSearchQuery)
 
@@ -1073,7 +1063,7 @@ class PropertiesSearchResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertiesSearchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertiesSearchResult_validator = bv.Struct(PropertiesSearchResult)
 
@@ -1112,7 +1102,7 @@ class PropertyField(bb.Struct):
     value = bb.Attribute("value")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertyField, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertyField_validator = bv.Struct(PropertyField)
 
@@ -1162,7 +1152,7 @@ class PropertyFieldTemplate(bb.Struct):
     type = bb.Attribute("type", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertyFieldTemplate, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertyFieldTemplate_validator = bv.Struct(PropertyFieldTemplate)
 
@@ -1203,7 +1193,7 @@ class PropertyGroup(bb.Struct):
     fields = bb.Attribute("fields")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertyGroup, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertyGroup_validator = bv.Struct(PropertyGroup)
 
@@ -1250,7 +1240,7 @@ class PropertyGroupUpdate(bb.Struct):
     remove_fields = bb.Attribute("remove_fields", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertyGroupUpdate, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertyGroupUpdate_validator = bv.Struct(PropertyGroupUpdate)
 
@@ -1278,7 +1268,7 @@ class PropertyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'string'
+        pass
 
     def is_other(self):
         """
@@ -1286,10 +1276,10 @@ class PropertyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PropertyType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PropertyType_validator = bv.Union(PropertyType)
 
@@ -1328,7 +1318,7 @@ class RemovePropertiesArg(bb.Struct):
     property_template_ids = bb.Attribute("property_template_ids")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemovePropertiesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemovePropertiesArg_validator = bv.Struct(RemovePropertiesArg)
 
@@ -1348,7 +1338,7 @@ class RemovePropertiesError(PropertiesError):
         :param LookUpPropertiesError val:
         :rtype: RemovePropertiesError
         """
-        return cls('property_group_lookup', val)
+        pass
 
     def is_property_group_lookup(self):
         """
@@ -1356,7 +1346,7 @@ class RemovePropertiesError(PropertiesError):
 
         :rtype: bool
         """
-        return self._tag == 'property_group_lookup'
+        pass
 
     def get_property_group_lookup(self):
         """
@@ -1364,12 +1354,10 @@ class RemovePropertiesError(PropertiesError):
 
         :rtype: LookUpPropertiesError
         """
-        if not self.is_property_group_lookup():
-            raise AttributeError("tag 'property_group_lookup' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemovePropertiesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemovePropertiesError_validator = bv.Union(RemovePropertiesError)
 
@@ -1398,7 +1386,7 @@ class RemoveTemplateArg(bb.Struct):
     template_id = bb.Attribute("template_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveTemplateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveTemplateArg_validator = bv.Struct(RemoveTemplateArg)
 
@@ -1426,7 +1414,7 @@ class TemplateFilterBase(bb.Union):
         :param list of [str] val:
         :rtype: TemplateFilterBase
         """
-        return cls('filter_some', val)
+        pass
 
     def is_filter_some(self):
         """
@@ -1434,7 +1422,7 @@ class TemplateFilterBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'filter_some'
+        pass
 
     def is_other(self):
         """
@@ -1442,7 +1430,7 @@ class TemplateFilterBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_filter_some(self):
         """
@@ -1453,12 +1441,10 @@ class TemplateFilterBase(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_filter_some():
-            raise AttributeError("tag 'filter_some' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TemplateFilterBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TemplateFilterBase_validator = bv.Union(TemplateFilterBase)
 
@@ -1481,10 +1467,10 @@ class TemplateFilter(TemplateFilterBase):
 
         :rtype: bool
         """
-        return self._tag == 'filter_none'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TemplateFilter, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TemplateFilter_validator = bv.Union(TemplateFilter)
 
@@ -1514,7 +1500,7 @@ class TemplateOwnerType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user'
+        pass
 
     def is_team(self):
         """
@@ -1522,7 +1508,7 @@ class TemplateOwnerType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_other(self):
         """
@@ -1530,10 +1516,10 @@ class TemplateOwnerType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TemplateOwnerType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TemplateOwnerType_validator = bv.Union(TemplateOwnerType)
 
@@ -1569,7 +1555,7 @@ class UpdatePropertiesArg(bb.Struct):
     update_property_groups = bb.Attribute("update_property_groups")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdatePropertiesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdatePropertiesArg_validator = bv.Struct(UpdatePropertiesArg)
 
@@ -1589,7 +1575,7 @@ class UpdatePropertiesError(InvalidPropertyGroupError):
         :param LookUpPropertiesError val:
         :rtype: UpdatePropertiesError
         """
-        return cls('property_group_lookup', val)
+        pass
 
     def is_property_group_lookup(self):
         """
@@ -1597,7 +1583,7 @@ class UpdatePropertiesError(InvalidPropertyGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'property_group_lookup'
+        pass
 
     def get_property_group_lookup(self):
         """
@@ -1605,12 +1591,10 @@ class UpdatePropertiesError(InvalidPropertyGroupError):
 
         :rtype: LookUpPropertiesError
         """
-        if not self.is_property_group_lookup():
-            raise AttributeError("tag 'property_group_lookup' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdatePropertiesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdatePropertiesError_validator = bv.Union(UpdatePropertiesError)
 
@@ -1670,7 +1654,7 @@ class UpdateTemplateArg(bb.Struct):
     add_fields = bb.Attribute("add_fields", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateTemplateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateTemplateArg_validator = bv.Struct(UpdateTemplateArg)
 
@@ -1699,7 +1683,7 @@ class UpdateTemplateResult(bb.Struct):
     template_id = bb.Attribute("template_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateTemplateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateTemplateResult_validator = bv.Struct(UpdateTemplateResult)
 

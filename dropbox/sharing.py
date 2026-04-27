@@ -47,7 +47,7 @@ class AccessInheritance(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inherit'
+        pass
 
     def is_no_inherit(self):
         """
@@ -55,7 +55,7 @@ class AccessInheritance(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_inherit'
+        pass
 
     def is_other(self):
         """
@@ -63,10 +63,10 @@ class AccessInheritance(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AccessInheritance, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AccessInheritance_validator = bv.Union(AccessInheritance)
 
@@ -119,7 +119,7 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'owner'
+        pass
 
     def is_editor(self):
         """
@@ -127,7 +127,7 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'editor'
+        pass
 
     def is_viewer(self):
         """
@@ -135,7 +135,7 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'viewer'
+        pass
 
     def is_viewer_no_comment(self):
         """
@@ -143,7 +143,7 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'viewer_no_comment'
+        pass
 
     def is_traverse(self):
         """
@@ -151,7 +151,7 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'traverse'
+        pass
 
     def is_no_access(self):
         """
@@ -159,7 +159,7 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_access'
+        pass
 
     def is_other(self):
         """
@@ -167,10 +167,10 @@ class AccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AccessLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AccessLevel_validator = bv.Union(AccessLevel)
 
@@ -202,7 +202,7 @@ class AclUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'owner'
+        pass
 
     def is_editors(self):
         """
@@ -210,7 +210,7 @@ class AclUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'editors'
+        pass
 
     def is_other(self):
         """
@@ -218,10 +218,10 @@ class AclUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AclUpdatePolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AclUpdatePolicy_validator = bv.Union(AclUpdatePolicy)
 
@@ -300,7 +300,7 @@ class AddFileMemberArgs(bb.Struct):
     add_message_as_comment = bb.Attribute("add_message_as_comment")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddFileMemberArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddFileMemberArgs_validator = bv.Struct(AddFileMemberArgs)
 
@@ -335,7 +335,7 @@ class AddFileMemberError(bb.Union):
         :param SharingUserError val:
         :rtype: AddFileMemberError
         """
-        return cls('user_error', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -346,7 +346,7 @@ class AddFileMemberError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: AddFileMemberError
         """
-        return cls('access_error', val)
+        pass
 
     def is_user_error(self):
         """
@@ -354,7 +354,7 @@ class AddFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_access_error(self):
         """
@@ -362,7 +362,7 @@ class AddFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_rate_limit(self):
         """
@@ -370,7 +370,7 @@ class AddFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'rate_limit'
+        pass
 
     def is_invalid_comment(self):
         """
@@ -378,7 +378,7 @@ class AddFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_comment'
+        pass
 
     def is_other(self):
         """
@@ -386,7 +386,7 @@ class AddFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -394,9 +394,7 @@ class AddFileMemberError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -404,12 +402,10 @@ class AddFileMemberError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddFileMemberError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddFileMemberError_validator = bv.Union(AddFileMemberError)
 
@@ -465,7 +461,7 @@ class AddFolderMemberArg(bb.Struct):
     custom_message = bb.Attribute("custom_message", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddFolderMemberArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddFolderMemberArg_validator = bv.Struct(AddFolderMemberArg)
 
@@ -538,7 +534,7 @@ class AddFolderMemberError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: AddFolderMemberError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def bad_member(cls, val):
@@ -549,7 +545,7 @@ class AddFolderMemberError(bb.Union):
         :param AddMemberSelectorError val:
         :rtype: AddFolderMemberError
         """
-        return cls('bad_member', val)
+        pass
 
     @classmethod
     def too_many_members(cls, val):
@@ -560,7 +556,7 @@ class AddFolderMemberError(bb.Union):
         :param int val:
         :rtype: AddFolderMemberError
         """
-        return cls('too_many_members', val)
+        pass
 
     @classmethod
     def too_many_pending_invites(cls, val):
@@ -571,7 +567,7 @@ class AddFolderMemberError(bb.Union):
         :param int val:
         :rtype: AddFolderMemberError
         """
-        return cls('too_many_pending_invites', val)
+        pass
 
     def is_access_error(self):
         """
@@ -579,7 +575,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_email_unverified(self):
         """
@@ -587,7 +583,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_unverified'
+        pass
 
     def is_banned_member(self):
         """
@@ -595,7 +591,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'banned_member'
+        pass
 
     def is_bad_member(self):
         """
@@ -603,7 +599,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'bad_member'
+        pass
 
     def is_cant_share_outside_team(self):
         """
@@ -611,7 +607,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_share_outside_team'
+        pass
 
     def is_too_many_members(self):
         """
@@ -619,7 +615,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_members'
+        pass
 
     def is_too_many_pending_invites(self):
         """
@@ -627,7 +623,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_pending_invites'
+        pass
 
     def is_rate_limit(self):
         """
@@ -635,7 +631,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'rate_limit'
+        pass
 
     def is_too_many_invitees(self):
         """
@@ -643,7 +639,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_invitees'
+        pass
 
     def is_insufficient_plan(self):
         """
@@ -651,7 +647,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_plan'
+        pass
 
     def is_team_folder(self):
         """
@@ -659,7 +655,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_no_permission(self):
         """
@@ -667,7 +663,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_invalid_shared_folder(self):
         """
@@ -675,7 +671,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_shared_folder'
+        pass
 
     def is_other(self):
         """
@@ -683,7 +679,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -693,9 +689,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_bad_member(self):
         """
@@ -705,9 +699,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: AddMemberSelectorError
         """
-        if not self.is_bad_member():
-            raise AttributeError("tag 'bad_member' not set")
-        return self._value
+        pass
 
     def get_too_many_members(self):
         """
@@ -717,9 +709,7 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: int
         """
-        if not self.is_too_many_members():
-            raise AttributeError("tag 'too_many_members' not set")
-        return self._value
+        pass
 
     def get_too_many_pending_invites(self):
         """
@@ -729,12 +719,10 @@ class AddFolderMemberError(bb.Union):
 
         :rtype: int
         """
-        if not self.is_too_many_pending_invites():
-            raise AttributeError("tag 'too_many_pending_invites' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddFolderMemberError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddFolderMemberError_validator = bv.Union(AddFolderMemberError)
 
@@ -772,7 +760,7 @@ class AddMember(bb.Struct):
     access_level = bb.Attribute("access_level", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddMember, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddMember_validator = bv.Struct(AddMember)
 
@@ -816,7 +804,7 @@ class AddMemberSelectorError(bb.Union):
         :param str val:
         :rtype: AddMemberSelectorError
         """
-        return cls('invalid_dropbox_id', val)
+        pass
 
     @classmethod
     def invalid_email(cls, val):
@@ -827,7 +815,7 @@ class AddMemberSelectorError(bb.Union):
         :param str val:
         :rtype: AddMemberSelectorError
         """
-        return cls('invalid_email', val)
+        pass
 
     @classmethod
     def unverified_dropbox_id(cls, val):
@@ -838,7 +826,7 @@ class AddMemberSelectorError(bb.Union):
         :param str val:
         :rtype: AddMemberSelectorError
         """
-        return cls('unverified_dropbox_id', val)
+        pass
 
     def is_automatic_group(self):
         """
@@ -846,7 +834,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'automatic_group'
+        pass
 
     def is_invalid_dropbox_id(self):
         """
@@ -854,7 +842,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_dropbox_id'
+        pass
 
     def is_invalid_email(self):
         """
@@ -862,7 +850,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_email'
+        pass
 
     def is_unverified_dropbox_id(self):
         """
@@ -870,7 +858,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unverified_dropbox_id'
+        pass
 
     def is_group_deleted(self):
         """
@@ -878,7 +866,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_deleted'
+        pass
 
     def is_group_not_on_team(self):
         """
@@ -886,7 +874,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_not_on_team'
+        pass
 
     def is_other(self):
         """
@@ -894,7 +882,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_invalid_dropbox_id(self):
         """
@@ -904,9 +892,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_invalid_dropbox_id():
-            raise AttributeError("tag 'invalid_dropbox_id' not set")
-        return self._value
+        pass
 
     def get_invalid_email(self):
         """
@@ -916,9 +902,7 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_invalid_email():
-            raise AttributeError("tag 'invalid_email' not set")
-        return self._value
+        pass
 
     def get_unverified_dropbox_id(self):
         """
@@ -930,12 +914,10 @@ class AddMemberSelectorError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_unverified_dropbox_id():
-            raise AttributeError("tag 'unverified_dropbox_id' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddMemberSelectorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddMemberSelectorError_validator = bv.Union(AddMemberSelectorError)
 
@@ -973,7 +955,7 @@ class RequestedVisibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'public'
+        pass
 
     def is_team_only(self):
         """
@@ -981,7 +963,7 @@ class RequestedVisibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_only'
+        pass
 
     def is_password(self):
         """
@@ -989,10 +971,10 @@ class RequestedVisibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'password'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RequestedVisibility, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RequestedVisibility_validator = bv.Union(RequestedVisibility)
 
@@ -1040,7 +1022,7 @@ class ResolvedVisibility(RequestedVisibility):
 
         :rtype: bool
         """
-        return self._tag == 'team_and_password'
+        pass
 
     def is_shared_folder_only(self):
         """
@@ -1048,7 +1030,7 @@ class ResolvedVisibility(RequestedVisibility):
 
         :rtype: bool
         """
-        return self._tag == 'shared_folder_only'
+        pass
 
     def is_no_one(self):
         """
@@ -1056,7 +1038,7 @@ class ResolvedVisibility(RequestedVisibility):
 
         :rtype: bool
         """
-        return self._tag == 'no_one'
+        pass
 
     def is_only_you(self):
         """
@@ -1064,7 +1046,7 @@ class ResolvedVisibility(RequestedVisibility):
 
         :rtype: bool
         """
-        return self._tag == 'only_you'
+        pass
 
     def is_other(self):
         """
@@ -1072,10 +1054,10 @@ class ResolvedVisibility(RequestedVisibility):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ResolvedVisibility, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ResolvedVisibility_validator = bv.Union(ResolvedVisibility)
 
@@ -1089,7 +1071,7 @@ class AlphaResolvedVisibility(ResolvedVisibility):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AlphaResolvedVisibility, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AlphaResolvedVisibility_validator = bv.Union(AlphaResolvedVisibility)
 
@@ -1118,7 +1100,7 @@ class AudienceExceptionContentInfo(bb.Struct):
     name = bb.Attribute("name")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AudienceExceptionContentInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AudienceExceptionContentInfo_validator = bv.Struct(AudienceExceptionContentInfo)
 
@@ -1158,7 +1140,7 @@ class AudienceExceptions(bb.Struct):
     exceptions = bb.Attribute("exceptions")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AudienceExceptions, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AudienceExceptions_validator = bv.Struct(AudienceExceptions)
 
@@ -1207,7 +1189,7 @@ class AudienceRestrictingSharedFolder(bb.Struct):
     audience = bb.Attribute("audience", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AudienceRestrictingSharedFolder, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AudienceRestrictingSharedFolder_validator = bv.Struct(AudienceRestrictingSharedFolder)
 
@@ -1254,7 +1236,7 @@ class LinkMetadata(bb.Struct):
     expires = bb.Attribute("expires", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkMetadata_validator = bv.StructTree(LinkMetadata)
 
@@ -1277,7 +1259,7 @@ class CollectionLinkMetadata(LinkMetadata):
                                                      expires)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CollectionLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CollectionLinkMetadata_validator = bv.Struct(CollectionLinkMetadata)
 
@@ -1322,7 +1304,7 @@ class CreateSharedLinkArg(bb.Struct):
     pending_upload = bb.Attribute("pending_upload", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateSharedLinkArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateSharedLinkArg_validator = bv.Struct(CreateSharedLinkArg)
 
@@ -1346,7 +1328,7 @@ class CreateSharedLinkError(bb.Union):
         :param files.LookupError val:
         :rtype: CreateSharedLinkError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -1354,7 +1336,7 @@ class CreateSharedLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_other(self):
         """
@@ -1362,7 +1344,7 @@ class CreateSharedLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -1370,12 +1352,10 @@ class CreateSharedLinkError(bb.Union):
 
         :rtype: files.LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateSharedLinkError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateSharedLinkError_validator = bv.Union(CreateSharedLinkError)
 
@@ -1411,7 +1391,7 @@ class CreateSharedLinkWithSettingsArg(bb.Struct):
     settings = bb.Attribute("settings", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateSharedLinkWithSettingsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateSharedLinkWithSettingsArg_validator = bv.Struct(CreateSharedLinkWithSettingsArg)
 
@@ -1454,7 +1434,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
         :param files.LookupError val:
         :rtype: CreateSharedLinkWithSettingsError
         """
-        return cls('path', val)
+        pass
 
     @classmethod
     def shared_link_already_exists(cls, val):
@@ -1465,7 +1445,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
         :param SharedLinkAlreadyExistsMetadata val:
         :rtype: CreateSharedLinkWithSettingsError
         """
-        return cls('shared_link_already_exists', val)
+        pass
 
     @classmethod
     def settings_error(cls, val):
@@ -1476,7 +1456,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
         :param SharedLinkSettingsError val:
         :rtype: CreateSharedLinkWithSettingsError
         """
-        return cls('settings_error', val)
+        pass
 
     def is_path(self):
         """
@@ -1484,7 +1464,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_email_not_verified(self):
         """
@@ -1492,7 +1472,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_not_verified'
+        pass
 
     def is_shared_link_already_exists(self):
         """
@@ -1500,7 +1480,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'shared_link_already_exists'
+        pass
 
     def is_settings_error(self):
         """
@@ -1508,7 +1488,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'settings_error'
+        pass
 
     def is_access_denied(self):
         """
@@ -1516,7 +1496,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_denied'
+        pass
 
     def get_path(self):
         """
@@ -1524,9 +1504,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: files.LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def get_shared_link_already_exists(self):
         """
@@ -1538,9 +1516,7 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: SharedLinkAlreadyExistsMetadata
         """
-        if not self.is_shared_link_already_exists():
-            raise AttributeError("tag 'shared_link_already_exists' not set")
-        return self._value
+        pass
 
     def get_settings_error(self):
         """
@@ -1550,12 +1526,10 @@ class CreateSharedLinkWithSettingsError(bb.Union):
 
         :rtype: SharedLinkSettingsError
         """
-        if not self.is_settings_error():
-            raise AttributeError("tag 'settings_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateSharedLinkWithSettingsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateSharedLinkWithSettingsError_validator = bv.Union(CreateSharedLinkWithSettingsError)
 
@@ -1647,7 +1621,7 @@ class SharedContentLinkMetadataBase(bb.Struct):
     password_protected = bb.Attribute("password_protected")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedContentLinkMetadataBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedContentLinkMetadataBase_validator = bv.Struct(SharedContentLinkMetadataBase)
 
@@ -1679,7 +1653,7 @@ class ExpectedSharedContentLinkMetadata(SharedContentLinkMetadataBase):
                                                                 expiry)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExpectedSharedContentLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExpectedSharedContentLinkMetadata_validator = bv.Struct(ExpectedSharedContentLinkMetadata)
 
@@ -1747,7 +1721,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disable_viewer_info'
+        pass
 
     def is_edit_contents(self):
         """
@@ -1755,7 +1729,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'edit_contents'
+        pass
 
     def is_enable_viewer_info(self):
         """
@@ -1763,7 +1737,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enable_viewer_info'
+        pass
 
     def is_invite_viewer(self):
         """
@@ -1771,7 +1745,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_viewer'
+        pass
 
     def is_invite_viewer_no_comment(self):
         """
@@ -1779,7 +1753,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_viewer_no_comment'
+        pass
 
     def is_invite_editor(self):
         """
@@ -1787,7 +1761,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_editor'
+        pass
 
     def is_unshare(self):
         """
@@ -1795,7 +1769,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unshare'
+        pass
 
     def is_relinquish_membership(self):
         """
@@ -1803,7 +1777,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'relinquish_membership'
+        pass
 
     def is_share_link(self):
         """
@@ -1811,7 +1785,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'share_link'
+        pass
 
     def is_create_link(self):
         """
@@ -1819,7 +1793,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'create_link'
+        pass
 
     def is_create_view_link(self):
         """
@@ -1827,7 +1801,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'create_view_link'
+        pass
 
     def is_create_edit_link(self):
         """
@@ -1835,7 +1809,7 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'create_edit_link'
+        pass
 
     def is_other(self):
         """
@@ -1843,10 +1817,10 @@ class FileAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileAction, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileAction_validator = bv.Union(FileAction)
 
@@ -1877,7 +1851,7 @@ class FileErrorResult(bb.Union):
         :param str val:
         :rtype: FileErrorResult
         """
-        return cls('file_not_found_error', val)
+        pass
 
     @classmethod
     def invalid_file_action_error(cls, val):
@@ -1888,7 +1862,7 @@ class FileErrorResult(bb.Union):
         :param str val:
         :rtype: FileErrorResult
         """
-        return cls('invalid_file_action_error', val)
+        pass
 
     @classmethod
     def permission_denied_error(cls, val):
@@ -1899,7 +1873,7 @@ class FileErrorResult(bb.Union):
         :param str val:
         :rtype: FileErrorResult
         """
-        return cls('permission_denied_error', val)
+        pass
 
     def is_file_not_found_error(self):
         """
@@ -1907,7 +1881,7 @@ class FileErrorResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_not_found_error'
+        pass
 
     def is_invalid_file_action_error(self):
         """
@@ -1915,7 +1889,7 @@ class FileErrorResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_file_action_error'
+        pass
 
     def is_permission_denied_error(self):
         """
@@ -1923,7 +1897,7 @@ class FileErrorResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'permission_denied_error'
+        pass
 
     def is_other(self):
         """
@@ -1931,7 +1905,7 @@ class FileErrorResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_file_not_found_error(self):
         """
@@ -1941,9 +1915,7 @@ class FileErrorResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_file_not_found_error():
-            raise AttributeError("tag 'file_not_found_error' not set")
-        return self._value
+        pass
 
     def get_invalid_file_action_error(self):
         """
@@ -1953,9 +1925,7 @@ class FileErrorResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_invalid_file_action_error():
-            raise AttributeError("tag 'invalid_file_action_error' not set")
-        return self._value
+        pass
 
     def get_permission_denied_error(self):
         """
@@ -1965,12 +1935,10 @@ class FileErrorResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_permission_denied_error():
-            raise AttributeError("tag 'permission_denied_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileErrorResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileErrorResult_validator = bv.Union(FileErrorResult)
 
@@ -2071,7 +2039,7 @@ class SharedLinkMetadata(bb.Struct):
     content_owner_team_info = bb.Attribute("content_owner_team_info", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkMetadata_validator = bv.StructTree(SharedLinkMetadata)
 
@@ -2149,7 +2117,7 @@ class FileLinkMetadata(SharedLinkMetadata):
     size = bb.Attribute("size")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileLinkMetadata_validator = bv.Struct(FileLinkMetadata)
 
@@ -2188,7 +2156,7 @@ class FileMemberActionError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: FileMemberActionError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def no_explicit_access(cls, val):
@@ -2199,7 +2167,7 @@ class FileMemberActionError(bb.Union):
         :param MemberAccessLevelResult val:
         :rtype: FileMemberActionError
         """
-        return cls('no_explicit_access', val)
+        pass
 
     def is_invalid_member(self):
         """
@@ -2207,7 +2175,7 @@ class FileMemberActionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_member'
+        pass
 
     def is_no_permission(self):
         """
@@ -2215,7 +2183,7 @@ class FileMemberActionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_access_error(self):
         """
@@ -2223,7 +2191,7 @@ class FileMemberActionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_no_explicit_access(self):
         """
@@ -2231,7 +2199,7 @@ class FileMemberActionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_explicit_access'
+        pass
 
     def is_other(self):
         """
@@ -2239,7 +2207,7 @@ class FileMemberActionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -2249,9 +2217,7 @@ class FileMemberActionError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_no_explicit_access(self):
         """
@@ -2263,12 +2229,10 @@ class FileMemberActionError(bb.Union):
 
         :rtype: MemberAccessLevelResult
         """
-        if not self.is_no_explicit_access():
-            raise AttributeError("tag 'no_explicit_access' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileMemberActionError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileMemberActionError_validator = bv.Union(FileMemberActionError)
 
@@ -2300,7 +2264,7 @@ class FileMemberActionIndividualResult(bb.Union):
         :param AccessLevel val:
         :rtype: FileMemberActionIndividualResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def member_error(cls, val):
@@ -2311,7 +2275,7 @@ class FileMemberActionIndividualResult(bb.Union):
         :param FileMemberActionError val:
         :rtype: FileMemberActionIndividualResult
         """
-        return cls('member_error', val)
+        pass
 
     def is_success(self):
         """
@@ -2319,7 +2283,7 @@ class FileMemberActionIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_member_error(self):
         """
@@ -2327,7 +2291,7 @@ class FileMemberActionIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_error'
+        pass
 
     def get_success(self):
         """
@@ -2341,9 +2305,7 @@ class FileMemberActionIndividualResult(bb.Union):
 
         :rtype: AccessLevel
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_member_error(self):
         """
@@ -2353,12 +2315,10 @@ class FileMemberActionIndividualResult(bb.Union):
 
         :rtype: FileMemberActionError
         """
-        if not self.is_member_error():
-            raise AttributeError("tag 'member_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileMemberActionIndividualResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileMemberActionIndividualResult_validator = bv.Union(FileMemberActionIndividualResult)
 
@@ -2418,7 +2378,7 @@ class FileMemberActionResult(bb.Struct):
     invitation_signature = bb.Attribute("invitation_signature", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileMemberActionResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileMemberActionResult_validator = bv.Struct(FileMemberActionResult)
 
@@ -2447,7 +2407,7 @@ class FileMemberRemoveActionResult(bb.Union):
         :param MemberAccessLevelResult val:
         :rtype: FileMemberRemoveActionResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def member_error(cls, val):
@@ -2458,7 +2418,7 @@ class FileMemberRemoveActionResult(bb.Union):
         :param FileMemberActionError val:
         :rtype: FileMemberRemoveActionResult
         """
-        return cls('member_error', val)
+        pass
 
     def is_success(self):
         """
@@ -2466,7 +2426,7 @@ class FileMemberRemoveActionResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_member_error(self):
         """
@@ -2474,7 +2434,7 @@ class FileMemberRemoveActionResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_error'
+        pass
 
     def is_other(self):
         """
@@ -2482,7 +2442,7 @@ class FileMemberRemoveActionResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -2492,9 +2452,7 @@ class FileMemberRemoveActionResult(bb.Union):
 
         :rtype: MemberAccessLevelResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_member_error(self):
         """
@@ -2504,12 +2462,10 @@ class FileMemberRemoveActionResult(bb.Union):
 
         :rtype: FileMemberActionError
         """
-        if not self.is_member_error():
-            raise AttributeError("tag 'member_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileMemberRemoveActionResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileMemberRemoveActionResult_validator = bv.Union(FileMemberRemoveActionResult)
 
@@ -2557,7 +2513,7 @@ class FilePermission(bb.Struct):
     reason = bb.Attribute("reason", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FilePermission, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FilePermission_validator = bv.Struct(FilePermission)
 
@@ -2633,7 +2589,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'change_options'
+        pass
 
     def is_disable_viewer_info(self):
         """
@@ -2641,7 +2597,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disable_viewer_info'
+        pass
 
     def is_edit_contents(self):
         """
@@ -2649,7 +2605,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'edit_contents'
+        pass
 
     def is_enable_viewer_info(self):
         """
@@ -2657,7 +2613,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enable_viewer_info'
+        pass
 
     def is_invite_editor(self):
         """
@@ -2665,7 +2621,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_editor'
+        pass
 
     def is_invite_viewer(self):
         """
@@ -2673,7 +2629,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_viewer'
+        pass
 
     def is_invite_viewer_no_comment(self):
         """
@@ -2681,7 +2637,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_viewer_no_comment'
+        pass
 
     def is_relinquish_membership(self):
         """
@@ -2689,7 +2645,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'relinquish_membership'
+        pass
 
     def is_unmount(self):
         """
@@ -2697,7 +2653,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unmount'
+        pass
 
     def is_unshare(self):
         """
@@ -2705,7 +2661,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unshare'
+        pass
 
     def is_leave_a_copy(self):
         """
@@ -2713,7 +2669,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'leave_a_copy'
+        pass
 
     def is_share_link(self):
         """
@@ -2721,7 +2677,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'share_link'
+        pass
 
     def is_create_link(self):
         """
@@ -2729,7 +2685,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'create_link'
+        pass
 
     def is_set_access_inheritance(self):
         """
@@ -2737,7 +2693,7 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'set_access_inheritance'
+        pass
 
     def is_other(self):
         """
@@ -2745,10 +2701,10 @@ class FolderAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderAction, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderAction_validator = bv.Union(FolderAction)
 
@@ -2781,7 +2737,7 @@ class FolderLinkMetadata(SharedLinkMetadata):
                                                  content_owner_team_info)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderLinkMetadata_validator = bv.Struct(FolderLinkMetadata)
 
@@ -2830,7 +2786,7 @@ class FolderPermission(bb.Struct):
     reason = bb.Attribute("reason", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderPermission, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderPermission_validator = bv.Struct(FolderPermission)
 
@@ -2902,7 +2858,7 @@ class FolderPolicy(bb.Struct):
     viewer_info_policy = bb.Attribute("viewer_info_policy", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderPolicy_validator = bv.Struct(FolderPolicy)
 
@@ -2942,7 +2898,7 @@ class GetFileMetadataArg(bb.Struct):
     actions = bb.Attribute("actions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileMetadataArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileMetadataArg_validator = bv.Struct(GetFileMetadataArg)
 
@@ -2982,7 +2938,7 @@ class GetFileMetadataBatchArg(bb.Struct):
     actions = bb.Attribute("actions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileMetadataBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileMetadataBatchArg_validator = bv.Struct(GetFileMetadataBatchArg)
 
@@ -3021,7 +2977,7 @@ class GetFileMetadataBatchResult(bb.Struct):
     result = bb.Attribute("result", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileMetadataBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileMetadataBatchResult_validator = bv.Struct(GetFileMetadataBatchResult)
 
@@ -3048,7 +3004,7 @@ class GetFileMetadataError(bb.Union):
         :param SharingUserError val:
         :rtype: GetFileMetadataError
         """
-        return cls('user_error', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -3059,7 +3015,7 @@ class GetFileMetadataError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: GetFileMetadataError
         """
-        return cls('access_error', val)
+        pass
 
     def is_user_error(self):
         """
@@ -3067,7 +3023,7 @@ class GetFileMetadataError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_access_error(self):
         """
@@ -3075,7 +3031,7 @@ class GetFileMetadataError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_other(self):
         """
@@ -3083,7 +3039,7 @@ class GetFileMetadataError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -3091,9 +3047,7 @@ class GetFileMetadataError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -3101,12 +3055,10 @@ class GetFileMetadataError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileMetadataError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileMetadataError_validator = bv.Union(GetFileMetadataError)
 
@@ -3135,7 +3087,7 @@ class GetFileMetadataIndividualResult(bb.Union):
         :param SharedFileMetadata val:
         :rtype: GetFileMetadataIndividualResult
         """
-        return cls('metadata', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -3146,7 +3098,7 @@ class GetFileMetadataIndividualResult(bb.Union):
         :param SharingFileAccessError val:
         :rtype: GetFileMetadataIndividualResult
         """
-        return cls('access_error', val)
+        pass
 
     def is_metadata(self):
         """
@@ -3154,7 +3106,7 @@ class GetFileMetadataIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'metadata'
+        pass
 
     def is_access_error(self):
         """
@@ -3162,7 +3114,7 @@ class GetFileMetadataIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_other(self):
         """
@@ -3170,7 +3122,7 @@ class GetFileMetadataIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_metadata(self):
         """
@@ -3180,9 +3132,7 @@ class GetFileMetadataIndividualResult(bb.Union):
 
         :rtype: SharedFileMetadata
         """
-        if not self.is_metadata():
-            raise AttributeError("tag 'metadata' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -3192,12 +3142,10 @@ class GetFileMetadataIndividualResult(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileMetadataIndividualResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileMetadataIndividualResult_validator = bv.Union(GetFileMetadataIndividualResult)
 
@@ -3235,7 +3183,7 @@ class GetMetadataArgs(bb.Struct):
     actions = bb.Attribute("actions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetMetadataArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetMetadataArgs_validator = bv.Struct(GetMetadataArgs)
 
@@ -3270,7 +3218,7 @@ class SharedLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'shared_link_not_found'
+        pass
 
     def is_shared_link_access_denied(self):
         """
@@ -3278,7 +3226,7 @@ class SharedLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'shared_link_access_denied'
+        pass
 
     def is_unsupported_link_type(self):
         """
@@ -3286,7 +3234,7 @@ class SharedLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_link_type'
+        pass
 
     def is_other(self):
         """
@@ -3294,10 +3242,10 @@ class SharedLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkError_validator = bv.Union(SharedLinkError)
 
@@ -3320,10 +3268,10 @@ class GetSharedLinkFileError(SharedLinkError):
 
         :rtype: bool
         """
-        return self._tag == 'shared_link_is_directory'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetSharedLinkFileError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetSharedLinkFileError_validator = bv.Union(GetSharedLinkFileError)
 
@@ -3370,7 +3318,7 @@ class GetSharedLinkMetadataArg(bb.Struct):
     link_password = bb.Attribute("link_password", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetSharedLinkMetadataArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetSharedLinkMetadataArg_validator = bv.Struct(GetSharedLinkMetadataArg)
 
@@ -3397,7 +3345,7 @@ class GetSharedLinksArg(bb.Struct):
     path = bb.Attribute("path", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetSharedLinksArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetSharedLinksArg_validator = bv.Struct(GetSharedLinksArg)
 
@@ -3421,7 +3369,7 @@ class GetSharedLinksError(bb.Union):
         :param Optional[str] val:
         :rtype: GetSharedLinksError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -3429,7 +3377,7 @@ class GetSharedLinksError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_other(self):
         """
@@ -3437,7 +3385,7 @@ class GetSharedLinksError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -3445,12 +3393,10 @@ class GetSharedLinksError(bb.Union):
 
         :rtype: Optional[str]
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetSharedLinksError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetSharedLinksError_validator = bv.Union(GetSharedLinksError)
 
@@ -3476,7 +3422,7 @@ class GetSharedLinksResult(bb.Struct):
     links = bb.Attribute("links")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetSharedLinksResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetSharedLinksResult_validator = bv.Struct(GetSharedLinksResult)
 
@@ -3544,7 +3490,7 @@ class GroupInfo(team_common.GroupSummary):
     same_team = bb.Attribute("same_team")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupInfo_validator = bv.Struct(GroupInfo)
 
@@ -3603,7 +3549,7 @@ class MembershipInfo(bb.Struct):
     is_inherited = bb.Attribute("is_inherited")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembershipInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembershipInfo_validator = bv.Struct(MembershipInfo)
 
@@ -3639,7 +3585,7 @@ class GroupMembershipInfo(MembershipInfo):
     group = bb.Attribute("group", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembershipInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembershipInfo_validator = bv.Struct(GroupMembershipInfo)
 
@@ -3676,7 +3622,7 @@ class InsufficientPlan(bb.Struct):
     upsell_url = bb.Attribute("upsell_url", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InsufficientPlan, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InsufficientPlan_validator = bv.Struct(InsufficientPlan)
 
@@ -3722,7 +3668,7 @@ class InsufficientQuotaAmounts(bb.Struct):
     space_left = bb.Attribute("space_left")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InsufficientQuotaAmounts, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InsufficientQuotaAmounts_validator = bv.Struct(InsufficientQuotaAmounts)
 
@@ -3750,7 +3696,7 @@ class InviteeInfo(bb.Union):
         :param str val:
         :rtype: InviteeInfo
         """
-        return cls('email', val)
+        pass
 
     def is_email(self):
         """
@@ -3758,7 +3704,7 @@ class InviteeInfo(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email'
+        pass
 
     def is_other(self):
         """
@@ -3766,7 +3712,7 @@ class InviteeInfo(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_email(self):
         """
@@ -3776,12 +3722,10 @@ class InviteeInfo(bb.Union):
 
         :rtype: str
         """
-        if not self.is_email():
-            raise AttributeError("tag 'email' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InviteeInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InviteeInfo_validator = bv.Union(InviteeInfo)
 
@@ -3826,7 +3770,7 @@ class InviteeMembershipInfo(MembershipInfo):
     user = bb.Attribute("user", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InviteeMembershipInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InviteeMembershipInfo_validator = bv.Struct(InviteeMembershipInfo)
 
@@ -3867,7 +3811,7 @@ class JobError(bb.Union):
         :param UnshareFolderError val:
         :rtype: JobError
         """
-        return cls('unshare_folder_error', val)
+        pass
 
     @classmethod
     def remove_folder_member_error(cls, val):
@@ -3878,7 +3822,7 @@ class JobError(bb.Union):
         :param RemoveFolderMemberError val:
         :rtype: JobError
         """
-        return cls('remove_folder_member_error', val)
+        pass
 
     @classmethod
     def relinquish_folder_membership_error(cls, val):
@@ -3889,7 +3833,7 @@ class JobError(bb.Union):
         :param RelinquishFolderMembershipError val:
         :rtype: JobError
         """
-        return cls('relinquish_folder_membership_error', val)
+        pass
 
     def is_unshare_folder_error(self):
         """
@@ -3897,7 +3841,7 @@ class JobError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unshare_folder_error'
+        pass
 
     def is_remove_folder_member_error(self):
         """
@@ -3905,7 +3849,7 @@ class JobError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'remove_folder_member_error'
+        pass
 
     def is_relinquish_folder_membership_error(self):
         """
@@ -3913,7 +3857,7 @@ class JobError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'relinquish_folder_membership_error'
+        pass
 
     def is_other(self):
         """
@@ -3921,7 +3865,7 @@ class JobError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_unshare_folder_error(self):
         """
@@ -3932,9 +3876,7 @@ class JobError(bb.Union):
 
         :rtype: UnshareFolderError
         """
-        if not self.is_unshare_folder_error():
-            raise AttributeError("tag 'unshare_folder_error' not set")
-        return self._value
+        pass
 
     def get_remove_folder_member_error(self):
         """
@@ -3946,9 +3888,7 @@ class JobError(bb.Union):
 
         :rtype: RemoveFolderMemberError
         """
-        if not self.is_remove_folder_member_error():
-            raise AttributeError("tag 'remove_folder_member_error' not set")
-        return self._value
+        pass
 
     def get_relinquish_folder_membership_error(self):
         """
@@ -3960,12 +3900,10 @@ class JobError(bb.Union):
 
         :rtype: RelinquishFolderMembershipError
         """
-        if not self.is_relinquish_folder_membership_error():
-            raise AttributeError("tag 'relinquish_folder_membership_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(JobError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 JobError_validator = bv.Union(JobError)
 
@@ -3991,7 +3929,7 @@ class JobStatus(async_.PollResultBase):
         :param JobError val:
         :rtype: JobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -3999,7 +3937,7 @@ class JobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -4007,7 +3945,7 @@ class JobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_failed(self):
         """
@@ -4017,12 +3955,10 @@ class JobStatus(async_.PollResultBase):
 
         :rtype: JobError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(JobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 JobStatus_validator = bv.Union(JobStatus)
 
@@ -4052,7 +3988,7 @@ class LinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'viewer'
+        pass
 
     def is_editor(self):
         """
@@ -4060,7 +3996,7 @@ class LinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'editor'
+        pass
 
     def is_other(self):
         """
@@ -4068,10 +4004,10 @@ class LinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkAccessLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkAccessLevel_validator = bv.Union(LinkAccessLevel)
 
@@ -4116,7 +4052,7 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'change_access_level'
+        pass
 
     def is_change_audience(self):
         """
@@ -4124,7 +4060,7 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'change_audience'
+        pass
 
     def is_remove_expiry(self):
         """
@@ -4132,7 +4068,7 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'remove_expiry'
+        pass
 
     def is_remove_password(self):
         """
@@ -4140,7 +4076,7 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'remove_password'
+        pass
 
     def is_set_expiry(self):
         """
@@ -4148,7 +4084,7 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'set_expiry'
+        pass
 
     def is_set_password(self):
         """
@@ -4156,7 +4092,7 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'set_password'
+        pass
 
     def is_other(self):
         """
@@ -4164,10 +4100,10 @@ class LinkAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkAction, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkAction_validator = bv.Union(LinkAction)
 
@@ -4210,7 +4146,7 @@ class LinkAudience(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'public'
+        pass
 
     def is_team(self):
         """
@@ -4218,7 +4154,7 @@ class LinkAudience(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_no_one(self):
         """
@@ -4226,7 +4162,7 @@ class LinkAudience(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_one'
+        pass
 
     def is_password(self):
         """
@@ -4234,7 +4170,7 @@ class LinkAudience(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'password'
+        pass
 
     def is_members(self):
         """
@@ -4242,7 +4178,7 @@ class LinkAudience(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'members'
+        pass
 
     def is_other(self):
         """
@@ -4250,10 +4186,10 @@ class LinkAudience(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkAudience, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkAudience_validator = bv.Union(LinkAudience)
 
@@ -4301,7 +4237,7 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'delete_and_recreate'
+        pass
 
     def is_restricted_by_shared_folder(self):
         """
@@ -4309,7 +4245,7 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_by_shared_folder'
+        pass
 
     def is_restricted_by_team(self):
         """
@@ -4317,7 +4253,7 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_by_team'
+        pass
 
     def is_user_not_on_team(self):
         """
@@ -4325,7 +4261,7 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_on_team'
+        pass
 
     def is_user_account_type(self):
         """
@@ -4333,7 +4269,7 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_account_type'
+        pass
 
     def is_permission_denied(self):
         """
@@ -4341,7 +4277,7 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'permission_denied'
+        pass
 
     def is_other(self):
         """
@@ -4349,10 +4285,10 @@ class VisibilityPolicyDisallowedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(VisibilityPolicyDisallowedReason, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 VisibilityPolicyDisallowedReason_validator = bv.Union(VisibilityPolicyDisallowedReason)
 
@@ -4366,7 +4302,7 @@ class LinkAudienceDisallowedReason(VisibilityPolicyDisallowedReason):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkAudienceDisallowedReason, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkAudienceDisallowedReason_validator = bv.Union(LinkAudienceDisallowedReason)
 
@@ -4413,7 +4349,7 @@ class LinkAudienceOption(bb.Struct):
     disallowed_reason = bb.Attribute("disallowed_reason", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkAudienceOption, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkAudienceOption_validator = bv.Struct(LinkAudienceOption)
 
@@ -4444,7 +4380,7 @@ class LinkExpiry(bb.Union):
         :param datetime.datetime val:
         :rtype: LinkExpiry
         """
-        return cls('set_expiry', val)
+        pass
 
     def is_remove_expiry(self):
         """
@@ -4452,7 +4388,7 @@ class LinkExpiry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'remove_expiry'
+        pass
 
     def is_set_expiry(self):
         """
@@ -4460,7 +4396,7 @@ class LinkExpiry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'set_expiry'
+        pass
 
     def is_other(self):
         """
@@ -4468,7 +4404,7 @@ class LinkExpiry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_set_expiry(self):
         """
@@ -4478,12 +4414,10 @@ class LinkExpiry(bb.Union):
 
         :rtype: datetime.datetime
         """
-        if not self.is_set_expiry():
-            raise AttributeError("tag 'set_expiry' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkExpiry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkExpiry_validator = bv.Union(LinkExpiry)
 
@@ -4514,7 +4448,7 @@ class LinkPassword(bb.Union):
         :param str val:
         :rtype: LinkPassword
         """
-        return cls('set_password', val)
+        pass
 
     def is_remove_password(self):
         """
@@ -4522,7 +4456,7 @@ class LinkPassword(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'remove_password'
+        pass
 
     def is_set_password(self):
         """
@@ -4530,7 +4464,7 @@ class LinkPassword(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'set_password'
+        pass
 
     def is_other(self):
         """
@@ -4538,7 +4472,7 @@ class LinkPassword(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_set_password(self):
         """
@@ -4548,12 +4482,10 @@ class LinkPassword(bb.Union):
 
         :rtype: str
         """
-        if not self.is_set_password():
-            raise AttributeError("tag 'set_password' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkPassword, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkPassword_validator = bv.Union(LinkPassword)
 
@@ -4594,7 +4526,7 @@ class LinkPermission(bb.Struct):
     reason = bb.Attribute("reason", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkPermission, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkPermission_validator = bv.Struct(LinkPermission)
 
@@ -4821,7 +4753,7 @@ class LinkPermissions(bb.Struct):
     can_use_extended_sharing_controls = bb.Attribute("can_use_extended_sharing_controls", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkPermissions, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkPermissions_validator = bv.Struct(LinkPermissions)
 
@@ -4877,7 +4809,7 @@ class LinkSettings(bb.Struct):
     password = bb.Attribute("password", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LinkSettings, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LinkSettings_validator = bv.Struct(LinkSettings)
 
@@ -4936,7 +4868,7 @@ class ListFileMembersArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersArg_validator = bv.Struct(ListFileMembersArg)
 
@@ -4975,7 +4907,7 @@ class ListFileMembersBatchArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersBatchArg_validator = bv.Struct(ListFileMembersBatchArg)
 
@@ -5014,7 +4946,7 @@ class ListFileMembersBatchResult(bb.Struct):
     result = bb.Attribute("result", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersBatchResult_validator = bv.Struct(ListFileMembersBatchResult)
 
@@ -5047,7 +4979,7 @@ class ListFileMembersContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersContinueArg_validator = bv.Struct(ListFileMembersContinueArg)
 
@@ -5079,7 +5011,7 @@ class ListFileMembersContinueError(bb.Union):
         :param SharingUserError val:
         :rtype: ListFileMembersContinueError
         """
-        return cls('user_error', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -5090,7 +5022,7 @@ class ListFileMembersContinueError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: ListFileMembersContinueError
         """
-        return cls('access_error', val)
+        pass
 
     def is_user_error(self):
         """
@@ -5098,7 +5030,7 @@ class ListFileMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_access_error(self):
         """
@@ -5106,7 +5038,7 @@ class ListFileMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_invalid_cursor(self):
         """
@@ -5114,7 +5046,7 @@ class ListFileMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -5122,7 +5054,7 @@ class ListFileMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -5130,9 +5062,7 @@ class ListFileMembersContinueError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -5140,12 +5070,10 @@ class ListFileMembersContinueError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersContinueError_validator = bv.Union(ListFileMembersContinueError)
 
@@ -5181,7 +5109,7 @@ class ListFileMembersCountResult(bb.Struct):
     member_count = bb.Attribute("member_count")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersCountResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersCountResult_validator = bv.Struct(ListFileMembersCountResult)
 
@@ -5207,7 +5135,7 @@ class ListFileMembersError(bb.Union):
         :param SharingUserError val:
         :rtype: ListFileMembersError
         """
-        return cls('user_error', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -5218,7 +5146,7 @@ class ListFileMembersError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: ListFileMembersError
         """
-        return cls('access_error', val)
+        pass
 
     def is_user_error(self):
         """
@@ -5226,7 +5154,7 @@ class ListFileMembersError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_access_error(self):
         """
@@ -5234,7 +5162,7 @@ class ListFileMembersError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_other(self):
         """
@@ -5242,7 +5170,7 @@ class ListFileMembersError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -5250,9 +5178,7 @@ class ListFileMembersError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -5260,12 +5186,10 @@ class ListFileMembersError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersError_validator = bv.Union(ListFileMembersError)
 
@@ -5294,7 +5218,7 @@ class ListFileMembersIndividualResult(bb.Union):
         :param ListFileMembersCountResult val:
         :rtype: ListFileMembersIndividualResult
         """
-        return cls('result', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -5305,7 +5229,7 @@ class ListFileMembersIndividualResult(bb.Union):
         :param SharingFileAccessError val:
         :rtype: ListFileMembersIndividualResult
         """
-        return cls('access_error', val)
+        pass
 
     def is_result(self):
         """
@@ -5313,7 +5237,7 @@ class ListFileMembersIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'result'
+        pass
 
     def is_access_error(self):
         """
@@ -5321,7 +5245,7 @@ class ListFileMembersIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_other(self):
         """
@@ -5329,7 +5253,7 @@ class ListFileMembersIndividualResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_result(self):
         """
@@ -5339,9 +5263,7 @@ class ListFileMembersIndividualResult(bb.Union):
 
         :rtype: ListFileMembersCountResult
         """
-        if not self.is_result():
-            raise AttributeError("tag 'result' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -5351,12 +5273,10 @@ class ListFileMembersIndividualResult(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileMembersIndividualResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileMembersIndividualResult_validator = bv.Union(ListFileMembersIndividualResult)
 
@@ -5397,7 +5317,7 @@ class ListFilesArg(bb.Struct):
     actions = bb.Attribute("actions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFilesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFilesArg_validator = bv.Struct(ListFilesArg)
 
@@ -5426,7 +5346,7 @@ class ListFilesContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFilesContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFilesContinueArg_validator = bv.Struct(ListFilesContinueArg)
 
@@ -5460,7 +5380,7 @@ class ListFilesContinueError(bb.Union):
         :param SharingUserError val:
         :rtype: ListFilesContinueError
         """
-        return cls('user_error', val)
+        pass
 
     def is_user_error(self):
         """
@@ -5468,7 +5388,7 @@ class ListFilesContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_invalid_cursor(self):
         """
@@ -5476,7 +5396,7 @@ class ListFilesContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -5484,7 +5404,7 @@ class ListFilesContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -5494,12 +5414,10 @@ class ListFilesContinueError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFilesContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFilesContinueError_validator = bv.Union(ListFilesContinueError)
 
@@ -5538,7 +5456,7 @@ class ListFilesResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFilesResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFilesResult_validator = bv.Struct(ListFilesResult)
 
@@ -5576,7 +5494,7 @@ class ListFolderMembersCursorArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderMembersCursorArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderMembersCursorArg_validator = bv.Struct(ListFolderMembersCursorArg)
 
@@ -5606,7 +5524,7 @@ class ListFolderMembersArgs(ListFolderMembersCursorArg):
     shared_folder_id = bb.Attribute("shared_folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderMembersArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderMembersArgs_validator = bv.Struct(ListFolderMembersArgs)
 
@@ -5634,7 +5552,7 @@ class ListFolderMembersContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderMembersContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderMembersContinueArg_validator = bv.Struct(ListFolderMembersContinueArg)
 
@@ -5663,7 +5581,7 @@ class ListFolderMembersContinueError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: ListFolderMembersContinueError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -5671,7 +5589,7 @@ class ListFolderMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_invalid_cursor(self):
         """
@@ -5679,7 +5597,7 @@ class ListFolderMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -5687,7 +5605,7 @@ class ListFolderMembersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -5695,12 +5613,10 @@ class ListFolderMembersContinueError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderMembersContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderMembersContinueError_validator = bv.Union(ListFolderMembersContinueError)
 
@@ -5738,7 +5654,7 @@ class ListFoldersArgs(bb.Struct):
     actions = bb.Attribute("actions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFoldersArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFoldersArgs_validator = bv.Struct(ListFoldersArgs)
 
@@ -5764,7 +5680,7 @@ class ListFoldersContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFoldersContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFoldersContinueArg_validator = bv.Struct(ListFoldersContinueArg)
 
@@ -5790,7 +5706,7 @@ class ListFoldersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -5798,10 +5714,10 @@ class ListFoldersContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFoldersContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFoldersContinueError_validator = bv.Union(ListFoldersContinueError)
 
@@ -5846,7 +5762,7 @@ class ListFoldersResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFoldersResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFoldersResult_validator = bv.Struct(ListFoldersResult)
 
@@ -5895,7 +5811,7 @@ class ListSharedLinksArg(bb.Struct):
     direct_only = bb.Attribute("direct_only", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListSharedLinksArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListSharedLinksArg_validator = bv.Struct(ListSharedLinksArg)
 
@@ -5926,7 +5842,7 @@ class ListSharedLinksError(bb.Union):
         :param files.LookupError val:
         :rtype: ListSharedLinksError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -5934,7 +5850,7 @@ class ListSharedLinksError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_reset(self):
         """
@@ -5942,7 +5858,7 @@ class ListSharedLinksError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -5950,7 +5866,7 @@ class ListSharedLinksError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -5958,12 +5874,10 @@ class ListSharedLinksError(bb.Union):
 
         :rtype: files.LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListSharedLinksError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListSharedLinksError_validator = bv.Union(ListSharedLinksError)
 
@@ -6013,7 +5927,7 @@ class ListSharedLinksResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListSharedLinksResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListSharedLinksResult_validator = bv.Struct(ListSharedLinksResult)
 
@@ -6064,7 +5978,7 @@ class MemberAccessLevelResult(bb.Struct):
     access_details = bb.Attribute("access_details", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAccessLevelResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAccessLevelResult_validator = bv.Struct(MemberAccessLevelResult)
 
@@ -6111,7 +6025,7 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'leave_a_copy'
+        pass
 
     def is_make_editor(self):
         """
@@ -6119,7 +6033,7 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'make_editor'
+        pass
 
     def is_make_owner(self):
         """
@@ -6127,7 +6041,7 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'make_owner'
+        pass
 
     def is_make_viewer(self):
         """
@@ -6135,7 +6049,7 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'make_viewer'
+        pass
 
     def is_make_viewer_no_comment(self):
         """
@@ -6143,7 +6057,7 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'make_viewer_no_comment'
+        pass
 
     def is_remove(self):
         """
@@ -6151,7 +6065,7 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'remove'
+        pass
 
     def is_other(self):
         """
@@ -6159,10 +6073,10 @@ class MemberAction(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAction, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAction_validator = bv.Union(MemberAction)
 
@@ -6210,7 +6124,7 @@ class MemberPermission(bb.Struct):
     reason = bb.Attribute("reason", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberPermission, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberPermission_validator = bv.Struct(MemberPermission)
 
@@ -6241,7 +6155,7 @@ class MemberPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_anyone(self):
         """
@@ -6249,7 +6163,7 @@ class MemberPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'anyone'
+        pass
 
     def is_other(self):
         """
@@ -6257,10 +6171,10 @@ class MemberPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberPolicy_validator = bv.Union(MemberPolicy)
 
@@ -6290,7 +6204,7 @@ class MemberSelector(bb.Union):
         :param str val:
         :rtype: MemberSelector
         """
-        return cls('dropbox_id', val)
+        pass
 
     @classmethod
     def email(cls, val):
@@ -6301,7 +6215,7 @@ class MemberSelector(bb.Union):
         :param str val:
         :rtype: MemberSelector
         """
-        return cls('email', val)
+        pass
 
     def is_dropbox_id(self):
         """
@@ -6309,7 +6223,7 @@ class MemberSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'dropbox_id'
+        pass
 
     def is_email(self):
         """
@@ -6317,7 +6231,7 @@ class MemberSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email'
+        pass
 
     def is_other(self):
         """
@@ -6325,7 +6239,7 @@ class MemberSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_dropbox_id(self):
         """
@@ -6335,9 +6249,7 @@ class MemberSelector(bb.Union):
 
         :rtype: str
         """
-        if not self.is_dropbox_id():
-            raise AttributeError("tag 'dropbox_id' not set")
-        return self._value
+        pass
 
     def get_email(self):
         """
@@ -6347,12 +6259,10 @@ class MemberSelector(bb.Union):
 
         :rtype: str
         """
-        if not self.is_email():
-            raise AttributeError("tag 'email' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberSelector, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberSelector_validator = bv.Union(MemberSelector)
 
@@ -6398,7 +6308,7 @@ class ModifySharedLinkSettingsArgs(bb.Struct):
     remove_expiration = bb.Attribute("remove_expiration")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ModifySharedLinkSettingsArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ModifySharedLinkSettingsArgs_validator = bv.Struct(ModifySharedLinkSettingsArgs)
 
@@ -6428,7 +6338,7 @@ class ModifySharedLinkSettingsError(SharedLinkError):
         :param SharedLinkSettingsError val:
         :rtype: ModifySharedLinkSettingsError
         """
-        return cls('settings_error', val)
+        pass
 
     def is_settings_error(self):
         """
@@ -6436,7 +6346,7 @@ class ModifySharedLinkSettingsError(SharedLinkError):
 
         :rtype: bool
         """
-        return self._tag == 'settings_error'
+        pass
 
     def is_email_not_verified(self):
         """
@@ -6444,7 +6354,7 @@ class ModifySharedLinkSettingsError(SharedLinkError):
 
         :rtype: bool
         """
-        return self._tag == 'email_not_verified'
+        pass
 
     def get_settings_error(self):
         """
@@ -6454,12 +6364,10 @@ class ModifySharedLinkSettingsError(SharedLinkError):
 
         :rtype: SharedLinkSettingsError
         """
-        if not self.is_settings_error():
-            raise AttributeError("tag 'settings_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ModifySharedLinkSettingsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ModifySharedLinkSettingsError_validator = bv.Union(ModifySharedLinkSettingsError)
 
@@ -6485,7 +6393,7 @@ class MountFolderArg(bb.Struct):
     shared_folder_id = bb.Attribute("shared_folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MountFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MountFolderArg_validator = bv.Struct(MountFolderArg)
 
@@ -6529,7 +6437,7 @@ class MountFolderError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: MountFolderError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def insufficient_quota(cls, val):
@@ -6540,7 +6448,7 @@ class MountFolderError(bb.Union):
         :param InsufficientQuotaAmounts val:
         :rtype: MountFolderError
         """
-        return cls('insufficient_quota', val)
+        pass
 
     def is_access_error(self):
         """
@@ -6548,7 +6456,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_inside_shared_folder(self):
         """
@@ -6556,7 +6464,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_shared_folder'
+        pass
 
     def is_insufficient_quota(self):
         """
@@ -6564,7 +6472,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_quota'
+        pass
 
     def is_already_mounted(self):
         """
@@ -6572,7 +6480,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'already_mounted'
+        pass
 
     def is_no_permission(self):
         """
@@ -6580,7 +6488,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_not_mountable(self):
         """
@@ -6588,7 +6496,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_mountable'
+        pass
 
     def is_other(self):
         """
@@ -6596,7 +6504,7 @@ class MountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -6604,9 +6512,7 @@ class MountFolderError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_insufficient_quota(self):
         """
@@ -6616,12 +6522,10 @@ class MountFolderError(bb.Union):
 
         :rtype: InsufficientQuotaAmounts
         """
-        if not self.is_insufficient_quota():
-            raise AttributeError("tag 'insufficient_quota' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MountFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MountFolderError_validator = bv.Union(MountFolderError)
 
@@ -6679,7 +6583,7 @@ class ParentFolderAccessInfo(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ParentFolderAccessInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ParentFolderAccessInfo_validator = bv.Struct(ParentFolderAccessInfo)
 
@@ -6712,7 +6616,7 @@ class PathLinkMetadata(LinkMetadata):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PathLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PathLinkMetadata_validator = bv.Struct(PathLinkMetadata)
 
@@ -6741,7 +6645,7 @@ class PendingUploadMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file'
+        pass
 
     def is_folder(self):
         """
@@ -6749,10 +6653,10 @@ class PendingUploadMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PendingUploadMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PendingUploadMode_validator = bv.Union(PendingUploadMode)
 
@@ -6835,7 +6739,7 @@ class PermissionDeniedReason(bb.Union):
         :param InsufficientPlan val:
         :rtype: PermissionDeniedReason
         """
-        return cls('insufficient_plan', val)
+        pass
 
     def is_user_not_same_team_as_owner(self):
         """
@@ -6843,7 +6747,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_same_team_as_owner'
+        pass
 
     def is_user_not_allowed_by_owner(self):
         """
@@ -6851,7 +6755,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_allowed_by_owner'
+        pass
 
     def is_target_is_indirect_member(self):
         """
@@ -6859,7 +6763,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'target_is_indirect_member'
+        pass
 
     def is_target_is_owner(self):
         """
@@ -6867,7 +6771,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'target_is_owner'
+        pass
 
     def is_target_is_self(self):
         """
@@ -6875,7 +6779,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'target_is_self'
+        pass
 
     def is_target_not_active(self):
         """
@@ -6883,7 +6787,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'target_not_active'
+        pass
 
     def is_folder_is_limited_team_folder(self):
         """
@@ -6891,7 +6795,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder_is_limited_team_folder'
+        pass
 
     def is_owner_not_on_team(self):
         """
@@ -6899,7 +6803,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'owner_not_on_team'
+        pass
 
     def is_permission_denied(self):
         """
@@ -6907,7 +6811,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'permission_denied'
+        pass
 
     def is_restricted_by_team(self):
         """
@@ -6915,7 +6819,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_by_team'
+        pass
 
     def is_user_account_type(self):
         """
@@ -6923,7 +6827,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_account_type'
+        pass
 
     def is_user_not_on_team(self):
         """
@@ -6931,7 +6835,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_on_team'
+        pass
 
     def is_folder_is_inside_shared_folder(self):
         """
@@ -6939,7 +6843,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder_is_inside_shared_folder'
+        pass
 
     def is_restricted_by_parent_folder(self):
         """
@@ -6947,7 +6851,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_by_parent_folder'
+        pass
 
     def is_insufficient_plan(self):
         """
@@ -6955,7 +6859,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_plan'
+        pass
 
     def is_other(self):
         """
@@ -6963,7 +6867,7 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_insufficient_plan(self):
         """
@@ -6971,12 +6875,10 @@ class PermissionDeniedReason(bb.Union):
 
         :rtype: InsufficientPlan
         """
-        if not self.is_insufficient_plan():
-            raise AttributeError("tag 'insufficient_plan' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PermissionDeniedReason, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PermissionDeniedReason_validator = bv.Union(PermissionDeniedReason)
 
@@ -7001,7 +6903,7 @@ class RelinquishFileMembershipArg(bb.Struct):
     file = bb.Attribute("file")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelinquishFileMembershipArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelinquishFileMembershipArg_validator = bv.Struct(RelinquishFileMembershipArg)
 
@@ -7035,7 +6937,7 @@ class RelinquishFileMembershipError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: RelinquishFileMembershipError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -7043,7 +6945,7 @@ class RelinquishFileMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_group_access(self):
         """
@@ -7051,7 +6953,7 @@ class RelinquishFileMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_access'
+        pass
 
     def is_no_permission(self):
         """
@@ -7059,7 +6961,7 @@ class RelinquishFileMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_other(self):
         """
@@ -7067,7 +6969,7 @@ class RelinquishFileMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -7075,12 +6977,10 @@ class RelinquishFileMembershipError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelinquishFileMembershipError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelinquishFileMembershipError_validator = bv.Union(RelinquishFileMembershipError)
 
@@ -7117,7 +7017,7 @@ class RelinquishFolderMembershipArg(bb.Struct):
     leave_a_copy = bb.Attribute("leave_a_copy")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelinquishFolderMembershipArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelinquishFolderMembershipArg_validator = bv.Struct(RelinquishFolderMembershipArg)
 
@@ -7170,7 +7070,7 @@ class RelinquishFolderMembershipError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: RelinquishFolderMembershipError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -7178,7 +7078,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_folder_owner(self):
         """
@@ -7186,7 +7086,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder_owner'
+        pass
 
     def is_mounted(self):
         """
@@ -7194,7 +7094,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mounted'
+        pass
 
     def is_group_access(self):
         """
@@ -7202,7 +7102,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_access'
+        pass
 
     def is_team_folder(self):
         """
@@ -7210,7 +7110,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_no_permission(self):
         """
@@ -7218,7 +7118,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_no_explicit_access(self):
         """
@@ -7226,7 +7126,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_explicit_access'
+        pass
 
     def is_other(self):
         """
@@ -7234,7 +7134,7 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -7242,12 +7142,10 @@ class RelinquishFolderMembershipError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelinquishFolderMembershipError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelinquishFolderMembershipError_validator = bv.Union(RelinquishFolderMembershipError)
 
@@ -7287,7 +7185,7 @@ class RemoveFileMemberArg(bb.Struct):
     member = bb.Attribute("member", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveFileMemberArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveFileMemberArg_validator = bv.Struct(RemoveFileMemberArg)
 
@@ -7319,7 +7217,7 @@ class RemoveFileMemberError(bb.Union):
         :param SharingUserError val:
         :rtype: RemoveFileMemberError
         """
-        return cls('user_error', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -7330,7 +7228,7 @@ class RemoveFileMemberError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: RemoveFileMemberError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def no_explicit_access(cls, val):
@@ -7341,7 +7239,7 @@ class RemoveFileMemberError(bb.Union):
         :param MemberAccessLevelResult val:
         :rtype: RemoveFileMemberError
         """
-        return cls('no_explicit_access', val)
+        pass
 
     def is_user_error(self):
         """
@@ -7349,7 +7247,7 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_access_error(self):
         """
@@ -7357,7 +7255,7 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_no_explicit_access(self):
         """
@@ -7365,7 +7263,7 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_explicit_access'
+        pass
 
     def is_other(self):
         """
@@ -7373,7 +7271,7 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -7381,9 +7279,7 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -7391,9 +7287,7 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_no_explicit_access(self):
         """
@@ -7405,12 +7299,10 @@ class RemoveFileMemberError(bb.Union):
 
         :rtype: MemberAccessLevelResult
         """
-        if not self.is_no_explicit_access():
-            raise AttributeError("tag 'no_explicit_access' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveFileMemberError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveFileMemberError_validator = bv.Union(RemoveFileMemberError)
 
@@ -7459,7 +7351,7 @@ class RemoveFolderMemberArg(bb.Struct):
     leave_a_copy = bb.Attribute("leave_a_copy")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveFolderMemberArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveFolderMemberArg_validator = bv.Struct(RemoveFolderMemberArg)
 
@@ -7506,7 +7398,7 @@ class RemoveFolderMemberError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: RemoveFolderMemberError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def member_error(cls, val):
@@ -7517,7 +7409,7 @@ class RemoveFolderMemberError(bb.Union):
         :param SharedFolderMemberError val:
         :rtype: RemoveFolderMemberError
         """
-        return cls('member_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -7525,7 +7417,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_member_error(self):
         """
@@ -7533,7 +7425,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_error'
+        pass
 
     def is_folder_owner(self):
         """
@@ -7541,7 +7433,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder_owner'
+        pass
 
     def is_group_access(self):
         """
@@ -7549,7 +7441,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_access'
+        pass
 
     def is_team_folder(self):
         """
@@ -7557,7 +7449,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_no_permission(self):
         """
@@ -7565,7 +7457,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_too_many_files(self):
         """
@@ -7573,7 +7465,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -7581,7 +7473,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -7589,9 +7481,7 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_member_error(self):
         """
@@ -7599,12 +7489,10 @@ class RemoveFolderMemberError(bb.Union):
 
         :rtype: SharedFolderMemberError
         """
-        if not self.is_member_error():
-            raise AttributeError("tag 'member_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveFolderMemberError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveFolderMemberError_validator = bv.Union(RemoveFolderMemberError)
 
@@ -7628,7 +7516,7 @@ class RemoveMemberJobStatus(async_.PollResultBase):
         :param MemberAccessLevelResult val:
         :rtype: RemoveMemberJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -7639,7 +7527,7 @@ class RemoveMemberJobStatus(async_.PollResultBase):
         :param RemoveFolderMemberError val:
         :rtype: RemoveMemberJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -7647,7 +7535,7 @@ class RemoveMemberJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -7655,7 +7543,7 @@ class RemoveMemberJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_complete(self):
         """
@@ -7666,9 +7554,7 @@ class RemoveMemberJobStatus(async_.PollResultBase):
 
         :rtype: MemberAccessLevelResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -7676,12 +7562,10 @@ class RemoveMemberJobStatus(async_.PollResultBase):
 
         :rtype: RemoveFolderMemberError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveMemberJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveMemberJobStatus_validator = bv.Union(RemoveMemberJobStatus)
 
@@ -7720,7 +7604,7 @@ class RequestedLinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'viewer'
+        pass
 
     def is_editor(self):
         """
@@ -7728,7 +7612,7 @@ class RequestedLinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'editor'
+        pass
 
     def is_max(self):
         """
@@ -7736,7 +7620,7 @@ class RequestedLinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'max'
+        pass
 
     def is_default(self):
         """
@@ -7744,7 +7628,7 @@ class RequestedLinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_other(self):
         """
@@ -7752,10 +7636,10 @@ class RequestedLinkAccessLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RequestedLinkAccessLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RequestedLinkAccessLevel_validator = bv.Union(RequestedLinkAccessLevel)
 
@@ -7780,7 +7664,7 @@ class RevokeSharedLinkArg(bb.Struct):
     url = bb.Attribute("url")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeSharedLinkArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeSharedLinkArg_validator = bv.Struct(RevokeSharedLinkArg)
 
@@ -7803,10 +7687,10 @@ class RevokeSharedLinkError(SharedLinkError):
 
         :rtype: bool
         """
-        return self._tag == 'shared_link_malformed'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeSharedLinkError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeSharedLinkError_validator = bv.Union(RevokeSharedLinkError)
 
@@ -7842,7 +7726,7 @@ class SetAccessInheritanceArg(bb.Struct):
     shared_folder_id = bb.Attribute("shared_folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetAccessInheritanceArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetAccessInheritanceArg_validator = bv.Struct(SetAccessInheritanceArg)
 
@@ -7873,7 +7757,7 @@ class SetAccessInheritanceError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: SetAccessInheritanceError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -7881,7 +7765,7 @@ class SetAccessInheritanceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_no_permission(self):
         """
@@ -7889,7 +7773,7 @@ class SetAccessInheritanceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_other(self):
         """
@@ -7897,7 +7781,7 @@ class SetAccessInheritanceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -7907,12 +7791,10 @@ class SetAccessInheritanceError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetAccessInheritanceError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetAccessInheritanceError_validator = bv.Union(SetAccessInheritanceError)
 
@@ -8000,7 +7882,7 @@ class ShareFolderArgBase(bb.Struct):
     access_inheritance = bb.Attribute("access_inheritance", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShareFolderArgBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShareFolderArgBase_validator = bv.Struct(ShareFolderArgBase)
 
@@ -8052,7 +7934,7 @@ class ShareFolderArg(ShareFolderArgBase):
     link_settings = bb.Attribute("link_settings", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShareFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShareFolderArg_validator = bv.Struct(ShareFolderArg)
 
@@ -8094,7 +7976,7 @@ class ShareFolderErrorBase(bb.Union):
         :param SharePathError val:
         :rtype: ShareFolderErrorBase
         """
-        return cls('bad_path', val)
+        pass
 
     def is_email_unverified(self):
         """
@@ -8102,7 +7984,7 @@ class ShareFolderErrorBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_unverified'
+        pass
 
     def is_bad_path(self):
         """
@@ -8110,7 +7992,7 @@ class ShareFolderErrorBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'bad_path'
+        pass
 
     def is_team_policy_disallows_member_policy(self):
         """
@@ -8118,7 +8000,7 @@ class ShareFolderErrorBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_policy_disallows_member_policy'
+        pass
 
     def is_disallowed_shared_link_policy(self):
         """
@@ -8126,7 +8008,7 @@ class ShareFolderErrorBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disallowed_shared_link_policy'
+        pass
 
     def is_other(self):
         """
@@ -8134,7 +8016,7 @@ class ShareFolderErrorBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_bad_path(self):
         """
@@ -8144,12 +8026,10 @@ class ShareFolderErrorBase(bb.Union):
 
         :rtype: SharePathError
         """
-        if not self.is_bad_path():
-            raise AttributeError("tag 'bad_path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShareFolderErrorBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShareFolderErrorBase_validator = bv.Union(ShareFolderErrorBase)
 
@@ -8172,10 +8052,10 @@ class ShareFolderError(ShareFolderErrorBase):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShareFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShareFolderError_validator = bv.Union(ShareFolderError)
 
@@ -8198,7 +8078,7 @@ class ShareFolderJobStatus(async_.PollResultBase):
         :param SharedFolderMetadata val:
         :rtype: ShareFolderJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -8209,7 +8089,7 @@ class ShareFolderJobStatus(async_.PollResultBase):
         :param ShareFolderError val:
         :rtype: ShareFolderJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -8217,7 +8097,7 @@ class ShareFolderJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -8225,7 +8105,7 @@ class ShareFolderJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_complete(self):
         """
@@ -8235,9 +8115,7 @@ class ShareFolderJobStatus(async_.PollResultBase):
 
         :rtype: SharedFolderMetadata
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -8245,12 +8123,10 @@ class ShareFolderJobStatus(async_.PollResultBase):
 
         :rtype: ShareFolderError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShareFolderJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShareFolderJobStatus_validator = bv.Union(ShareFolderJobStatus)
 
@@ -8270,7 +8146,7 @@ class ShareFolderLaunch(async_.LaunchResultBase):
         :param SharedFolderMetadata val:
         :rtype: ShareFolderLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -8278,7 +8154,7 @@ class ShareFolderLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -8286,12 +8162,10 @@ class ShareFolderLaunch(async_.LaunchResultBase):
 
         :rtype: SharedFolderMetadata
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShareFolderLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShareFolderLaunch_validator = bv.Union(ShareFolderLaunch)
 
@@ -8376,7 +8250,7 @@ class SharePathError(bb.Union):
         :param SharedFolderMetadata val:
         :rtype: SharePathError
         """
-        return cls('already_shared', val)
+        pass
 
     def is_is_file(self):
         """
@@ -8384,7 +8258,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_file'
+        pass
 
     def is_inside_shared_folder(self):
         """
@@ -8392,7 +8266,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_shared_folder'
+        pass
 
     def is_contains_shared_folder(self):
         """
@@ -8400,7 +8274,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'contains_shared_folder'
+        pass
 
     def is_contains_app_folder(self):
         """
@@ -8408,7 +8282,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'contains_app_folder'
+        pass
 
     def is_contains_team_folder(self):
         """
@@ -8416,7 +8290,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'contains_team_folder'
+        pass
 
     def is_is_app_folder(self):
         """
@@ -8424,7 +8298,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_app_folder'
+        pass
 
     def is_inside_app_folder(self):
         """
@@ -8432,7 +8306,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_app_folder'
+        pass
 
     def is_is_public_folder(self):
         """
@@ -8440,7 +8314,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_public_folder'
+        pass
 
     def is_inside_public_folder(self):
         """
@@ -8448,7 +8322,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_public_folder'
+        pass
 
     def is_already_shared(self):
         """
@@ -8456,7 +8330,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'already_shared'
+        pass
 
     def is_invalid_path(self):
         """
@@ -8464,7 +8338,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_path'
+        pass
 
     def is_is_osx_package(self):
         """
@@ -8472,7 +8346,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_osx_package'
+        pass
 
     def is_inside_osx_package(self):
         """
@@ -8480,7 +8354,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_osx_package'
+        pass
 
     def is_is_vault(self):
         """
@@ -8488,7 +8362,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_vault'
+        pass
 
     def is_is_vault_locked(self):
         """
@@ -8496,7 +8370,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_vault_locked'
+        pass
 
     def is_is_family(self):
         """
@@ -8504,7 +8378,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_family'
+        pass
 
     def is_other(self):
         """
@@ -8512,7 +8386,7 @@ class SharePathError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_already_shared(self):
         """
@@ -8523,12 +8397,10 @@ class SharePathError(bb.Union):
 
         :rtype: SharedFolderMetadata
         """
-        if not self.is_already_shared():
-            raise AttributeError("tag 'already_shared' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharePathError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharePathError_validator = bv.Union(SharePathError)
 
@@ -8581,7 +8453,7 @@ class SharedContentLinkMetadata(SharedContentLinkMetadataBase):
     url = bb.Attribute("url")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedContentLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedContentLinkMetadata_validator = bv.Struct(SharedContentLinkMetadata)
 
@@ -8646,7 +8518,7 @@ class SharedFileMembers(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFileMembers, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFileMembers_validator = bv.Struct(SharedFileMembers)
 
@@ -8814,7 +8686,7 @@ class SharedFileMetadata(bb.Struct):
     time_invited = bb.Attribute("time_invited", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFileMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFileMetadata_validator = bv.Struct(SharedFileMetadata)
 
@@ -8857,7 +8729,7 @@ class SharedFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_id'
+        pass
 
     def is_not_a_member(self):
         """
@@ -8865,7 +8737,7 @@ class SharedFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_a_member'
+        pass
 
     def is_invalid_member(self):
         """
@@ -8873,7 +8745,7 @@ class SharedFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_member'
+        pass
 
     def is_email_unverified(self):
         """
@@ -8881,7 +8753,7 @@ class SharedFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_unverified'
+        pass
 
     def is_unmounted(self):
         """
@@ -8889,7 +8761,7 @@ class SharedFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unmounted'
+        pass
 
     def is_other(self):
         """
@@ -8897,10 +8769,10 @@ class SharedFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderAccessError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderAccessError_validator = bv.Union(SharedFolderAccessError)
 
@@ -8935,7 +8807,7 @@ class SharedFolderMemberError(bb.Union):
         :param MemberAccessLevelResult val:
         :rtype: SharedFolderMemberError
         """
-        return cls('no_explicit_access', val)
+        pass
 
     def is_invalid_dropbox_id(self):
         """
@@ -8943,7 +8815,7 @@ class SharedFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_dropbox_id'
+        pass
 
     def is_not_a_member(self):
         """
@@ -8951,7 +8823,7 @@ class SharedFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_a_member'
+        pass
 
     def is_no_explicit_access(self):
         """
@@ -8959,7 +8831,7 @@ class SharedFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_explicit_access'
+        pass
 
     def is_other(self):
         """
@@ -8967,7 +8839,7 @@ class SharedFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_no_explicit_access(self):
         """
@@ -8977,12 +8849,10 @@ class SharedFolderMemberError(bb.Union):
 
         :rtype: MemberAccessLevelResult
         """
-        if not self.is_no_explicit_access():
-            raise AttributeError("tag 'no_explicit_access' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderMemberError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderMemberError_validator = bv.Union(SharedFolderMemberError)
 
@@ -9043,7 +8913,7 @@ class SharedFolderMembers(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderMembers, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderMembers_validator = bv.Struct(SharedFolderMembers)
 
@@ -9154,7 +9024,7 @@ class SharedFolderMetadataBase(bb.Struct):
     parent_folder_name = bb.Attribute("parent_folder_name", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderMetadataBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderMetadataBase_validator = bv.Struct(SharedFolderMetadataBase)
 
@@ -9271,7 +9141,7 @@ class SharedFolderMetadata(SharedFolderMetadataBase):
     access_inheritance = bb.Attribute("access_inheritance", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderMetadata_validator = bv.Struct(SharedFolderMetadata)
 
@@ -9315,7 +9185,7 @@ class SharedLinkAccessFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'login_required'
+        pass
 
     def is_email_verify_required(self):
         """
@@ -9323,7 +9193,7 @@ class SharedLinkAccessFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_verify_required'
+        pass
 
     def is_password_required(self):
         """
@@ -9331,7 +9201,7 @@ class SharedLinkAccessFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'password_required'
+        pass
 
     def is_team_only(self):
         """
@@ -9339,7 +9209,7 @@ class SharedLinkAccessFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_only'
+        pass
 
     def is_owner_only(self):
         """
@@ -9347,7 +9217,7 @@ class SharedLinkAccessFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'owner_only'
+        pass
 
     def is_other(self):
         """
@@ -9355,10 +9225,10 @@ class SharedLinkAccessFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkAccessFailureReason, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkAccessFailureReason_validator = bv.Union(SharedLinkAccessFailureReason)
 
@@ -9385,7 +9255,7 @@ class SharedLinkAlreadyExistsMetadata(bb.Union):
         :param SharedLinkMetadata val:
         :rtype: SharedLinkAlreadyExistsMetadata
         """
-        return cls('metadata', val)
+        pass
 
     def is_metadata(self):
         """
@@ -9393,7 +9263,7 @@ class SharedLinkAlreadyExistsMetadata(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'metadata'
+        pass
 
     def is_other(self):
         """
@@ -9401,7 +9271,7 @@ class SharedLinkAlreadyExistsMetadata(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_metadata(self):
         """
@@ -9411,12 +9281,10 @@ class SharedLinkAlreadyExistsMetadata(bb.Union):
 
         :rtype: SharedLinkMetadata
         """
-        if not self.is_metadata():
-            raise AttributeError("tag 'metadata' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkAlreadyExistsMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkAlreadyExistsMetadata_validator = bv.Union(SharedLinkAlreadyExistsMetadata)
 
@@ -9451,7 +9319,7 @@ class SharedLinkPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'anyone'
+        pass
 
     def is_team(self):
         """
@@ -9459,7 +9327,7 @@ class SharedLinkPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_members(self):
         """
@@ -9467,7 +9335,7 @@ class SharedLinkPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'members'
+        pass
 
     def is_other(self):
         """
@@ -9475,10 +9343,10 @@ class SharedLinkPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkPolicy_validator = bv.Union(SharedLinkPolicy)
 
@@ -9569,7 +9437,7 @@ class SharedLinkSettings(bb.Struct):
     allow_download = bb.Attribute("allow_download", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkSettings, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkSettings_validator = bv.Struct(SharedLinkSettings)
 
@@ -9604,7 +9472,7 @@ class SharedLinkSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_settings'
+        pass
 
     def is_not_authorized(self):
         """
@@ -9612,10 +9480,10 @@ class SharedLinkSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_authorized'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkSettingsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkSettingsError_validator = bv.Union(SharedLinkSettingsError)
 
@@ -9659,7 +9527,7 @@ class SharingFileAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_invalid_file(self):
         """
@@ -9667,7 +9535,7 @@ class SharingFileAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_file'
+        pass
 
     def is_is_folder(self):
         """
@@ -9675,7 +9543,7 @@ class SharingFileAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_folder'
+        pass
 
     def is_inside_public_folder(self):
         """
@@ -9683,7 +9551,7 @@ class SharingFileAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_public_folder'
+        pass
 
     def is_inside_osx_package(self):
         """
@@ -9691,7 +9559,7 @@ class SharingFileAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'inside_osx_package'
+        pass
 
     def is_other(self):
         """
@@ -9699,10 +9567,10 @@ class SharingFileAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingFileAccessError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingFileAccessError_validator = bv.Union(SharingFileAccessError)
 
@@ -9732,7 +9600,7 @@ class SharingUserError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_unverified'
+        pass
 
     def is_other(self):
         """
@@ -9740,10 +9608,10 @@ class SharingUserError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingUserError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingUserError_validator = bv.Union(SharingUserError)
 
@@ -9790,7 +9658,7 @@ class TeamMemberInfo(bb.Struct):
     member_id = bb.Attribute("member_id", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberInfo_validator = bv.Struct(TeamMemberInfo)
 
@@ -9826,7 +9694,7 @@ class TransferFolderArg(bb.Struct):
     to_dropbox_id = bb.Attribute("to_dropbox_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TransferFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TransferFolderArg_validator = bv.Struct(TransferFolderArg)
 
@@ -9877,7 +9745,7 @@ class TransferFolderError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: TransferFolderError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -9885,7 +9753,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_invalid_dropbox_id(self):
         """
@@ -9893,7 +9761,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_dropbox_id'
+        pass
 
     def is_new_owner_not_a_member(self):
         """
@@ -9901,7 +9769,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'new_owner_not_a_member'
+        pass
 
     def is_new_owner_unmounted(self):
         """
@@ -9909,7 +9777,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'new_owner_unmounted'
+        pass
 
     def is_new_owner_email_unverified(self):
         """
@@ -9917,7 +9785,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'new_owner_email_unverified'
+        pass
 
     def is_team_folder(self):
         """
@@ -9925,7 +9793,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_no_permission(self):
         """
@@ -9933,7 +9801,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_other(self):
         """
@@ -9941,7 +9809,7 @@ class TransferFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -9949,12 +9817,10 @@ class TransferFolderError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TransferFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TransferFolderError_validator = bv.Union(TransferFolderError)
 
@@ -9980,7 +9846,7 @@ class UnmountFolderArg(bb.Struct):
     shared_folder_id = bb.Attribute("shared_folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnmountFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnmountFolderArg_validator = bv.Struct(UnmountFolderArg)
 
@@ -10015,7 +9881,7 @@ class UnmountFolderError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: UnmountFolderError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -10023,7 +9889,7 @@ class UnmountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_no_permission(self):
         """
@@ -10031,7 +9897,7 @@ class UnmountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_not_unmountable(self):
         """
@@ -10039,7 +9905,7 @@ class UnmountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_unmountable'
+        pass
 
     def is_other(self):
         """
@@ -10047,7 +9913,7 @@ class UnmountFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -10055,12 +9921,10 @@ class UnmountFolderError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnmountFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnmountFolderError_validator = bv.Union(UnmountFolderError)
 
@@ -10087,7 +9951,7 @@ class UnshareFileArg(bb.Struct):
     file = bb.Attribute("file")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnshareFileArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnshareFileArg_validator = bv.Struct(UnshareFileArg)
 
@@ -10114,7 +9978,7 @@ class UnshareFileError(bb.Union):
         :param SharingUserError val:
         :rtype: UnshareFileError
         """
-        return cls('user_error', val)
+        pass
 
     @classmethod
     def access_error(cls, val):
@@ -10125,7 +9989,7 @@ class UnshareFileError(bb.Union):
         :param SharingFileAccessError val:
         :rtype: UnshareFileError
         """
-        return cls('access_error', val)
+        pass
 
     def is_user_error(self):
         """
@@ -10133,7 +9997,7 @@ class UnshareFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_error'
+        pass
 
     def is_access_error(self):
         """
@@ -10141,7 +10005,7 @@ class UnshareFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_other(self):
         """
@@ -10149,7 +10013,7 @@ class UnshareFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_error(self):
         """
@@ -10157,9 +10021,7 @@ class UnshareFileError(bb.Union):
 
         :rtype: SharingUserError
         """
-        if not self.is_user_error():
-            raise AttributeError("tag 'user_error' not set")
-        return self._value
+        pass
 
     def get_access_error(self):
         """
@@ -10167,12 +10029,10 @@ class UnshareFileError(bb.Union):
 
         :rtype: SharingFileAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnshareFileError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnshareFileError_validator = bv.Union(UnshareFileError)
 
@@ -10210,7 +10070,7 @@ class UnshareFolderArg(bb.Struct):
     leave_a_copy = bb.Attribute("leave_a_copy")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnshareFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnshareFolderArg_validator = bv.Struct(UnshareFolderArg)
 
@@ -10247,7 +10107,7 @@ class UnshareFolderError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: UnshareFolderError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -10255,7 +10115,7 @@ class UnshareFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_team_folder(self):
         """
@@ -10263,7 +10123,7 @@ class UnshareFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_no_permission(self):
         """
@@ -10271,7 +10131,7 @@ class UnshareFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_too_many_files(self):
         """
@@ -10279,7 +10139,7 @@ class UnshareFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -10287,7 +10147,7 @@ class UnshareFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -10295,12 +10155,10 @@ class UnshareFolderError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnshareFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnshareFolderError_validator = bv.Union(UnshareFolderError)
 
@@ -10349,7 +10207,7 @@ class UpdateFileMemberArgs(bb.Struct):
     access_level = bb.Attribute("access_level", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFileMemberArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFileMemberArgs_validator = bv.Struct(UpdateFileMemberArgs)
 
@@ -10396,7 +10254,7 @@ class UpdateFolderMemberArg(bb.Struct):
     access_level = bb.Attribute("access_level", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFolderMemberArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFolderMemberArg_validator = bv.Struct(UpdateFolderMemberArg)
 
@@ -10434,7 +10292,7 @@ class UpdateFolderMemberError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: UpdateFolderMemberError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def member_error(cls, val):
@@ -10445,7 +10303,7 @@ class UpdateFolderMemberError(bb.Union):
         :param SharedFolderMemberError val:
         :rtype: UpdateFolderMemberError
         """
-        return cls('member_error', val)
+        pass
 
     @classmethod
     def no_explicit_access(cls, val):
@@ -10456,7 +10314,7 @@ class UpdateFolderMemberError(bb.Union):
         :param AddFolderMemberError val:
         :rtype: UpdateFolderMemberError
         """
-        return cls('no_explicit_access', val)
+        pass
 
     def is_access_error(self):
         """
@@ -10464,7 +10322,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_member_error(self):
         """
@@ -10472,7 +10330,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_error'
+        pass
 
     def is_no_explicit_access(self):
         """
@@ -10480,7 +10338,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_explicit_access'
+        pass
 
     def is_insufficient_plan(self):
         """
@@ -10488,7 +10346,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_plan'
+        pass
 
     def is_no_permission(self):
         """
@@ -10496,7 +10354,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_other(self):
         """
@@ -10504,7 +10362,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -10512,9 +10370,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_member_error(self):
         """
@@ -10522,9 +10378,7 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: SharedFolderMemberError
         """
-        if not self.is_member_error():
-            raise AttributeError("tag 'member_error' not set")
-        return self._value
+        pass
 
     def get_no_explicit_access(self):
         """
@@ -10535,12 +10389,10 @@ class UpdateFolderMemberError(bb.Union):
 
         :rtype: AddFolderMemberError
         """
-        if not self.is_no_explicit_access():
-            raise AttributeError("tag 'no_explicit_access' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFolderMemberError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFolderMemberError_validator = bv.Union(UpdateFolderMemberError)
 
@@ -10632,7 +10484,7 @@ class UpdateFolderPolicyArg(bb.Struct):
     actions = bb.Attribute("actions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFolderPolicyArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFolderPolicyArg_validator = bv.Struct(UpdateFolderPolicyArg)
 
@@ -10679,7 +10531,7 @@ class UpdateFolderPolicyError(bb.Union):
         :param SharedFolderAccessError val:
         :rtype: UpdateFolderPolicyError
         """
-        return cls('access_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -10687,7 +10539,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_not_on_team(self):
         """
@@ -10695,7 +10547,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_on_team'
+        pass
 
     def is_team_policy_disallows_member_policy(self):
         """
@@ -10703,7 +10555,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_policy_disallows_member_policy'
+        pass
 
     def is_disallowed_shared_link_policy(self):
         """
@@ -10711,7 +10563,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disallowed_shared_link_policy'
+        pass
 
     def is_no_permission(self):
         """
@@ -10719,7 +10571,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_team_folder(self):
         """
@@ -10727,7 +10579,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_other(self):
         """
@@ -10735,7 +10587,7 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -10743,12 +10595,10 @@ class UpdateFolderPolicyError(bb.Union):
 
         :rtype: SharedFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFolderPolicyError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFolderPolicyError_validator = bv.Union(UpdateFolderPolicyError)
 
@@ -10784,7 +10634,7 @@ class UserMembershipInfo(MembershipInfo):
     user = bb.Attribute("user", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserMembershipInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserMembershipInfo_validator = bv.Struct(UserMembershipInfo)
 
@@ -10834,7 +10684,7 @@ class UserFileMembershipInfo(UserMembershipInfo):
     platform_type = bb.Attribute("platform_type", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserFileMembershipInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserFileMembershipInfo_validator = bv.Struct(UserFileMembershipInfo)
 
@@ -10902,7 +10752,7 @@ class UserInfo(bb.Struct):
     team_member_id = bb.Attribute("team_member_id", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserInfo_validator = bv.Struct(UserInfo)
 
@@ -10932,7 +10782,7 @@ class ViewerInfoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_disabled(self):
         """
@@ -10940,7 +10790,7 @@ class ViewerInfoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_other(self):
         """
@@ -10948,10 +10798,10 @@ class ViewerInfoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ViewerInfoPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ViewerInfoPolicy_validator = bv.Union(ViewerInfoPolicy)
 
@@ -10998,7 +10848,7 @@ class Visibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'public'
+        pass
 
     def is_team_only(self):
         """
@@ -11006,7 +10856,7 @@ class Visibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_only'
+        pass
 
     def is_password(self):
         """
@@ -11014,7 +10864,7 @@ class Visibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'password'
+        pass
 
     def is_team_and_password(self):
         """
@@ -11022,7 +10872,7 @@ class Visibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_and_password'
+        pass
 
     def is_shared_folder_only(self):
         """
@@ -11030,7 +10880,7 @@ class Visibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'shared_folder_only'
+        pass
 
     def is_other(self):
         """
@@ -11038,10 +10888,10 @@ class Visibility(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Visibility, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Visibility_validator = bv.Union(Visibility)
 
@@ -11100,7 +10950,7 @@ class VisibilityPolicy(bb.Struct):
     disallowed_reason = bb.Attribute("disallowed_reason", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(VisibilityPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 VisibilityPolicy_validator = bv.Struct(VisibilityPolicy)
 

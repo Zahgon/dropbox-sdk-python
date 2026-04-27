@@ -54,14 +54,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.account.SetProfilePhotoError`
         """
-        arg = account.SetProfilePhotoArg(photo)
-        r = self.request(
-            account.set_profile_photo,
-            'account',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in auth namespace
@@ -82,19 +75,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.auth.TokenFromOAuth1Error`
         """
-        warnings.warn(
-            'token/from_oauth1 is deprecated.',
-            DeprecationWarning,
-        )
-        arg = auth.TokenFromOAuth1Arg(oauth1_token,
-                                      oauth1_token_secret)
-        r = self.request(
-            auth.token_from_oauth1,
-            'auth',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def auth_token_revoke(self):
         """
@@ -105,14 +86,7 @@ class DropboxBase(object):
 
         :rtype: None
         """
-        arg = None
-        r = self.request(
-            auth.token_revoke,
-            'auth',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     # ------------------------------------------
     # Routes in check namespace
@@ -130,14 +104,7 @@ class DropboxBase(object):
         :param str query: The string that you'd like to be echoed back to you.
         :rtype: :class:`dropbox.check.EchoResult`
         """
-        arg = check.EchoArg(query)
-        r = self.request(
-            check.app,
-            'check',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def check_user(self,
                    query=''):
@@ -155,14 +122,7 @@ class DropboxBase(object):
         :param str query: The string that you'd like to be echoed back to you.
         :rtype: :class:`dropbox.check.EchoResult`
         """
-        arg = check.EchoArg(query)
-        r = self.request(
-            check.user,
-            'check',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in contacts namespace
@@ -178,14 +138,7 @@ class DropboxBase(object):
 
         :rtype: None
         """
-        arg = None
-        r = self.request(
-            contacts.delete_manual_contacts,
-            'contacts',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def contacts_delete_manual_contacts_batch(self,
                                               email_addresses):
@@ -203,14 +156,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.contacts.DeleteManualContactsError`
         """
-        arg = contacts.DeleteManualContactsArg(email_addresses)
-        r = self.request(
-            contacts.delete_manual_contacts_batch,
-            'contacts',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     # ------------------------------------------
     # Routes in file_properties namespace
@@ -237,15 +183,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.AddPropertiesError`
         """
-        arg = file_properties.AddPropertiesArg(path,
-                                               property_groups)
-        r = self.request(
-            file_properties.properties_add,
-            'file_properties',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def file_properties_properties_overwrite(self,
                                              path,
@@ -272,15 +210,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.InvalidPropertyGroupError`
         """
-        arg = file_properties.OverwritePropertyGroupArg(path,
-                                                        property_groups)
-        r = self.request(
-            file_properties.properties_overwrite,
-            'file_properties',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def file_properties_properties_remove(self,
                                           path,
@@ -307,15 +237,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.RemovePropertiesError`
         """
-        arg = file_properties.RemovePropertiesArg(path,
-                                                  property_template_ids)
-        r = self.request(
-            file_properties.properties_remove,
-            'file_properties',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def file_properties_properties_search(self,
                                           queries,
@@ -337,15 +259,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.PropertiesSearchError`
         """
-        arg = file_properties.PropertiesSearchArg(queries,
-                                                  template_filter)
-        r = self.request(
-            file_properties.properties_search,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_properties_search_continue(self,
                                                    cursor):
@@ -366,14 +280,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.PropertiesSearchContinueError`
         """
-        arg = file_properties.PropertiesSearchContinueArg(cursor)
-        r = self.request(
-            file_properties.properties_search_continue,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_properties_update(self,
                                           path,
@@ -400,15 +307,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.UpdatePropertiesError`
         """
-        arg = file_properties.UpdatePropertiesArg(path,
-                                                  update_property_groups)
-        r = self.request(
-            file_properties.properties_update,
-            'file_properties',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def file_properties_templates_add_for_user(self,
                                                name,
@@ -428,16 +327,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.ModifyTemplateError`
         """
-        arg = file_properties.AddTemplateArg(name,
-                                             description,
-                                             fields)
-        r = self.request(
-            file_properties.templates_add_for_user,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_templates_get_for_user(self,
                                                template_id):
@@ -457,14 +347,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.TemplateError`
         """
-        arg = file_properties.GetTemplateArg(template_id)
-        r = self.request(
-            file_properties.templates_get_for_user,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_templates_list_for_user(self):
         """
@@ -481,14 +364,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.TemplateError`
         """
-        arg = None
-        r = self.request(
-            file_properties.templates_list_for_user,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_templates_remove_for_user(self,
                                                   template_id):
@@ -510,14 +386,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.TemplateError`
         """
-        arg = file_properties.RemoveTemplateArg(template_id)
-        r = self.request(
-            file_properties.templates_remove_for_user,
-            'file_properties',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def file_properties_templates_update_for_user(self,
                                                   template_id,
@@ -550,17 +419,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.ModifyTemplateError`
         """
-        arg = file_properties.UpdateTemplateArg(template_id,
-                                                name,
-                                                description,
-                                                add_fields)
-        r = self.request(
-            file_properties.templates_update_for_user,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in file_requests namespace
@@ -575,14 +434,7 @@ class DropboxBase(object):
 
         :rtype: :class:`dropbox.file_requests.CountFileRequestsResult`
         """
-        arg = None
-        r = self.request(
-            file_requests.count,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_create(self,
                              title,
@@ -613,18 +465,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_requests.CreateFileRequestError`
         """
-        arg = file_requests.CreateFileRequestArgs(title,
-                                                  destination,
-                                                  deadline,
-                                                  open,
-                                                  description)
-        r = self.request(
-            file_requests.create,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_delete(self,
                              ids):
@@ -641,14 +482,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_requests.DeleteFileRequestError`
         """
-        arg = file_requests.DeleteFileRequestArgs(ids)
-        r = self.request(
-            file_requests.delete,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_delete_all_closed(self):
         """
@@ -659,14 +493,7 @@ class DropboxBase(object):
 
         :rtype: :class:`dropbox.file_requests.DeleteAllClosedFileRequestsResult`
         """
-        arg = None
-        r = self.request(
-            file_requests.delete_all_closed,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_get(self,
                           id):
@@ -679,14 +506,7 @@ class DropboxBase(object):
         :param str id: The ID of the file request to retrieve.
         :rtype: :class:`dropbox.file_requests.FileRequest`
         """
-        arg = file_requests.GetFileRequestArgs(id)
-        r = self.request(
-            file_requests.get,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_list_v2(self,
                               limit=1000):
@@ -702,14 +522,7 @@ class DropboxBase(object):
             returned per request.
         :rtype: :class:`dropbox.file_requests.ListFileRequestsV2Result`
         """
-        arg = file_requests.ListFileRequestsArg(limit)
-        r = self.request(
-            file_requests.list_v2,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_list(self):
         """
@@ -722,14 +535,7 @@ class DropboxBase(object):
 
         :rtype: :class:`dropbox.file_requests.ListFileRequestsResult`
         """
-        arg = None
-        r = self.request(
-            file_requests.list,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_list_continue(self,
                                     cursor):
@@ -750,14 +556,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_requests.ListFileRequestsContinueError`
         """
-        arg = file_requests.ListFileRequestsContinueArg(cursor)
-        r = self.request(
-            file_requests.list_continue,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_requests_update(self,
                              id,
@@ -786,19 +585,7 @@ class DropboxBase(object):
         :param Nullable[str] description: The description of the file request.
         :rtype: :class:`dropbox.file_requests.FileRequest`
         """
-        arg = file_requests.UpdateFileRequestArgs(id,
-                                                  title,
-                                                  destination,
-                                                  deadline,
-                                                  open,
-                                                  description)
-        r = self.request(
-            file_requests.update,
-            'file_requests',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in files namespace
@@ -827,23 +614,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.AlphaGetMetadataError`
         """
-        warnings.warn(
-            'alpha/get_metadata is deprecated. Use get_metadata.',
-            DeprecationWarning,
-        )
-        arg = files.AlphaGetMetadataArg(path,
-                                        include_media_info,
-                                        include_deleted,
-                                        include_has_explicit_shared_members,
-                                        include_property_groups,
-                                        include_property_templates)
-        r = self.request(
-            files.alpha_get_metadata,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_alpha_upload(self,
                            f,
@@ -876,25 +647,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UploadError`
         """
-        warnings.warn(
-            'alpha/upload is deprecated. Use upload.',
-            DeprecationWarning,
-        )
-        arg = files.UploadArg(path,
-                              mode,
-                              autorename,
-                              client_modified,
-                              mute,
-                              property_groups,
-                              strict_conflict,
-                              content_hash)
-        r = self.request(
-            files.alpha_upload,
-            'files',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def files_copy_v2(self,
                       from_path,
@@ -921,18 +674,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RelocationError`
         """
-        arg = files.RelocationArg(from_path,
-                                  to_path,
-                                  allow_shared_folder,
-                                  autorename,
-                                  allow_ownership_transfer)
-        r = self.request(
-            files.copy_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy(self,
                    from_path,
@@ -959,22 +701,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RelocationError`
         """
-        warnings.warn(
-            'copy is deprecated. Use copy.',
-            DeprecationWarning,
-        )
-        arg = files.RelocationArg(from_path,
-                                  to_path,
-                                  allow_shared_folder,
-                                  autorename,
-                                  allow_ownership_transfer)
-        r = self.request(
-            files.copy,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy_batch_v2(self,
                             entries,
@@ -998,15 +725,7 @@ class DropboxBase(object):
             Dropbox server try to autorename that file to avoid the conflict.
         :rtype: :class:`dropbox.files.RelocationBatchV2Launch`
         """
-        arg = files.RelocationBatchArgBase(entries,
-                                           autorename)
-        r = self.request(
-            files.copy_batch_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy_batch(self,
                          entries,
@@ -1028,21 +747,7 @@ class DropboxBase(object):
             This does not apply to copies.
         :rtype: :class:`dropbox.files.RelocationBatchLaunch`
         """
-        warnings.warn(
-            'copy_batch is deprecated. Use copy_batch.',
-            DeprecationWarning,
-        )
-        arg = files.RelocationBatchArg(entries,
-                                       autorename,
-                                       allow_shared_folder,
-                                       allow_ownership_transfer)
-        r = self.request(
-            files.copy_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy_batch_check_v2(self,
                                   async_job_id):
@@ -1061,14 +766,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.copy_batch_check_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy_batch_check(self,
                                async_job_id):
@@ -1087,18 +785,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        warnings.warn(
-            'copy_batch/check is deprecated. Use copy_batch/check.',
-            DeprecationWarning,
-        )
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.copy_batch_check,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy_reference_get(self,
                                  path):
@@ -1118,14 +805,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.GetCopyReferenceError`
         """
-        arg = files.GetCopyReferenceArg(path)
-        r = self.request(
-            files.copy_reference_get,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_copy_reference_save(self,
                                   copy_reference,
@@ -1146,15 +826,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.SaveCopyReferenceError`
         """
-        arg = files.SaveCopyReferenceArg(copy_reference,
-                                         path)
-        r = self.request(
-            files.copy_reference_save,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_create_folder_v2(self,
                                path,
@@ -1174,15 +846,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.CreateFolderError`
         """
-        arg = files.CreateFolderArg(path,
-                                    autorename)
-        r = self.request(
-            files.create_folder_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_create_folder(self,
                             path,
@@ -1202,19 +866,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.CreateFolderError`
         """
-        warnings.warn(
-            'create_folder is deprecated. Use create_folder.',
-            DeprecationWarning,
-        )
-        arg = files.CreateFolderArg(path,
-                                    autorename)
-        r = self.request(
-            files.create_folder,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_create_folder_batch(self,
                                   paths,
@@ -1240,16 +892,7 @@ class DropboxBase(object):
             asynchronously.
         :rtype: :class:`dropbox.files.CreateFolderBatchLaunch`
         """
-        arg = files.CreateFolderBatchArg(paths,
-                                         autorename,
-                                         force_async)
-        r = self.request(
-            files.create_folder_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_create_folder_batch_check(self,
                                         async_job_id):
@@ -1269,14 +912,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.create_folder_batch_check,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_delete_v2(self,
                         path,
@@ -1302,15 +938,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.DeleteError`
         """
-        arg = files.DeleteArg(path,
-                              parent_rev)
-        r = self.request(
-            files.delete_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_delete(self,
                      path,
@@ -1336,19 +964,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.DeleteError`
         """
-        warnings.warn(
-            'delete is deprecated. Use delete.',
-            DeprecationWarning,
-        )
-        arg = files.DeleteArg(path,
-                              parent_rev)
-        r = self.request(
-            files.delete,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_delete_batch(self,
                            entries):
@@ -1363,14 +979,7 @@ class DropboxBase(object):
         :type entries: List[:class:`dropbox.files.DeleteArg`]
         :rtype: :class:`dropbox.files.DeleteBatchLaunch`
         """
-        arg = files.DeleteBatchArg(entries)
-        r = self.request(
-            files.delete_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_delete_batch_check(self,
                                  async_job_id):
@@ -1390,14 +999,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.delete_batch_check,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_download(self,
                        path,
@@ -1423,15 +1025,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = files.DownloadArg(path,
-                                rev)
-        r = self.request(
-            files.download,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_download_to_file(self,
                                download_path,
@@ -1452,16 +1046,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.DownloadError`
         """
-        arg = files.DownloadArg(path,
-                                rev)
-        r = self.request(
-            files.download,
-            'files',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def files_download_zip(self,
                            path):
@@ -1490,14 +1075,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = files.DownloadZipArg(path)
-        r = self.request(
-            files.download_zip,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_download_zip_to_file(self,
                                    download_path,
@@ -1521,15 +1099,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.DownloadZipError`
         """
-        arg = files.DownloadZipArg(path)
-        r = self.request(
-            files.download_zip,
-            'files',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def files_export(self,
                      path,
@@ -1561,15 +1131,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = files.ExportArg(path,
-                              export_format)
-        r = self.request(
-            files.export,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_export_to_file(self,
                              download_path,
@@ -1596,16 +1158,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ExportError`
         """
-        arg = files.ExportArg(path,
-                              export_format)
-        r = self.request(
-            files.export,
-            'files',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def files_get_file_lock_batch(self,
                                   entries):
@@ -1625,14 +1178,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.LockFileError`
         """
-        arg = files.LockFileBatchArg(entries)
-        r = self.request(
-            files.get_file_lock_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_metadata(self,
                            path,
@@ -1667,18 +1213,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.GetMetadataError`
         """
-        arg = files.GetMetadataArg(path,
-                                   include_media_info,
-                                   include_deleted,
-                                   include_has_explicit_shared_members,
-                                   include_property_groups)
-        r = self.request(
-            files.get_metadata,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_preview(self,
                           path,
@@ -1709,15 +1244,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = files.PreviewArg(path,
-                               rev)
-        r = self.request(
-            files.get_preview,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_preview_to_file(self,
                                   download_path,
@@ -1743,16 +1270,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PreviewError`
         """
-        arg = files.PreviewArg(path,
-                               rev)
-        r = self.request(
-            files.get_preview,
-            'files',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def files_get_temporary_link(self,
                                  path):
@@ -1772,14 +1290,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.GetTemporaryLinkError`
         """
-        arg = files.GetTemporaryLinkArg(path)
-        r = self.request(
-            files.get_temporary_link,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_temporary_upload_link(self,
                                         commit_info,
@@ -1828,15 +1339,7 @@ class DropboxBase(object):
             of time after link creation will result in an error.
         :rtype: :class:`dropbox.files.GetTemporaryUploadLinkResult`
         """
-        arg = files.GetTemporaryUploadLinkArg(commit_info,
-                                              duration)
-        r = self.request(
-            files.get_temporary_upload_link,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_thumbnail(self,
                             path,
@@ -1875,17 +1378,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = files.ThumbnailArg(path,
-                                 format,
-                                 size,
-                                 mode)
-        r = self.request(
-            files.get_thumbnail,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_thumbnail_to_file(self,
                                     download_path,
@@ -1919,18 +1412,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ThumbnailError`
         """
-        arg = files.ThumbnailArg(path,
-                                 format,
-                                 size,
-                                 mode)
-        r = self.request(
-            files.get_thumbnail,
-            'files',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def files_get_thumbnail_v2(self,
                                resource,
@@ -1972,17 +1454,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = files.ThumbnailV2Arg(resource,
-                                   format,
-                                   size,
-                                   mode)
-        r = self.request(
-            files.get_thumbnail_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_get_thumbnail_to_file_v2(self,
                                        download_path,
@@ -2019,18 +1491,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ThumbnailV2Error`
         """
-        arg = files.ThumbnailV2Arg(resource,
-                                   format,
-                                   size,
-                                   mode)
-        r = self.request(
-            files.get_thumbnail_v2,
-            'files',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def files_get_thumbnail_batch(self,
                                   entries):
@@ -2052,14 +1513,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.GetThumbnailBatchError`
         """
-        arg = files.GetThumbnailBatchArg(entries)
-        r = self.request(
-            files.get_thumbnail_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_list_folder(self,
                           path,
@@ -2136,23 +1590,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ListFolderError`
         """
-        arg = files.ListFolderArg(path,
-                                  recursive,
-                                  include_media_info,
-                                  include_deleted,
-                                  include_has_explicit_shared_members,
-                                  include_mounted_folders,
-                                  limit,
-                                  shared_link,
-                                  include_property_groups,
-                                  include_non_downloadable_files)
-        r = self.request(
-            files.list_folder,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_list_folder_continue(self,
                                    cursor):
@@ -2172,14 +1610,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ListFolderContinueError`
         """
-        arg = files.ListFolderContinueArg(cursor)
-        r = self.request(
-            files.list_folder_continue,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_list_folder_get_latest_cursor(self,
                                             path,
@@ -2237,23 +1668,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ListFolderError`
         """
-        arg = files.ListFolderArg(path,
-                                  recursive,
-                                  include_media_info,
-                                  include_deleted,
-                                  include_has_explicit_shared_members,
-                                  include_mounted_folders,
-                                  limit,
-                                  shared_link,
-                                  include_property_groups,
-                                  include_non_downloadable_files)
-        r = self.request(
-            files.list_folder_get_latest_cursor,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_list_folder_longpoll(self,
                                    cursor,
@@ -2284,15 +1699,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ListFolderLongpollError`
         """
-        arg = files.ListFolderLongpollArg(cursor,
-                                          timeout)
-        r = self.request(
-            files.list_folder_longpoll,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_list_revisions(self,
                              path,
@@ -2323,16 +1730,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.ListRevisionsError`
         """
-        arg = files.ListRevisionsArg(path,
-                                     mode,
-                                     limit)
-        r = self.request(
-            files.list_revisions,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_lock_file_batch(self,
                               entries):
@@ -2355,14 +1753,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.LockFileError`
         """
-        arg = files.LockFileBatchArg(entries)
-        r = self.request(
-            files.lock_file_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_move_v2(self,
                       from_path,
@@ -2390,18 +1781,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RelocationError`
         """
-        arg = files.RelocationArg(from_path,
-                                  to_path,
-                                  allow_shared_folder,
-                                  autorename,
-                                  allow_ownership_transfer)
-        r = self.request(
-            files.move_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_move(self,
                    from_path,
@@ -2428,22 +1808,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RelocationError`
         """
-        warnings.warn(
-            'move is deprecated. Use move.',
-            DeprecationWarning,
-        )
-        arg = files.RelocationArg(from_path,
-                                  to_path,
-                                  allow_shared_folder,
-                                  autorename,
-                                  allow_ownership_transfer)
-        r = self.request(
-            files.move,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_move_batch_v2(self,
                             entries,
@@ -2467,16 +1832,7 @@ class DropboxBase(object):
             This does not apply to copies.
         :rtype: :class:`dropbox.files.RelocationBatchV2Launch`
         """
-        arg = files.MoveBatchArg(entries,
-                                 autorename,
-                                 allow_ownership_transfer)
-        r = self.request(
-            files.move_batch_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_move_batch(self,
                          entries,
@@ -2498,21 +1854,7 @@ class DropboxBase(object):
             This does not apply to copies.
         :rtype: :class:`dropbox.files.RelocationBatchLaunch`
         """
-        warnings.warn(
-            'move_batch is deprecated. Use move_batch.',
-            DeprecationWarning,
-        )
-        arg = files.RelocationBatchArg(entries,
-                                       autorename,
-                                       allow_shared_folder,
-                                       allow_ownership_transfer)
-        r = self.request(
-            files.move_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_move_batch_check_v2(self,
                                   async_job_id):
@@ -2531,14 +1873,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.move_batch_check_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_move_batch_check(self,
                                async_job_id):
@@ -2557,18 +1892,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        warnings.warn(
-            'move_batch/check is deprecated. Use move_batch/check.',
-            DeprecationWarning,
-        )
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.move_batch_check,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_paper_create(self,
                            f,
@@ -2592,15 +1916,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PaperCreateError`
         """
-        arg = files.PaperCreateArg(path,
-                                   import_format)
-        r = self.request(
-            files.paper_create,
-            'files',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def files_paper_update(self,
                            f,
@@ -2631,17 +1947,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PaperUpdateError`
         """
-        arg = files.PaperUpdateArg(path,
-                                   import_format,
-                                   doc_update_policy,
-                                   paper_revision)
-        r = self.request(
-            files.paper_update,
-            'files',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def files_permanently_delete(self,
                                  path,
@@ -2666,15 +1972,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.DeleteError`
         """
-        arg = files.DeleteArg(path,
-                              parent_rev)
-        r = self.request(
-            files.permanently_delete,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_properties_add(self,
                              path,
@@ -2693,19 +1991,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.AddPropertiesError`
         """
-        warnings.warn(
-            'properties/add is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.AddPropertiesArg(path,
-                                               property_groups)
-        r = self.request(
-            files.properties_add,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_properties_overwrite(self,
                                    path,
@@ -2724,19 +2010,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.InvalidPropertyGroupError`
         """
-        warnings.warn(
-            'properties/overwrite is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.OverwritePropertyGroupArg(path,
-                                                        property_groups)
-        r = self.request(
-            files.properties_overwrite,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_properties_remove(self,
                                 path,
@@ -2755,19 +2029,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RemovePropertiesError`
         """
-        warnings.warn(
-            'properties/remove is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.RemovePropertiesArg(path,
-                                                  property_template_ids)
-        r = self.request(
-            files.properties_remove,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_properties_template_get(self,
                                       template_id):
@@ -2784,18 +2046,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.TemplateError`
         """
-        warnings.warn(
-            'properties/template/get is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.GetTemplateArg(template_id)
-        r = self.request(
-            files.properties_template_get,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_properties_template_list(self):
         """
@@ -2808,18 +2059,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.TemplateError`
         """
-        warnings.warn(
-            'properties/template/list is deprecated.',
-            DeprecationWarning,
-        )
-        arg = None
-        r = self.request(
-            files.properties_template_list,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_properties_update(self,
                                 path,
@@ -2838,19 +2078,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UpdatePropertiesError`
         """
-        warnings.warn(
-            'properties/update is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.UpdatePropertiesArg(path,
-                                                  update_property_groups)
-        r = self.request(
-            files.properties_update,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_restore(self,
                       path,
@@ -2869,15 +2097,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RestoreError`
         """
-        arg = files.RestoreArg(path,
-                               rev)
-        r = self.request(
-            files.restore,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_save_url(self,
                        path,
@@ -2900,15 +2120,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.SaveUrlError`
         """
-        arg = files.SaveUrlArg(path,
-                               url)
-        r = self.request(
-            files.save_url,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_save_url_check_job_status(self,
                                         async_job_id):
@@ -2926,14 +2138,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.save_url_check_job_status,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_search(self,
                      path,
@@ -2969,22 +2174,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.SearchError`
         """
-        warnings.warn(
-            'search is deprecated. Use search.',
-            DeprecationWarning,
-        )
-        arg = files.SearchArg(path,
-                              query,
-                              start,
-                              max_results,
-                              mode)
-        r = self.request(
-            files.search,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_search_v2(self,
                         query,
@@ -3015,17 +2205,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.SearchError`
         """
-        arg = files.SearchV2Arg(query,
-                                options,
-                                match_field_options,
-                                include_highlights)
-        r = self.request(
-            files.search_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_search_continue_v2(self,
                                  cursor):
@@ -3048,14 +2228,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.SearchError`
         """
-        arg = files.SearchV2ContinueArg(cursor)
-        r = self.request(
-            files.search_continue_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_tags_add(self,
                        path,
@@ -3077,15 +2250,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.AddTagError`
         """
-        arg = files.AddTagArg(path,
-                              tag_text)
-        r = self.request(
-            files.tags_add,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_tags_get(self,
                        paths):
@@ -3102,14 +2267,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.BaseTagError`
         """
-        arg = files.GetTagsArg(paths)
-        r = self.request(
-            files.tags_get,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_tags_remove(self,
                           path,
@@ -3129,15 +2287,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.RemoveTagError`
         """
-        arg = files.RemoveTagArg(path,
-                                 tag_text)
-        r = self.request(
-            files.tags_remove,
-            'files',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def files_unlock_file_batch(self,
                                 entries):
@@ -3160,14 +2310,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.LockFileError`
         """
-        arg = files.UnlockFileBatchArg(entries)
-        r = self.request(
-            files.unlock_file_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_upload(self,
                      f,
@@ -3203,21 +2346,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UploadError`
         """
-        arg = files.UploadArg(path,
-                              mode,
-                              autorename,
-                              client_modified,
-                              mute,
-                              property_groups,
-                              strict_conflict,
-                              content_hash)
-        r = self.request(
-            files.upload,
-            'files',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def files_upload_session_append_v2(self,
                                        f,
@@ -3255,16 +2384,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UploadSessionAppendError`
         """
-        arg = files.UploadSessionAppendArg(cursor,
-                                           close,
-                                           content_hash)
-        r = self.request(
-            files.upload_session_append_v2,
-            'files',
-            arg,
-            f,
-        )
-        return None
+        pass
 
     def files_upload_session_append(self,
                                     f,
@@ -3294,19 +2414,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UploadSessionAppendError`
         """
-        warnings.warn(
-            'upload_session/append is deprecated. Use upload_session/append.',
-            DeprecationWarning,
-        )
-        arg = files.UploadSessionCursor(session_id,
-                                        offset)
-        r = self.request(
-            files.upload_session_append,
-            'files',
-            arg,
-            f,
-        )
-        return None
+        pass
 
     def files_upload_session_finish(self,
                                     f,
@@ -3343,16 +2451,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UploadSessionFinishError`
         """
-        arg = files.UploadSessionFinishArg(cursor,
-                                           commit,
-                                           content_hash)
-        r = self.request(
-            files.upload_session_finish,
-            'files',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def files_upload_session_finish_batch(self,
                                           entries):
@@ -3385,18 +2484,7 @@ class DropboxBase(object):
             Commit information for each file in the batch.
         :rtype: :class:`dropbox.files.UploadSessionFinishBatchLaunch`
         """
-        warnings.warn(
-            'upload_session/finish_batch is deprecated. Use upload_session/finish_batch.',
-            DeprecationWarning,
-        )
-        arg = files.UploadSessionFinishBatchArg(entries)
-        r = self.request(
-            files.upload_session_finish_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_upload_session_finish_batch_v2(self,
                                              entries):
@@ -3425,14 +2513,7 @@ class DropboxBase(object):
             Commit information for each file in the batch.
         :rtype: :class:`dropbox.files.UploadSessionFinishBatchResult`
         """
-        arg = files.UploadSessionFinishBatchArg(entries)
-        r = self.request(
-            files.upload_session_finish_batch_v2,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_upload_session_finish_batch_check(self,
                                                 async_job_id):
@@ -3452,14 +2533,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            files.upload_session_finish_batch_check,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def files_upload_session_start(self,
                                    f,
@@ -3524,16 +2598,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.files.UploadSessionStartError`
         """
-        arg = files.UploadSessionStartArg(close,
-                                          session_type,
-                                          content_hash)
-        r = self.request(
-            files.upload_session_start,
-            'files',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def files_upload_session_start_batch(self,
                                          num_sessions,
@@ -3555,15 +2620,7 @@ class DropboxBase(object):
         :param int num_sessions: The number of upload sessions to start.
         :rtype: :class:`dropbox.files.UploadSessionStartBatchResult`
         """
-        arg = files.UploadSessionStartBatchArg(num_sessions,
-                                               session_type)
-        r = self.request(
-            files.upload_session_start_batch,
-            'files',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in openid namespace
@@ -3583,14 +2640,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.openid.UserInfoError`
         """
-        arg = openid.UserInfoArgs()
-        r = self.request(
-            openid.userinfo,
-            'openid',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in paper namespace
@@ -3618,18 +2668,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/archive is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.RefPaperDoc(doc_id)
-        r = self.request(
-            paper.docs_archive,
-            'paper',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def paper_docs_create(self,
                           f,
@@ -3660,19 +2699,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.PaperDocCreateError`
         """
-        warnings.warn(
-            'docs/create is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.PaperDocCreateArgs(import_format,
-                                       parent_folder_id)
-        r = self.request(
-            paper.docs_create,
-            'paper',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def paper_docs_download(self,
                             doc_id,
@@ -3704,19 +2731,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        warnings.warn(
-            'docs/download is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.PaperDocExport(doc_id,
-                                   export_format)
-        r = self.request(
-            paper.docs_download,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_download_to_file(self,
                                     download_path,
@@ -3743,20 +2758,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/download is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.PaperDocExport(doc_id,
-                                   export_format)
-        r = self.request(
-            paper.docs_download,
-            'paper',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def paper_docs_folder_users_list(self,
                                      doc_id,
@@ -3786,19 +2788,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/folder_users/list is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.ListUsersOnFolderArgs(doc_id,
-                                          limit)
-        r = self.request(
-            paper.docs_folder_users_list,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_folder_users_list_continue(self,
                                               doc_id,
@@ -3827,19 +2817,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.ListUsersCursorError`
         """
-        warnings.warn(
-            'docs/folder_users/list/continue is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.ListUsersOnFolderContinueArgs(doc_id,
-                                                  cursor)
-        r = self.request(
-            paper.docs_folder_users_list_continue,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_get_folder_info(self,
                                    doc_id):
@@ -3868,18 +2846,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/get_folder_info is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.RefPaperDoc(doc_id)
-        r = self.request(
-            paper.docs_get_folder_info,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_list(self,
                         filter_by=paper.ListPaperDocsFilterBy.docs_accessed,
@@ -3914,21 +2881,7 @@ class DropboxBase(object):
             arguments error.
         :rtype: :class:`dropbox.paper.ListPaperDocsResponse`
         """
-        warnings.warn(
-            'docs/list is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.ListPaperDocsArgs(filter_by,
-                                      sort_by,
-                                      sort_order,
-                                      limit)
-        r = self.request(
-            paper.docs_list,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_list_continue(self,
                                  cursor):
@@ -3954,18 +2907,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.ListDocsCursorError`
         """
-        warnings.warn(
-            'docs/list/continue is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.ListPaperDocsContinueArgs(cursor)
-        r = self.request(
-            paper.docs_list_continue,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_permanently_delete(self,
                                       doc_id):
@@ -3990,18 +2932,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/permanently_delete is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.RefPaperDoc(doc_id)
-        r = self.request(
-            paper.docs_permanently_delete,
-            'paper',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def paper_docs_sharing_policy_get(self,
                                       doc_id):
@@ -4025,18 +2956,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/sharing_policy/get is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.RefPaperDoc(doc_id)
-        r = self.request(
-            paper.docs_sharing_policy_get,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_sharing_policy_set(self,
                                       doc_id,
@@ -4066,19 +2986,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/sharing_policy/set is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.PaperDocSharingPolicy(doc_id,
-                                          sharing_policy)
-        r = self.request(
-            paper.docs_sharing_policy_set,
-            'paper',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def paper_docs_update(self,
                           f,
@@ -4113,21 +3021,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.PaperDocUpdateError`
         """
-        warnings.warn(
-            'docs/update is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.PaperDocUpdateArgs(doc_id,
-                                       doc_update_policy,
-                                       revision,
-                                       import_format)
-        r = self.request(
-            paper.docs_update,
-            'paper',
-            arg,
-            f,
-        )
-        return r
+        pass
 
     def paper_docs_users_add(self,
                              doc_id,
@@ -4162,21 +3056,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/users/add is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.AddPaperDocUser(doc_id,
-                                    members,
-                                    custom_message,
-                                    quiet)
-        r = self.request(
-            paper.docs_users_add,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_users_list(self,
                               doc_id,
@@ -4210,20 +3090,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/users/list is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.ListUsersOnPaperDocArgs(doc_id,
-                                            limit,
-                                            filter_by)
-        r = self.request(
-            paper.docs_users_list,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_users_list_continue(self,
                                        doc_id,
@@ -4251,19 +3118,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.ListUsersCursorError`
         """
-        warnings.warn(
-            'docs/users/list/continue is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.ListUsersOnPaperDocContinueArgs(doc_id,
-                                                    cursor)
-        r = self.request(
-            paper.docs_users_list_continue,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def paper_docs_users_remove(self,
                                 doc_id,
@@ -4291,19 +3146,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.DocLookupError`
         """
-        warnings.warn(
-            'docs/users/remove is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.RemovePaperDocUser(doc_id,
-                                       member)
-        r = self.request(
-            paper.docs_users_remove,
-            'paper',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def paper_folders_create(self,
                              name,
@@ -4339,20 +3182,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.paper.PaperFolderCreateError`
         """
-        warnings.warn(
-            'folders/create is deprecated.',
-            DeprecationWarning,
-        )
-        arg = paper.PaperFolderCreateArg(name,
-                                         parent_folder_id,
-                                         is_team_folder)
-        r = self.request(
-            paper.folders_create,
-            'paper',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in sharing namespace
@@ -4390,19 +3220,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.AddFileMemberError`
         """
-        arg = sharing.AddFileMemberArgs(file,
-                                        members,
-                                        custom_message,
-                                        quiet,
-                                        access_level,
-                                        add_message_as_comment)
-        r = self.request(
-            sharing.add_file_member,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_add_folder_member(self,
                                   shared_folder_id,
@@ -4432,17 +3250,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.AddFolderMemberError`
         """
-        arg = sharing.AddFolderMemberArg(shared_folder_id,
-                                         members,
-                                         quiet,
-                                         custom_message)
-        r = self.request(
-            sharing.add_folder_member,
-            'sharing',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def sharing_check_job_status(self,
                                  async_job_id):
@@ -4460,14 +3268,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            sharing.check_job_status,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_check_remove_member_job_status(self,
                                                async_job_id):
@@ -4485,14 +3286,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            sharing.check_remove_member_job_status,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_check_share_job_status(self,
                                        async_job_id):
@@ -4510,14 +3304,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            sharing.check_share_job_status,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_create_shared_link(self,
                                    path,
@@ -4547,20 +3334,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.CreateSharedLinkError`
         """
-        warnings.warn(
-            'create_shared_link is deprecated. Use create_shared_link_with_settings.',
-            DeprecationWarning,
-        )
-        arg = sharing.CreateSharedLinkArg(path,
-                                          short_url,
-                                          pending_upload)
-        r = self.request(
-            sharing.create_shared_link,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_create_shared_link_with_settings(self,
                                                  path,
@@ -4583,15 +3357,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.CreateSharedLinkWithSettingsError`
         """
-        arg = sharing.CreateSharedLinkWithSettingsArg(path,
-                                                      settings)
-        r = self.request(
-            sharing.create_shared_link_with_settings,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_get_file_metadata(self,
                                   file,
@@ -4614,15 +3380,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.GetFileMetadataError`
         """
-        arg = sharing.GetFileMetadataArg(file,
-                                         actions)
-        r = self.request(
-            sharing.get_file_metadata,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_get_file_metadata_batch(self,
                                         files,
@@ -4645,15 +3403,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SharingUserError`
         """
-        arg = sharing.GetFileMetadataBatchArg(files,
-                                              actions)
-        r = self.request(
-            sharing.get_file_metadata_batch,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_get_folder_metadata(self,
                                     shared_folder_id,
@@ -4676,15 +3426,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SharedFolderAccessError`
         """
-        arg = sharing.GetMetadataArgs(shared_folder_id,
-                                      actions)
-        r = self.request(
-            sharing.get_folder_metadata,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_get_shared_link_file(self,
                                      url,
@@ -4715,16 +3457,7 @@ class DropboxBase(object):
         <https://docs.python.org/2/library/contextlib.html#contextlib.closing>`_
         context manager to ensure this.
         """
-        arg = sharing.GetSharedLinkMetadataArg(url,
-                                               path,
-                                               link_password)
-        r = self.request(
-            sharing.get_shared_link_file,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_get_shared_link_file_to_file(self,
                                              download_path,
@@ -4750,17 +3483,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.GetSharedLinkFileError`
         """
-        arg = sharing.GetSharedLinkMetadataArg(url,
-                                               path,
-                                               link_password)
-        r = self.request(
-            sharing.get_shared_link_file,
-            'sharing',
-            arg,
-            None,
-        )
-        self._save_body_to_file(download_path, r[1])
-        return r[0]
+        pass
 
     def sharing_get_shared_link_metadata(self,
                                          url,
@@ -4784,16 +3507,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SharedLinkError`
         """
-        arg = sharing.GetSharedLinkMetadataArg(url,
-                                               path,
-                                               link_password)
-        r = self.request(
-            sharing.get_shared_link_metadata,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_get_shared_links(self,
                                  path=None):
@@ -4816,18 +3530,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.GetSharedLinksError`
         """
-        warnings.warn(
-            'get_shared_links is deprecated. Use list_shared_links.',
-            DeprecationWarning,
-        )
-        arg = sharing.GetSharedLinksArg(path)
-        r = self.request(
-            sharing.get_shared_links,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_file_members(self,
                                   file,
@@ -4854,17 +3557,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListFileMembersError`
         """
-        arg = sharing.ListFileMembersArg(file,
-                                         actions,
-                                         include_inherited,
-                                         limit)
-        r = self.request(
-            sharing.list_file_members,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_file_members_batch(self,
                                         files,
@@ -4888,15 +3581,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SharingUserError`
         """
-        arg = sharing.ListFileMembersBatchArg(files,
-                                              limit)
-        r = self.request(
-            sharing.list_file_members_batch,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_file_members_continue(self,
                                            cursor):
@@ -4918,14 +3603,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListFileMembersContinueError`
         """
-        arg = sharing.ListFileMembersContinueArg(cursor)
-        r = self.request(
-            sharing.list_file_members_continue,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_folder_members(self,
                                     shared_folder_id,
@@ -4944,16 +3622,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SharedFolderAccessError`
         """
-        arg = sharing.ListFolderMembersArgs(shared_folder_id,
-                                            actions,
-                                            limit)
-        r = self.request(
-            sharing.list_folder_members,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_folder_members_continue(self,
                                              cursor):
@@ -4974,14 +3643,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListFolderMembersContinueError`
         """
-        arg = sharing.ListFolderMembersContinueArg(cursor)
-        r = self.request(
-            sharing.list_folder_members_continue,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_folders(self,
                              limit=1000,
@@ -5000,15 +3662,7 @@ class DropboxBase(object):
             the  authenticated user can perform on the folder.
         :rtype: :class:`dropbox.sharing.ListFoldersResult`
         """
-        arg = sharing.ListFoldersArgs(limit,
-                                      actions)
-        r = self.request(
-            sharing.list_folders,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_folders_continue(self,
                                       cursor):
@@ -5029,14 +3683,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListFoldersContinueError`
         """
-        arg = sharing.ListFoldersContinueArg(cursor)
-        r = self.request(
-            sharing.list_folders_continue,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_mountable_folders(self,
                                        limit=1000,
@@ -5056,15 +3703,7 @@ class DropboxBase(object):
             the  authenticated user can perform on the folder.
         :rtype: :class:`dropbox.sharing.ListFoldersResult`
         """
-        arg = sharing.ListFoldersArgs(limit,
-                                      actions)
-        r = self.request(
-            sharing.list_mountable_folders,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_mountable_folders_continue(self,
                                                 cursor):
@@ -5086,14 +3725,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListFoldersContinueError`
         """
-        arg = sharing.ListFoldersContinueArg(cursor)
-        r = self.request(
-            sharing.list_mountable_folders_continue,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_received_files(self,
                                     limit=100,
@@ -5119,15 +3751,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SharingUserError`
         """
-        arg = sharing.ListFilesArg(limit,
-                                   actions)
-        r = self.request(
-            sharing.list_received_files,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_received_files_continue(self,
                                              cursor):
@@ -5144,14 +3768,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListFilesContinueError`
         """
-        arg = sharing.ListFilesContinueArg(cursor)
-        r = self.request(
-            sharing.list_received_files_continue,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_list_shared_links(self,
                                   path=None,
@@ -5184,16 +3801,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ListSharedLinksError`
         """
-        arg = sharing.ListSharedLinksArg(path,
-                                         cursor,
-                                         direct_only)
-        r = self.request(
-            sharing.list_shared_links,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_modify_shared_link_settings(self,
                                             url,
@@ -5223,16 +3831,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ModifySharedLinkSettingsError`
         """
-        arg = sharing.ModifySharedLinkSettingsArgs(url,
-                                                   settings,
-                                                   remove_expiration)
-        r = self.request(
-            sharing.modify_shared_link_settings,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_mount_folder(self,
                              shared_folder_id):
@@ -5251,14 +3850,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.MountFolderError`
         """
-        arg = sharing.MountFolderArg(shared_folder_id)
-        r = self.request(
-            sharing.mount_folder,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_relinquish_file_membership(self,
                                            file):
@@ -5277,14 +3869,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.RelinquishFileMembershipError`
         """
-        arg = sharing.RelinquishFileMembershipArg(file)
-        r = self.request(
-            sharing.relinquish_file_membership,
-            'sharing',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def sharing_relinquish_folder_membership(self,
                                              shared_folder_id,
@@ -5309,15 +3894,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.RelinquishFolderMembershipError`
         """
-        arg = sharing.RelinquishFolderMembershipArg(shared_folder_id,
-                                                    leave_a_copy)
-        r = self.request(
-            sharing.relinquish_folder_membership,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_remove_file_member(self,
                                    file,
@@ -5340,19 +3917,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.RemoveFileMemberError`
         """
-        warnings.warn(
-            'remove_file_member is deprecated. Use remove_file_member_2.',
-            DeprecationWarning,
-        )
-        arg = sharing.RemoveFileMemberArg(file,
-                                          member)
-        r = self.request(
-            sharing.remove_file_member,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_remove_file_member_2(self,
                                      file,
@@ -5375,15 +3940,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.RemoveFileMemberError`
         """
-        arg = sharing.RemoveFileMemberArg(file,
-                                          member)
-        r = self.request(
-            sharing.remove_file_member_2,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_remove_folder_member(self,
                                      shared_folder_id,
@@ -5410,16 +3967,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.RemoveFolderMemberError`
         """
-        arg = sharing.RemoveFolderMemberArg(shared_folder_id,
-                                            member,
-                                            leave_a_copy)
-        r = self.request(
-            sharing.remove_folder_member,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_revoke_shared_link(self,
                                    url):
@@ -5441,14 +3989,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.RevokeSharedLinkError`
         """
-        arg = sharing.RevokeSharedLinkArg(url)
-        r = self.request(
-            sharing.revoke_shared_link,
-            'sharing',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def sharing_set_access_inheritance(self,
                                        shared_folder_id,
@@ -5473,15 +4014,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.SetAccessInheritanceError`
         """
-        arg = sharing.SetAccessInheritanceArg(shared_folder_id,
-                                              access_inheritance)
-        r = self.request(
-            sharing.set_access_inheritance,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_share_folder(self,
                              path,
@@ -5517,22 +4050,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.ShareFolderError`
         """
-        arg = sharing.ShareFolderArg(path,
-                                     acl_update_policy,
-                                     force_async,
-                                     member_policy,
-                                     shared_link_policy,
-                                     viewer_info_policy,
-                                     access_inheritance,
-                                     actions,
-                                     link_settings)
-        r = self.request(
-            sharing.share_folder,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_transfer_folder(self,
                                 shared_folder_id,
@@ -5554,15 +4072,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.TransferFolderError`
         """
-        arg = sharing.TransferFolderArg(shared_folder_id,
-                                        to_dropbox_id)
-        r = self.request(
-            sharing.transfer_folder,
-            'sharing',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def sharing_unmount_folder(self,
                                shared_folder_id):
@@ -5580,14 +4090,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.UnmountFolderError`
         """
-        arg = sharing.UnmountFolderArg(shared_folder_id)
-        r = self.request(
-            sharing.unmount_folder,
-            'sharing',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def sharing_unshare_file(self,
                              file):
@@ -5604,14 +4107,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.UnshareFileError`
         """
-        arg = sharing.UnshareFileArg(file)
-        r = self.request(
-            sharing.unshare_file,
-            'sharing',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def sharing_unshare_folder(self,
                                shared_folder_id,
@@ -5635,15 +4131,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.UnshareFolderError`
         """
-        arg = sharing.UnshareFolderArg(shared_folder_id,
-                                       leave_a_copy)
-        r = self.request(
-            sharing.unshare_folder,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_update_file_member(self,
                                    file,
@@ -5666,16 +4154,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.FileMemberActionError`
         """
-        arg = sharing.UpdateFileMemberArgs(file,
-                                           member,
-                                           access_level)
-        r = self.request(
-            sharing.update_file_member,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_update_folder_member(self,
                                      shared_folder_id,
@@ -5701,16 +4180,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.UpdateFolderMemberError`
         """
-        arg = sharing.UpdateFolderMemberArg(shared_folder_id,
-                                            member,
-                                            access_level)
-        r = self.request(
-            sharing.update_folder_member,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def sharing_update_folder_policy(self,
                                      shared_folder_id,
@@ -5755,20 +4225,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.sharing.UpdateFolderPolicyError`
         """
-        arg = sharing.UpdateFolderPolicyArg(shared_folder_id,
-                                            member_policy,
-                                            acl_update_policy,
-                                            viewer_info_policy,
-                                            shared_link_policy,
-                                            link_settings,
-                                            actions)
-        r = self.request(
-            sharing.update_folder_policy,
-            'sharing',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in team namespace
@@ -5798,14 +4255,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.users.UserFeaturesGetValuesBatchError`
         """
-        arg = users.UserFeaturesGetValuesBatchArg(features)
-        r = self.request(
-            users.features_get_values,
-            'users',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def users_get_account(self,
                           account_id):
@@ -5822,14 +4272,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.users.GetAccountError`
         """
-        arg = users.GetAccountArg(account_id)
-        r = self.request(
-            users.get_account,
-            'users',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def users_get_account_batch(self,
                                 account_ids):
@@ -5848,14 +4291,7 @@ class DropboxBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.users.GetAccountBatchError`
         """
-        arg = users.GetAccountBatchArg(account_ids)
-        r = self.request(
-            users.get_account_batch,
-            'users',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def users_get_current_account(self):
         """
@@ -5866,14 +4302,7 @@ class DropboxBase(object):
 
         :rtype: :class:`dropbox.users.FullAccount`
         """
-        arg = None
-        r = self.request(
-            users.get_current_account,
-            'users',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def users_get_space_usage(self):
         """
@@ -5884,12 +4313,5 @@ class DropboxBase(object):
 
         :rtype: :class:`dropbox.users.SpaceUsage`
         """
-        arg = None
-        r = self.request(
-            users.get_space_usage,
-            'users',
-            arg,
-            None,
-        )
-        return r
+        pass
 

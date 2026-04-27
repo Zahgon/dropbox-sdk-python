@@ -42,28 +42,11 @@ class _SSLAdapter(HTTPAdapter):
         super(_SSLAdapter, self).__init__(*args, **kwargs)
 
     def init_poolmanager(self, connections, maxsize, block=False, **_):
-        self.poolmanager = PoolManager(
-            num_pools=connections,
-            maxsize=maxsize,
-            block=block,
-            cert_reqs=ssl.CERT_REQUIRED,
-            ca_certs=self._ca_certs,
-        )
+        pass
 
 def pinned_session(pool_maxsize=8, ca_certs=None):
     # always verify, use cert bundle if provided
 
-    _session = requests.session()
-
-    # requests
-    if ca_certs is not None:
-        _session.verify = ca_certs
-    else:
-        _session.verify = True
-
-    # urllib3 within requests
-    http_adapter = _SSLAdapter(pool_connections=4, pool_maxsize=pool_maxsize, ca_certs=ca_certs)
-    _session.mount('https://', http_adapter)
-    return _session
+    pass
 
 SSLError = requests.exceptions.SSLError  # raised on verification errors

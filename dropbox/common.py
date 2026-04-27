@@ -39,7 +39,7 @@ class PathRoot(bb.Union):
         :param str val:
         :rtype: PathRoot
         """
-        return cls('root', val)
+        pass
 
     @classmethod
     def namespace_id(cls, val):
@@ -50,7 +50,7 @@ class PathRoot(bb.Union):
         :param str val:
         :rtype: PathRoot
         """
-        return cls('namespace_id', val)
+        pass
 
     def is_home(self):
         """
@@ -58,7 +58,7 @@ class PathRoot(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'home'
+        pass
 
     def is_root(self):
         """
@@ -66,7 +66,7 @@ class PathRoot(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'root'
+        pass
 
     def is_namespace_id(self):
         """
@@ -74,7 +74,7 @@ class PathRoot(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'namespace_id'
+        pass
 
     def is_other(self):
         """
@@ -82,7 +82,7 @@ class PathRoot(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_root(self):
         """
@@ -94,9 +94,7 @@ class PathRoot(bb.Union):
 
         :rtype: str
         """
-        if not self.is_root():
-            raise AttributeError("tag 'root' not set")
-        return self._value
+        pass
 
     def get_namespace_id(self):
         """
@@ -108,12 +106,10 @@ class PathRoot(bb.Union):
 
         :rtype: str
         """
-        if not self.is_namespace_id():
-            raise AttributeError("tag 'namespace_id' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PathRoot, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PathRoot_validator = bv.Union(PathRoot)
 
@@ -145,7 +141,7 @@ class PathRootError(bb.Union):
         :param RootInfo val:
         :rtype: PathRootError
         """
-        return cls('invalid_root', val)
+        pass
 
     def is_invalid_root(self):
         """
@@ -153,7 +149,7 @@ class PathRootError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_root'
+        pass
 
     def is_no_permission(self):
         """
@@ -161,7 +157,7 @@ class PathRootError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_other(self):
         """
@@ -169,7 +165,7 @@ class PathRootError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_invalid_root(self):
         """
@@ -180,12 +176,10 @@ class PathRootError(bb.Union):
 
         :rtype: RootInfo
         """
-        if not self.is_invalid_root():
-            raise AttributeError("tag 'invalid_root' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PathRootError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PathRootError_validator = bv.Union(PathRootError)
 
@@ -225,7 +219,7 @@ class RootInfo(bb.Struct):
     home_namespace_id = bb.Attribute("home_namespace_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RootInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RootInfo_validator = bv.StructTree(RootInfo)
 
@@ -257,7 +251,7 @@ class TeamRootInfo(RootInfo):
     home_path = bb.Attribute("home_path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamRootInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamRootInfo_validator = bv.Struct(TeamRootInfo)
 
@@ -279,7 +273,7 @@ class UserRootInfo(RootInfo):
                                            home_namespace_id)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserRootInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserRootInfo_validator = bv.Struct(UserRootInfo)
 

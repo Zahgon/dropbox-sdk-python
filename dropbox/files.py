@@ -47,7 +47,7 @@ class AddTagArg(bb.Struct):
     tag_text = bb.Attribute("tag_text")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddTagArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddTagArg_validator = bv.Struct(AddTagArg)
 
@@ -71,7 +71,7 @@ class BaseTagError(bb.Union):
         :param LookupError val:
         :rtype: BaseTagError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -79,7 +79,7 @@ class BaseTagError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_other(self):
         """
@@ -87,7 +87,7 @@ class BaseTagError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -95,12 +95,10 @@ class BaseTagError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(BaseTagError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 BaseTagError_validator = bv.Union(BaseTagError)
 
@@ -123,10 +121,10 @@ class AddTagError(BaseTagError):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_tags'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddTagError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddTagError_validator = bv.Union(AddTagError)
 
@@ -194,7 +192,7 @@ class GetMetadataArg(bb.Struct):
     include_property_groups = bb.Attribute("include_property_groups", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetMetadataArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetMetadataArg_validator = bv.Struct(GetMetadataArg)
 
@@ -231,7 +229,7 @@ class AlphaGetMetadataArg(GetMetadataArg):
     include_property_templates = bb.Attribute("include_property_templates", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AlphaGetMetadataArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AlphaGetMetadataArg_validator = bv.Struct(AlphaGetMetadataArg)
 
@@ -253,7 +251,7 @@ class GetMetadataError(bb.Union):
         :param LookupError val:
         :rtype: GetMetadataError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -261,7 +259,7 @@ class GetMetadataError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def get_path(self):
         """
@@ -269,12 +267,10 @@ class GetMetadataError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetMetadataError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetMetadataError_validator = bv.Union(GetMetadataError)
 
@@ -294,7 +290,7 @@ class AlphaGetMetadataError(GetMetadataError):
         :param file_properties.LookUpPropertiesError val:
         :rtype: AlphaGetMetadataError
         """
-        return cls('properties_error', val)
+        pass
 
     def is_properties_error(self):
         """
@@ -302,7 +298,7 @@ class AlphaGetMetadataError(GetMetadataError):
 
         :rtype: bool
         """
-        return self._tag == 'properties_error'
+        pass
 
     def get_properties_error(self):
         """
@@ -310,12 +306,10 @@ class AlphaGetMetadataError(GetMetadataError):
 
         :rtype: file_properties.LookUpPropertiesError
         """
-        if not self.is_properties_error():
-            raise AttributeError("tag 'properties_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AlphaGetMetadataError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AlphaGetMetadataError_validator = bv.Union(AlphaGetMetadataError)
 
@@ -409,7 +403,7 @@ class CommitInfo(bb.Struct):
     strict_conflict = bb.Attribute("strict_conflict")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CommitInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CommitInfo_validator = bv.Struct(CommitInfo)
 
@@ -444,7 +438,7 @@ class ContentSyncSetting(bb.Struct):
     sync_setting = bb.Attribute("sync_setting", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ContentSyncSetting, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ContentSyncSetting_validator = bv.Struct(ContentSyncSetting)
 
@@ -479,7 +473,7 @@ class ContentSyncSettingArg(bb.Struct):
     sync_setting = bb.Attribute("sync_setting", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ContentSyncSettingArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ContentSyncSettingArg_validator = bv.Struct(ContentSyncSettingArg)
 
@@ -514,7 +508,7 @@ class CreateFolderArg(bb.Struct):
     autorename = bb.Attribute("autorename")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderArg_validator = bv.Struct(CreateFolderArg)
 
@@ -561,7 +555,7 @@ class CreateFolderBatchArg(bb.Struct):
     force_async = bb.Attribute("force_async")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderBatchArg_validator = bv.Struct(CreateFolderBatchArg)
 
@@ -587,7 +581,7 @@ class CreateFolderBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -595,10 +589,10 @@ class CreateFolderBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderBatchError_validator = bv.Union(CreateFolderBatchError)
 
@@ -627,7 +621,7 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
         :param CreateFolderBatchResult val:
         :rtype: CreateFolderBatchJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -638,7 +632,7 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
         :param CreateFolderBatchError val:
         :rtype: CreateFolderBatchJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -646,7 +640,7 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -654,7 +648,7 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def is_other(self):
         """
@@ -662,7 +656,7 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -672,9 +666,7 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
 
         :rtype: CreateFolderBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -684,12 +676,10 @@ class CreateFolderBatchJobStatus(async_.PollResultBase):
 
         :rtype: CreateFolderBatchError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderBatchJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderBatchJobStatus_validator = bv.Union(CreateFolderBatchJobStatus)
 
@@ -717,7 +707,7 @@ class CreateFolderBatchLaunch(async_.LaunchResultBase):
         :param CreateFolderBatchResult val:
         :rtype: CreateFolderBatchLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -725,7 +715,7 @@ class CreateFolderBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_other(self):
         """
@@ -733,7 +723,7 @@ class CreateFolderBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -741,12 +731,10 @@ class CreateFolderBatchLaunch(async_.LaunchResultBase):
 
         :rtype: CreateFolderBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderBatchLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderBatchLaunch_validator = bv.Union(CreateFolderBatchLaunch)
 
@@ -761,7 +749,7 @@ class FileOpsResult(bb.Struct):
         pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileOpsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileOpsResult_validator = bv.Struct(FileOpsResult)
 
@@ -789,7 +777,7 @@ class CreateFolderBatchResult(FileOpsResult):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderBatchResult_validator = bv.Struct(CreateFolderBatchResult)
 
@@ -811,7 +799,7 @@ class CreateFolderBatchResultEntry(bb.Union):
         :param CreateFolderEntryResult val:
         :rtype: CreateFolderBatchResultEntry
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def failure(cls, val):
@@ -822,7 +810,7 @@ class CreateFolderBatchResultEntry(bb.Union):
         :param CreateFolderEntryError val:
         :rtype: CreateFolderBatchResultEntry
         """
-        return cls('failure', val)
+        pass
 
     def is_success(self):
         """
@@ -830,7 +818,7 @@ class CreateFolderBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_failure(self):
         """
@@ -838,7 +826,7 @@ class CreateFolderBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failure'
+        pass
 
     def get_success(self):
         """
@@ -846,9 +834,7 @@ class CreateFolderBatchResultEntry(bb.Union):
 
         :rtype: CreateFolderEntryResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_failure(self):
         """
@@ -856,12 +842,10 @@ class CreateFolderBatchResultEntry(bb.Union):
 
         :rtype: CreateFolderEntryError
         """
-        if not self.is_failure():
-            raise AttributeError("tag 'failure' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderBatchResultEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderBatchResultEntry_validator = bv.Union(CreateFolderBatchResultEntry)
 
@@ -885,7 +869,7 @@ class CreateFolderEntryError(bb.Union):
         :param WriteError val:
         :rtype: CreateFolderEntryError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -893,7 +877,7 @@ class CreateFolderEntryError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_other(self):
         """
@@ -901,7 +885,7 @@ class CreateFolderEntryError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -909,12 +893,10 @@ class CreateFolderEntryError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderEntryError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderEntryError_validator = bv.Union(CreateFolderEntryError)
 
@@ -940,7 +922,7 @@ class CreateFolderEntryResult(bb.Struct):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderEntryResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderEntryResult_validator = bv.Struct(CreateFolderEntryResult)
 
@@ -962,7 +944,7 @@ class CreateFolderError(bb.Union):
         :param WriteError val:
         :rtype: CreateFolderError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -970,7 +952,7 @@ class CreateFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def get_path(self):
         """
@@ -978,12 +960,10 @@ class CreateFolderError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderError_validator = bv.Union(CreateFolderError)
 
@@ -1009,7 +989,7 @@ class CreateFolderResult(FileOpsResult):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFolderResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFolderResult_validator = bv.Struct(CreateFolderResult)
 
@@ -1045,7 +1025,7 @@ class DeleteArg(bb.Struct):
     parent_rev = bb.Attribute("parent_rev", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteArg_validator = bv.Struct(DeleteArg)
 
@@ -1067,7 +1047,7 @@ class DeleteBatchArg(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchArg_validator = bv.Struct(DeleteBatchArg)
 
@@ -1095,7 +1075,7 @@ class DeleteBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_other(self):
         """
@@ -1103,10 +1083,10 @@ class DeleteBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchError_validator = bv.Union(DeleteBatchError)
 
@@ -1135,7 +1115,7 @@ class DeleteBatchJobStatus(async_.PollResultBase):
         :param DeleteBatchResult val:
         :rtype: DeleteBatchJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -1146,7 +1126,7 @@ class DeleteBatchJobStatus(async_.PollResultBase):
         :param DeleteBatchError val:
         :rtype: DeleteBatchJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -1154,7 +1134,7 @@ class DeleteBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -1162,7 +1142,7 @@ class DeleteBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def is_other(self):
         """
@@ -1170,7 +1150,7 @@ class DeleteBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -1180,9 +1160,7 @@ class DeleteBatchJobStatus(async_.PollResultBase):
 
         :rtype: DeleteBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -1192,12 +1170,10 @@ class DeleteBatchJobStatus(async_.PollResultBase):
 
         :rtype: DeleteBatchError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchJobStatus_validator = bv.Union(DeleteBatchJobStatus)
 
@@ -1224,7 +1200,7 @@ class DeleteBatchLaunch(async_.LaunchResultBase):
         :param DeleteBatchResult val:
         :rtype: DeleteBatchLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -1232,7 +1208,7 @@ class DeleteBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_other(self):
         """
@@ -1240,7 +1216,7 @@ class DeleteBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -1248,12 +1224,10 @@ class DeleteBatchLaunch(async_.LaunchResultBase):
 
         :rtype: DeleteBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchLaunch_validator = bv.Union(DeleteBatchLaunch)
 
@@ -1281,7 +1255,7 @@ class DeleteBatchResult(FileOpsResult):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchResult_validator = bv.Struct(DeleteBatchResult)
 
@@ -1306,7 +1280,7 @@ class DeleteBatchResultData(bb.Struct):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchResultData, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchResultData_validator = bv.Struct(DeleteBatchResultData)
 
@@ -1328,7 +1302,7 @@ class DeleteBatchResultEntry(bb.Union):
         :param DeleteBatchResultData val:
         :rtype: DeleteBatchResultEntry
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def failure(cls, val):
@@ -1339,7 +1313,7 @@ class DeleteBatchResultEntry(bb.Union):
         :param DeleteError val:
         :rtype: DeleteBatchResultEntry
         """
-        return cls('failure', val)
+        pass
 
     def is_success(self):
         """
@@ -1347,7 +1321,7 @@ class DeleteBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_failure(self):
         """
@@ -1355,7 +1329,7 @@ class DeleteBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failure'
+        pass
 
     def get_success(self):
         """
@@ -1363,9 +1337,7 @@ class DeleteBatchResultEntry(bb.Union):
 
         :rtype: DeleteBatchResultData
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_failure(self):
         """
@@ -1373,12 +1345,10 @@ class DeleteBatchResultEntry(bb.Union):
 
         :rtype: DeleteError
         """
-        if not self.is_failure():
-            raise AttributeError("tag 'failure' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteBatchResultEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteBatchResultEntry_validator = bv.Union(DeleteBatchResultEntry)
 
@@ -1411,7 +1381,7 @@ class DeleteError(bb.Union):
         :param LookupError val:
         :rtype: DeleteError
         """
-        return cls('path_lookup', val)
+        pass
 
     @classmethod
     def path_write(cls, val):
@@ -1422,7 +1392,7 @@ class DeleteError(bb.Union):
         :param WriteError val:
         :rtype: DeleteError
         """
-        return cls('path_write', val)
+        pass
 
     def is_path_lookup(self):
         """
@@ -1430,7 +1400,7 @@ class DeleteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path_lookup'
+        pass
 
     def is_path_write(self):
         """
@@ -1438,7 +1408,7 @@ class DeleteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path_write'
+        pass
 
     def is_too_many_write_operations(self):
         """
@@ -1446,7 +1416,7 @@ class DeleteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_too_many_files(self):
         """
@@ -1454,7 +1424,7 @@ class DeleteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -1462,7 +1432,7 @@ class DeleteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path_lookup(self):
         """
@@ -1470,9 +1440,7 @@ class DeleteError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path_lookup():
-            raise AttributeError("tag 'path_lookup' not set")
-        return self._value
+        pass
 
     def get_path_write(self):
         """
@@ -1480,12 +1448,10 @@ class DeleteError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path_write():
-            raise AttributeError("tag 'path_write' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteError_validator = bv.Union(DeleteError)
 
@@ -1511,7 +1477,7 @@ class DeleteResult(FileOpsResult):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteResult_validator = bv.Struct(DeleteResult)
 
@@ -1585,7 +1551,7 @@ class Metadata(bb.Struct):
     preview_url = bb.Attribute("preview_url", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Metadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Metadata_validator = bv.StructTree(Metadata)
 
@@ -1613,7 +1579,7 @@ class DeletedMetadata(Metadata):
                                               preview_url)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeletedMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeletedMetadata_validator = bv.Struct(DeletedMetadata)
 
@@ -1649,7 +1615,7 @@ class Dimensions(bb.Struct):
     width = bb.Attribute("width")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Dimensions, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Dimensions_validator = bv.Struct(Dimensions)
 
@@ -1683,7 +1649,7 @@ class DownloadArg(bb.Struct):
     rev = bb.Attribute("rev", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DownloadArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DownloadArg_validator = bv.Struct(DownloadArg)
 
@@ -1713,7 +1679,7 @@ class DownloadError(bb.Union):
         :param LookupError val:
         :rtype: DownloadError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -1721,7 +1687,7 @@ class DownloadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_unsupported_file(self):
         """
@@ -1729,7 +1695,7 @@ class DownloadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_file'
+        pass
 
     def is_other(self):
         """
@@ -1737,7 +1703,7 @@ class DownloadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -1745,12 +1711,10 @@ class DownloadError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DownloadError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DownloadError_validator = bv.Union(DownloadError)
 
@@ -1775,7 +1739,7 @@ class DownloadZipArg(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DownloadZipArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DownloadZipArg_validator = bv.Struct(DownloadZipArg)
 
@@ -1808,7 +1772,7 @@ class DownloadZipError(bb.Union):
         :param LookupError val:
         :rtype: DownloadZipError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -1816,7 +1780,7 @@ class DownloadZipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_too_large(self):
         """
@@ -1824,7 +1788,7 @@ class DownloadZipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_large'
+        pass
 
     def is_too_many_files(self):
         """
@@ -1832,7 +1796,7 @@ class DownloadZipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -1840,7 +1804,7 @@ class DownloadZipError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -1848,12 +1812,10 @@ class DownloadZipError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DownloadZipError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DownloadZipError_validator = bv.Union(DownloadZipError)
 
@@ -1875,7 +1837,7 @@ class DownloadZipResult(bb.Struct):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DownloadZipResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DownloadZipResult_validator = bv.Struct(DownloadZipResult)
 
@@ -1914,7 +1876,7 @@ class ExportArg(bb.Struct):
     export_format = bb.Attribute("export_format", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExportArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExportArg_validator = bv.Struct(ExportArg)
 
@@ -1951,7 +1913,7 @@ class ExportError(bb.Union):
         :param LookupError val:
         :rtype: ExportError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -1959,7 +1921,7 @@ class ExportError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_non_exportable(self):
         """
@@ -1967,7 +1929,7 @@ class ExportError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'non_exportable'
+        pass
 
     def is_invalid_export_format(self):
         """
@@ -1975,7 +1937,7 @@ class ExportError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_export_format'
+        pass
 
     def is_retry_error(self):
         """
@@ -1983,7 +1945,7 @@ class ExportError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'retry_error'
+        pass
 
     def is_other(self):
         """
@@ -1991,7 +1953,7 @@ class ExportError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -1999,12 +1961,10 @@ class ExportError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExportError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExportError_validator = bv.Union(ExportError)
 
@@ -2043,7 +2003,7 @@ class ExportInfo(bb.Struct):
     export_options = bb.Attribute("export_options", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExportInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExportInfo_validator = bv.Struct(ExportInfo)
 
@@ -2101,7 +2061,7 @@ class ExportMetadata(bb.Struct):
     paper_revision = bb.Attribute("paper_revision", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExportMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExportMetadata_validator = bv.Struct(ExportMetadata)
 
@@ -2136,7 +2096,7 @@ class ExportResult(bb.Struct):
     file_metadata = bb.Attribute("file_metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExportResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExportResult_validator = bv.Struct(ExportResult)
 
@@ -2189,7 +2149,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'image'
+        pass
 
     def is_document(self):
         """
@@ -2197,7 +2157,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'document'
+        pass
 
     def is_pdf(self):
         """
@@ -2205,7 +2165,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'pdf'
+        pass
 
     def is_spreadsheet(self):
         """
@@ -2213,7 +2173,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'spreadsheet'
+        pass
 
     def is_presentation(self):
         """
@@ -2221,7 +2181,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'presentation'
+        pass
 
     def is_audio(self):
         """
@@ -2229,7 +2189,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'audio'
+        pass
 
     def is_video(self):
         """
@@ -2237,7 +2197,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'video'
+        pass
 
     def is_folder(self):
         """
@@ -2245,7 +2205,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder'
+        pass
 
     def is_paper(self):
         """
@@ -2253,7 +2213,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'paper'
+        pass
 
     def is_others(self):
         """
@@ -2261,7 +2221,7 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'others'
+        pass
 
     def is_other(self):
         """
@@ -2269,10 +2229,10 @@ class FileCategory(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileCategory, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileCategory_validator = bv.Union(FileCategory)
 
@@ -2297,7 +2257,7 @@ class FileLock(bb.Struct):
     content = bb.Attribute("content", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileLock, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileLock_validator = bv.Struct(FileLock)
 
@@ -2327,7 +2287,7 @@ class FileLockContent(bb.Union):
         :param SingleUserLock val:
         :rtype: FileLockContent
         """
-        return cls('single_user', val)
+        pass
 
     def is_unlocked(self):
         """
@@ -2335,7 +2295,7 @@ class FileLockContent(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unlocked'
+        pass
 
     def is_single_user(self):
         """
@@ -2343,7 +2303,7 @@ class FileLockContent(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'single_user'
+        pass
 
     def is_other(self):
         """
@@ -2351,7 +2311,7 @@ class FileLockContent(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_single_user(self):
         """
@@ -2361,12 +2321,10 @@ class FileLockContent(bb.Union):
 
         :rtype: SingleUserLock
         """
-        if not self.is_single_user():
-            raise AttributeError("tag 'single_user' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileLockContent, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileLockContent_validator = bv.Union(FileLockContent)
 
@@ -2421,7 +2379,7 @@ class FileLockMetadata(bb.Struct):
     created = bb.Attribute("created", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileLockMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileLockMetadata_validator = bv.Struct(FileLockMetadata)
 
@@ -2602,7 +2560,7 @@ class FileMetadata(Metadata):
     file_lock_info = bb.Attribute("file_lock_info", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileMetadata_validator = bv.Struct(FileMetadata)
 
@@ -2630,7 +2588,7 @@ class SharingInfo(bb.Struct):
     read_only = bb.Attribute("read_only")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingInfo_validator = bv.Struct(SharingInfo)
 
@@ -2670,7 +2628,7 @@ class FileSharingInfo(SharingInfo):
     modified_by = bb.Attribute("modified_by", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileSharingInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileSharingInfo_validator = bv.Struct(FileSharingInfo)
 
@@ -2695,7 +2653,7 @@ class FileStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'active'
+        pass
 
     def is_deleted(self):
         """
@@ -2703,7 +2661,7 @@ class FileStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'deleted'
+        pass
 
     def is_other(self):
         """
@@ -2711,10 +2669,10 @@ class FileStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileStatus_validator = bv.Union(FileStatus)
 
@@ -2781,7 +2739,7 @@ class FolderMetadata(Metadata):
     property_groups = bb.Attribute("property_groups", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderMetadata_validator = bv.Struct(FolderMetadata)
 
@@ -2845,7 +2803,7 @@ class FolderSharingInfo(SharingInfo):
     no_access = bb.Attribute("no_access")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderSharingInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderSharingInfo_validator = bv.Struct(FolderSharingInfo)
 
@@ -2871,7 +2829,7 @@ class GetCopyReferenceArg(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetCopyReferenceArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetCopyReferenceArg_validator = bv.Struct(GetCopyReferenceArg)
 
@@ -2895,7 +2853,7 @@ class GetCopyReferenceError(bb.Union):
         :param LookupError val:
         :rtype: GetCopyReferenceError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -2903,7 +2861,7 @@ class GetCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_other(self):
         """
@@ -2911,7 +2869,7 @@ class GetCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -2919,12 +2877,10 @@ class GetCopyReferenceError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetCopyReferenceError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetCopyReferenceError_validator = bv.Union(GetCopyReferenceError)
 
@@ -2970,7 +2926,7 @@ class GetCopyReferenceResult(bb.Struct):
     expires = bb.Attribute("expires")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetCopyReferenceResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetCopyReferenceResult_validator = bv.Struct(GetCopyReferenceResult)
 
@@ -2995,7 +2951,7 @@ class GetTagsArg(bb.Struct):
     paths = bb.Attribute("paths")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTagsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTagsArg_validator = bv.Struct(GetTagsArg)
 
@@ -3021,7 +2977,7 @@ class GetTagsResult(bb.Struct):
     paths_to_tags = bb.Attribute("paths_to_tags")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTagsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTagsResult_validator = bv.Struct(GetTagsResult)
 
@@ -3047,7 +3003,7 @@ class GetTemporaryLinkArg(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemporaryLinkArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemporaryLinkArg_validator = bv.Struct(GetTemporaryLinkArg)
 
@@ -3089,7 +3045,7 @@ class GetTemporaryLinkError(bb.Union):
         :param LookupError val:
         :rtype: GetTemporaryLinkError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -3097,7 +3053,7 @@ class GetTemporaryLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_email_not_verified(self):
         """
@@ -3105,7 +3061,7 @@ class GetTemporaryLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email_not_verified'
+        pass
 
     def is_unsupported_file(self):
         """
@@ -3113,7 +3069,7 @@ class GetTemporaryLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_file'
+        pass
 
     def is_not_allowed(self):
         """
@@ -3121,7 +3077,7 @@ class GetTemporaryLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_allowed'
+        pass
 
     def is_other(self):
         """
@@ -3129,7 +3085,7 @@ class GetTemporaryLinkError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -3137,12 +3093,10 @@ class GetTemporaryLinkError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemporaryLinkError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemporaryLinkError_validator = bv.Union(GetTemporaryLinkError)
 
@@ -3177,7 +3131,7 @@ class GetTemporaryLinkResult(bb.Struct):
     link = bb.Attribute("link")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemporaryLinkResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemporaryLinkResult_validator = bv.Struct(GetTemporaryLinkResult)
 
@@ -3217,7 +3171,7 @@ class GetTemporaryUploadLinkArg(bb.Struct):
     duration = bb.Attribute("duration")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemporaryUploadLinkArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemporaryUploadLinkArg_validator = bv.Struct(GetTemporaryUploadLinkArg)
 
@@ -3243,7 +3197,7 @@ class GetTemporaryUploadLinkResult(bb.Struct):
     link = bb.Attribute("link")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetTemporaryUploadLinkResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetTemporaryUploadLinkResult_validator = bv.Struct(GetTemporaryUploadLinkResult)
 
@@ -3271,7 +3225,7 @@ class GetThumbnailBatchArg(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetThumbnailBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetThumbnailBatchArg_validator = bv.Struct(GetThumbnailBatchArg)
 
@@ -3297,7 +3251,7 @@ class GetThumbnailBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -3305,10 +3259,10 @@ class GetThumbnailBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetThumbnailBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetThumbnailBatchError_validator = bv.Union(GetThumbnailBatchError)
 
@@ -3334,7 +3288,7 @@ class GetThumbnailBatchResult(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetThumbnailBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetThumbnailBatchResult_validator = bv.Struct(GetThumbnailBatchResult)
 
@@ -3368,7 +3322,7 @@ class GetThumbnailBatchResultData(bb.Struct):
     thumbnail = bb.Attribute("thumbnail")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetThumbnailBatchResultData, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetThumbnailBatchResultData_validator = bv.Struct(GetThumbnailBatchResultData)
 
@@ -3395,7 +3349,7 @@ class GetThumbnailBatchResultEntry(bb.Union):
         :param GetThumbnailBatchResultData val:
         :rtype: GetThumbnailBatchResultEntry
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def failure(cls, val):
@@ -3406,7 +3360,7 @@ class GetThumbnailBatchResultEntry(bb.Union):
         :param ThumbnailError val:
         :rtype: GetThumbnailBatchResultEntry
         """
-        return cls('failure', val)
+        pass
 
     def is_success(self):
         """
@@ -3414,7 +3368,7 @@ class GetThumbnailBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_failure(self):
         """
@@ -3422,7 +3376,7 @@ class GetThumbnailBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failure'
+        pass
 
     def is_other(self):
         """
@@ -3430,7 +3384,7 @@ class GetThumbnailBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -3438,9 +3392,7 @@ class GetThumbnailBatchResultEntry(bb.Union):
 
         :rtype: GetThumbnailBatchResultData
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_failure(self):
         """
@@ -3450,12 +3402,10 @@ class GetThumbnailBatchResultEntry(bb.Union):
 
         :rtype: ThumbnailError
         """
-        if not self.is_failure():
-            raise AttributeError("tag 'failure' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetThumbnailBatchResultEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetThumbnailBatchResultEntry_validator = bv.Union(GetThumbnailBatchResultEntry)
 
@@ -3491,7 +3441,7 @@ class GpsCoordinates(bb.Struct):
     longitude = bb.Attribute("longitude")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GpsCoordinates, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GpsCoordinates_validator = bv.Struct(GpsCoordinates)
 
@@ -3527,7 +3477,7 @@ class HighlightSpan(bb.Struct):
     is_highlighted = bb.Attribute("is_highlighted")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(HighlightSpan, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 HighlightSpan_validator = bv.Struct(HighlightSpan)
 
@@ -3563,7 +3513,7 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'html'
+        pass
 
     def is_markdown(self):
         """
@@ -3571,7 +3521,7 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'markdown'
+        pass
 
     def is_plain_text(self):
         """
@@ -3579,7 +3529,7 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'plain_text'
+        pass
 
     def is_other(self):
         """
@@ -3587,10 +3537,10 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ImportFormat, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ImportFormat_validator = bv.Union(ImportFormat)
 
@@ -3714,7 +3664,7 @@ class ListFolderArg(bb.Struct):
     include_non_downloadable_files = bb.Attribute("include_non_downloadable_files")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderArg_validator = bv.Struct(ListFolderArg)
 
@@ -3741,7 +3691,7 @@ class ListFolderContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderContinueArg_validator = bv.Struct(ListFolderContinueArg)
 
@@ -3772,7 +3722,7 @@ class ListFolderContinueError(bb.Union):
         :param LookupError val:
         :rtype: ListFolderContinueError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -3780,7 +3730,7 @@ class ListFolderContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_reset(self):
         """
@@ -3788,7 +3738,7 @@ class ListFolderContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -3796,7 +3746,7 @@ class ListFolderContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -3804,12 +3754,10 @@ class ListFolderContinueError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderContinueError_validator = bv.Union(ListFolderContinueError)
 
@@ -3833,7 +3781,7 @@ class ListFolderError(bb.Union):
         :param LookupError val:
         :rtype: ListFolderError
         """
-        return cls('path', val)
+        pass
 
     @classmethod
     def template_error(cls, val):
@@ -3844,7 +3792,7 @@ class ListFolderError(bb.Union):
         :param file_properties.TemplateError val:
         :rtype: ListFolderError
         """
-        return cls('template_error', val)
+        pass
 
     def is_path(self):
         """
@@ -3852,7 +3800,7 @@ class ListFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_template_error(self):
         """
@@ -3860,7 +3808,7 @@ class ListFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'template_error'
+        pass
 
     def is_other(self):
         """
@@ -3868,7 +3816,7 @@ class ListFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -3876,9 +3824,7 @@ class ListFolderError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def get_template_error(self):
         """
@@ -3886,12 +3832,10 @@ class ListFolderError(bb.Union):
 
         :rtype: file_properties.TemplateError
         """
-        if not self.is_template_error():
-            raise AttributeError("tag 'template_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderError_validator = bv.Union(ListFolderError)
 
@@ -3918,7 +3862,7 @@ class ListFolderGetLatestCursorResult(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderGetLatestCursorResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderGetLatestCursorResult_validator = bv.Struct(ListFolderGetLatestCursorResult)
 
@@ -3960,7 +3904,7 @@ class ListFolderLongpollArg(bb.Struct):
     timeout = bb.Attribute("timeout")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderLongpollArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderLongpollArg_validator = bv.Struct(ListFolderLongpollArg)
 
@@ -3988,7 +3932,7 @@ class ListFolderLongpollError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -3996,10 +3940,10 @@ class ListFolderLongpollError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderLongpollError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderLongpollError_validator = bv.Union(ListFolderLongpollError)
 
@@ -4038,7 +3982,7 @@ class ListFolderLongpollResult(bb.Struct):
     backoff = bb.Attribute("backoff", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderLongpollResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderLongpollResult_validator = bv.Struct(ListFolderLongpollResult)
 
@@ -4087,7 +4031,7 @@ class ListFolderResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFolderResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFolderResult_validator = bv.Struct(ListFolderResult)
 
@@ -4133,7 +4077,7 @@ class ListRevisionsArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListRevisionsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListRevisionsArg_validator = bv.Struct(ListRevisionsArg)
 
@@ -4157,7 +4101,7 @@ class ListRevisionsError(bb.Union):
         :param LookupError val:
         :rtype: ListRevisionsError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -4165,7 +4109,7 @@ class ListRevisionsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_other(self):
         """
@@ -4173,7 +4117,7 @@ class ListRevisionsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -4181,12 +4125,10 @@ class ListRevisionsError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListRevisionsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListRevisionsError_validator = bv.Union(ListRevisionsError)
 
@@ -4217,7 +4159,7 @@ class ListRevisionsMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_id(self):
         """
@@ -4225,7 +4167,7 @@ class ListRevisionsMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'id'
+        pass
 
     def is_other(self):
         """
@@ -4233,10 +4175,10 @@ class ListRevisionsMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListRevisionsMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListRevisionsMode_validator = bv.Union(ListRevisionsMode)
 
@@ -4282,7 +4224,7 @@ class ListRevisionsResult(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListRevisionsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListRevisionsResult_validator = bv.Struct(ListRevisionsResult)
 
@@ -4307,7 +4249,7 @@ class LockConflictError(bb.Struct):
     lock = bb.Attribute("lock", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockConflictError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockConflictError_validator = bv.Struct(LockConflictError)
 
@@ -4332,7 +4274,7 @@ class LockFileArg(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockFileArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockFileArg_validator = bv.Struct(LockFileArg)
 
@@ -4359,7 +4301,7 @@ class LockFileBatchArg(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockFileBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockFileBatchArg_validator = bv.Struct(LockFileBatchArg)
 
@@ -4387,7 +4329,7 @@ class LockFileBatchResult(FileOpsResult):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockFileBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockFileBatchResult_validator = bv.Struct(LockFileBatchResult)
 
@@ -4441,7 +4383,7 @@ class LockFileError(bb.Union):
         :param LookupError val:
         :rtype: LockFileError
         """
-        return cls('path_lookup', val)
+        pass
 
     @classmethod
     def lock_conflict(cls, val):
@@ -4452,7 +4394,7 @@ class LockFileError(bb.Union):
         :param LockConflictError val:
         :rtype: LockFileError
         """
-        return cls('lock_conflict', val)
+        pass
 
     def is_path_lookup(self):
         """
@@ -4460,7 +4402,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path_lookup'
+        pass
 
     def is_too_many_write_operations(self):
         """
@@ -4468,7 +4410,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_too_many_files(self):
         """
@@ -4476,7 +4418,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_no_write_permission(self):
         """
@@ -4484,7 +4426,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_write_permission'
+        pass
 
     def is_cannot_be_locked(self):
         """
@@ -4492,7 +4434,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_be_locked'
+        pass
 
     def is_file_not_shared(self):
         """
@@ -4500,7 +4442,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_not_shared'
+        pass
 
     def is_lock_conflict(self):
         """
@@ -4508,7 +4450,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'lock_conflict'
+        pass
 
     def is_internal_error(self):
         """
@@ -4516,7 +4458,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'internal_error'
+        pass
 
     def is_other(self):
         """
@@ -4524,7 +4466,7 @@ class LockFileError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path_lookup(self):
         """
@@ -4534,9 +4476,7 @@ class LockFileError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path_lookup():
-            raise AttributeError("tag 'path_lookup' not set")
-        return self._value
+        pass
 
     def get_lock_conflict(self):
         """
@@ -4546,12 +4486,10 @@ class LockFileError(bb.Union):
 
         :rtype: LockConflictError
         """
-        if not self.is_lock_conflict():
-            raise AttributeError("tag 'lock_conflict' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockFileError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockFileError_validator = bv.Union(LockFileError)
 
@@ -4585,7 +4523,7 @@ class LockFileResult(bb.Struct):
     lock = bb.Attribute("lock", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockFileResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockFileResult_validator = bv.Struct(LockFileResult)
 
@@ -4607,7 +4545,7 @@ class LockFileResultEntry(bb.Union):
         :param LockFileResult val:
         :rtype: LockFileResultEntry
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def failure(cls, val):
@@ -4618,7 +4556,7 @@ class LockFileResultEntry(bb.Union):
         :param LockFileError val:
         :rtype: LockFileResultEntry
         """
-        return cls('failure', val)
+        pass
 
     def is_success(self):
         """
@@ -4626,7 +4564,7 @@ class LockFileResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_failure(self):
         """
@@ -4634,7 +4572,7 @@ class LockFileResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failure'
+        pass
 
     def get_success(self):
         """
@@ -4642,9 +4580,7 @@ class LockFileResultEntry(bb.Union):
 
         :rtype: LockFileResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_failure(self):
         """
@@ -4652,12 +4588,10 @@ class LockFileResultEntry(bb.Union):
 
         :rtype: LockFileError
         """
-        if not self.is_failure():
-            raise AttributeError("tag 'failure' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LockFileResultEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LockFileResultEntry_validator = bv.Union(LockFileResultEntry)
 
@@ -4710,7 +4644,7 @@ class LookupError(bb.Union):
         :param Optional[str] val:
         :rtype: LookupError
         """
-        return cls('malformed_path', val)
+        pass
 
     def is_malformed_path(self):
         """
@@ -4718,7 +4652,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'malformed_path'
+        pass
 
     def is_not_found(self):
         """
@@ -4726,7 +4660,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_not_file(self):
         """
@@ -4734,7 +4668,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_file'
+        pass
 
     def is_not_folder(self):
         """
@@ -4742,7 +4676,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_folder'
+        pass
 
     def is_restricted_content(self):
         """
@@ -4750,7 +4684,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'restricted_content'
+        pass
 
     def is_unsupported_content_type(self):
         """
@@ -4758,7 +4692,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_content_type'
+        pass
 
     def is_locked(self):
         """
@@ -4766,7 +4700,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'locked'
+        pass
 
     def is_other(self):
         """
@@ -4774,7 +4708,7 @@ class LookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_malformed_path(self):
         """
@@ -4787,12 +4721,10 @@ class LookupError(bb.Union):
 
         :rtype: Optional[str]
         """
-        if not self.is_malformed_path():
-            raise AttributeError("tag 'malformed_path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LookupError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LookupError_validator = bv.Union(LookupError)
 
@@ -4820,7 +4752,7 @@ class MediaInfo(bb.Union):
         :param MediaMetadata val:
         :rtype: MediaInfo
         """
-        return cls('metadata', val)
+        pass
 
     def is_pending(self):
         """
@@ -4828,7 +4760,7 @@ class MediaInfo(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'pending'
+        pass
 
     def is_metadata(self):
         """
@@ -4836,7 +4768,7 @@ class MediaInfo(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'metadata'
+        pass
 
     def get_metadata(self):
         """
@@ -4846,12 +4778,10 @@ class MediaInfo(bb.Union):
 
         :rtype: MediaMetadata
         """
-        if not self.is_metadata():
-            raise AttributeError("tag 'metadata' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MediaInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MediaInfo_validator = bv.Union(MediaInfo)
 
@@ -4897,7 +4827,7 @@ class MediaMetadata(bb.Struct):
     time_taken = bb.Attribute("time_taken", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MediaMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MediaMetadata_validator = bv.StructTree(MediaMetadata)
 
@@ -4923,7 +4853,7 @@ class MetadataV2(bb.Union):
         :param Metadata val:
         :rtype: MetadataV2
         """
-        return cls('metadata', val)
+        pass
 
     def is_metadata(self):
         """
@@ -4931,7 +4861,7 @@ class MetadataV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'metadata'
+        pass
 
     def is_other(self):
         """
@@ -4939,7 +4869,7 @@ class MetadataV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_metadata(self):
         """
@@ -4947,12 +4877,10 @@ class MetadataV2(bb.Union):
 
         :rtype: Metadata
         """
-        if not self.is_metadata():
-            raise AttributeError("tag 'metadata' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MetadataV2, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MetadataV2_validator = bv.Union(MetadataV2)
 
@@ -5009,7 +4937,7 @@ class MinimalFileLinkMetadata(bb.Struct):
     rev = bb.Attribute("rev")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MinimalFileLinkMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MinimalFileLinkMetadata_validator = bv.Struct(MinimalFileLinkMetadata)
 
@@ -5046,7 +4974,7 @@ class RelocationBatchArgBase(bb.Struct):
     autorename = bb.Attribute("autorename")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchArgBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchArgBase_validator = bv.Struct(RelocationBatchArgBase)
 
@@ -5077,7 +5005,7 @@ class MoveBatchArg(RelocationBatchArgBase):
     allow_ownership_transfer = bb.Attribute("allow_ownership_transfer")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MoveBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MoveBatchArg_validator = bv.Struct(MoveBatchArg)
 
@@ -5103,7 +5031,7 @@ class MoveIntoFamilyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_shared_folder'
+        pass
 
     def is_other(self):
         """
@@ -5111,10 +5039,10 @@ class MoveIntoFamilyError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MoveIntoFamilyError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MoveIntoFamilyError_validator = bv.Union(MoveIntoFamilyError)
 
@@ -5140,7 +5068,7 @@ class MoveIntoVaultError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'is_shared_folder'
+        pass
 
     def is_other(self):
         """
@@ -5148,10 +5076,10 @@ class MoveIntoVaultError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MoveIntoVaultError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MoveIntoVaultError_validator = bv.Union(MoveIntoVaultError)
 
@@ -5190,7 +5118,7 @@ class PaperContentError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_permissions'
+        pass
 
     def is_content_malformed(self):
         """
@@ -5198,7 +5126,7 @@ class PaperContentError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'content_malformed'
+        pass
 
     def is_doc_length_exceeded(self):
         """
@@ -5206,7 +5134,7 @@ class PaperContentError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'doc_length_exceeded'
+        pass
 
     def is_image_size_exceeded(self):
         """
@@ -5214,7 +5142,7 @@ class PaperContentError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'image_size_exceeded'
+        pass
 
     def is_other(self):
         """
@@ -5222,10 +5150,10 @@ class PaperContentError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperContentError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperContentError_validator = bv.Union(PaperContentError)
 
@@ -5261,7 +5189,7 @@ class PaperCreateArg(bb.Struct):
     import_format = bb.Attribute("import_format", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperCreateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperCreateArg_validator = bv.Struct(PaperCreateArg)
 
@@ -5296,7 +5224,7 @@ class PaperCreateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_path'
+        pass
 
     def is_email_unverified(self):
         """
@@ -5304,7 +5232,7 @@ class PaperCreateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'email_unverified'
+        pass
 
     def is_invalid_file_extension(self):
         """
@@ -5312,7 +5240,7 @@ class PaperCreateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_file_extension'
+        pass
 
     def is_paper_disabled(self):
         """
@@ -5320,10 +5248,10 @@ class PaperCreateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'paper_disabled'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperCreateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperCreateError_validator = bv.Union(PaperCreateError)
 
@@ -5377,7 +5305,7 @@ class PaperCreateResult(bb.Struct):
     paper_revision = bb.Attribute("paper_revision")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperCreateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperCreateResult_validator = bv.Struct(PaperCreateResult)
 
@@ -5416,7 +5344,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'update'
+        pass
 
     def is_overwrite(self):
         """
@@ -5424,7 +5352,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'overwrite'
+        pass
 
     def is_prepend(self):
         """
@@ -5432,7 +5360,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'prepend'
+        pass
 
     def is_append(self):
         """
@@ -5440,7 +5368,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'append'
+        pass
 
     def is_other(self):
         """
@@ -5448,10 +5376,10 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocUpdatePolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocUpdatePolicy_validator = bv.Union(PaperDocUpdatePolicy)
 
@@ -5507,7 +5435,7 @@ class PaperUpdateArg(bb.Struct):
     paper_revision = bb.Attribute("paper_revision", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperUpdateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperUpdateArg_validator = bv.Struct(PaperUpdateArg)
 
@@ -5541,7 +5469,7 @@ class PaperUpdateError(PaperContentError):
         :param LookupError val:
         :rtype: PaperUpdateError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -5549,7 +5477,7 @@ class PaperUpdateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_revision_mismatch(self):
         """
@@ -5557,7 +5485,7 @@ class PaperUpdateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'revision_mismatch'
+        pass
 
     def is_doc_archived(self):
         """
@@ -5565,7 +5493,7 @@ class PaperUpdateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_archived'
+        pass
 
     def is_doc_deleted(self):
         """
@@ -5573,7 +5501,7 @@ class PaperUpdateError(PaperContentError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_deleted'
+        pass
 
     def get_path(self):
         """
@@ -5581,12 +5509,10 @@ class PaperUpdateError(PaperContentError):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperUpdateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperUpdateError_validator = bv.Union(PaperUpdateError)
 
@@ -5611,7 +5537,7 @@ class PaperUpdateResult(bb.Struct):
     paper_revision = bb.Attribute("paper_revision")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperUpdateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperUpdateResult_validator = bv.Struct(PaperUpdateResult)
 
@@ -5635,7 +5561,7 @@ class PathOrLink(bb.Union):
         :param str val:
         :rtype: PathOrLink
         """
-        return cls('path', val)
+        pass
 
     @classmethod
     def link(cls, val):
@@ -5646,7 +5572,7 @@ class PathOrLink(bb.Union):
         :param SharedLinkFileInfo val:
         :rtype: PathOrLink
         """
-        return cls('link', val)
+        pass
 
     def is_path(self):
         """
@@ -5654,7 +5580,7 @@ class PathOrLink(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_link(self):
         """
@@ -5662,7 +5588,7 @@ class PathOrLink(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'link'
+        pass
 
     def is_other(self):
         """
@@ -5670,7 +5596,7 @@ class PathOrLink(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -5678,9 +5604,7 @@ class PathOrLink(bb.Union):
 
         :rtype: str
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def get_link(self):
         """
@@ -5688,12 +5612,10 @@ class PathOrLink(bb.Union):
 
         :rtype: SharedLinkFileInfo
         """
-        if not self.is_link():
-            raise AttributeError("tag 'link' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PathOrLink, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PathOrLink_validator = bv.Union(PathOrLink)
 
@@ -5727,7 +5649,7 @@ class PathToTags(bb.Struct):
     tags = bb.Attribute("tags")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PathToTags, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PathToTags_validator = bv.Struct(PathToTags)
 
@@ -5750,7 +5672,7 @@ class PhotoMetadata(MediaMetadata):
                                             time_taken)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PhotoMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PhotoMetadata_validator = bv.Struct(PhotoMetadata)
 
@@ -5784,7 +5706,7 @@ class PreviewArg(bb.Struct):
     rev = bb.Attribute("rev", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PreviewArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PreviewArg_validator = bv.Struct(PreviewArg)
 
@@ -5821,7 +5743,7 @@ class PreviewError(bb.Union):
         :param LookupError val:
         :rtype: PreviewError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -5829,7 +5751,7 @@ class PreviewError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_in_progress(self):
         """
@@ -5837,7 +5759,7 @@ class PreviewError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'in_progress'
+        pass
 
     def is_unsupported_extension(self):
         """
@@ -5845,7 +5767,7 @@ class PreviewError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_extension'
+        pass
 
     def is_unsupported_content(self):
         """
@@ -5853,7 +5775,7 @@ class PreviewError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_content'
+        pass
 
     def get_path(self):
         """
@@ -5863,12 +5785,10 @@ class PreviewError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PreviewError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PreviewError_validator = bv.Union(PreviewError)
 
@@ -5906,7 +5826,7 @@ class PreviewResult(bb.Struct):
     link_metadata = bb.Attribute("link_metadata", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PreviewResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PreviewResult_validator = bv.Struct(PreviewResult)
 
@@ -5942,7 +5862,7 @@ class RelocationPath(bb.Struct):
     to_path = bb.Attribute("to_path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationPath, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationPath_validator = bv.Struct(RelocationPath)
 
@@ -5992,7 +5912,7 @@ class RelocationArg(RelocationPath):
     allow_ownership_transfer = bb.Attribute("allow_ownership_transfer")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationArg_validator = bv.Struct(RelocationArg)
 
@@ -6032,7 +5952,7 @@ class RelocationBatchArg(RelocationBatchArgBase):
     allow_ownership_transfer = bb.Attribute("allow_ownership_transfer")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchArg_validator = bv.Struct(RelocationBatchArg)
 
@@ -6102,7 +6022,7 @@ class RelocationError(bb.Union):
         :param LookupError val:
         :rtype: RelocationError
         """
-        return cls('from_lookup', val)
+        pass
 
     @classmethod
     def from_write(cls, val):
@@ -6113,7 +6033,7 @@ class RelocationError(bb.Union):
         :param WriteError val:
         :rtype: RelocationError
         """
-        return cls('from_write', val)
+        pass
 
     @classmethod
     def to(cls, val):
@@ -6124,7 +6044,7 @@ class RelocationError(bb.Union):
         :param WriteError val:
         :rtype: RelocationError
         """
-        return cls('to', val)
+        pass
 
     @classmethod
     def cant_move_into_vault(cls, val):
@@ -6135,7 +6055,7 @@ class RelocationError(bb.Union):
         :param MoveIntoVaultError val:
         :rtype: RelocationError
         """
-        return cls('cant_move_into_vault', val)
+        pass
 
     @classmethod
     def cant_move_into_family(cls, val):
@@ -6146,7 +6066,7 @@ class RelocationError(bb.Union):
         :param MoveIntoFamilyError val:
         :rtype: RelocationError
         """
-        return cls('cant_move_into_family', val)
+        pass
 
     def is_from_lookup(self):
         """
@@ -6154,7 +6074,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'from_lookup'
+        pass
 
     def is_from_write(self):
         """
@@ -6162,7 +6082,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'from_write'
+        pass
 
     def is_to(self):
         """
@@ -6170,7 +6090,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'to'
+        pass
 
     def is_cant_copy_shared_folder(self):
         """
@@ -6178,7 +6098,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_copy_shared_folder'
+        pass
 
     def is_cant_nest_shared_folder(self):
         """
@@ -6186,7 +6106,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_nest_shared_folder'
+        pass
 
     def is_cant_move_folder_into_itself(self):
         """
@@ -6194,7 +6114,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_move_folder_into_itself'
+        pass
 
     def is_too_many_files(self):
         """
@@ -6202,7 +6122,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_duplicated_or_nested_paths(self):
         """
@@ -6210,7 +6130,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'duplicated_or_nested_paths'
+        pass
 
     def is_cant_transfer_ownership(self):
         """
@@ -6218,7 +6138,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_transfer_ownership'
+        pass
 
     def is_insufficient_quota(self):
         """
@@ -6226,7 +6146,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_quota'
+        pass
 
     def is_internal_error(self):
         """
@@ -6234,7 +6154,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'internal_error'
+        pass
 
     def is_cant_move_shared_folder(self):
         """
@@ -6242,7 +6162,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_move_shared_folder'
+        pass
 
     def is_cant_move_into_vault(self):
         """
@@ -6250,7 +6170,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_move_into_vault'
+        pass
 
     def is_cant_move_into_family(self):
         """
@@ -6258,7 +6178,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cant_move_into_family'
+        pass
 
     def is_other(self):
         """
@@ -6266,7 +6186,7 @@ class RelocationError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_from_lookup(self):
         """
@@ -6274,9 +6194,7 @@ class RelocationError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_from_lookup():
-            raise AttributeError("tag 'from_lookup' not set")
-        return self._value
+        pass
 
     def get_from_write(self):
         """
@@ -6284,9 +6202,7 @@ class RelocationError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_from_write():
-            raise AttributeError("tag 'from_write' not set")
-        return self._value
+        pass
 
     def get_to(self):
         """
@@ -6294,9 +6210,7 @@ class RelocationError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_to():
-            raise AttributeError("tag 'to' not set")
-        return self._value
+        pass
 
     def get_cant_move_into_vault(self):
         """
@@ -6307,9 +6221,7 @@ class RelocationError(bb.Union):
 
         :rtype: MoveIntoVaultError
         """
-        if not self.is_cant_move_into_vault():
-            raise AttributeError("tag 'cant_move_into_vault' not set")
-        return self._value
+        pass
 
     def get_cant_move_into_family(self):
         """
@@ -6320,12 +6232,10 @@ class RelocationError(bb.Union):
 
         :rtype: MoveIntoFamilyError
         """
-        if not self.is_cant_move_into_family():
-            raise AttributeError("tag 'cant_move_into_family' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationError_validator = bv.Union(RelocationError)
 
@@ -6348,10 +6258,10 @@ class RelocationBatchError(RelocationError):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchError_validator = bv.Union(RelocationBatchError)
 
@@ -6388,7 +6298,7 @@ class RelocationBatchErrorEntry(bb.Union):
         :param RelocationError val:
         :rtype: RelocationBatchErrorEntry
         """
-        return cls('relocation_error', val)
+        pass
 
     def is_relocation_error(self):
         """
@@ -6396,7 +6306,7 @@ class RelocationBatchErrorEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'relocation_error'
+        pass
 
     def is_internal_error(self):
         """
@@ -6404,7 +6314,7 @@ class RelocationBatchErrorEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'internal_error'
+        pass
 
     def is_too_many_write_operations(self):
         """
@@ -6412,7 +6322,7 @@ class RelocationBatchErrorEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_other(self):
         """
@@ -6420,7 +6330,7 @@ class RelocationBatchErrorEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_relocation_error(self):
         """
@@ -6430,12 +6340,10 @@ class RelocationBatchErrorEntry(bb.Union):
 
         :rtype: RelocationError
         """
-        if not self.is_relocation_error():
-            raise AttributeError("tag 'relocation_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchErrorEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchErrorEntry_validator = bv.Union(RelocationBatchErrorEntry)
 
@@ -6460,7 +6368,7 @@ class RelocationBatchJobStatus(async_.PollResultBase):
         :param RelocationBatchResult val:
         :rtype: RelocationBatchJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -6471,7 +6379,7 @@ class RelocationBatchJobStatus(async_.PollResultBase):
         :param RelocationBatchError val:
         :rtype: RelocationBatchJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -6479,7 +6387,7 @@ class RelocationBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -6487,7 +6395,7 @@ class RelocationBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_complete(self):
         """
@@ -6497,9 +6405,7 @@ class RelocationBatchJobStatus(async_.PollResultBase):
 
         :rtype: RelocationBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -6509,12 +6415,10 @@ class RelocationBatchJobStatus(async_.PollResultBase):
 
         :rtype: RelocationBatchError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchJobStatus_validator = bv.Union(RelocationBatchJobStatus)
 
@@ -6542,7 +6446,7 @@ class RelocationBatchLaunch(async_.LaunchResultBase):
         :param RelocationBatchResult val:
         :rtype: RelocationBatchLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -6550,7 +6454,7 @@ class RelocationBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_other(self):
         """
@@ -6558,7 +6462,7 @@ class RelocationBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -6566,12 +6470,10 @@ class RelocationBatchLaunch(async_.LaunchResultBase):
 
         :rtype: RelocationBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchLaunch_validator = bv.Union(RelocationBatchLaunch)
 
@@ -6594,7 +6496,7 @@ class RelocationBatchResult(FileOpsResult):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchResult_validator = bv.Struct(RelocationBatchResult)
 
@@ -6620,7 +6522,7 @@ class RelocationBatchResultData(bb.Struct):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchResultData, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchResultData_validator = bv.Struct(RelocationBatchResultData)
 
@@ -6644,7 +6546,7 @@ class RelocationBatchResultEntry(bb.Union):
         :param Metadata val:
         :rtype: RelocationBatchResultEntry
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def failure(cls, val):
@@ -6655,7 +6557,7 @@ class RelocationBatchResultEntry(bb.Union):
         :param RelocationBatchErrorEntry val:
         :rtype: RelocationBatchResultEntry
         """
-        return cls('failure', val)
+        pass
 
     def is_success(self):
         """
@@ -6663,7 +6565,7 @@ class RelocationBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_failure(self):
         """
@@ -6671,7 +6573,7 @@ class RelocationBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failure'
+        pass
 
     def is_other(self):
         """
@@ -6679,7 +6581,7 @@ class RelocationBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -6687,9 +6589,7 @@ class RelocationBatchResultEntry(bb.Union):
 
         :rtype: Metadata
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_failure(self):
         """
@@ -6697,12 +6597,10 @@ class RelocationBatchResultEntry(bb.Union):
 
         :rtype: RelocationBatchErrorEntry
         """
-        if not self.is_failure():
-            raise AttributeError("tag 'failure' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchResultEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchResultEntry_validator = bv.Union(RelocationBatchResultEntry)
 
@@ -6730,7 +6628,7 @@ class RelocationBatchV2JobStatus(async_.PollResultBase):
         :param RelocationBatchV2Result val:
         :rtype: RelocationBatchV2JobStatus
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -6738,7 +6636,7 @@ class RelocationBatchV2JobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -6748,12 +6646,10 @@ class RelocationBatchV2JobStatus(async_.PollResultBase):
 
         :rtype: RelocationBatchV2Result
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchV2JobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchV2JobStatus_validator = bv.Union(RelocationBatchV2JobStatus)
 
@@ -6777,7 +6673,7 @@ class RelocationBatchV2Launch(async_.LaunchResultBase):
         :param RelocationBatchV2Result val:
         :rtype: RelocationBatchV2Launch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -6785,7 +6681,7 @@ class RelocationBatchV2Launch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -6793,12 +6689,10 @@ class RelocationBatchV2Launch(async_.LaunchResultBase):
 
         :rtype: RelocationBatchV2Result
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchV2Launch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchV2Launch_validator = bv.Union(RelocationBatchV2Launch)
 
@@ -6826,7 +6720,7 @@ class RelocationBatchV2Result(FileOpsResult):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationBatchV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationBatchV2Result_validator = bv.Struct(RelocationBatchV2Result)
 
@@ -6852,7 +6746,7 @@ class RelocationResult(FileOpsResult):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RelocationResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RelocationResult_validator = bv.Struct(RelocationResult)
 
@@ -6887,7 +6781,7 @@ class RemoveTagArg(bb.Struct):
     tag_text = bb.Attribute("tag_text")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveTagArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveTagArg_validator = bv.Struct(RemoveTagArg)
 
@@ -6910,10 +6804,10 @@ class RemoveTagError(BaseTagError):
 
         :rtype: bool
         """
-        return self._tag == 'tag_not_present'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveTagError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveTagError_validator = bv.Union(RemoveTagError)
 
@@ -6947,7 +6841,7 @@ class RestoreArg(bb.Struct):
     rev = bb.Attribute("rev")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RestoreArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RestoreArg_validator = bv.Struct(RestoreArg)
 
@@ -6984,7 +6878,7 @@ class RestoreError(bb.Union):
         :param LookupError val:
         :rtype: RestoreError
         """
-        return cls('path_lookup', val)
+        pass
 
     @classmethod
     def path_write(cls, val):
@@ -6995,7 +6889,7 @@ class RestoreError(bb.Union):
         :param WriteError val:
         :rtype: RestoreError
         """
-        return cls('path_write', val)
+        pass
 
     def is_path_lookup(self):
         """
@@ -7003,7 +6897,7 @@ class RestoreError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path_lookup'
+        pass
 
     def is_path_write(self):
         """
@@ -7011,7 +6905,7 @@ class RestoreError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path_write'
+        pass
 
     def is_invalid_revision(self):
         """
@@ -7019,7 +6913,7 @@ class RestoreError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_revision'
+        pass
 
     def is_in_progress(self):
         """
@@ -7027,7 +6921,7 @@ class RestoreError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'in_progress'
+        pass
 
     def is_other(self):
         """
@@ -7035,7 +6929,7 @@ class RestoreError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path_lookup(self):
         """
@@ -7045,9 +6939,7 @@ class RestoreError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path_lookup():
-            raise AttributeError("tag 'path_lookup' not set")
-        return self._value
+        pass
 
     def get_path_write(self):
         """
@@ -7057,12 +6949,10 @@ class RestoreError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path_write():
-            raise AttributeError("tag 'path_write' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RestoreError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RestoreError_validator = bv.Union(RestoreError)
 
@@ -7098,7 +6988,7 @@ class SaveCopyReferenceArg(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveCopyReferenceArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveCopyReferenceArg_validator = bv.Struct(SaveCopyReferenceArg)
 
@@ -7141,7 +7031,7 @@ class SaveCopyReferenceError(bb.Union):
         :param WriteError val:
         :rtype: SaveCopyReferenceError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -7149,7 +7039,7 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_invalid_copy_reference(self):
         """
@@ -7157,7 +7047,7 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_copy_reference'
+        pass
 
     def is_no_permission(self):
         """
@@ -7165,7 +7055,7 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_not_found(self):
         """
@@ -7173,7 +7063,7 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_too_many_files(self):
         """
@@ -7181,7 +7071,7 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_files'
+        pass
 
     def is_other(self):
         """
@@ -7189,7 +7079,7 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -7197,12 +7087,10 @@ class SaveCopyReferenceError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveCopyReferenceError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveCopyReferenceError_validator = bv.Union(SaveCopyReferenceError)
 
@@ -7228,7 +7116,7 @@ class SaveCopyReferenceResult(bb.Struct):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveCopyReferenceResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveCopyReferenceResult_validator = bv.Struct(SaveCopyReferenceResult)
 
@@ -7263,7 +7151,7 @@ class SaveUrlArg(bb.Struct):
     url = bb.Attribute("url")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveUrlArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveUrlArg_validator = bv.Struct(SaveUrlArg)
 
@@ -7300,7 +7188,7 @@ class SaveUrlError(bb.Union):
         :param WriteError val:
         :rtype: SaveUrlError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -7308,7 +7196,7 @@ class SaveUrlError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_download_failed(self):
         """
@@ -7316,7 +7204,7 @@ class SaveUrlError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'download_failed'
+        pass
 
     def is_invalid_url(self):
         """
@@ -7324,7 +7212,7 @@ class SaveUrlError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_url'
+        pass
 
     def is_not_found(self):
         """
@@ -7332,7 +7220,7 @@ class SaveUrlError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_other(self):
         """
@@ -7340,7 +7228,7 @@ class SaveUrlError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -7348,12 +7236,10 @@ class SaveUrlError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveUrlError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveUrlError_validator = bv.Union(SaveUrlError)
 
@@ -7376,7 +7262,7 @@ class SaveUrlJobStatus(async_.PollResultBase):
         :param FileMetadata val:
         :rtype: SaveUrlJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -7387,7 +7273,7 @@ class SaveUrlJobStatus(async_.PollResultBase):
         :param SaveUrlError val:
         :rtype: SaveUrlJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -7395,7 +7281,7 @@ class SaveUrlJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -7403,7 +7289,7 @@ class SaveUrlJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_complete(self):
         """
@@ -7413,9 +7299,7 @@ class SaveUrlJobStatus(async_.PollResultBase):
 
         :rtype: FileMetadata
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -7423,12 +7307,10 @@ class SaveUrlJobStatus(async_.PollResultBase):
 
         :rtype: SaveUrlError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveUrlJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveUrlJobStatus_validator = bv.Union(SaveUrlJobStatus)
 
@@ -7451,7 +7333,7 @@ class SaveUrlResult(async_.LaunchResultBase):
         :param FileMetadata val:
         :rtype: SaveUrlResult
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -7459,7 +7341,7 @@ class SaveUrlResult(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -7469,12 +7351,10 @@ class SaveUrlResult(async_.LaunchResultBase):
 
         :rtype: FileMetadata
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SaveUrlResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SaveUrlResult_validator = bv.Union(SaveUrlResult)
 
@@ -7544,7 +7424,7 @@ class SearchArg(bb.Struct):
     mode = bb.Attribute("mode", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchArg_validator = bv.Struct(SearchArg)
 
@@ -7573,7 +7453,7 @@ class SearchError(bb.Union):
         :param LookupError val:
         :rtype: SearchError
         """
-        return cls('path', val)
+        pass
 
     @classmethod
     def invalid_argument(cls, val):
@@ -7584,7 +7464,7 @@ class SearchError(bb.Union):
         :param str val:
         :rtype: SearchError
         """
-        return cls('invalid_argument', val)
+        pass
 
     def is_path(self):
         """
@@ -7592,7 +7472,7 @@ class SearchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_invalid_argument(self):
         """
@@ -7600,7 +7480,7 @@ class SearchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_argument'
+        pass
 
     def is_internal_error(self):
         """
@@ -7608,7 +7488,7 @@ class SearchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'internal_error'
+        pass
 
     def is_other(self):
         """
@@ -7616,7 +7496,7 @@ class SearchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -7624,9 +7504,7 @@ class SearchError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def get_invalid_argument(self):
         """
@@ -7634,12 +7512,10 @@ class SearchError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_invalid_argument():
-            raise AttributeError("tag 'invalid_argument' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchError_validator = bv.Union(SearchError)
 
@@ -7674,7 +7550,7 @@ class SearchMatch(bb.Struct):
     metadata = bb.Attribute("metadata", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchMatch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchMatch_validator = bv.Struct(SearchMatch)
 
@@ -7700,7 +7576,7 @@ class SearchMatchFieldOptions(bb.Struct):
     include_highlights = bb.Attribute("include_highlights")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchMatchFieldOptions, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchMatchFieldOptions_validator = bv.Struct(SearchMatchFieldOptions)
 
@@ -7734,7 +7610,7 @@ class SearchMatchType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'filename'
+        pass
 
     def is_content(self):
         """
@@ -7742,7 +7618,7 @@ class SearchMatchType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'content'
+        pass
 
     def is_both(self):
         """
@@ -7750,10 +7626,10 @@ class SearchMatchType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'both'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchMatchType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchMatchType_validator = bv.Union(SearchMatchType)
 
@@ -7793,7 +7669,7 @@ class SearchMatchTypeV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'filename'
+        pass
 
     def is_file_content(self):
         """
@@ -7801,7 +7677,7 @@ class SearchMatchTypeV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_content'
+        pass
 
     def is_filename_and_content(self):
         """
@@ -7809,7 +7685,7 @@ class SearchMatchTypeV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'filename_and_content'
+        pass
 
     def is_image_content(self):
         """
@@ -7817,7 +7693,7 @@ class SearchMatchTypeV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'image_content'
+        pass
 
     def is_other(self):
         """
@@ -7825,10 +7701,10 @@ class SearchMatchTypeV2(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchMatchTypeV2, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchMatchTypeV2_validator = bv.Union(SearchMatchTypeV2)
 
@@ -7873,7 +7749,7 @@ class SearchMatchV2(bb.Struct):
     highlight_spans = bb.Attribute("highlight_spans", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchMatchV2, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchMatchV2_validator = bv.Struct(SearchMatchV2)
 
@@ -7904,7 +7780,7 @@ class SearchMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'filename'
+        pass
 
     def is_filename_and_content(self):
         """
@@ -7912,7 +7788,7 @@ class SearchMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'filename_and_content'
+        pass
 
     def is_deleted_filename(self):
         """
@@ -7920,10 +7796,10 @@ class SearchMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'deleted_filename'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchMode_validator = bv.Union(SearchMode)
 
@@ -8019,7 +7895,7 @@ class SearchOptions(bb.Struct):
     account_id = bb.Attribute("account_id", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchOptions, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchOptions_validator = bv.Struct(SearchOptions)
 
@@ -8044,7 +7920,7 @@ class SearchOrderBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'relevance'
+        pass
 
     def is_last_modified_time(self):
         """
@@ -8052,7 +7928,7 @@ class SearchOrderBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'last_modified_time'
+        pass
 
     def is_other(self):
         """
@@ -8060,10 +7936,10 @@ class SearchOrderBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchOrderBy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchOrderBy_validator = bv.Union(SearchOrderBy)
 
@@ -8112,7 +7988,7 @@ class SearchResult(bb.Struct):
     start = bb.Attribute("start")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchResult_validator = bv.Struct(SearchResult)
 
@@ -8167,7 +8043,7 @@ class SearchV2Arg(bb.Struct):
     include_highlights = bb.Attribute("include_highlights", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchV2Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchV2Arg_validator = bv.Struct(SearchV2Arg)
 
@@ -8194,7 +8070,7 @@ class SearchV2ContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchV2ContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchV2ContinueArg_validator = bv.Struct(SearchV2ContinueArg)
 
@@ -8243,7 +8119,7 @@ class SearchV2Result(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SearchV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SearchV2Result_validator = bv.Struct(SearchV2Result)
 
@@ -8277,7 +8153,7 @@ class SharedLink(bb.Struct):
     password = bb.Attribute("password", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLink, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLink_validator = bv.Struct(SharedLink)
 
@@ -8326,7 +8202,7 @@ class SharedLinkFileInfo(bb.Struct):
     password = bb.Attribute("password", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkFileInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkFileInfo_validator = bv.Struct(SharedLinkFileInfo)
 
@@ -8371,7 +8247,7 @@ class SingleUserLock(bb.Struct):
     lock_holder_team_id = bb.Attribute("lock_holder_team_id", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SingleUserLock, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SingleUserLock_validator = bv.Struct(SingleUserLock)
 
@@ -8396,7 +8272,7 @@ class SymlinkInfo(bb.Struct):
     target = bb.Attribute("target")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SymlinkInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SymlinkInfo_validator = bv.Struct(SymlinkInfo)
 
@@ -8432,7 +8308,7 @@ class SyncSetting(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_not_synced(self):
         """
@@ -8440,7 +8316,7 @@ class SyncSetting(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_synced'
+        pass
 
     def is_not_synced_inactive(self):
         """
@@ -8448,7 +8324,7 @@ class SyncSetting(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_synced_inactive'
+        pass
 
     def is_other(self):
         """
@@ -8456,10 +8332,10 @@ class SyncSetting(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SyncSetting, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SyncSetting_validator = bv.Union(SyncSetting)
 
@@ -8490,7 +8366,7 @@ class SyncSettingArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_not_synced(self):
         """
@@ -8498,7 +8374,7 @@ class SyncSettingArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_synced'
+        pass
 
     def is_other(self):
         """
@@ -8506,10 +8382,10 @@ class SyncSettingArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SyncSettingArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SyncSettingArg_validator = bv.Union(SyncSettingArg)
 
@@ -8542,7 +8418,7 @@ class SyncSettingsError(bb.Union):
         :param LookupError val:
         :rtype: SyncSettingsError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -8550,7 +8426,7 @@ class SyncSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_unsupported_combination(self):
         """
@@ -8558,7 +8434,7 @@ class SyncSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_combination'
+        pass
 
     def is_unsupported_configuration(self):
         """
@@ -8566,7 +8442,7 @@ class SyncSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_configuration'
+        pass
 
     def is_other(self):
         """
@@ -8574,7 +8450,7 @@ class SyncSettingsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -8582,12 +8458,10 @@ class SyncSettingsError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SyncSettingsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SyncSettingsError_validator = bv.Union(SyncSettingsError)
 
@@ -8615,7 +8489,7 @@ class Tag(bb.Union):
         :param UserGeneratedTag val:
         :rtype: Tag
         """
-        return cls('user_generated_tag', val)
+        pass
 
     def is_user_generated_tag(self):
         """
@@ -8623,7 +8497,7 @@ class Tag(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_generated_tag'
+        pass
 
     def is_other(self):
         """
@@ -8631,7 +8505,7 @@ class Tag(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_user_generated_tag(self):
         """
@@ -8641,12 +8515,10 @@ class Tag(bb.Union):
 
         :rtype: UserGeneratedTag
         """
-        if not self.is_user_generated_tag():
-            raise AttributeError("tag 'user_generated_tag' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Tag, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Tag_validator = bv.Union(Tag)
 
@@ -8702,7 +8574,7 @@ class ThumbnailArg(bb.Struct):
     mode = bb.Attribute("mode", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailArg_validator = bv.Struct(ThumbnailArg)
 
@@ -8739,7 +8611,7 @@ class ThumbnailError(bb.Union):
         :param LookupError val:
         :rtype: ThumbnailError
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -8747,7 +8619,7 @@ class ThumbnailError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_unsupported_extension(self):
         """
@@ -8755,7 +8627,7 @@ class ThumbnailError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_extension'
+        pass
 
     def is_unsupported_image(self):
         """
@@ -8763,7 +8635,7 @@ class ThumbnailError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_image'
+        pass
 
     def is_conversion_error(self):
         """
@@ -8771,7 +8643,7 @@ class ThumbnailError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'conversion_error'
+        pass
 
     def get_path(self):
         """
@@ -8781,12 +8653,10 @@ class ThumbnailError(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailError_validator = bv.Union(ThumbnailError)
 
@@ -8809,7 +8679,7 @@ class ThumbnailFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'jpeg'
+        pass
 
     def is_png(self):
         """
@@ -8817,10 +8687,10 @@ class ThumbnailFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'png'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailFormat, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailFormat_validator = bv.Union(ThumbnailFormat)
 
@@ -8852,7 +8722,7 @@ class ThumbnailMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'strict'
+        pass
 
     def is_bestfit(self):
         """
@@ -8860,7 +8730,7 @@ class ThumbnailMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'bestfit'
+        pass
 
     def is_fitone_bestfit(self):
         """
@@ -8868,10 +8738,10 @@ class ThumbnailMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'fitone_bestfit'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailMode_validator = bv.Union(ThumbnailMode)
 
@@ -8918,7 +8788,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w32h32'
+        pass
 
     def is_w64h64(self):
         """
@@ -8926,7 +8796,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w64h64'
+        pass
 
     def is_w128h128(self):
         """
@@ -8934,7 +8804,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w128h128'
+        pass
 
     def is_w256h256(self):
         """
@@ -8942,7 +8812,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w256h256'
+        pass
 
     def is_w480h320(self):
         """
@@ -8950,7 +8820,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w480h320'
+        pass
 
     def is_w640h480(self):
         """
@@ -8958,7 +8828,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w640h480'
+        pass
 
     def is_w960h640(self):
         """
@@ -8966,7 +8836,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w960h640'
+        pass
 
     def is_w1024h768(self):
         """
@@ -8974,7 +8844,7 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w1024h768'
+        pass
 
     def is_w2048h1536(self):
         """
@@ -8982,10 +8852,10 @@ class ThumbnailSize(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'w2048h1536'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailSize, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailSize_validator = bv.Union(ThumbnailSize)
 
@@ -9042,7 +8912,7 @@ class ThumbnailV2Arg(bb.Struct):
     mode = bb.Attribute("mode", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailV2Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailV2Arg_validator = bv.Struct(ThumbnailV2Arg)
 
@@ -9088,7 +8958,7 @@ class ThumbnailV2Error(bb.Union):
         :param LookupError val:
         :rtype: ThumbnailV2Error
         """
-        return cls('path', val)
+        pass
 
     def is_path(self):
         """
@@ -9096,7 +8966,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_unsupported_extension(self):
         """
@@ -9104,7 +8974,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_extension'
+        pass
 
     def is_unsupported_image(self):
         """
@@ -9112,7 +8982,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unsupported_image'
+        pass
 
     def is_conversion_error(self):
         """
@@ -9120,7 +8990,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'conversion_error'
+        pass
 
     def is_access_denied(self):
         """
@@ -9128,7 +8998,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_denied'
+        pass
 
     def is_not_found(self):
         """
@@ -9136,7 +9006,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_other(self):
         """
@@ -9144,7 +9014,7 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -9154,12 +9024,10 @@ class ThumbnailV2Error(bb.Union):
 
         :rtype: LookupError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ThumbnailV2Error, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ThumbnailV2Error_validator = bv.Union(ThumbnailV2Error)
 
@@ -9184,7 +9052,7 @@ class UnlockFileArg(bb.Struct):
     path = bb.Attribute("path")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnlockFileArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnlockFileArg_validator = bv.Struct(UnlockFileArg)
 
@@ -9211,7 +9079,7 @@ class UnlockFileBatchArg(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UnlockFileBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UnlockFileBatchArg_validator = bv.Struct(UnlockFileBatchArg)
 
@@ -9253,7 +9121,7 @@ class UploadArg(CommitInfo):
     content_hash = bb.Attribute("content_hash", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadArg_validator = bv.Struct(UploadArg)
 
@@ -9291,7 +9159,7 @@ class UploadError(bb.Union):
         :param UploadWriteFailed val:
         :rtype: UploadError
         """
-        return cls('path', val)
+        pass
 
     @classmethod
     def properties_error(cls, val):
@@ -9302,7 +9170,7 @@ class UploadError(bb.Union):
         :param file_properties.InvalidPropertyGroupError val:
         :rtype: UploadError
         """
-        return cls('properties_error', val)
+        pass
 
     def is_path(self):
         """
@@ -9310,7 +9178,7 @@ class UploadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_properties_error(self):
         """
@@ -9318,7 +9186,7 @@ class UploadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'properties_error'
+        pass
 
     def is_payload_too_large(self):
         """
@@ -9326,7 +9194,7 @@ class UploadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'payload_too_large'
+        pass
 
     def is_content_hash_mismatch(self):
         """
@@ -9334,7 +9202,7 @@ class UploadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'content_hash_mismatch'
+        pass
 
     def is_other(self):
         """
@@ -9342,7 +9210,7 @@ class UploadError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_path(self):
         """
@@ -9352,9 +9220,7 @@ class UploadError(bb.Union):
 
         :rtype: UploadWriteFailed
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def get_properties_error(self):
         """
@@ -9365,12 +9231,10 @@ class UploadError(bb.Union):
 
         :rtype: file_properties.InvalidPropertyGroupError
         """
-        if not self.is_properties_error():
-            raise AttributeError("tag 'properties_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadError_validator = bv.Union(UploadError)
 
@@ -9421,7 +9285,7 @@ class UploadSessionAppendArg(bb.Struct):
     content_hash = bb.Attribute("content_hash", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionAppendArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionAppendArg_validator = bv.Struct(UploadSessionAppendArg)
 
@@ -9482,7 +9346,7 @@ class UploadSessionLookupError(bb.Union):
         :param UploadSessionOffsetError val:
         :rtype: UploadSessionLookupError
         """
-        return cls('incorrect_offset', val)
+        pass
 
     def is_not_found(self):
         """
@@ -9490,7 +9354,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_incorrect_offset(self):
         """
@@ -9498,7 +9362,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'incorrect_offset'
+        pass
 
     def is_closed(self):
         """
@@ -9506,7 +9370,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'closed'
+        pass
 
     def is_not_closed(self):
         """
@@ -9514,7 +9378,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_closed'
+        pass
 
     def is_too_large(self):
         """
@@ -9522,7 +9386,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_large'
+        pass
 
     def is_concurrent_session_invalid_offset(self):
         """
@@ -9530,7 +9394,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_invalid_offset'
+        pass
 
     def is_concurrent_session_invalid_data_size(self):
         """
@@ -9538,7 +9402,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_invalid_data_size'
+        pass
 
     def is_payload_too_large(self):
         """
@@ -9546,7 +9410,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'payload_too_large'
+        pass
 
     def is_other(self):
         """
@@ -9554,7 +9418,7 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_incorrect_offset(self):
         """
@@ -9567,12 +9431,10 @@ class UploadSessionLookupError(bb.Union):
 
         :rtype: UploadSessionOffsetError
         """
-        if not self.is_incorrect_offset():
-            raise AttributeError("tag 'incorrect_offset' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionLookupError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionLookupError_validator = bv.Union(UploadSessionLookupError)
 
@@ -9596,10 +9458,10 @@ class UploadSessionAppendError(UploadSessionLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'content_hash_mismatch'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionAppendError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionAppendError_validator = bv.Union(UploadSessionAppendError)
 
@@ -9636,7 +9498,7 @@ class UploadSessionCursor(bb.Struct):
     offset = bb.Attribute("offset")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionCursor, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionCursor_validator = bv.Struct(UploadSessionCursor)
 
@@ -9685,7 +9547,7 @@ class UploadSessionFinishArg(bb.Struct):
     content_hash = bb.Attribute("content_hash", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishArg_validator = bv.Struct(UploadSessionFinishArg)
 
@@ -9711,7 +9573,7 @@ class UploadSessionFinishBatchArg(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishBatchArg_validator = bv.Struct(UploadSessionFinishBatchArg)
 
@@ -9736,7 +9598,7 @@ class UploadSessionFinishBatchJobStatus(async_.PollResultBase):
         :param UploadSessionFinishBatchResult val:
         :rtype: UploadSessionFinishBatchJobStatus
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -9744,7 +9606,7 @@ class UploadSessionFinishBatchJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -9756,12 +9618,10 @@ class UploadSessionFinishBatchJobStatus(async_.PollResultBase):
 
         :rtype: UploadSessionFinishBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishBatchJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishBatchJobStatus_validator = bv.Union(UploadSessionFinishBatchJobStatus)
 
@@ -9789,7 +9649,7 @@ class UploadSessionFinishBatchLaunch(async_.LaunchResultBase):
         :param UploadSessionFinishBatchResult val:
         :rtype: UploadSessionFinishBatchLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -9797,7 +9657,7 @@ class UploadSessionFinishBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_other(self):
         """
@@ -9805,7 +9665,7 @@ class UploadSessionFinishBatchLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -9813,12 +9673,10 @@ class UploadSessionFinishBatchLaunch(async_.LaunchResultBase):
 
         :rtype: UploadSessionFinishBatchResult
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishBatchLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishBatchLaunch_validator = bv.Union(UploadSessionFinishBatchLaunch)
 
@@ -9845,7 +9703,7 @@ class UploadSessionFinishBatchResult(bb.Struct):
     entries = bb.Attribute("entries")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishBatchResult_validator = bv.Struct(UploadSessionFinishBatchResult)
 
@@ -9867,7 +9725,7 @@ class UploadSessionFinishBatchResultEntry(bb.Union):
         :param FileMetadata val:
         :rtype: UploadSessionFinishBatchResultEntry
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def failure(cls, val):
@@ -9878,7 +9736,7 @@ class UploadSessionFinishBatchResultEntry(bb.Union):
         :param UploadSessionFinishError val:
         :rtype: UploadSessionFinishBatchResultEntry
         """
-        return cls('failure', val)
+        pass
 
     def is_success(self):
         """
@@ -9886,7 +9744,7 @@ class UploadSessionFinishBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_failure(self):
         """
@@ -9894,7 +9752,7 @@ class UploadSessionFinishBatchResultEntry(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failure'
+        pass
 
     def get_success(self):
         """
@@ -9902,9 +9760,7 @@ class UploadSessionFinishBatchResultEntry(bb.Union):
 
         :rtype: FileMetadata
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_failure(self):
         """
@@ -9912,12 +9768,10 @@ class UploadSessionFinishBatchResultEntry(bb.Union):
 
         :rtype: UploadSessionFinishError
         """
-        if not self.is_failure():
-            raise AttributeError("tag 'failure' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishBatchResultEntry, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishBatchResultEntry_validator = bv.Union(UploadSessionFinishBatchResultEntry)
 
@@ -9982,7 +9836,7 @@ class UploadSessionFinishError(bb.Union):
         :param UploadSessionLookupError val:
         :rtype: UploadSessionFinishError
         """
-        return cls('lookup_failed', val)
+        pass
 
     @classmethod
     def path(cls, val):
@@ -9993,7 +9847,7 @@ class UploadSessionFinishError(bb.Union):
         :param WriteError val:
         :rtype: UploadSessionFinishError
         """
-        return cls('path', val)
+        pass
 
     @classmethod
     def properties_error(cls, val):
@@ -10004,7 +9858,7 @@ class UploadSessionFinishError(bb.Union):
         :param file_properties.InvalidPropertyGroupError val:
         :rtype: UploadSessionFinishError
         """
-        return cls('properties_error', val)
+        pass
 
     def is_lookup_failed(self):
         """
@@ -10012,7 +9866,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'lookup_failed'
+        pass
 
     def is_path(self):
         """
@@ -10020,7 +9874,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'path'
+        pass
 
     def is_properties_error(self):
         """
@@ -10028,7 +9882,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'properties_error'
+        pass
 
     def is_too_many_shared_folder_targets(self):
         """
@@ -10036,7 +9890,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_shared_folder_targets'
+        pass
 
     def is_too_many_write_operations(self):
         """
@@ -10044,7 +9898,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_concurrent_session_data_not_allowed(self):
         """
@@ -10052,7 +9906,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_data_not_allowed'
+        pass
 
     def is_concurrent_session_not_closed(self):
         """
@@ -10060,7 +9914,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_not_closed'
+        pass
 
     def is_concurrent_session_missing_data(self):
         """
@@ -10068,7 +9922,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_missing_data'
+        pass
 
     def is_payload_too_large(self):
         """
@@ -10076,7 +9930,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'payload_too_large'
+        pass
 
     def is_content_hash_mismatch(self):
         """
@@ -10084,7 +9938,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'content_hash_mismatch'
+        pass
 
     def is_other(self):
         """
@@ -10092,7 +9946,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_lookup_failed(self):
         """
@@ -10102,9 +9956,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: UploadSessionLookupError
         """
-        if not self.is_lookup_failed():
-            raise AttributeError("tag 'lookup_failed' not set")
-        return self._value
+        pass
 
     def get_path(self):
         """
@@ -10116,9 +9968,7 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: WriteError
         """
-        if not self.is_path():
-            raise AttributeError("tag 'path' not set")
-        return self._value
+        pass
 
     def get_properties_error(self):
         """
@@ -10129,12 +9979,10 @@ class UploadSessionFinishError(bb.Union):
 
         :rtype: file_properties.InvalidPropertyGroupError
         """
-        if not self.is_properties_error():
-            raise AttributeError("tag 'properties_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionFinishError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionFinishError_validator = bv.Union(UploadSessionFinishError)
 
@@ -10160,7 +10008,7 @@ class UploadSessionOffsetError(bb.Struct):
     correct_offset = bb.Attribute("correct_offset")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionOffsetError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionOffsetError_validator = bv.Struct(UploadSessionOffsetError)
 
@@ -10212,7 +10060,7 @@ class UploadSessionStartArg(bb.Struct):
     content_hash = bb.Attribute("content_hash", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionStartArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionStartArg_validator = bv.Struct(UploadSessionStartArg)
 
@@ -10249,7 +10097,7 @@ class UploadSessionStartBatchArg(bb.Struct):
     num_sessions = bb.Attribute("num_sessions")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionStartBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionStartBatchArg_validator = bv.Struct(UploadSessionStartBatchArg)
 
@@ -10277,7 +10125,7 @@ class UploadSessionStartBatchResult(bb.Struct):
     session_ids = bb.Attribute("session_ids")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionStartBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionStartBatchResult_validator = bv.Struct(UploadSessionStartBatchResult)
 
@@ -10316,7 +10164,7 @@ class UploadSessionStartError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_data_not_allowed'
+        pass
 
     def is_concurrent_session_close_not_allowed(self):
         """
@@ -10324,7 +10172,7 @@ class UploadSessionStartError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent_session_close_not_allowed'
+        pass
 
     def is_payload_too_large(self):
         """
@@ -10332,7 +10180,7 @@ class UploadSessionStartError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'payload_too_large'
+        pass
 
     def is_content_hash_mismatch(self):
         """
@@ -10340,7 +10188,7 @@ class UploadSessionStartError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'content_hash_mismatch'
+        pass
 
     def is_other(self):
         """
@@ -10348,10 +10196,10 @@ class UploadSessionStartError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionStartError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionStartError_validator = bv.Union(UploadSessionStartError)
 
@@ -10379,7 +10227,7 @@ class UploadSessionStartResult(bb.Struct):
     session_id = bb.Attribute("session_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionStartResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionStartResult_validator = bv.Struct(UploadSessionStartResult)
 
@@ -10409,7 +10257,7 @@ class UploadSessionType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'sequential'
+        pass
 
     def is_concurrent(self):
         """
@@ -10417,7 +10265,7 @@ class UploadSessionType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'concurrent'
+        pass
 
     def is_other(self):
         """
@@ -10425,10 +10273,10 @@ class UploadSessionType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadSessionType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadSessionType_validator = bv.Union(UploadSessionType)
 
@@ -10466,7 +10314,7 @@ class UploadWriteFailed(bb.Struct):
     upload_session_id = bb.Attribute("upload_session_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadWriteFailed, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadWriteFailed_validator = bv.Struct(UploadWriteFailed)
 
@@ -10488,7 +10336,7 @@ class UserGeneratedTag(bb.Struct):
     tag_text = bb.Attribute("tag_text")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserGeneratedTag, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserGeneratedTag_validator = bv.Struct(UserGeneratedTag)
 
@@ -10522,7 +10370,7 @@ class VideoMetadata(MediaMetadata):
     duration = bb.Attribute("duration", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(VideoMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 VideoMetadata_validator = bv.Struct(VideoMetadata)
 
@@ -10554,7 +10402,7 @@ class WriteConflictError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file'
+        pass
 
     def is_folder(self):
         """
@@ -10562,7 +10410,7 @@ class WriteConflictError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder'
+        pass
 
     def is_file_ancestor(self):
         """
@@ -10570,7 +10418,7 @@ class WriteConflictError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_ancestor'
+        pass
 
     def is_other(self):
         """
@@ -10578,10 +10426,10 @@ class WriteConflictError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(WriteConflictError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 WriteConflictError_validator = bv.Union(WriteConflictError)
 
@@ -10637,7 +10485,7 @@ class WriteError(bb.Union):
         :param Optional[str] val:
         :rtype: WriteError
         """
-        return cls('malformed_path', val)
+        pass
 
     @classmethod
     def conflict(cls, val):
@@ -10648,7 +10496,7 @@ class WriteError(bb.Union):
         :param WriteConflictError val:
         :rtype: WriteError
         """
-        return cls('conflict', val)
+        pass
 
     def is_malformed_path(self):
         """
@@ -10656,7 +10504,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'malformed_path'
+        pass
 
     def is_conflict(self):
         """
@@ -10664,7 +10512,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'conflict'
+        pass
 
     def is_no_write_permission(self):
         """
@@ -10672,7 +10520,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_write_permission'
+        pass
 
     def is_insufficient_space(self):
         """
@@ -10680,7 +10528,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_space'
+        pass
 
     def is_disallowed_name(self):
         """
@@ -10688,7 +10536,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disallowed_name'
+        pass
 
     def is_team_folder(self):
         """
@@ -10696,7 +10544,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_operation_suppressed(self):
         """
@@ -10704,7 +10552,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'operation_suppressed'
+        pass
 
     def is_too_many_write_operations(self):
         """
@@ -10712,7 +10560,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_other(self):
         """
@@ -10720,7 +10568,7 @@ class WriteError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_malformed_path(self):
         """
@@ -10733,9 +10581,7 @@ class WriteError(bb.Union):
 
         :rtype: Optional[str]
         """
-        if not self.is_malformed_path():
-            raise AttributeError("tag 'malformed_path' not set")
-        return self._value
+        pass
 
     def get_conflict(self):
         """
@@ -10746,12 +10592,10 @@ class WriteError(bb.Union):
 
         :rtype: WriteConflictError
         """
-        if not self.is_conflict():
-            raise AttributeError("tag 'conflict' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(WriteError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 WriteError_validator = bv.Union(WriteError)
 
@@ -10802,7 +10646,7 @@ class WriteMode(bb.Union):
         :param str val:
         :rtype: WriteMode
         """
-        return cls('update', val)
+        pass
 
     def is_add(self):
         """
@@ -10810,7 +10654,7 @@ class WriteMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'add'
+        pass
 
     def is_overwrite(self):
         """
@@ -10818,7 +10662,7 @@ class WriteMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'overwrite'
+        pass
 
     def is_update(self):
         """
@@ -10826,7 +10670,7 @@ class WriteMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'update'
+        pass
 
     def get_update(self):
         """
@@ -10844,12 +10688,10 @@ class WriteMode(bb.Union):
 
         :rtype: str
         """
-        if not self.is_update():
-            raise AttributeError("tag 'update' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(WriteMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 WriteMode_validator = bv.Union(WriteMode)
 

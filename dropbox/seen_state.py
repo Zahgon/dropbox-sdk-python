@@ -54,7 +54,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'web'
+        pass
 
     def is_desktop(self):
         """
@@ -62,7 +62,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'desktop'
+        pass
 
     def is_mobile_ios(self):
         """
@@ -70,7 +70,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mobile_ios'
+        pass
 
     def is_mobile_android(self):
         """
@@ -78,7 +78,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mobile_android'
+        pass
 
     def is_api(self):
         """
@@ -86,7 +86,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'api'
+        pass
 
     def is_unknown(self):
         """
@@ -94,7 +94,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown'
+        pass
 
     def is_mobile(self):
         """
@@ -102,7 +102,7 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mobile'
+        pass
 
     def is_other(self):
         """
@@ -110,10 +110,10 @@ class PlatformType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PlatformType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PlatformType_validator = bv.Union(PlatformType)
 

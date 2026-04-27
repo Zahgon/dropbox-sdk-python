@@ -40,7 +40,7 @@ class SecondaryEmail(bb.Struct):
     is_verified = bb.Attribute("is_verified")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SecondaryEmail, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SecondaryEmail_validator = bv.Struct(SecondaryEmail)
 

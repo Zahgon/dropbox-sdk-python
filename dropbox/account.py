@@ -30,7 +30,7 @@ class PhotoSourceArg(bb.Union):
         :param str val:
         :rtype: PhotoSourceArg
         """
-        return cls('base64_data', val)
+        pass
 
     def is_base64_data(self):
         """
@@ -38,7 +38,7 @@ class PhotoSourceArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'base64_data'
+        pass
 
     def is_other(self):
         """
@@ -46,7 +46,7 @@ class PhotoSourceArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_base64_data(self):
         """
@@ -56,12 +56,10 @@ class PhotoSourceArg(bb.Union):
 
         :rtype: str
         """
-        if not self.is_base64_data():
-            raise AttributeError("tag 'base64_data' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PhotoSourceArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PhotoSourceArg_validator = bv.Union(PhotoSourceArg)
 
@@ -87,7 +85,7 @@ class SetProfilePhotoArg(bb.Struct):
     photo = bb.Attribute("photo", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetProfilePhotoArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetProfilePhotoArg_validator = bv.Struct(SetProfilePhotoArg)
 
@@ -129,7 +127,7 @@ class SetProfilePhotoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_type_error'
+        pass
 
     def is_file_size_error(self):
         """
@@ -137,7 +135,7 @@ class SetProfilePhotoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_size_error'
+        pass
 
     def is_dimension_error(self):
         """
@@ -145,7 +143,7 @@ class SetProfilePhotoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'dimension_error'
+        pass
 
     def is_thumbnail_error(self):
         """
@@ -153,7 +151,7 @@ class SetProfilePhotoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'thumbnail_error'
+        pass
 
     def is_transient_error(self):
         """
@@ -161,7 +159,7 @@ class SetProfilePhotoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def is_other(self):
         """
@@ -169,10 +167,10 @@ class SetProfilePhotoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetProfilePhotoError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetProfilePhotoError_validator = bv.Union(SetProfilePhotoError)
 
@@ -198,7 +196,7 @@ class SetProfilePhotoResult(bb.Struct):
     profile_photo_url = bb.Attribute("profile_photo_url")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetProfilePhotoResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetProfilePhotoResult_validator = bv.Struct(SetProfilePhotoResult)
 

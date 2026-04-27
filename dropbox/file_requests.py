@@ -38,7 +38,7 @@ class GeneralFileRequestsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled_for_team'
+        pass
 
     def is_other(self):
         """
@@ -46,10 +46,10 @@ class GeneralFileRequestsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GeneralFileRequestsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GeneralFileRequestsError_validator = bv.Union(GeneralFileRequestsError)
 
@@ -63,7 +63,7 @@ class CountFileRequestsError(GeneralFileRequestsError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CountFileRequestsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CountFileRequestsError_validator = bv.Union(CountFileRequestsError)
 
@@ -91,7 +91,7 @@ class CountFileRequestsResult(bb.Struct):
     file_request_count = bb.Attribute("file_request_count")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CountFileRequestsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CountFileRequestsResult_validator = bv.Struct(CountFileRequestsResult)
 
@@ -162,7 +162,7 @@ class CreateFileRequestArgs(bb.Struct):
     description = bb.Attribute("description", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFileRequestArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFileRequestArgs_validator = bv.Struct(CreateFileRequestArgs)
 
@@ -211,7 +211,7 @@ class FileRequestError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_not_a_folder(self):
         """
@@ -219,7 +219,7 @@ class FileRequestError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'not_a_folder'
+        pass
 
     def is_app_lacks_access(self):
         """
@@ -227,7 +227,7 @@ class FileRequestError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'app_lacks_access'
+        pass
 
     def is_no_permission(self):
         """
@@ -235,7 +235,7 @@ class FileRequestError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'no_permission'
+        pass
 
     def is_email_unverified(self):
         """
@@ -243,7 +243,7 @@ class FileRequestError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'email_unverified'
+        pass
 
     def is_validation_error(self):
         """
@@ -251,10 +251,10 @@ class FileRequestError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'validation_error'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileRequestError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileRequestError_validator = bv.Union(FileRequestError)
 
@@ -284,7 +284,7 @@ class CreateFileRequestError(FileRequestError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_location'
+        pass
 
     def is_rate_limit(self):
         """
@@ -292,10 +292,10 @@ class CreateFileRequestError(FileRequestError):
 
         :rtype: bool
         """
-        return self._tag == 'rate_limit'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CreateFileRequestError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CreateFileRequestError_validator = bv.Union(CreateFileRequestError)
 
@@ -309,7 +309,7 @@ class DeleteAllClosedFileRequestsError(FileRequestError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteAllClosedFileRequestsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteAllClosedFileRequestsError_validator = bv.Union(DeleteAllClosedFileRequestsError)
 
@@ -338,7 +338,7 @@ class DeleteAllClosedFileRequestsResult(bb.Struct):
     file_requests = bb.Attribute("file_requests")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteAllClosedFileRequestsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteAllClosedFileRequestsResult_validator = bv.Struct(DeleteAllClosedFileRequestsResult)
 
@@ -366,7 +366,7 @@ class DeleteFileRequestArgs(bb.Struct):
     ids = bb.Attribute("ids")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteFileRequestArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteFileRequestArgs_validator = bv.Struct(DeleteFileRequestArgs)
 
@@ -391,10 +391,10 @@ class DeleteFileRequestError(FileRequestError):
 
         :rtype: bool
         """
-        return self._tag == 'file_request_open'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteFileRequestError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteFileRequestError_validator = bv.Union(DeleteFileRequestError)
 
@@ -422,7 +422,7 @@ class DeleteFileRequestsResult(bb.Struct):
     file_requests = bb.Attribute("file_requests")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteFileRequestsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteFileRequestsResult_validator = bv.Struct(DeleteFileRequestsResult)
 
@@ -530,7 +530,7 @@ class FileRequest(bb.Struct):
     description = bb.Attribute("description", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileRequest, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileRequest_validator = bv.Struct(FileRequest)
 
@@ -567,7 +567,7 @@ class FileRequestDeadline(bb.Struct):
     allow_late_uploads = bb.Attribute("allow_late_uploads", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileRequestDeadline, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileRequestDeadline_validator = bv.Struct(FileRequestDeadline)
 
@@ -595,7 +595,7 @@ class GetFileRequestArgs(bb.Struct):
     id = bb.Attribute("id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileRequestArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileRequestArgs_validator = bv.Struct(GetFileRequestArgs)
 
@@ -609,7 +609,7 @@ class GetFileRequestError(FileRequestError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetFileRequestError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetFileRequestError_validator = bv.Union(GetFileRequestError)
 
@@ -640,7 +640,7 @@ class GracePeriod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'one_day'
+        pass
 
     def is_two_days(self):
         """
@@ -648,7 +648,7 @@ class GracePeriod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'two_days'
+        pass
 
     def is_seven_days(self):
         """
@@ -656,7 +656,7 @@ class GracePeriod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'seven_days'
+        pass
 
     def is_thirty_days(self):
         """
@@ -664,7 +664,7 @@ class GracePeriod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'thirty_days'
+        pass
 
     def is_always(self):
         """
@@ -672,7 +672,7 @@ class GracePeriod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'always'
+        pass
 
     def is_other(self):
         """
@@ -680,10 +680,10 @@ class GracePeriod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GracePeriod, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GracePeriod_validator = bv.Union(GracePeriod)
 
@@ -711,7 +711,7 @@ class ListFileRequestsArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileRequestsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileRequestsArg_validator = bv.Struct(ListFileRequestsArg)
 
@@ -737,7 +737,7 @@ class ListFileRequestsContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileRequestsContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileRequestsContinueArg_validator = bv.Struct(ListFileRequestsContinueArg)
 
@@ -762,10 +762,10 @@ class ListFileRequestsContinueError(GeneralFileRequestsError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileRequestsContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileRequestsContinueError_validator = bv.Union(ListFileRequestsContinueError)
 
@@ -779,7 +779,7 @@ class ListFileRequestsError(GeneralFileRequestsError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileRequestsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileRequestsError_validator = bv.Union(ListFileRequestsError)
 
@@ -808,7 +808,7 @@ class ListFileRequestsResult(bb.Struct):
     file_requests = bb.Attribute("file_requests")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileRequestsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileRequestsResult_validator = bv.Struct(ListFileRequestsResult)
 
@@ -860,7 +860,7 @@ class ListFileRequestsV2Result(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListFileRequestsV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListFileRequestsV2Result_validator = bv.Struct(ListFileRequestsV2Result)
 
@@ -940,7 +940,7 @@ class UpdateFileRequestArgs(bb.Struct):
     description = bb.Attribute("description", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFileRequestArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFileRequestArgs_validator = bv.Struct(UpdateFileRequestArgs)
 
@@ -972,7 +972,7 @@ class UpdateFileRequestDeadline(bb.Union):
         :param FileRequestDeadline val:
         :rtype: UpdateFileRequestDeadline
         """
-        return cls('update', val)
+        pass
 
     def is_no_update(self):
         """
@@ -980,7 +980,7 @@ class UpdateFileRequestDeadline(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_update'
+        pass
 
     def is_update(self):
         """
@@ -988,7 +988,7 @@ class UpdateFileRequestDeadline(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'update'
+        pass
 
     def is_other(self):
         """
@@ -996,7 +996,7 @@ class UpdateFileRequestDeadline(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_update(self):
         """
@@ -1006,12 +1006,10 @@ class UpdateFileRequestDeadline(bb.Union):
 
         :rtype: FileRequestDeadline
         """
-        if not self.is_update():
-            raise AttributeError("tag 'update' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFileRequestDeadline, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFileRequestDeadline_validator = bv.Union(UpdateFileRequestDeadline)
 
@@ -1025,7 +1023,7 @@ class UpdateFileRequestError(FileRequestError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UpdateFileRequestError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UpdateFileRequestError_validator = bv.Union(UpdateFileRequestError)
 

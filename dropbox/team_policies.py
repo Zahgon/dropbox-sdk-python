@@ -33,7 +33,7 @@ class CameraUploadsPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -41,7 +41,7 @@ class CameraUploadsPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -49,10 +49,10 @@ class CameraUploadsPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CameraUploadsPolicyState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CameraUploadsPolicyState_validator = bv.Union(CameraUploadsPolicyState)
 
@@ -86,7 +86,7 @@ class ComputerBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -94,7 +94,7 @@ class ComputerBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_default(self):
         """
@@ -102,7 +102,7 @@ class ComputerBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_other(self):
         """
@@ -110,10 +110,10 @@ class ComputerBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ComputerBackupPolicyState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ComputerBackupPolicyState_validator = bv.Union(ComputerBackupPolicyState)
 
@@ -144,7 +144,7 @@ class EmmState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_optional(self):
         """
@@ -152,7 +152,7 @@ class EmmState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'optional'
+        pass
 
     def is_required(self):
         """
@@ -160,7 +160,7 @@ class EmmState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'required'
+        pass
 
     def is_other(self):
         """
@@ -168,10 +168,10 @@ class EmmState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(EmmState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 EmmState_validator = bv.Union(EmmState)
 
@@ -205,7 +205,7 @@ class ExternalDriveBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -213,7 +213,7 @@ class ExternalDriveBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_default(self):
         """
@@ -221,7 +221,7 @@ class ExternalDriveBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_other(self):
         """
@@ -229,10 +229,10 @@ class ExternalDriveBackupPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExternalDriveBackupPolicyState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExternalDriveBackupPolicyState_validator = bv.Union(ExternalDriveBackupPolicyState)
 
@@ -262,7 +262,7 @@ class FileLockingPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -270,7 +270,7 @@ class FileLockingPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -278,10 +278,10 @@ class FileLockingPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileLockingPolicyState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileLockingPolicyState_validator = bv.Union(FileLockingPolicyState)
 
@@ -315,7 +315,7 @@ class FileProviderMigrationPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -323,7 +323,7 @@ class FileProviderMigrationPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_default(self):
         """
@@ -331,7 +331,7 @@ class FileProviderMigrationPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_other(self):
         """
@@ -339,10 +339,10 @@ class FileProviderMigrationPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileProviderMigrationPolicyState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileProviderMigrationPolicyState_validator = bv.Union(FileProviderMigrationPolicyState)
 
@@ -370,7 +370,7 @@ class GroupCreation(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'admins_and_members'
+        pass
 
     def is_admins_only(self):
         """
@@ -378,10 +378,10 @@ class GroupCreation(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'admins_only'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupCreation, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupCreation_validator = bv.Union(GroupCreation)
 
@@ -409,7 +409,7 @@ class OfficeAddInPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -417,7 +417,7 @@ class OfficeAddInPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -425,10 +425,10 @@ class OfficeAddInPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(OfficeAddInPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 OfficeAddInPolicy_validator = bv.Union(OfficeAddInPolicy)
 
@@ -458,7 +458,7 @@ class PaperDefaultFolderPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'everyone_in_team'
+        pass
 
     def is_invite_only(self):
         """
@@ -466,7 +466,7 @@ class PaperDefaultFolderPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_only'
+        pass
 
     def is_other(self):
         """
@@ -474,10 +474,10 @@ class PaperDefaultFolderPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDefaultFolderPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDefaultFolderPolicy_validator = bv.Union(PaperDefaultFolderPolicy)
 
@@ -508,7 +508,7 @@ class PaperDeploymentPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'full'
+        pass
 
     def is_partial(self):
         """
@@ -516,7 +516,7 @@ class PaperDeploymentPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'partial'
+        pass
 
     def is_other(self):
         """
@@ -524,10 +524,10 @@ class PaperDeploymentPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDeploymentPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDeploymentPolicy_validator = bv.Union(PaperDeploymentPolicy)
 
@@ -557,7 +557,7 @@ class PaperDesktopPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -565,7 +565,7 @@ class PaperDesktopPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -573,10 +573,10 @@ class PaperDesktopPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDesktopPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDesktopPolicy_validator = bv.Union(PaperDesktopPolicy)
 
@@ -607,7 +607,7 @@ class PaperEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -615,7 +615,7 @@ class PaperEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_unspecified(self):
         """
@@ -623,7 +623,7 @@ class PaperEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unspecified'
+        pass
 
     def is_other(self):
         """
@@ -631,10 +631,10 @@ class PaperEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperEnabledPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperEnabledPolicy_validator = bv.Union(PaperEnabledPolicy)
 
@@ -662,7 +662,7 @@ class PasswordControlMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -670,7 +670,7 @@ class PasswordControlMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -678,10 +678,10 @@ class PasswordControlMode(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PasswordControlMode, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PasswordControlMode_validator = bv.Union(PasswordControlMode)
 
@@ -715,7 +715,7 @@ class PasswordStrengthPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'minimal_requirements'
+        pass
 
     def is_moderate_password(self):
         """
@@ -723,7 +723,7 @@ class PasswordStrengthPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'moderate_password'
+        pass
 
     def is_strong_password(self):
         """
@@ -731,7 +731,7 @@ class PasswordStrengthPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'strong_password'
+        pass
 
     def is_other(self):
         """
@@ -739,10 +739,10 @@ class PasswordStrengthPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PasswordStrengthPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PasswordStrengthPolicy_validator = bv.Union(PasswordStrengthPolicy)
 
@@ -773,7 +773,7 @@ class RolloutMethod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unlink_all'
+        pass
 
     def is_unlink_most_inactive(self):
         """
@@ -781,7 +781,7 @@ class RolloutMethod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unlink_most_inactive'
+        pass
 
     def is_add_member_to_exceptions(self):
         """
@@ -789,10 +789,10 @@ class RolloutMethod(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'add_member_to_exceptions'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RolloutMethod, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RolloutMethod_validator = bv.Union(RolloutMethod)
 
@@ -825,7 +825,7 @@ class SharedFolderBlanketLinkRestrictionPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'members'
+        pass
 
     def is_anyone(self):
         """
@@ -833,7 +833,7 @@ class SharedFolderBlanketLinkRestrictionPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'anyone'
+        pass
 
     def is_other(self):
         """
@@ -841,10 +841,10 @@ class SharedFolderBlanketLinkRestrictionPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderBlanketLinkRestrictionPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderBlanketLinkRestrictionPolicy_validator = bv.Union(SharedFolderBlanketLinkRestrictionPolicy)
 
@@ -877,7 +877,7 @@ class SharedFolderJoinPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'from_team_only'
+        pass
 
     def is_from_anyone(self):
         """
@@ -885,7 +885,7 @@ class SharedFolderJoinPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'from_anyone'
+        pass
 
     def is_other(self):
         """
@@ -893,10 +893,10 @@ class SharedFolderJoinPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderJoinPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderJoinPolicy_validator = bv.Union(SharedFolderJoinPolicy)
 
@@ -928,7 +928,7 @@ class SharedFolderMemberPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_anyone(self):
         """
@@ -936,7 +936,7 @@ class SharedFolderMemberPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'anyone'
+        pass
 
     def is_other(self):
         """
@@ -944,10 +944,10 @@ class SharedFolderMemberPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedFolderMemberPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedFolderMemberPolicy_validator = bv.Union(SharedFolderMemberPolicy)
 
@@ -992,7 +992,7 @@ class SharedLinkCreatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default_public'
+        pass
 
     def is_default_team_only(self):
         """
@@ -1000,7 +1000,7 @@ class SharedLinkCreatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default_team_only'
+        pass
 
     def is_team_only(self):
         """
@@ -1008,7 +1008,7 @@ class SharedLinkCreatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_only'
+        pass
 
     def is_default_no_one(self):
         """
@@ -1016,7 +1016,7 @@ class SharedLinkCreatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default_no_one'
+        pass
 
     def is_other(self):
         """
@@ -1024,10 +1024,10 @@ class SharedLinkCreatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharedLinkCreatePolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharedLinkCreatePolicy_validator = bv.Union(SharedLinkCreatePolicy)
 
@@ -1057,7 +1057,7 @@ class ShowcaseDownloadPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -1065,7 +1065,7 @@ class ShowcaseDownloadPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -1073,10 +1073,10 @@ class ShowcaseDownloadPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShowcaseDownloadPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShowcaseDownloadPolicy_validator = bv.Union(ShowcaseDownloadPolicy)
 
@@ -1104,7 +1104,7 @@ class ShowcaseEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -1112,7 +1112,7 @@ class ShowcaseEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -1120,10 +1120,10 @@ class ShowcaseEnabledPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShowcaseEnabledPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShowcaseEnabledPolicy_validator = bv.Union(ShowcaseEnabledPolicy)
 
@@ -1153,7 +1153,7 @@ class ShowcaseExternalSharingPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -1161,7 +1161,7 @@ class ShowcaseExternalSharingPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -1169,10 +1169,10 @@ class ShowcaseExternalSharingPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ShowcaseExternalSharingPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ShowcaseExternalSharingPolicy_validator = bv.Union(ShowcaseExternalSharingPolicy)
 
@@ -1202,7 +1202,7 @@ class SmartSyncPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'local'
+        pass
 
     def is_on_demand(self):
         """
@@ -1210,7 +1210,7 @@ class SmartSyncPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'on_demand'
+        pass
 
     def is_other(self):
         """
@@ -1218,10 +1218,10 @@ class SmartSyncPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SmartSyncPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SmartSyncPolicy_validator = bv.Union(SmartSyncPolicy)
 
@@ -1251,7 +1251,7 @@ class SmarterSmartSyncPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -1259,7 +1259,7 @@ class SmarterSmartSyncPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -1267,10 +1267,10 @@ class SmarterSmartSyncPolicyState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SmarterSmartSyncPolicyState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SmarterSmartSyncPolicyState_validator = bv.Union(SmarterSmartSyncPolicyState)
 
@@ -1304,7 +1304,7 @@ class SsoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_optional(self):
         """
@@ -1312,7 +1312,7 @@ class SsoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'optional'
+        pass
 
     def is_required(self):
         """
@@ -1320,7 +1320,7 @@ class SsoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'required'
+        pass
 
     def is_other(self):
         """
@@ -1328,10 +1328,10 @@ class SsoPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SsoPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SsoPolicy_validator = bv.Union(SsoPolicy)
 
@@ -1361,7 +1361,7 @@ class SuggestMembersPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_enabled(self):
         """
@@ -1369,7 +1369,7 @@ class SuggestMembersPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -1377,10 +1377,10 @@ class SuggestMembersPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SuggestMembersPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SuggestMembersPolicy_validator = bv.Union(SuggestMembersPolicy)
 
@@ -1443,7 +1443,7 @@ class TeamMemberPolicies(bb.Struct):
     suggest_members_policy = bb.Attribute("suggest_members_policy", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberPolicies, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberPolicies_validator = bv.Struct(TeamMemberPolicies)
 
@@ -1512,7 +1512,7 @@ class TeamSharingPolicies(bb.Struct):
     shared_folder_link_restriction_policy = bb.Attribute("shared_folder_link_restriction_policy", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamSharingPolicies, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamSharingPolicies_validator = bv.Struct(TeamSharingPolicies)
 
@@ -1542,7 +1542,7 @@ class TwoStepVerificationPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'require_tfa_enable'
+        pass
 
     def is_require_tfa_disable(self):
         """
@@ -1550,7 +1550,7 @@ class TwoStepVerificationPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'require_tfa_disable'
+        pass
 
     def is_other(self):
         """
@@ -1558,10 +1558,10 @@ class TwoStepVerificationPolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TwoStepVerificationPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TwoStepVerificationPolicy_validator = bv.Union(TwoStepVerificationPolicy)
 
@@ -1595,7 +1595,7 @@ class TwoStepVerificationState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'required'
+        pass
 
     def is_optional(self):
         """
@@ -1603,7 +1603,7 @@ class TwoStepVerificationState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'optional'
+        pass
 
     def is_disabled(self):
         """
@@ -1611,7 +1611,7 @@ class TwoStepVerificationState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def is_other(self):
         """
@@ -1619,10 +1619,10 @@ class TwoStepVerificationState(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TwoStepVerificationState, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TwoStepVerificationState_validator = bv.Union(TwoStepVerificationState)
 

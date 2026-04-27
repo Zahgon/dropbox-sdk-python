@@ -46,7 +46,7 @@ class AddMember(bb.Struct):
     member = bb.Attribute("member", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddMember, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddMember_validator = bv.Struct(AddMember)
 
@@ -71,7 +71,7 @@ class RefPaperDoc(bb.Struct):
     doc_id = bb.Attribute("doc_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RefPaperDoc, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RefPaperDoc_validator = bv.Struct(RefPaperDoc)
 
@@ -119,7 +119,7 @@ class AddPaperDocUser(RefPaperDoc):
     quiet = bb.Attribute("quiet")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddPaperDocUser, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddPaperDocUser_validator = bv.Struct(AddPaperDocUser)
 
@@ -158,7 +158,7 @@ class AddPaperDocUserMemberResult(bb.Struct):
     result = bb.Attribute("result", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddPaperDocUserMemberResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddPaperDocUserMemberResult_validator = bv.Struct(AddPaperDocUserMemberResult)
 
@@ -208,7 +208,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_unknown_error(self):
         """
@@ -216,7 +216,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown_error'
+        pass
 
     def is_sharing_outside_team_disabled(self):
         """
@@ -224,7 +224,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'sharing_outside_team_disabled'
+        pass
 
     def is_daily_limit_reached(self):
         """
@@ -232,7 +232,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'daily_limit_reached'
+        pass
 
     def is_user_is_owner(self):
         """
@@ -240,7 +240,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_is_owner'
+        pass
 
     def is_failed_user_data_retrieval(self):
         """
@@ -248,7 +248,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'failed_user_data_retrieval'
+        pass
 
     def is_permission_already_granted(self):
         """
@@ -256,7 +256,7 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'permission_already_granted'
+        pass
 
     def is_other(self):
         """
@@ -264,10 +264,10 @@ class AddPaperDocUserResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddPaperDocUserResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddPaperDocUserResult_validator = bv.Union(AddPaperDocUserResult)
 
@@ -313,7 +313,7 @@ class Cursor(bb.Struct):
     expiration = bb.Attribute("expiration", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Cursor, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Cursor_validator = bv.Struct(Cursor)
 
@@ -342,7 +342,7 @@ class PaperApiBaseError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_permissions'
+        pass
 
     def is_other(self):
         """
@@ -350,10 +350,10 @@ class PaperApiBaseError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperApiBaseError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperApiBaseError_validator = bv.Union(PaperApiBaseError)
 
@@ -375,10 +375,10 @@ class DocLookupError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_not_found'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DocLookupError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DocLookupError_validator = bv.Union(DocLookupError)
 
@@ -416,7 +416,7 @@ class DocSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'default'
+        pass
 
     def is_ignore(self):
         """
@@ -424,7 +424,7 @@ class DocSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'ignore'
+        pass
 
     def is_every(self):
         """
@@ -432,7 +432,7 @@ class DocSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'every'
+        pass
 
     def is_no_email(self):
         """
@@ -440,10 +440,10 @@ class DocSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_email'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DocSubscriptionLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DocSubscriptionLevel_validator = bv.Union(DocSubscriptionLevel)
 
@@ -473,7 +473,7 @@ class ExportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'html'
+        pass
 
     def is_markdown(self):
         """
@@ -481,7 +481,7 @@ class ExportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'markdown'
+        pass
 
     def is_other(self):
         """
@@ -489,10 +489,10 @@ class ExportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExportFormat, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExportFormat_validator = bv.Union(ExportFormat)
 
@@ -529,7 +529,7 @@ class Folder(bb.Struct):
     name = bb.Attribute("name")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Folder, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Folder_validator = bv.Struct(Folder)
 
@@ -560,7 +560,7 @@ class FolderSharingPolicyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_invite_only(self):
         """
@@ -568,10 +568,10 @@ class FolderSharingPolicyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_only'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderSharingPolicyType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderSharingPolicyType_validator = bv.Union(FolderSharingPolicyType)
 
@@ -609,7 +609,7 @@ class FolderSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'none'
+        pass
 
     def is_activity_only(self):
         """
@@ -617,7 +617,7 @@ class FolderSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'activity_only'
+        pass
 
     def is_daily_emails(self):
         """
@@ -625,7 +625,7 @@ class FolderSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'daily_emails'
+        pass
 
     def is_weekly_emails(self):
         """
@@ -633,10 +633,10 @@ class FolderSubscriptionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'weekly_emails'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FolderSubscriptionLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FolderSubscriptionLevel_validator = bv.Union(FolderSubscriptionLevel)
 
@@ -674,7 +674,7 @@ class FoldersContainingPaperDoc(bb.Struct):
     folders = bb.Attribute("folders", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FoldersContainingPaperDoc, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FoldersContainingPaperDoc_validator = bv.Struct(FoldersContainingPaperDoc)
 
@@ -712,7 +712,7 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'html'
+        pass
 
     def is_markdown(self):
         """
@@ -720,7 +720,7 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'markdown'
+        pass
 
     def is_plain_text(self):
         """
@@ -728,7 +728,7 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'plain_text'
+        pass
 
     def is_other(self):
         """
@@ -736,10 +736,10 @@ class ImportFormat(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ImportFormat, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ImportFormat_validator = bv.Union(ImportFormat)
 
@@ -775,7 +775,7 @@ class InviteeInfoWithPermissionLevel(bb.Struct):
     permission_level = bb.Attribute("permission_level", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InviteeInfoWithPermissionLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InviteeInfoWithPermissionLevel_validator = bv.Struct(InviteeInfoWithPermissionLevel)
 
@@ -799,7 +799,7 @@ class ListDocsCursorError(bb.Union):
         :param PaperApiCursorError val:
         :rtype: ListDocsCursorError
         """
-        return cls('cursor_error', val)
+        pass
 
     def is_cursor_error(self):
         """
@@ -807,7 +807,7 @@ class ListDocsCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cursor_error'
+        pass
 
     def is_other(self):
         """
@@ -815,7 +815,7 @@ class ListDocsCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_cursor_error(self):
         """
@@ -823,12 +823,10 @@ class ListDocsCursorError(bb.Union):
 
         :rtype: PaperApiCursorError
         """
-        if not self.is_cursor_error():
-            raise AttributeError("tag 'cursor_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListDocsCursorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListDocsCursorError_validator = bv.Union(ListDocsCursorError)
 
@@ -885,7 +883,7 @@ class ListPaperDocsArgs(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListPaperDocsArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListPaperDocsArgs_validator = bv.Struct(ListPaperDocsArgs)
 
@@ -913,7 +911,7 @@ class ListPaperDocsContinueArgs(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListPaperDocsContinueArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListPaperDocsContinueArgs_validator = bv.Struct(ListPaperDocsContinueArgs)
 
@@ -943,7 +941,7 @@ class ListPaperDocsFilterBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'docs_accessed'
+        pass
 
     def is_docs_created(self):
         """
@@ -951,7 +949,7 @@ class ListPaperDocsFilterBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'docs_created'
+        pass
 
     def is_other(self):
         """
@@ -959,10 +957,10 @@ class ListPaperDocsFilterBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListPaperDocsFilterBy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListPaperDocsFilterBy_validator = bv.Union(ListPaperDocsFilterBy)
 
@@ -1017,7 +1015,7 @@ class ListPaperDocsResponse(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListPaperDocsResponse, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListPaperDocsResponse_validator = bv.Struct(ListPaperDocsResponse)
 
@@ -1051,7 +1049,7 @@ class ListPaperDocsSortBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'accessed'
+        pass
 
     def is_modified(self):
         """
@@ -1059,7 +1057,7 @@ class ListPaperDocsSortBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'modified'
+        pass
 
     def is_created(self):
         """
@@ -1067,7 +1065,7 @@ class ListPaperDocsSortBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'created'
+        pass
 
     def is_other(self):
         """
@@ -1075,10 +1073,10 @@ class ListPaperDocsSortBy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListPaperDocsSortBy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListPaperDocsSortBy_validator = bv.Union(ListPaperDocsSortBy)
 
@@ -1108,7 +1106,7 @@ class ListPaperDocsSortOrder(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'ascending'
+        pass
 
     def is_descending(self):
         """
@@ -1116,7 +1114,7 @@ class ListPaperDocsSortOrder(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'descending'
+        pass
 
     def is_other(self):
         """
@@ -1124,10 +1122,10 @@ class ListPaperDocsSortOrder(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListPaperDocsSortOrder, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListPaperDocsSortOrder_validator = bv.Union(ListPaperDocsSortOrder)
 
@@ -1153,7 +1151,7 @@ class ListUsersCursorError(PaperApiBaseError):
         :param PaperApiCursorError val:
         :rtype: ListUsersCursorError
         """
-        return cls('cursor_error', val)
+        pass
 
     def is_doc_not_found(self):
         """
@@ -1161,7 +1159,7 @@ class ListUsersCursorError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_not_found'
+        pass
 
     def is_cursor_error(self):
         """
@@ -1169,7 +1167,7 @@ class ListUsersCursorError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'cursor_error'
+        pass
 
     def get_cursor_error(self):
         """
@@ -1177,12 +1175,10 @@ class ListUsersCursorError(PaperApiBaseError):
 
         :rtype: PaperApiCursorError
         """
-        if not self.is_cursor_error():
-            raise AttributeError("tag 'cursor_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersCursorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersCursorError_validator = bv.Union(ListUsersCursorError)
 
@@ -1211,7 +1207,7 @@ class ListUsersOnFolderArgs(RefPaperDoc):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersOnFolderArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersOnFolderArgs_validator = bv.Struct(ListUsersOnFolderArgs)
 
@@ -1241,7 +1237,7 @@ class ListUsersOnFolderContinueArgs(RefPaperDoc):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersOnFolderContinueArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersOnFolderContinueArgs_validator = bv.Struct(ListUsersOnFolderContinueArgs)
 
@@ -1304,7 +1300,7 @@ class ListUsersOnFolderResponse(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersOnFolderResponse, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersOnFolderResponse_validator = bv.Struct(ListUsersOnFolderResponse)
 
@@ -1343,7 +1339,7 @@ class ListUsersOnPaperDocArgs(RefPaperDoc):
     filter_by = bb.Attribute("filter_by", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersOnPaperDocArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersOnPaperDocArgs_validator = bv.Struct(ListUsersOnPaperDocArgs)
 
@@ -1373,7 +1369,7 @@ class ListUsersOnPaperDocContinueArgs(RefPaperDoc):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersOnPaperDocContinueArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersOnPaperDocContinueArgs_validator = bv.Struct(ListUsersOnPaperDocContinueArgs)
 
@@ -1447,7 +1443,7 @@ class ListUsersOnPaperDocResponse(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListUsersOnPaperDocResponse, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListUsersOnPaperDocResponse_validator = bv.Struct(ListUsersOnPaperDocResponse)
 
@@ -1486,7 +1482,7 @@ class PaperApiCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'expired_cursor'
+        pass
 
     def is_invalid_cursor(self):
         """
@@ -1494,7 +1490,7 @@ class PaperApiCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_wrong_user_in_cursor(self):
         """
@@ -1502,7 +1498,7 @@ class PaperApiCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'wrong_user_in_cursor'
+        pass
 
     def is_reset(self):
         """
@@ -1510,7 +1506,7 @@ class PaperApiCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -1518,10 +1514,10 @@ class PaperApiCursorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperApiCursorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperApiCursorError_validator = bv.Union(PaperApiCursorError)
 
@@ -1557,7 +1553,7 @@ class PaperDocCreateArgs(bb.Struct):
     import_format = bb.Attribute("import_format", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocCreateArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocCreateArgs_validator = bv.Struct(PaperDocCreateArgs)
 
@@ -1593,7 +1589,7 @@ class PaperDocCreateError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'content_malformed'
+        pass
 
     def is_folder_not_found(self):
         """
@@ -1601,7 +1597,7 @@ class PaperDocCreateError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'folder_not_found'
+        pass
 
     def is_doc_length_exceeded(self):
         """
@@ -1609,7 +1605,7 @@ class PaperDocCreateError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_length_exceeded'
+        pass
 
     def is_image_size_exceeded(self):
         """
@@ -1617,10 +1613,10 @@ class PaperDocCreateError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'image_size_exceeded'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocCreateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocCreateError_validator = bv.Union(PaperDocCreateError)
 
@@ -1665,7 +1661,7 @@ class PaperDocCreateUpdateResult(bb.Struct):
     title = bb.Attribute("title")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocCreateUpdateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocCreateUpdateResult_validator = bv.Struct(PaperDocCreateUpdateResult)
 
@@ -1689,7 +1685,7 @@ class PaperDocExport(RefPaperDoc):
     export_format = bb.Attribute("export_format", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocExport, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocExport_validator = bv.Struct(PaperDocExport)
 
@@ -1743,7 +1739,7 @@ class PaperDocExportResult(bb.Struct):
     mime_type = bb.Attribute("mime_type")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocExportResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocExportResult_validator = bv.Struct(PaperDocExportResult)
 
@@ -1773,7 +1769,7 @@ class PaperDocPermissionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'edit'
+        pass
 
     def is_view_and_comment(self):
         """
@@ -1781,7 +1777,7 @@ class PaperDocPermissionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'view_and_comment'
+        pass
 
     def is_other(self):
         """
@@ -1789,10 +1785,10 @@ class PaperDocPermissionLevel(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocPermissionLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocPermissionLevel_validator = bv.Union(PaperDocPermissionLevel)
 
@@ -1820,7 +1816,7 @@ class PaperDocSharingPolicy(RefPaperDoc):
     sharing_policy = bb.Attribute("sharing_policy", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocSharingPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocSharingPolicy_validator = bv.Struct(PaperDocSharingPolicy)
 
@@ -1868,7 +1864,7 @@ class PaperDocUpdateArgs(RefPaperDoc):
     import_format = bb.Attribute("import_format", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocUpdateArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocUpdateArgs_validator = bv.Struct(PaperDocUpdateArgs)
 
@@ -1912,7 +1908,7 @@ class PaperDocUpdateError(DocLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'content_malformed'
+        pass
 
     def is_revision_mismatch(self):
         """
@@ -1920,7 +1916,7 @@ class PaperDocUpdateError(DocLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'revision_mismatch'
+        pass
 
     def is_doc_length_exceeded(self):
         """
@@ -1928,7 +1924,7 @@ class PaperDocUpdateError(DocLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_length_exceeded'
+        pass
 
     def is_image_size_exceeded(self):
         """
@@ -1936,7 +1932,7 @@ class PaperDocUpdateError(DocLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'image_size_exceeded'
+        pass
 
     def is_doc_archived(self):
         """
@@ -1944,7 +1940,7 @@ class PaperDocUpdateError(DocLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_archived'
+        pass
 
     def is_doc_deleted(self):
         """
@@ -1952,10 +1948,10 @@ class PaperDocUpdateError(DocLookupError):
 
         :rtype: bool
         """
-        return self._tag == 'doc_deleted'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocUpdateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocUpdateError_validator = bv.Union(PaperDocUpdateError)
 
@@ -1989,7 +1985,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'append'
+        pass
 
     def is_prepend(self):
         """
@@ -1997,7 +1993,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'prepend'
+        pass
 
     def is_overwrite_all(self):
         """
@@ -2005,7 +2001,7 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'overwrite_all'
+        pass
 
     def is_other(self):
         """
@@ -2013,10 +2009,10 @@ class PaperDocUpdatePolicy(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperDocUpdatePolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperDocUpdatePolicy_validator = bv.Union(PaperDocUpdatePolicy)
 
@@ -2067,7 +2063,7 @@ class PaperFolderCreateArg(bb.Struct):
     is_team_folder = bb.Attribute("is_team_folder", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperFolderCreateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperFolderCreateArg_validator = bv.Struct(PaperFolderCreateArg)
 
@@ -2094,7 +2090,7 @@ class PaperFolderCreateError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'folder_not_found'
+        pass
 
     def is_invalid_folder_id(self):
         """
@@ -2102,10 +2098,10 @@ class PaperFolderCreateError(PaperApiBaseError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_folder_id'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperFolderCreateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperFolderCreateError_validator = bv.Union(PaperFolderCreateError)
 
@@ -2131,7 +2127,7 @@ class PaperFolderCreateResult(bb.Struct):
     folder_id = bb.Attribute("folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperFolderCreateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperFolderCreateResult_validator = bv.Struct(PaperFolderCreateResult)
 
@@ -2159,7 +2155,7 @@ class RemovePaperDocUser(RefPaperDoc):
     member = bb.Attribute("member", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemovePaperDocUser, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemovePaperDocUser_validator = bv.Struct(RemovePaperDocUser)
 
@@ -2197,7 +2193,7 @@ class SharingPolicy(bb.Struct):
     team_sharing_policy = bb.Attribute("team_sharing_policy", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingPolicy_validator = bv.Struct(SharingPolicy)
 
@@ -2231,7 +2227,7 @@ class SharingTeamPolicyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'people_with_link_can_edit'
+        pass
 
     def is_people_with_link_can_view_and_comment(self):
         """
@@ -2239,7 +2235,7 @@ class SharingTeamPolicyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'people_with_link_can_view_and_comment'
+        pass
 
     def is_invite_only(self):
         """
@@ -2247,10 +2243,10 @@ class SharingTeamPolicyType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invite_only'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingTeamPolicyType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingTeamPolicyType_validator = bv.Union(SharingTeamPolicyType)
 
@@ -2273,10 +2269,10 @@ class SharingPublicPolicyType(SharingTeamPolicyType):
 
         :rtype: bool
         """
-        return self._tag == 'disabled'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingPublicPolicyType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingPublicPolicyType_validator = bv.Union(SharingPublicPolicyType)
 
@@ -2311,7 +2307,7 @@ class UserInfoWithPermissionLevel(bb.Struct):
     permission_level = bb.Attribute("permission_level", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserInfoWithPermissionLevel, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserInfoWithPermissionLevel_validator = bv.Struct(UserInfoWithPermissionLevel)
 
@@ -2342,7 +2338,7 @@ class UserOnPaperDocFilter(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'visited'
+        pass
 
     def is_shared(self):
         """
@@ -2350,7 +2346,7 @@ class UserOnPaperDocFilter(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'shared'
+        pass
 
     def is_other(self):
         """
@@ -2358,10 +2354,10 @@ class UserOnPaperDocFilter(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserOnPaperDocFilter, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserOnPaperDocFilter_validator = bv.Union(UserOnPaperDocFilter)
 

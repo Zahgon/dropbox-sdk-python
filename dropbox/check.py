@@ -31,7 +31,7 @@ class EchoArg(bb.Struct):
     query = bb.Attribute("query")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(EchoArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 EchoArg_validator = bv.Struct(EchoArg)
 
@@ -59,7 +59,7 @@ class EchoResult(bb.Struct):
     result = bb.Attribute("result")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(EchoResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 EchoResult_validator = bv.Struct(EchoResult)
 

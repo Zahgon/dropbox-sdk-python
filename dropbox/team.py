@@ -78,7 +78,7 @@ class DeviceSession(bb.Struct):
     updated = bb.Attribute("updated", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeviceSession, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeviceSession_validator = bv.Struct(DeviceSession)
 
@@ -143,7 +143,7 @@ class ActiveWebSession(DeviceSession):
     expires = bb.Attribute("expires", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ActiveWebSession, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ActiveWebSession_validator = bv.Struct(ActiveWebSession)
 
@@ -191,7 +191,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param secondary_emails.SecondaryEmail val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def unavailable(cls, val):
@@ -202,7 +202,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('unavailable', val)
+        pass
 
     @classmethod
     def already_pending(cls, val):
@@ -213,7 +213,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('already_pending', val)
+        pass
 
     @classmethod
     def already_owned_by_user(cls, val):
@@ -224,7 +224,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('already_owned_by_user', val)
+        pass
 
     @classmethod
     def reached_limit(cls, val):
@@ -235,7 +235,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('reached_limit', val)
+        pass
 
     @classmethod
     def transient_error(cls, val):
@@ -246,7 +246,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('transient_error', val)
+        pass
 
     @classmethod
     def too_many_updates(cls, val):
@@ -257,7 +257,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('too_many_updates', val)
+        pass
 
     @classmethod
     def unknown_error(cls, val):
@@ -268,7 +268,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('unknown_error', val)
+        pass
 
     @classmethod
     def rate_limited(cls, val):
@@ -279,7 +279,7 @@ class AddSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: AddSecondaryEmailResult
         """
-        return cls('rate_limited', val)
+        pass
 
     def is_success(self):
         """
@@ -287,7 +287,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_unavailable(self):
         """
@@ -295,7 +295,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unavailable'
+        pass
 
     def is_already_pending(self):
         """
@@ -303,7 +303,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'already_pending'
+        pass
 
     def is_already_owned_by_user(self):
         """
@@ -311,7 +311,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'already_owned_by_user'
+        pass
 
     def is_reached_limit(self):
         """
@@ -319,7 +319,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reached_limit'
+        pass
 
     def is_transient_error(self):
         """
@@ -327,7 +327,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def is_too_many_updates(self):
         """
@@ -335,7 +335,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_updates'
+        pass
 
     def is_unknown_error(self):
         """
@@ -343,7 +343,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown_error'
+        pass
 
     def is_rate_limited(self):
         """
@@ -351,7 +351,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'rate_limited'
+        pass
 
     def is_other(self):
         """
@@ -359,7 +359,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -369,9 +369,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: secondary_emails.SecondaryEmail
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_unavailable(self):
         """
@@ -381,9 +379,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_unavailable():
-            raise AttributeError("tag 'unavailable' not set")
-        return self._value
+        pass
 
     def get_already_pending(self):
         """
@@ -393,9 +389,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_already_pending():
-            raise AttributeError("tag 'already_pending' not set")
-        return self._value
+        pass
 
     def get_already_owned_by_user(self):
         """
@@ -405,9 +399,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_already_owned_by_user():
-            raise AttributeError("tag 'already_owned_by_user' not set")
-        return self._value
+        pass
 
     def get_reached_limit(self):
         """
@@ -417,9 +409,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_reached_limit():
-            raise AttributeError("tag 'reached_limit' not set")
-        return self._value
+        pass
 
     def get_transient_error(self):
         """
@@ -429,9 +419,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_transient_error():
-            raise AttributeError("tag 'transient_error' not set")
-        return self._value
+        pass
 
     def get_too_many_updates(self):
         """
@@ -441,9 +429,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_too_many_updates():
-            raise AttributeError("tag 'too_many_updates' not set")
-        return self._value
+        pass
 
     def get_unknown_error(self):
         """
@@ -453,9 +439,7 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_unknown_error():
-            raise AttributeError("tag 'unknown_error' not set")
-        return self._value
+        pass
 
     def get_rate_limited(self):
         """
@@ -466,12 +450,10 @@ class AddSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_rate_limited():
-            raise AttributeError("tag 'rate_limited' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddSecondaryEmailResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddSecondaryEmailResult_validator = bv.Union(AddSecondaryEmailResult)
 
@@ -497,7 +479,7 @@ class AddSecondaryEmailsArg(bb.Struct):
     new_secondary_emails = bb.Attribute("new_secondary_emails")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddSecondaryEmailsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddSecondaryEmailsArg_validator = bv.Struct(AddSecondaryEmailsArg)
 
@@ -529,7 +511,7 @@ class AddSecondaryEmailsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'secondary_emails_disabled'
+        pass
 
     def is_too_many_emails(self):
         """
@@ -537,7 +519,7 @@ class AddSecondaryEmailsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_emails'
+        pass
 
     def is_other(self):
         """
@@ -545,10 +527,10 @@ class AddSecondaryEmailsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddSecondaryEmailsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddSecondaryEmailsError_validator = bv.Union(AddSecondaryEmailsError)
 
@@ -574,7 +556,7 @@ class AddSecondaryEmailsResult(bb.Struct):
     results = bb.Attribute("results")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AddSecondaryEmailsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AddSecondaryEmailsResult_validator = bv.Struct(AddSecondaryEmailsResult)
 
@@ -612,7 +594,7 @@ class AdminTier(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_admin'
+        pass
 
     def is_user_management_admin(self):
         """
@@ -620,7 +602,7 @@ class AdminTier(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_management_admin'
+        pass
 
     def is_support_admin(self):
         """
@@ -628,7 +610,7 @@ class AdminTier(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'support_admin'
+        pass
 
     def is_member_only(self):
         """
@@ -636,10 +618,10 @@ class AdminTier(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_only'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AdminTier, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AdminTier_validator = bv.Union(AdminTier)
 
@@ -712,7 +694,7 @@ class ApiApp(bb.Struct):
     is_app_folder = bb.Attribute("is_app_folder")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ApiApp, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ApiApp_validator = bv.Struct(ApiApp)
 
@@ -740,7 +722,7 @@ class BaseDfbReport(bb.Struct):
     start_date = bb.Attribute("start_date")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(BaseDfbReport, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 BaseDfbReport_validator = bv.Struct(BaseDfbReport)
 
@@ -766,7 +748,7 @@ class BaseTeamFolderError(bb.Union):
         :param TeamFolderAccessError val:
         :rtype: BaseTeamFolderError
         """
-        return cls('access_error', val)
+        pass
 
     @classmethod
     def status_error(cls, val):
@@ -777,7 +759,7 @@ class BaseTeamFolderError(bb.Union):
         :param TeamFolderInvalidStatusError val:
         :rtype: BaseTeamFolderError
         """
-        return cls('status_error', val)
+        pass
 
     @classmethod
     def team_shared_dropbox_error(cls, val):
@@ -788,7 +770,7 @@ class BaseTeamFolderError(bb.Union):
         :param TeamFolderTeamSharedDropboxError val:
         :rtype: BaseTeamFolderError
         """
-        return cls('team_shared_dropbox_error', val)
+        pass
 
     def is_access_error(self):
         """
@@ -796,7 +778,7 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'access_error'
+        pass
 
     def is_status_error(self):
         """
@@ -804,7 +786,7 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'status_error'
+        pass
 
     def is_team_shared_dropbox_error(self):
         """
@@ -812,7 +794,7 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_shared_dropbox_error'
+        pass
 
     def is_other(self):
         """
@@ -820,7 +802,7 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_access_error(self):
         """
@@ -828,9 +810,7 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: TeamFolderAccessError
         """
-        if not self.is_access_error():
-            raise AttributeError("tag 'access_error' not set")
-        return self._value
+        pass
 
     def get_status_error(self):
         """
@@ -838,9 +818,7 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: TeamFolderInvalidStatusError
         """
-        if not self.is_status_error():
-            raise AttributeError("tag 'status_error' not set")
-        return self._value
+        pass
 
     def get_team_shared_dropbox_error(self):
         """
@@ -848,12 +826,10 @@ class BaseTeamFolderError(bb.Union):
 
         :rtype: TeamFolderTeamSharedDropboxError
         """
-        if not self.is_team_shared_dropbox_error():
-            raise AttributeError("tag 'team_shared_dropbox_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(BaseTeamFolderError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 BaseTeamFolderError_validator = bv.Union(BaseTeamFolderError)
 
@@ -881,7 +857,7 @@ class CustomQuotaError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_users'
+        pass
 
     def is_other(self):
         """
@@ -889,10 +865,10 @@ class CustomQuotaError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CustomQuotaError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CustomQuotaError_validator = bv.Union(CustomQuotaError)
 
@@ -922,7 +898,7 @@ class CustomQuotaResult(bb.Union):
         :param UserCustomQuotaResult val:
         :rtype: CustomQuotaResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def invalid_user(cls, val):
@@ -933,7 +909,7 @@ class CustomQuotaResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: CustomQuotaResult
         """
-        return cls('invalid_user', val)
+        pass
 
     def is_success(self):
         """
@@ -941,7 +917,7 @@ class CustomQuotaResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_invalid_user(self):
         """
@@ -949,7 +925,7 @@ class CustomQuotaResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_user'
+        pass
 
     def is_other(self):
         """
@@ -957,7 +933,7 @@ class CustomQuotaResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -967,9 +943,7 @@ class CustomQuotaResult(bb.Union):
 
         :rtype: UserCustomQuotaResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_invalid_user(self):
         """
@@ -979,12 +953,10 @@ class CustomQuotaResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_invalid_user():
-            raise AttributeError("tag 'invalid_user' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CustomQuotaResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CustomQuotaResult_validator = bv.Union(CustomQuotaResult)
 
@@ -1009,7 +981,7 @@ class CustomQuotaUsersArg(bb.Struct):
     users = bb.Attribute("users")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(CustomQuotaUsersArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 CustomQuotaUsersArg_validator = bv.Struct(CustomQuotaUsersArg)
 
@@ -1047,7 +1019,7 @@ class DateRange(bb.Struct):
     end_date = bb.Attribute("end_date", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DateRange, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DateRange_validator = bv.Struct(DateRange)
 
@@ -1070,10 +1042,10 @@ class DateRangeError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DateRangeError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DateRangeError_validator = bv.Union(DateRangeError)
 
@@ -1109,7 +1081,7 @@ class DeleteSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: DeleteSecondaryEmailResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def not_found(cls, val):
@@ -1120,7 +1092,7 @@ class DeleteSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: DeleteSecondaryEmailResult
         """
-        return cls('not_found', val)
+        pass
 
     @classmethod
     def cannot_remove_primary(cls, val):
@@ -1131,7 +1103,7 @@ class DeleteSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: DeleteSecondaryEmailResult
         """
-        return cls('cannot_remove_primary', val)
+        pass
 
     def is_success(self):
         """
@@ -1139,7 +1111,7 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_not_found(self):
         """
@@ -1147,7 +1119,7 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_found'
+        pass
 
     def is_cannot_remove_primary(self):
         """
@@ -1155,7 +1127,7 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_remove_primary'
+        pass
 
     def is_other(self):
         """
@@ -1163,7 +1135,7 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -1173,9 +1145,7 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_not_found(self):
         """
@@ -1185,9 +1155,7 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_not_found():
-            raise AttributeError("tag 'not_found' not set")
-        return self._value
+        pass
 
     def get_cannot_remove_primary(self):
         """
@@ -1198,12 +1166,10 @@ class DeleteSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_cannot_remove_primary():
-            raise AttributeError("tag 'cannot_remove_primary' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteSecondaryEmailResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteSecondaryEmailResult_validator = bv.Union(DeleteSecondaryEmailResult)
 
@@ -1229,7 +1195,7 @@ class DeleteSecondaryEmailsArg(bb.Struct):
     emails_to_delete = bb.Attribute("emails_to_delete")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteSecondaryEmailsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteSecondaryEmailsArg_validator = bv.Struct(DeleteSecondaryEmailsArg)
 
@@ -1251,7 +1217,7 @@ class DeleteSecondaryEmailsResult(bb.Struct):
     results = bb.Attribute("results")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeleteSecondaryEmailsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeleteSecondaryEmailsResult_validator = bv.Struct(DeleteSecondaryEmailsResult)
 
@@ -1327,7 +1293,7 @@ class DesktopClientSession(DeviceSession):
     is_delete_on_unlink_supported = bb.Attribute("is_delete_on_unlink_supported")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DesktopClientSession, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DesktopClientSession_validator = bv.Struct(DesktopClientSession)
 
@@ -1358,7 +1324,7 @@ class DesktopPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'windows'
+        pass
 
     def is_mac(self):
         """
@@ -1366,7 +1332,7 @@ class DesktopPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mac'
+        pass
 
     def is_linux(self):
         """
@@ -1374,7 +1340,7 @@ class DesktopPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'linux'
+        pass
 
     def is_other(self):
         """
@@ -1382,10 +1348,10 @@ class DesktopPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DesktopPlatform, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DesktopPlatform_validator = bv.Union(DesktopPlatform)
 
@@ -1420,7 +1386,7 @@ class DeviceSessionArg(bb.Struct):
     team_member_id = bb.Attribute("team_member_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DeviceSessionArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DeviceSessionArg_validator = bv.Struct(DeviceSessionArg)
 
@@ -1510,7 +1476,7 @@ class DevicesActive(bb.Struct):
     total = bb.Attribute("total")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(DevicesActive, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 DevicesActive_validator = bv.Struct(DevicesActive)
 
@@ -1537,7 +1503,7 @@ class ExcludedUsersListArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersListArg_validator = bv.Struct(ExcludedUsersListArg)
 
@@ -1565,7 +1531,7 @@ class ExcludedUsersListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersListContinueArg_validator = bv.Struct(ExcludedUsersListContinueArg)
 
@@ -1593,7 +1559,7 @@ class ExcludedUsersListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -1601,10 +1567,10 @@ class ExcludedUsersListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersListContinueError_validator = bv.Union(ExcludedUsersListContinueError)
 
@@ -1631,7 +1597,7 @@ class ExcludedUsersListError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'list_error'
+        pass
 
     def is_other(self):
         """
@@ -1639,10 +1605,10 @@ class ExcludedUsersListError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersListError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersListError_validator = bv.Union(ExcludedUsersListError)
 
@@ -1691,7 +1657,7 @@ class ExcludedUsersListResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersListResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersListResult_validator = bv.Struct(ExcludedUsersListResult)
 
@@ -1720,7 +1686,7 @@ class ExcludedUsersUpdateArg(bb.Struct):
     users = bb.Attribute("users", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersUpdateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersUpdateArg_validator = bv.Struct(ExcludedUsersUpdateArg)
 
@@ -1752,7 +1718,7 @@ class ExcludedUsersUpdateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'users_not_in_team'
+        pass
 
     def is_too_many_users(self):
         """
@@ -1760,7 +1726,7 @@ class ExcludedUsersUpdateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_users'
+        pass
 
     def is_other(self):
         """
@@ -1768,10 +1734,10 @@ class ExcludedUsersUpdateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersUpdateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersUpdateError_validator = bv.Union(ExcludedUsersUpdateError)
 
@@ -1798,7 +1764,7 @@ class ExcludedUsersUpdateResult(bb.Struct):
     status = bb.Attribute("status", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersUpdateResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersUpdateResult_validator = bv.Struct(ExcludedUsersUpdateResult)
 
@@ -1825,7 +1791,7 @@ class ExcludedUsersUpdateStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_other(self):
         """
@@ -1833,10 +1799,10 @@ class ExcludedUsersUpdateStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ExcludedUsersUpdateStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ExcludedUsersUpdateStatus_validator = bv.Union(ExcludedUsersUpdateStatus)
 
@@ -1875,7 +1841,7 @@ class Feature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'upload_api_rate_limit'
+        pass
 
     def is_has_team_shared_dropbox(self):
         """
@@ -1883,7 +1849,7 @@ class Feature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_shared_dropbox'
+        pass
 
     def is_has_team_file_events(self):
         """
@@ -1891,7 +1857,7 @@ class Feature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_file_events'
+        pass
 
     def is_has_team_selective_sync(self):
         """
@@ -1899,7 +1865,7 @@ class Feature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_selective_sync'
+        pass
 
     def is_other(self):
         """
@@ -1907,10 +1873,10 @@ class Feature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Feature, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Feature_validator = bv.Union(Feature)
 
@@ -1937,7 +1903,7 @@ class FeatureValue(bb.Union):
         :param UploadApiRateLimitValue val:
         :rtype: FeatureValue
         """
-        return cls('upload_api_rate_limit', val)
+        pass
 
     @classmethod
     def has_team_shared_dropbox(cls, val):
@@ -1948,7 +1914,7 @@ class FeatureValue(bb.Union):
         :param HasTeamSharedDropboxValue val:
         :rtype: FeatureValue
         """
-        return cls('has_team_shared_dropbox', val)
+        pass
 
     @classmethod
     def has_team_file_events(cls, val):
@@ -1959,7 +1925,7 @@ class FeatureValue(bb.Union):
         :param HasTeamFileEventsValue val:
         :rtype: FeatureValue
         """
-        return cls('has_team_file_events', val)
+        pass
 
     @classmethod
     def has_team_selective_sync(cls, val):
@@ -1970,7 +1936,7 @@ class FeatureValue(bb.Union):
         :param HasTeamSelectiveSyncValue val:
         :rtype: FeatureValue
         """
-        return cls('has_team_selective_sync', val)
+        pass
 
     def is_upload_api_rate_limit(self):
         """
@@ -1978,7 +1944,7 @@ class FeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'upload_api_rate_limit'
+        pass
 
     def is_has_team_shared_dropbox(self):
         """
@@ -1986,7 +1952,7 @@ class FeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_shared_dropbox'
+        pass
 
     def is_has_team_file_events(self):
         """
@@ -1994,7 +1960,7 @@ class FeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_file_events'
+        pass
 
     def is_has_team_selective_sync(self):
         """
@@ -2002,7 +1968,7 @@ class FeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_selective_sync'
+        pass
 
     def is_other(self):
         """
@@ -2010,7 +1976,7 @@ class FeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_upload_api_rate_limit(self):
         """
@@ -2018,9 +1984,7 @@ class FeatureValue(bb.Union):
 
         :rtype: UploadApiRateLimitValue
         """
-        if not self.is_upload_api_rate_limit():
-            raise AttributeError("tag 'upload_api_rate_limit' not set")
-        return self._value
+        pass
 
     def get_has_team_shared_dropbox(self):
         """
@@ -2028,9 +1992,7 @@ class FeatureValue(bb.Union):
 
         :rtype: HasTeamSharedDropboxValue
         """
-        if not self.is_has_team_shared_dropbox():
-            raise AttributeError("tag 'has_team_shared_dropbox' not set")
-        return self._value
+        pass
 
     def get_has_team_file_events(self):
         """
@@ -2038,9 +2000,7 @@ class FeatureValue(bb.Union):
 
         :rtype: HasTeamFileEventsValue
         """
-        if not self.is_has_team_file_events():
-            raise AttributeError("tag 'has_team_file_events' not set")
-        return self._value
+        pass
 
     def get_has_team_selective_sync(self):
         """
@@ -2048,12 +2008,10 @@ class FeatureValue(bb.Union):
 
         :rtype: HasTeamSelectiveSyncValue
         """
-        if not self.is_has_team_selective_sync():
-            raise AttributeError("tag 'has_team_selective_sync' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FeatureValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FeatureValue_validator = bv.Union(FeatureValue)
 
@@ -2080,7 +2038,7 @@ class FeaturesGetValuesBatchArg(bb.Struct):
     features = bb.Attribute("features")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FeaturesGetValuesBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FeaturesGetValuesBatchArg_validator = bv.Struct(FeaturesGetValuesBatchArg)
 
@@ -2107,7 +2065,7 @@ class FeaturesGetValuesBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'empty_features_list'
+        pass
 
     def is_other(self):
         """
@@ -2115,10 +2073,10 @@ class FeaturesGetValuesBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FeaturesGetValuesBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FeaturesGetValuesBatchError_validator = bv.Union(FeaturesGetValuesBatchError)
 
@@ -2140,7 +2098,7 @@ class FeaturesGetValuesBatchResult(bb.Struct):
     values = bb.Attribute("values")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FeaturesGetValuesBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FeaturesGetValuesBatchResult_validator = bv.Struct(FeaturesGetValuesBatchResult)
 
@@ -2305,7 +2263,7 @@ class GetActivityReport(BaseDfbReport):
     shared_links_viewed_total = bb.Attribute("shared_links_viewed_total")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetActivityReport, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetActivityReport_validator = bv.Struct(GetActivityReport)
 
@@ -2358,7 +2316,7 @@ class GetDevicesReport(BaseDfbReport):
     active_28_day = bb.Attribute("active_28_day", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetDevicesReport, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetDevicesReport_validator = bv.Struct(GetDevicesReport)
 
@@ -2429,7 +2387,7 @@ class GetMembershipReport(BaseDfbReport):
     licenses = bb.Attribute("licenses")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetMembershipReport, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetMembershipReport_validator = bv.Struct(GetMembershipReport)
 
@@ -2505,7 +2463,7 @@ class GetStorageReport(BaseDfbReport):
     member_storage_map = bb.Attribute("member_storage_map")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetStorageReport, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetStorageReport_validator = bv.Struct(GetStorageReport)
 
@@ -2535,7 +2493,7 @@ class GroupAccessType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member'
+        pass
 
     def is_owner(self):
         """
@@ -2543,10 +2501,10 @@ class GroupAccessType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'owner'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupAccessType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupAccessType_validator = bv.Union(GroupAccessType)
 
@@ -2601,7 +2559,7 @@ class GroupCreateArg(bb.Struct):
     group_management_type = bb.Attribute("group_management_type", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupCreateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupCreateArg_validator = bv.Struct(GroupCreateArg)
 
@@ -2639,7 +2597,7 @@ class GroupCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_name_already_used'
+        pass
 
     def is_group_name_invalid(self):
         """
@@ -2647,7 +2605,7 @@ class GroupCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_name_invalid'
+        pass
 
     def is_external_id_already_in_use(self):
         """
@@ -2655,7 +2613,7 @@ class GroupCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'external_id_already_in_use'
+        pass
 
     def is_system_managed_group_disallowed(self):
         """
@@ -2663,7 +2621,7 @@ class GroupCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'system_managed_group_disallowed'
+        pass
 
     def is_other(self):
         """
@@ -2671,10 +2629,10 @@ class GroupCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupCreateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupCreateError_validator = bv.Union(GroupCreateError)
 
@@ -2702,7 +2660,7 @@ class GroupSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_not_found'
+        pass
 
     def is_other(self):
         """
@@ -2710,10 +2668,10 @@ class GroupSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupSelectorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupSelectorError_validator = bv.Union(GroupSelectorError)
 
@@ -2739,10 +2697,10 @@ class GroupSelectorWithTeamGroupError(GroupSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'system_managed_group_disallowed'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupSelectorWithTeamGroupError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupSelectorWithTeamGroupError_validator = bv.Union(GroupSelectorWithTeamGroupError)
 
@@ -2765,10 +2723,10 @@ class GroupDeleteError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'group_already_deleted'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupDeleteError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupDeleteError_validator = bv.Union(GroupDeleteError)
 
@@ -2815,7 +2773,7 @@ class GroupFullInfo(team_common.GroupSummary):
     created = bb.Attribute("created")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupFullInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupFullInfo_validator = bv.Struct(GroupFullInfo)
 
@@ -2852,7 +2810,7 @@ class GroupMemberInfo(bb.Struct):
     access_type = bb.Attribute("access_type", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMemberInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMemberInfo_validator = bv.Struct(GroupMemberInfo)
 
@@ -2889,7 +2847,7 @@ class GroupMemberSelector(bb.Struct):
     user = bb.Attribute("user", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMemberSelector, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMemberSelector_validator = bv.Struct(GroupMemberSelector)
 
@@ -2915,10 +2873,10 @@ class GroupMemberSelectorError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'member_not_in_group'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMemberSelectorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMemberSelectorError_validator = bv.Union(GroupMemberSelectorError)
 
@@ -2942,10 +2900,10 @@ class GroupMemberSetAccessTypeError(GroupMemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_cannot_be_manager_of_company_managed_group'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMemberSetAccessTypeError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMemberSetAccessTypeError_validator = bv.Union(GroupMemberSetAccessTypeError)
 
@@ -2973,7 +2931,7 @@ class IncludeMembersArg(bb.Struct):
     return_members = bb.Attribute("return_members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(IncludeMembersArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 IncludeMembersArg_validator = bv.Struct(IncludeMembersArg)
 
@@ -3010,7 +2968,7 @@ class GroupMembersAddArg(IncludeMembersArg):
     members = bb.Attribute("members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersAddArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersAddArg_validator = bv.Struct(GroupMembersAddArg)
 
@@ -3055,7 +3013,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
         :param list of [str] val:
         :rtype: GroupMembersAddError
         """
-        return cls('members_not_in_team', val)
+        pass
 
     @classmethod
     def users_not_found(cls, val):
@@ -3066,7 +3024,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
         :param list of [str] val:
         :rtype: GroupMembersAddError
         """
-        return cls('users_not_found', val)
+        pass
 
     @classmethod
     def user_cannot_be_manager_of_company_managed_group(cls, val):
@@ -3078,7 +3036,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
         :param list of [str] val:
         :rtype: GroupMembersAddError
         """
-        return cls('user_cannot_be_manager_of_company_managed_group', val)
+        pass
 
     def is_duplicate_user(self):
         """
@@ -3086,7 +3044,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'duplicate_user'
+        pass
 
     def is_group_not_in_team(self):
         """
@@ -3094,7 +3052,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'group_not_in_team'
+        pass
 
     def is_members_not_in_team(self):
         """
@@ -3102,7 +3060,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'members_not_in_team'
+        pass
 
     def is_users_not_found(self):
         """
@@ -3110,7 +3068,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'users_not_found'
+        pass
 
     def is_user_must_be_active_to_be_owner(self):
         """
@@ -3118,7 +3076,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'user_must_be_active_to_be_owner'
+        pass
 
     def is_user_cannot_be_manager_of_company_managed_group(self):
         """
@@ -3126,7 +3084,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'user_cannot_be_manager_of_company_managed_group'
+        pass
 
     def get_members_not_in_team(self):
         """
@@ -3140,9 +3098,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: list of [str]
         """
-        if not self.is_members_not_in_team():
-            raise AttributeError("tag 'members_not_in_team' not set")
-        return self._value
+        pass
 
     def get_users_not_found(self):
         """
@@ -3152,9 +3108,7 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: list of [str]
         """
-        if not self.is_users_not_found():
-            raise AttributeError("tag 'users_not_found' not set")
-        return self._value
+        pass
 
     def get_user_cannot_be_manager_of_company_managed_group(self):
         """
@@ -3164,12 +3118,10 @@ class GroupMembersAddError(GroupSelectorWithTeamGroupError):
 
         :rtype: list of [str]
         """
-        if not self.is_user_cannot_be_manager_of_company_managed_group():
-            raise AttributeError("tag 'user_cannot_be_manager_of_company_managed_group' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersAddError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersAddError_validator = bv.Union(GroupMembersAddError)
 
@@ -3212,7 +3164,7 @@ class GroupMembersChangeResult(bb.Struct):
     async_job_id = bb.Attribute("async_job_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersChangeResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersChangeResult_validator = bv.Struct(GroupMembersChangeResult)
 
@@ -3250,7 +3202,7 @@ class GroupMembersRemoveArg(IncludeMembersArg):
     users = bb.Attribute("users")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersRemoveArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersRemoveArg_validator = bv.Struct(GroupMembersRemoveArg)
 
@@ -3276,10 +3228,10 @@ class GroupMembersSelectorError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'member_not_in_group'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersSelectorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersSelectorError_validator = bv.Union(GroupMembersSelectorError)
 
@@ -3310,7 +3262,7 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
         :param list of [str] val:
         :rtype: GroupMembersRemoveError
         """
-        return cls('members_not_in_team', val)
+        pass
 
     @classmethod
     def users_not_found(cls, val):
@@ -3321,7 +3273,7 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
         :param list of [str] val:
         :rtype: GroupMembersRemoveError
         """
-        return cls('users_not_found', val)
+        pass
 
     def is_group_not_in_team(self):
         """
@@ -3329,7 +3281,7 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'group_not_in_team'
+        pass
 
     def is_members_not_in_team(self):
         """
@@ -3337,7 +3289,7 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'members_not_in_team'
+        pass
 
     def is_users_not_found(self):
         """
@@ -3345,7 +3297,7 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'users_not_found'
+        pass
 
     def get_members_not_in_team(self):
         """
@@ -3355,9 +3307,7 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
 
         :rtype: list of [str]
         """
-        if not self.is_members_not_in_team():
-            raise AttributeError("tag 'members_not_in_team' not set")
-        return self._value
+        pass
 
     def get_users_not_found(self):
         """
@@ -3367,12 +3317,10 @@ class GroupMembersRemoveError(GroupMembersSelectorError):
 
         :rtype: list of [str]
         """
-        if not self.is_users_not_found():
-            raise AttributeError("tag 'users_not_found' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersRemoveError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersRemoveError_validator = bv.Union(GroupMembersRemoveError)
 
@@ -3409,7 +3357,7 @@ class GroupMembersSelector(bb.Struct):
     users = bb.Attribute("users", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersSelector, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersSelector_validator = bv.Struct(GroupMembersSelector)
 
@@ -3451,7 +3399,7 @@ class GroupMembersSetAccessTypeArg(GroupMemberSelector):
     return_members = bb.Attribute("return_members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupMembersSetAccessTypeArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupMembersSetAccessTypeArg_validator = bv.Struct(GroupMembersSetAccessTypeArg)
 
@@ -3479,7 +3427,7 @@ class GroupSelector(bb.Union):
         :param str val:
         :rtype: GroupSelector
         """
-        return cls('group_id', val)
+        pass
 
     @classmethod
     def group_external_id(cls, val):
@@ -3490,7 +3438,7 @@ class GroupSelector(bb.Union):
         :param str val:
         :rtype: GroupSelector
         """
-        return cls('group_external_id', val)
+        pass
 
     def is_group_id(self):
         """
@@ -3498,7 +3446,7 @@ class GroupSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_id'
+        pass
 
     def is_group_external_id(self):
         """
@@ -3506,7 +3454,7 @@ class GroupSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_external_id'
+        pass
 
     def get_group_id(self):
         """
@@ -3516,9 +3464,7 @@ class GroupSelector(bb.Union):
 
         :rtype: str
         """
-        if not self.is_group_id():
-            raise AttributeError("tag 'group_id' not set")
-        return self._value
+        pass
 
     def get_group_external_id(self):
         """
@@ -3528,12 +3474,10 @@ class GroupSelector(bb.Union):
 
         :rtype: str
         """
-        if not self.is_group_external_id():
-            raise AttributeError("tag 'group_external_id' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupSelector, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupSelector_validator = bv.Union(GroupSelector)
 
@@ -3592,7 +3536,7 @@ class GroupUpdateArgs(IncludeMembersArg):
     new_group_management_type = bb.Attribute("new_group_management_type", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupUpdateArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupUpdateArgs_validator = bv.Struct(GroupUpdateArgs)
 
@@ -3623,7 +3567,7 @@ class GroupUpdateError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'group_name_already_used'
+        pass
 
     def is_group_name_invalid(self):
         """
@@ -3631,7 +3575,7 @@ class GroupUpdateError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'group_name_invalid'
+        pass
 
     def is_external_id_already_in_use(self):
         """
@@ -3639,10 +3583,10 @@ class GroupUpdateError(GroupSelectorWithTeamGroupError):
 
         :rtype: bool
         """
-        return self._tag == 'external_id_already_in_use'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupUpdateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupUpdateError_validator = bv.Union(GroupUpdateError)
 
@@ -3668,7 +3612,7 @@ class GroupsGetInfoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_not_on_team'
+        pass
 
     def is_other(self):
         """
@@ -3676,10 +3620,10 @@ class GroupsGetInfoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsGetInfoError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsGetInfoError_validator = bv.Union(GroupsGetInfoError)
 
@@ -3707,7 +3651,7 @@ class GroupsGetInfoItem(bb.Union):
         :param str val:
         :rtype: GroupsGetInfoItem
         """
-        return cls('id_not_found', val)
+        pass
 
     @classmethod
     def group_info(cls, val):
@@ -3718,7 +3662,7 @@ class GroupsGetInfoItem(bb.Union):
         :param GroupFullInfo val:
         :rtype: GroupsGetInfoItem
         """
-        return cls('group_info', val)
+        pass
 
     def is_id_not_found(self):
         """
@@ -3726,7 +3670,7 @@ class GroupsGetInfoItem(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'id_not_found'
+        pass
 
     def is_group_info(self):
         """
@@ -3734,7 +3678,7 @@ class GroupsGetInfoItem(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_info'
+        pass
 
     def get_id_not_found(self):
         """
@@ -3747,9 +3691,7 @@ class GroupsGetInfoItem(bb.Union):
 
         :rtype: str
         """
-        if not self.is_id_not_found():
-            raise AttributeError("tag 'id_not_found' not set")
-        return self._value
+        pass
 
     def get_group_info(self):
         """
@@ -3759,12 +3701,10 @@ class GroupsGetInfoItem(bb.Union):
 
         :rtype: GroupFullInfo
         """
-        if not self.is_group_info():
-            raise AttributeError("tag 'group_info' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsGetInfoItem, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsGetInfoItem_validator = bv.Union(GroupsGetInfoItem)
 
@@ -3789,7 +3729,7 @@ class GroupsListArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsListArg_validator = bv.Struct(GroupsListArg)
 
@@ -3815,7 +3755,7 @@ class GroupsListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsListContinueArg_validator = bv.Struct(GroupsListContinueArg)
 
@@ -3840,7 +3780,7 @@ class GroupsListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -3848,10 +3788,10 @@ class GroupsListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsListContinueError_validator = bv.Union(GroupsListContinueError)
 
@@ -3898,7 +3838,7 @@ class GroupsListResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsListResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsListResult_validator = bv.Struct(GroupsListResult)
 
@@ -3933,7 +3873,7 @@ class GroupsMembersListArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsMembersListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsMembersListArg_validator = bv.Struct(GroupsMembersListArg)
 
@@ -3959,7 +3899,7 @@ class GroupsMembersListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsMembersListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsMembersListContinueArg_validator = bv.Struct(GroupsMembersListContinueArg)
 
@@ -3985,7 +3925,7 @@ class GroupsMembersListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -3993,10 +3933,10 @@ class GroupsMembersListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsMembersListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsMembersListContinueError_validator = bv.Union(GroupsMembersListContinueError)
 
@@ -4043,7 +3983,7 @@ class GroupsMembersListResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsMembersListResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsMembersListResult_validator = bv.Struct(GroupsMembersListResult)
 
@@ -4066,10 +4006,10 @@ class GroupsPollError(async_.PollError):
 
         :rtype: bool
         """
-        return self._tag == 'access_denied'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsPollError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsPollError_validator = bv.Union(GroupsPollError)
 
@@ -4098,7 +4038,7 @@ class GroupsSelector(bb.Union):
         :param list of [str] val:
         :rtype: GroupsSelector
         """
-        return cls('group_ids', val)
+        pass
 
     @classmethod
     def group_external_ids(cls, val):
@@ -4109,7 +4049,7 @@ class GroupsSelector(bb.Union):
         :param list of [str] val:
         :rtype: GroupsSelector
         """
-        return cls('group_external_ids', val)
+        pass
 
     def is_group_ids(self):
         """
@@ -4117,7 +4057,7 @@ class GroupsSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_ids'
+        pass
 
     def is_group_external_ids(self):
         """
@@ -4125,7 +4065,7 @@ class GroupsSelector(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'group_external_ids'
+        pass
 
     def get_group_ids(self):
         """
@@ -4135,9 +4075,7 @@ class GroupsSelector(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_group_ids():
-            raise AttributeError("tag 'group_ids' not set")
-        return self._value
+        pass
 
     def get_group_external_ids(self):
         """
@@ -4147,12 +4085,10 @@ class GroupsSelector(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_group_external_ids():
-            raise AttributeError("tag 'group_external_ids' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupsSelector, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupsSelector_validator = bv.Union(GroupsSelector)
 
@@ -4181,7 +4117,7 @@ class HasTeamFileEventsValue(bb.Union):
         :param bool val:
         :rtype: HasTeamFileEventsValue
         """
-        return cls('enabled', val)
+        pass
 
     def is_enabled(self):
         """
@@ -4189,7 +4125,7 @@ class HasTeamFileEventsValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -4197,7 +4133,7 @@ class HasTeamFileEventsValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_enabled(self):
         """
@@ -4207,12 +4143,10 @@ class HasTeamFileEventsValue(bb.Union):
 
         :rtype: bool
         """
-        if not self.is_enabled():
-            raise AttributeError("tag 'enabled' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(HasTeamFileEventsValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 HasTeamFileEventsValue_validator = bv.Union(HasTeamFileEventsValue)
 
@@ -4241,7 +4175,7 @@ class HasTeamSelectiveSyncValue(bb.Union):
         :param bool val:
         :rtype: HasTeamSelectiveSyncValue
         """
-        return cls('has_team_selective_sync', val)
+        pass
 
     def is_has_team_selective_sync(self):
         """
@@ -4249,7 +4183,7 @@ class HasTeamSelectiveSyncValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_selective_sync'
+        pass
 
     def is_other(self):
         """
@@ -4257,7 +4191,7 @@ class HasTeamSelectiveSyncValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_has_team_selective_sync(self):
         """
@@ -4267,12 +4201,10 @@ class HasTeamSelectiveSyncValue(bb.Union):
 
         :rtype: bool
         """
-        if not self.is_has_team_selective_sync():
-            raise AttributeError("tag 'has_team_selective_sync' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(HasTeamSelectiveSyncValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 HasTeamSelectiveSyncValue_validator = bv.Union(HasTeamSelectiveSyncValue)
 
@@ -4301,7 +4233,7 @@ class HasTeamSharedDropboxValue(bb.Union):
         :param bool val:
         :rtype: HasTeamSharedDropboxValue
         """
-        return cls('has_team_shared_dropbox', val)
+        pass
 
     def is_has_team_shared_dropbox(self):
         """
@@ -4309,7 +4241,7 @@ class HasTeamSharedDropboxValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'has_team_shared_dropbox'
+        pass
 
     def is_other(self):
         """
@@ -4317,7 +4249,7 @@ class HasTeamSharedDropboxValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_has_team_shared_dropbox(self):
         """
@@ -4327,12 +4259,10 @@ class HasTeamSharedDropboxValue(bb.Union):
 
         :rtype: bool
         """
-        if not self.is_has_team_shared_dropbox():
-            raise AttributeError("tag 'has_team_shared_dropbox' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(HasTeamSharedDropboxValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 HasTeamSharedDropboxValue_validator = bv.Union(HasTeamSharedDropboxValue)
 
@@ -4449,7 +4379,7 @@ class LegalHoldHeldRevisionMetadata(bb.Struct):
     content_hash = bb.Attribute("content_hash")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldHeldRevisionMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldHeldRevisionMetadata_validator = bv.Struct(LegalHoldHeldRevisionMetadata)
 
@@ -4540,7 +4470,7 @@ class LegalHoldPolicy(bb.Struct):
     end_date = bb.Attribute("end_date", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldPolicy, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldPolicy_validator = bv.Struct(LegalHoldPolicy)
 
@@ -4580,7 +4510,7 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'active'
+        pass
 
     def is_released(self):
         """
@@ -4588,7 +4518,7 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'released'
+        pass
 
     def is_activating(self):
         """
@@ -4596,7 +4526,7 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'activating'
+        pass
 
     def is_updating(self):
         """
@@ -4604,7 +4534,7 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'updating'
+        pass
 
     def is_exporting(self):
         """
@@ -4612,7 +4542,7 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'exporting'
+        pass
 
     def is_releasing(self):
         """
@@ -4620,7 +4550,7 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'releasing'
+        pass
 
     def is_other(self):
         """
@@ -4628,10 +4558,10 @@ class LegalHoldStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldStatus_validator = bv.Union(LegalHoldStatus)
 
@@ -4661,7 +4591,7 @@ class LegalHoldsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown_legal_hold_error'
+        pass
 
     def is_insufficient_permissions(self):
         """
@@ -4669,7 +4599,7 @@ class LegalHoldsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'insufficient_permissions'
+        pass
 
     def is_other(self):
         """
@@ -4677,10 +4607,10 @@ class LegalHoldsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsError_validator = bv.Union(LegalHoldsError)
 
@@ -4705,7 +4635,7 @@ class LegalHoldsGetPolicyArg(bb.Struct):
     id = bb.Attribute("id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsGetPolicyArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsGetPolicyArg_validator = bv.Struct(LegalHoldsGetPolicyArg)
 
@@ -4728,10 +4658,10 @@ class LegalHoldsGetPolicyError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_policy_not_found'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsGetPolicyError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsGetPolicyError_validator = bv.Union(LegalHoldsGetPolicyError)
 
@@ -4780,7 +4710,7 @@ class LegalHoldsListHeldRevisionResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListHeldRevisionResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListHeldRevisionResult_validator = bv.Struct(LegalHoldsListHeldRevisionResult)
 
@@ -4805,7 +4735,7 @@ class LegalHoldsListHeldRevisionsArg(bb.Struct):
     id = bb.Attribute("id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListHeldRevisionsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListHeldRevisionsArg_validator = bv.Struct(LegalHoldsListHeldRevisionsArg)
 
@@ -4841,7 +4771,7 @@ class LegalHoldsListHeldRevisionsContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListHeldRevisionsContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListHeldRevisionsContinueArg_validator = bv.Struct(LegalHoldsListHeldRevisionsContinueArg)
 
@@ -4878,7 +4808,7 @@ class LegalHoldsListHeldRevisionsContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown_legal_hold_error'
+        pass
 
     def is_transient_error(self):
         """
@@ -4886,7 +4816,7 @@ class LegalHoldsListHeldRevisionsContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def is_reset(self):
         """
@@ -4894,7 +4824,7 @@ class LegalHoldsListHeldRevisionsContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -4902,10 +4832,10 @@ class LegalHoldsListHeldRevisionsContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListHeldRevisionsContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListHeldRevisionsContinueError_validator = bv.Union(LegalHoldsListHeldRevisionsContinueError)
 
@@ -4936,7 +4866,7 @@ class LegalHoldsListHeldRevisionsError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def is_legal_hold_still_empty(self):
         """
@@ -4944,7 +4874,7 @@ class LegalHoldsListHeldRevisionsError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_still_empty'
+        pass
 
     def is_inactive_legal_hold(self):
         """
@@ -4952,10 +4882,10 @@ class LegalHoldsListHeldRevisionsError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'inactive_legal_hold'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListHeldRevisionsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListHeldRevisionsError_validator = bv.Union(LegalHoldsListHeldRevisionsError)
 
@@ -4981,7 +4911,7 @@ class LegalHoldsListPoliciesArg(bb.Struct):
     include_released = bb.Attribute("include_released")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListPoliciesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListPoliciesArg_validator = bv.Struct(LegalHoldsListPoliciesArg)
 
@@ -5004,10 +4934,10 @@ class LegalHoldsListPoliciesError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListPoliciesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListPoliciesError_validator = bv.Union(LegalHoldsListPoliciesError)
 
@@ -5029,7 +4959,7 @@ class LegalHoldsListPoliciesResult(bb.Struct):
     policies = bb.Attribute("policies")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsListPoliciesResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsListPoliciesResult_validator = bv.Struct(LegalHoldsListPoliciesResult)
 
@@ -5094,7 +5024,7 @@ class LegalHoldsPolicyCreateArg(bb.Struct):
     end_date = bb.Attribute("end_date", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsPolicyCreateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsPolicyCreateArg_validator = bv.Struct(LegalHoldsPolicyCreateArg)
 
@@ -5146,7 +5076,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'start_date_is_later_than_end_date'
+        pass
 
     def is_empty_members_list(self):
         """
@@ -5154,7 +5084,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'empty_members_list'
+        pass
 
     def is_invalid_members(self):
         """
@@ -5162,7 +5092,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_members'
+        pass
 
     def is_number_of_users_on_hold_is_greater_than_hold_limitation(self):
         """
@@ -5170,7 +5100,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'number_of_users_on_hold_is_greater_than_hold_limitation'
+        pass
 
     def is_transient_error(self):
         """
@@ -5178,7 +5108,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def is_name_must_be_unique(self):
         """
@@ -5186,7 +5116,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'name_must_be_unique'
+        pass
 
     def is_team_exceeded_legal_hold_quota(self):
         """
@@ -5194,7 +5124,7 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'team_exceeded_legal_hold_quota'
+        pass
 
     def is_invalid_date(self):
         """
@@ -5202,10 +5132,10 @@ class LegalHoldsPolicyCreateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_date'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsPolicyCreateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsPolicyCreateError_validator = bv.Union(LegalHoldsPolicyCreateError)
 
@@ -5230,7 +5160,7 @@ class LegalHoldsPolicyReleaseArg(bb.Struct):
     id = bb.Attribute("id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsPolicyReleaseArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsPolicyReleaseArg_validator = bv.Struct(LegalHoldsPolicyReleaseArg)
 
@@ -5262,7 +5192,7 @@ class LegalHoldsPolicyReleaseError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_performing_another_operation'
+        pass
 
     def is_legal_hold_already_releasing(self):
         """
@@ -5270,7 +5200,7 @@ class LegalHoldsPolicyReleaseError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_already_releasing'
+        pass
 
     def is_legal_hold_policy_not_found(self):
         """
@@ -5278,10 +5208,10 @@ class LegalHoldsPolicyReleaseError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_policy_not_found'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsPolicyReleaseError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsPolicyReleaseError_validator = bv.Union(LegalHoldsPolicyReleaseError)
 
@@ -5334,7 +5264,7 @@ class LegalHoldsPolicyUpdateArg(bb.Struct):
     members = bb.Attribute("members", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsPolicyUpdateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsPolicyUpdateArg_validator = bv.Struct(LegalHoldsPolicyUpdateArg)
 
@@ -5387,7 +5317,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'transient_error'
+        pass
 
     def is_inactive_legal_hold(self):
         """
@@ -5395,7 +5325,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'inactive_legal_hold'
+        pass
 
     def is_legal_hold_performing_another_operation(self):
         """
@@ -5403,7 +5333,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_performing_another_operation'
+        pass
 
     def is_invalid_members(self):
         """
@@ -5411,7 +5341,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_members'
+        pass
 
     def is_number_of_users_on_hold_is_greater_than_hold_limitation(self):
         """
@@ -5419,7 +5349,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'number_of_users_on_hold_is_greater_than_hold_limitation'
+        pass
 
     def is_empty_members_list(self):
         """
@@ -5427,7 +5357,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'empty_members_list'
+        pass
 
     def is_name_must_be_unique(self):
         """
@@ -5435,7 +5365,7 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'name_must_be_unique'
+        pass
 
     def is_legal_hold_policy_not_found(self):
         """
@@ -5443,10 +5373,10 @@ class LegalHoldsPolicyUpdateError(LegalHoldsError):
 
         :rtype: bool
         """
-        return self._tag == 'legal_hold_policy_not_found'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(LegalHoldsPolicyUpdateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 LegalHoldsPolicyUpdateError_validator = bv.Union(LegalHoldsPolicyUpdateError)
 
@@ -5471,7 +5401,7 @@ class ListMemberAppsArg(bb.Struct):
     team_member_id = bb.Attribute("team_member_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMemberAppsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMemberAppsArg_validator = bv.Struct(ListMemberAppsArg)
 
@@ -5499,7 +5429,7 @@ class ListMemberAppsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_not_found'
+        pass
 
     def is_other(self):
         """
@@ -5507,10 +5437,10 @@ class ListMemberAppsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMemberAppsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMemberAppsError_validator = bv.Union(ListMemberAppsError)
 
@@ -5536,7 +5466,7 @@ class ListMemberAppsResult(bb.Struct):
     linked_api_apps = bb.Attribute("linked_api_apps")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMemberAppsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMemberAppsResult_validator = bv.Struct(ListMemberAppsResult)
 
@@ -5591,7 +5521,7 @@ class ListMemberDevicesArg(bb.Struct):
     include_mobile_clients = bb.Attribute("include_mobile_clients")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMemberDevicesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMemberDevicesArg_validator = bv.Struct(ListMemberDevicesArg)
 
@@ -5616,7 +5546,7 @@ class ListMemberDevicesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_not_found'
+        pass
 
     def is_other(self):
         """
@@ -5624,10 +5554,10 @@ class ListMemberDevicesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMemberDevicesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMemberDevicesError_validator = bv.Union(ListMemberDevicesError)
 
@@ -5673,7 +5603,7 @@ class ListMemberDevicesResult(bb.Struct):
     mobile_client_sessions = bb.Attribute("mobile_client_sessions", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMemberDevicesResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMemberDevicesResult_validator = bv.Struct(ListMemberDevicesResult)
 
@@ -5705,7 +5635,7 @@ class ListMembersAppsArg(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMembersAppsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMembersAppsArg_validator = bv.Struct(ListMembersAppsArg)
 
@@ -5736,7 +5666,7 @@ class ListMembersAppsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -5744,10 +5674,10 @@ class ListMembersAppsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMembersAppsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMembersAppsError_validator = bv.Union(ListMembersAppsError)
 
@@ -5799,7 +5729,7 @@ class ListMembersAppsResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMembersAppsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMembersAppsResult_validator = bv.Struct(ListMembersAppsResult)
 
@@ -5858,7 +5788,7 @@ class ListMembersDevicesArg(bb.Struct):
     include_mobile_clients = bb.Attribute("include_mobile_clients")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMembersDevicesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMembersDevicesArg_validator = bv.Struct(ListMembersDevicesArg)
 
@@ -5886,7 +5816,7 @@ class ListMembersDevicesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -5894,10 +5824,10 @@ class ListMembersDevicesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMembersDevicesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMembersDevicesError_validator = bv.Union(ListMembersDevicesError)
 
@@ -5946,7 +5876,7 @@ class ListMembersDevicesResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListMembersDevicesResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListMembersDevicesResult_validator = bv.Struct(ListMembersDevicesResult)
 
@@ -5978,7 +5908,7 @@ class ListTeamAppsArg(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTeamAppsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTeamAppsArg_validator = bv.Struct(ListTeamAppsArg)
 
@@ -6009,7 +5939,7 @@ class ListTeamAppsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -6017,10 +5947,10 @@ class ListTeamAppsError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTeamAppsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTeamAppsError_validator = bv.Union(ListTeamAppsError)
 
@@ -6072,7 +6002,7 @@ class ListTeamAppsResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTeamAppsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTeamAppsResult_validator = bv.Struct(ListTeamAppsResult)
 
@@ -6131,7 +6061,7 @@ class ListTeamDevicesArg(bb.Struct):
     include_mobile_clients = bb.Attribute("include_mobile_clients")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTeamDevicesArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTeamDevicesArg_validator = bv.Struct(ListTeamDevicesArg)
 
@@ -6159,7 +6089,7 @@ class ListTeamDevicesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'reset'
+        pass
 
     def is_other(self):
         """
@@ -6167,10 +6097,10 @@ class ListTeamDevicesError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTeamDevicesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTeamDevicesError_validator = bv.Union(ListTeamDevicesError)
 
@@ -6219,7 +6149,7 @@ class ListTeamDevicesResult(bb.Struct):
     cursor = bb.Attribute("cursor", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ListTeamDevicesResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ListTeamDevicesResult_validator = bv.Struct(ListTeamDevicesResult)
 
@@ -6255,7 +6185,7 @@ class MemberAccess(bb.Struct):
     access_type = bb.Attribute("access_type", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAccess, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAccess_validator = bv.Struct(MemberAccess)
 
@@ -6340,7 +6270,7 @@ class MemberAddArgBase(bb.Struct):
     is_directory_restricted = bb.Attribute("is_directory_restricted", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAddArgBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAddArgBase_validator = bv.Struct(MemberAddArgBase)
 
@@ -6376,7 +6306,7 @@ class MemberAddArg(MemberAddArgBase):
     role = bb.Attribute("role", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAddArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAddArg_validator = bv.Struct(MemberAddArg)
 
@@ -6425,7 +6355,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('team_license_limit', val)
+        pass
 
     @classmethod
     def free_team_member_limit_reached(cls, val):
@@ -6436,7 +6366,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('free_team_member_limit_reached', val)
+        pass
 
     @classmethod
     def user_already_on_team(cls, val):
@@ -6447,7 +6377,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('user_already_on_team', val)
+        pass
 
     @classmethod
     def user_on_another_team(cls, val):
@@ -6458,7 +6388,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('user_on_another_team', val)
+        pass
 
     @classmethod
     def user_already_paired(cls, val):
@@ -6469,7 +6399,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('user_already_paired', val)
+        pass
 
     @classmethod
     def user_migration_failed(cls, val):
@@ -6480,7 +6410,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('user_migration_failed', val)
+        pass
 
     @classmethod
     def duplicate_external_member_id(cls, val):
@@ -6491,7 +6421,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('duplicate_external_member_id', val)
+        pass
 
     @classmethod
     def duplicate_member_persistent_id(cls, val):
@@ -6502,7 +6432,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('duplicate_member_persistent_id', val)
+        pass
 
     @classmethod
     def persistent_id_disabled(cls, val):
@@ -6513,7 +6443,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('persistent_id_disabled', val)
+        pass
 
     @classmethod
     def user_creation_failed(cls, val):
@@ -6524,7 +6454,7 @@ class MemberAddResultBase(bb.Union):
         :param str val:
         :rtype: MemberAddResultBase
         """
-        return cls('user_creation_failed', val)
+        pass
 
     def is_team_license_limit(self):
         """
@@ -6532,7 +6462,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_license_limit'
+        pass
 
     def is_free_team_member_limit_reached(self):
         """
@@ -6540,7 +6470,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'free_team_member_limit_reached'
+        pass
 
     def is_user_already_on_team(self):
         """
@@ -6548,7 +6478,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_already_on_team'
+        pass
 
     def is_user_on_another_team(self):
         """
@@ -6556,7 +6486,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_on_another_team'
+        pass
 
     def is_user_already_paired(self):
         """
@@ -6564,7 +6494,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_already_paired'
+        pass
 
     def is_user_migration_failed(self):
         """
@@ -6572,7 +6502,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_migration_failed'
+        pass
 
     def is_duplicate_external_member_id(self):
         """
@@ -6580,7 +6510,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'duplicate_external_member_id'
+        pass
 
     def is_duplicate_member_persistent_id(self):
         """
@@ -6588,7 +6518,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'duplicate_member_persistent_id'
+        pass
 
     def is_persistent_id_disabled(self):
         """
@@ -6596,7 +6526,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'persistent_id_disabled'
+        pass
 
     def is_user_creation_failed(self):
         """
@@ -6604,7 +6534,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_creation_failed'
+        pass
 
     def get_team_license_limit(self):
         """
@@ -6614,9 +6544,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_team_license_limit():
-            raise AttributeError("tag 'team_license_limit' not set")
-        return self._value
+        pass
 
     def get_free_team_member_limit_reached(self):
         """
@@ -6626,9 +6554,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_free_team_member_limit_reached():
-            raise AttributeError("tag 'free_team_member_limit_reached' not set")
-        return self._value
+        pass
 
     def get_user_already_on_team(self):
         """
@@ -6640,9 +6566,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_user_already_on_team():
-            raise AttributeError("tag 'user_already_on_team' not set")
-        return self._value
+        pass
 
     def get_user_on_another_team(self):
         """
@@ -6654,9 +6578,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_user_on_another_team():
-            raise AttributeError("tag 'user_on_another_team' not set")
-        return self._value
+        pass
 
     def get_user_already_paired(self):
         """
@@ -6666,9 +6588,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_user_already_paired():
-            raise AttributeError("tag 'user_already_paired' not set")
-        return self._value
+        pass
 
     def get_user_migration_failed(self):
         """
@@ -6678,9 +6598,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_user_migration_failed():
-            raise AttributeError("tag 'user_migration_failed' not set")
-        return self._value
+        pass
 
     def get_duplicate_external_member_id(self):
         """
@@ -6691,9 +6609,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_duplicate_external_member_id():
-            raise AttributeError("tag 'duplicate_external_member_id' not set")
-        return self._value
+        pass
 
     def get_duplicate_member_persistent_id(self):
         """
@@ -6704,9 +6620,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_duplicate_member_persistent_id():
-            raise AttributeError("tag 'duplicate_member_persistent_id' not set")
-        return self._value
+        pass
 
     def get_persistent_id_disabled(self):
         """
@@ -6717,9 +6631,7 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_persistent_id_disabled():
-            raise AttributeError("tag 'persistent_id_disabled' not set")
-        return self._value
+        pass
 
     def get_user_creation_failed(self):
         """
@@ -6729,12 +6641,10 @@ class MemberAddResultBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_user_creation_failed():
-            raise AttributeError("tag 'user_creation_failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAddResultBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAddResultBase_validator = bv.Union(MemberAddResultBase)
 
@@ -6762,7 +6672,7 @@ class MemberAddResult(MemberAddResultBase):
         :param TeamMemberInfo val:
         :rtype: MemberAddResult
         """
-        return cls('success', val)
+        pass
 
     def is_success(self):
         """
@@ -6770,7 +6680,7 @@ class MemberAddResult(MemberAddResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def get_success(self):
         """
@@ -6780,12 +6690,10 @@ class MemberAddResult(MemberAddResultBase):
 
         :rtype: TeamMemberInfo
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAddResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAddResult_validator = bv.Union(MemberAddResult)
 
@@ -6821,7 +6729,7 @@ class MemberAddV2Arg(MemberAddArgBase):
     role_ids = bb.Attribute("role_ids", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAddV2Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAddV2Arg_validator = bv.Struct(MemberAddV2Arg)
 
@@ -6853,7 +6761,7 @@ class MemberAddV2Result(MemberAddResultBase):
         :param TeamMemberInfoV2 val:
         :rtype: MemberAddV2Result
         """
-        return cls('success', val)
+        pass
 
     def is_success(self):
         """
@@ -6861,7 +6769,7 @@ class MemberAddV2Result(MemberAddResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_other(self):
         """
@@ -6869,7 +6777,7 @@ class MemberAddV2Result(MemberAddResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -6879,12 +6787,10 @@ class MemberAddV2Result(MemberAddResultBase):
 
         :rtype: TeamMemberInfoV2
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberAddV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberAddV2Result_validator = bv.Union(MemberAddV2Result)
 
@@ -6941,7 +6847,7 @@ class MemberDevices(bb.Struct):
     mobile_clients = bb.Attribute("mobile_clients", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberDevices, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberDevices_validator = bv.Struct(MemberDevices)
 
@@ -6978,7 +6884,7 @@ class MemberLinkedApps(bb.Struct):
     linked_api_apps = bb.Attribute("linked_api_apps")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberLinkedApps, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberLinkedApps_validator = bv.Struct(MemberLinkedApps)
 
@@ -7146,7 +7052,7 @@ class MemberProfile(bb.Struct):
     profile_photo_url = bb.Attribute("profile_photo_url", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberProfile, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberProfile_validator = bv.Struct(MemberProfile)
 
@@ -7174,10 +7080,10 @@ class UserSelectorError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_found'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserSelectorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserSelectorError_validator = bv.Union(UserSelectorError)
 
@@ -7200,10 +7106,10 @@ class MemberSelectorError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_in_team'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberSelectorError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberSelectorError_validator = bv.Union(MemberSelectorError)
 
@@ -7229,7 +7135,7 @@ class MembersAddArgBase(bb.Struct):
     force_async = bb.Attribute("force_async")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddArgBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddArgBase_validator = bv.Struct(MembersAddArgBase)
 
@@ -7257,7 +7163,7 @@ class MembersAddArg(MembersAddArgBase):
     new_members = bb.Attribute("new_members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddArg_validator = bv.Struct(MembersAddArg)
 
@@ -7284,7 +7190,7 @@ class MembersAddJobStatus(async_.PollResultBase):
         :param list of [MemberAddResult] val:
         :rtype: MembersAddJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -7295,7 +7201,7 @@ class MembersAddJobStatus(async_.PollResultBase):
         :param str val:
         :rtype: MembersAddJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -7303,7 +7209,7 @@ class MembersAddJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -7311,7 +7217,7 @@ class MembersAddJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_complete(self):
         """
@@ -7324,9 +7230,7 @@ class MembersAddJobStatus(async_.PollResultBase):
 
         :rtype: list of [MemberAddResult]
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -7337,12 +7241,10 @@ class MembersAddJobStatus(async_.PollResultBase):
 
         :rtype: str
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddJobStatus_validator = bv.Union(MembersAddJobStatus)
 
@@ -7373,7 +7275,7 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
         :param list of [MemberAddV2Result] val:
         :rtype: MembersAddJobStatusV2Result
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -7384,7 +7286,7 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
         :param str val:
         :rtype: MembersAddJobStatusV2Result
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -7392,7 +7294,7 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -7400,7 +7302,7 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def is_other(self):
         """
@@ -7408,7 +7310,7 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -7421,9 +7323,7 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
 
         :rtype: list of [MemberAddV2Result]
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -7434,12 +7334,10 @@ class MembersAddJobStatusV2Result(async_.PollResultBase):
 
         :rtype: str
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddJobStatusV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddJobStatusV2Result_validator = bv.Union(MembersAddJobStatusV2Result)
 
@@ -7459,7 +7357,7 @@ class MembersAddLaunch(async_.LaunchResultBase):
         :param list of [MemberAddResult] val:
         :rtype: MembersAddLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -7467,7 +7365,7 @@ class MembersAddLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -7475,12 +7373,10 @@ class MembersAddLaunch(async_.LaunchResultBase):
 
         :rtype: list of [MemberAddResult]
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddLaunch_validator = bv.Union(MembersAddLaunch)
 
@@ -7504,7 +7400,7 @@ class MembersAddLaunchV2Result(async_.LaunchResultBase):
         :param list of [MemberAddV2Result] val:
         :rtype: MembersAddLaunchV2Result
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -7512,7 +7408,7 @@ class MembersAddLaunchV2Result(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_other(self):
         """
@@ -7520,7 +7416,7 @@ class MembersAddLaunchV2Result(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_complete(self):
         """
@@ -7528,12 +7424,10 @@ class MembersAddLaunchV2Result(async_.LaunchResultBase):
 
         :rtype: list of [MemberAddV2Result]
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddLaunchV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddLaunchV2Result_validator = bv.Union(MembersAddLaunchV2Result)
 
@@ -7561,7 +7455,7 @@ class MembersAddV2Arg(MembersAddArgBase):
     new_members = bb.Attribute("new_members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersAddV2Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersAddV2Arg_validator = bv.Struct(MembersAddV2Arg)
 
@@ -7590,7 +7484,7 @@ class MembersDeactivateBaseArg(bb.Struct):
     user = bb.Attribute("user", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersDeactivateBaseArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersDeactivateBaseArg_validator = bv.Struct(MembersDeactivateBaseArg)
 
@@ -7628,7 +7522,7 @@ class MembersDataTransferArg(MembersDeactivateBaseArg):
     transfer_admin_id = bb.Attribute("transfer_admin_id", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersDataTransferArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersDataTransferArg_validator = bv.Struct(MembersDataTransferArg)
 
@@ -7656,7 +7550,7 @@ class MembersDeactivateArg(MembersDeactivateBaseArg):
     wipe_data = bb.Attribute("wipe_data")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersDeactivateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersDeactivateArg_validator = bv.Struct(MembersDeactivateArg)
 
@@ -7682,7 +7576,7 @@ class MembersDeactivateError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_in_team'
+        pass
 
     def is_other(self):
         """
@@ -7690,10 +7584,10 @@ class MembersDeactivateError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersDeactivateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersDeactivateError_validator = bv.Union(MembersDeactivateError)
 
@@ -7719,7 +7613,7 @@ class MembersDeleteProfilePhotoArg(bb.Struct):
     user = bb.Attribute("user", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersDeleteProfilePhotoArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersDeleteProfilePhotoArg_validator = bv.Struct(MembersDeleteProfilePhotoArg)
 
@@ -7745,7 +7639,7 @@ class MembersDeleteProfilePhotoError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'set_profile_disallowed'
+        pass
 
     def is_other(self):
         """
@@ -7753,10 +7647,10 @@ class MembersDeleteProfilePhotoError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersDeleteProfilePhotoError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersDeleteProfilePhotoError_validator = bv.Union(MembersDeleteProfilePhotoError)
 
@@ -7784,7 +7678,7 @@ class MembersGetAvailableTeamMemberRolesResult(bb.Struct):
     roles = bb.Attribute("roles")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetAvailableTeamMemberRolesResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetAvailableTeamMemberRolesResult_validator = bv.Struct(MembersGetAvailableTeamMemberRolesResult)
 
@@ -7809,7 +7703,7 @@ class MembersGetInfoArgs(bb.Struct):
     members = bb.Attribute("members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoArgs_validator = bv.Struct(MembersGetInfoArgs)
 
@@ -7830,10 +7724,10 @@ class MembersGetInfoError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoError_validator = bv.Union(MembersGetInfoError)
 
@@ -7861,7 +7755,7 @@ class MembersGetInfoItemBase(bb.Union):
         :param str val:
         :rtype: MembersGetInfoItemBase
         """
-        return cls('id_not_found', val)
+        pass
 
     def is_id_not_found(self):
         """
@@ -7869,7 +7763,7 @@ class MembersGetInfoItemBase(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'id_not_found'
+        pass
 
     def get_id_not_found(self):
         """
@@ -7883,12 +7777,10 @@ class MembersGetInfoItemBase(bb.Union):
 
         :rtype: str
         """
-        if not self.is_id_not_found():
-            raise AttributeError("tag 'id_not_found' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoItemBase, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoItemBase_validator = bv.Union(MembersGetInfoItemBase)
 
@@ -7914,7 +7806,7 @@ class MembersGetInfoItem(MembersGetInfoItemBase):
         :param TeamMemberInfo val:
         :rtype: MembersGetInfoItem
         """
-        return cls('member_info', val)
+        pass
 
     def is_member_info(self):
         """
@@ -7922,7 +7814,7 @@ class MembersGetInfoItem(MembersGetInfoItemBase):
 
         :rtype: bool
         """
-        return self._tag == 'member_info'
+        pass
 
     def get_member_info(self):
         """
@@ -7932,12 +7824,10 @@ class MembersGetInfoItem(MembersGetInfoItemBase):
 
         :rtype: TeamMemberInfo
         """
-        if not self.is_member_info():
-            raise AttributeError("tag 'member_info' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoItem, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoItem_validator = bv.Union(MembersGetInfoItem)
 
@@ -7967,7 +7857,7 @@ class MembersGetInfoItemV2(MembersGetInfoItemBase):
         :param TeamMemberInfoV2 val:
         :rtype: MembersGetInfoItemV2
         """
-        return cls('member_info', val)
+        pass
 
     def is_member_info(self):
         """
@@ -7975,7 +7865,7 @@ class MembersGetInfoItemV2(MembersGetInfoItemBase):
 
         :rtype: bool
         """
-        return self._tag == 'member_info'
+        pass
 
     def is_other(self):
         """
@@ -7983,7 +7873,7 @@ class MembersGetInfoItemV2(MembersGetInfoItemBase):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_member_info(self):
         """
@@ -7993,12 +7883,10 @@ class MembersGetInfoItemV2(MembersGetInfoItemBase):
 
         :rtype: TeamMemberInfoV2
         """
-        if not self.is_member_info():
-            raise AttributeError("tag 'member_info' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoItemV2, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoItemV2_validator = bv.Union(MembersGetInfoItemV2)
 
@@ -8023,7 +7911,7 @@ class MembersGetInfoV2Arg(bb.Struct):
     members = bb.Attribute("members")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoV2Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoV2Arg_validator = bv.Struct(MembersGetInfoV2Arg)
 
@@ -8048,7 +7936,7 @@ class MembersGetInfoV2Result(bb.Struct):
     members_info = bb.Attribute("members_info")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersGetInfoV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersGetInfoV2Result_validator = bv.Struct(MembersGetInfoV2Result)
 
@@ -8084,7 +7972,7 @@ class MembersInfo(bb.Struct):
     permanently_deleted_users = bb.Attribute("permanently_deleted_users")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersInfo_validator = bv.Struct(MembersInfo)
 
@@ -8119,7 +8007,7 @@ class MembersListArg(bb.Struct):
     include_removed = bb.Attribute("include_removed")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersListArg_validator = bv.Struct(MembersListArg)
 
@@ -8145,7 +8033,7 @@ class MembersListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersListContinueArg_validator = bv.Struct(MembersListContinueArg)
 
@@ -8170,7 +8058,7 @@ class MembersListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -8178,10 +8066,10 @@ class MembersListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersListContinueError_validator = bv.Union(MembersListContinueError)
 
@@ -8202,10 +8090,10 @@ class MembersListError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersListError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersListError_validator = bv.Union(MembersListError)
 
@@ -8253,7 +8141,7 @@ class MembersListResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersListResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersListResult_validator = bv.Struct(MembersListResult)
 
@@ -8301,7 +8189,7 @@ class MembersListV2Result(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersListV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersListV2Result_validator = bv.Struct(MembersListV2Result)
 
@@ -8329,7 +8217,7 @@ class MembersRecoverArg(bb.Struct):
     user = bb.Attribute("user", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersRecoverArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersRecoverArg_validator = bv.Struct(MembersRecoverArg)
 
@@ -8363,7 +8251,7 @@ class MembersRecoverError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_unrecoverable'
+        pass
 
     def is_user_not_in_team(self):
         """
@@ -8371,7 +8259,7 @@ class MembersRecoverError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_in_team'
+        pass
 
     def is_team_license_limit(self):
         """
@@ -8379,7 +8267,7 @@ class MembersRecoverError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'team_license_limit'
+        pass
 
     def is_other(self):
         """
@@ -8387,10 +8275,10 @@ class MembersRecoverError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersRecoverError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersRecoverError_validator = bv.Union(MembersRecoverError)
 
@@ -8460,7 +8348,7 @@ class MembersRemoveArg(MembersDeactivateArg):
     retain_team_shares = bb.Attribute("retain_team_shares")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersRemoveArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersRemoveArg_validator = bv.Struct(MembersRemoveArg)
 
@@ -8518,7 +8406,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'removed_and_transfer_dest_should_differ'
+        pass
 
     def is_removed_and_transfer_admin_should_differ(self):
         """
@@ -8526,7 +8414,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'removed_and_transfer_admin_should_differ'
+        pass
 
     def is_transfer_dest_user_not_found(self):
         """
@@ -8534,7 +8422,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'transfer_dest_user_not_found'
+        pass
 
     def is_transfer_dest_user_not_in_team(self):
         """
@@ -8542,7 +8430,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'transfer_dest_user_not_in_team'
+        pass
 
     def is_transfer_admin_user_not_in_team(self):
         """
@@ -8550,7 +8438,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'transfer_admin_user_not_in_team'
+        pass
 
     def is_transfer_admin_user_not_found(self):
         """
@@ -8558,7 +8446,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'transfer_admin_user_not_found'
+        pass
 
     def is_unspecified_transfer_admin_id(self):
         """
@@ -8566,7 +8454,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'unspecified_transfer_admin_id'
+        pass
 
     def is_transfer_admin_is_not_admin(self):
         """
@@ -8574,7 +8462,7 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'transfer_admin_is_not_admin'
+        pass
 
     def is_recipient_not_verified(self):
         """
@@ -8582,10 +8470,10 @@ class MembersTransferFilesError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'recipient_not_verified'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersTransferFilesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersTransferFilesError_validator = bv.Union(MembersTransferFilesError)
 
@@ -8655,7 +8543,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'remove_last_admin'
+        pass
 
     def is_cannot_keep_account_and_transfer(self):
         """
@@ -8663,7 +8551,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_keep_account_and_transfer'
+        pass
 
     def is_cannot_keep_account_and_delete_data(self):
         """
@@ -8671,7 +8559,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_keep_account_and_delete_data'
+        pass
 
     def is_email_address_too_long_to_be_disabled(self):
         """
@@ -8679,7 +8567,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'email_address_too_long_to_be_disabled'
+        pass
 
     def is_cannot_keep_invited_user_account(self):
         """
@@ -8687,7 +8575,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_keep_invited_user_account'
+        pass
 
     def is_cannot_retain_shares_when_data_wiped(self):
         """
@@ -8695,7 +8583,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_retain_shares_when_data_wiped'
+        pass
 
     def is_cannot_retain_shares_when_no_account_kept(self):
         """
@@ -8703,7 +8591,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_retain_shares_when_no_account_kept'
+        pass
 
     def is_cannot_retain_shares_when_team_external_sharing_off(self):
         """
@@ -8711,7 +8599,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_retain_shares_when_team_external_sharing_off'
+        pass
 
     def is_cannot_keep_account(self):
         """
@@ -8719,7 +8607,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_keep_account'
+        pass
 
     def is_cannot_keep_account_under_legal_hold(self):
         """
@@ -8727,7 +8615,7 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_keep_account_under_legal_hold'
+        pass
 
     def is_cannot_keep_account_required_to_sign_tos(self):
         """
@@ -8735,10 +8623,10 @@ class MembersRemoveError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_keep_account_required_to_sign_tos'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersRemoveError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersRemoveError_validator = bv.Union(MembersRemoveError)
 
@@ -8759,10 +8647,10 @@ class MembersSendWelcomeError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSendWelcomeError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSendWelcomeError_validator = bv.Union(MembersSendWelcomeError)
 
@@ -8802,7 +8690,7 @@ class MembersSetPermissions2Arg(bb.Struct):
     new_roles = bb.Attribute("new_roles", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetPermissions2Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetPermissions2Arg_validator = bv.Struct(MembersSetPermissions2Arg)
 
@@ -8842,7 +8730,7 @@ class MembersSetPermissions2Error(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'last_admin'
+        pass
 
     def is_user_not_in_team(self):
         """
@@ -8850,7 +8738,7 @@ class MembersSetPermissions2Error(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_in_team'
+        pass
 
     def is_cannot_set_permissions(self):
         """
@@ -8858,7 +8746,7 @@ class MembersSetPermissions2Error(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_set_permissions'
+        pass
 
     def is_role_not_found(self):
         """
@@ -8866,7 +8754,7 @@ class MembersSetPermissions2Error(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'role_not_found'
+        pass
 
     def is_other(self):
         """
@@ -8874,10 +8762,10 @@ class MembersSetPermissions2Error(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetPermissions2Error, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetPermissions2Error_validator = bv.Union(MembersSetPermissions2Error)
 
@@ -8913,7 +8801,7 @@ class MembersSetPermissions2Result(bb.Struct):
     roles = bb.Attribute("roles", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetPermissions2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetPermissions2Result_validator = bv.Struct(MembersSetPermissions2Result)
 
@@ -8951,7 +8839,7 @@ class MembersSetPermissionsArg(bb.Struct):
     new_role = bb.Attribute("new_role", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetPermissionsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetPermissionsArg_validator = bv.Struct(MembersSetPermissionsArg)
 
@@ -8989,7 +8877,7 @@ class MembersSetPermissionsError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'last_admin'
+        pass
 
     def is_user_not_in_team(self):
         """
@@ -8997,7 +8885,7 @@ class MembersSetPermissionsError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_in_team'
+        pass
 
     def is_cannot_set_permissions(self):
         """
@@ -9005,7 +8893,7 @@ class MembersSetPermissionsError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'cannot_set_permissions'
+        pass
 
     def is_team_license_limit(self):
         """
@@ -9013,7 +8901,7 @@ class MembersSetPermissionsError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'team_license_limit'
+        pass
 
     def is_other(self):
         """
@@ -9021,10 +8909,10 @@ class MembersSetPermissionsError(UserSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetPermissionsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetPermissionsError_validator = bv.Union(MembersSetPermissionsError)
 
@@ -9059,7 +8947,7 @@ class MembersSetPermissionsResult(bb.Struct):
     role = bb.Attribute("role", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetPermissionsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetPermissionsResult_validator = bv.Struct(MembersSetPermissionsResult)
 
@@ -9145,7 +9033,7 @@ class MembersSetProfileArg(bb.Struct):
     new_is_directory_restricted = bb.Attribute("new_is_directory_restricted", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetProfileArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetProfileArg_validator = bv.Struct(MembersSetProfileArg)
 
@@ -9204,7 +9092,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'external_id_and_new_external_id_unsafe'
+        pass
 
     def is_no_new_data_specified(self):
         """
@@ -9212,7 +9100,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'no_new_data_specified'
+        pass
 
     def is_email_reserved_for_other_user(self):
         """
@@ -9220,7 +9108,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'email_reserved_for_other_user'
+        pass
 
     def is_external_id_used_by_other_user(self):
         """
@@ -9228,7 +9116,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'external_id_used_by_other_user'
+        pass
 
     def is_set_profile_disallowed(self):
         """
@@ -9236,7 +9124,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'set_profile_disallowed'
+        pass
 
     def is_param_cannot_be_empty(self):
         """
@@ -9244,7 +9132,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'param_cannot_be_empty'
+        pass
 
     def is_persistent_id_disabled(self):
         """
@@ -9252,7 +9140,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'persistent_id_disabled'
+        pass
 
     def is_persistent_id_used_by_other_user(self):
         """
@@ -9260,7 +9148,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'persistent_id_used_by_other_user'
+        pass
 
     def is_directory_restricted_off(self):
         """
@@ -9268,7 +9156,7 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'directory_restricted_off'
+        pass
 
     def is_other(self):
         """
@@ -9276,10 +9164,10 @@ class MembersSetProfileError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetProfileError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetProfileError_validator = bv.Union(MembersSetProfileError)
 
@@ -9315,7 +9203,7 @@ class MembersSetProfilePhotoArg(bb.Struct):
     photo = bb.Attribute("photo", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetProfilePhotoArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetProfilePhotoArg_validator = bv.Struct(MembersSetProfilePhotoArg)
 
@@ -9344,7 +9232,7 @@ class MembersSetProfilePhotoError(MemberSelectorError):
         :param account.SetProfilePhotoError val:
         :rtype: MembersSetProfilePhotoError
         """
-        return cls('photo_error', val)
+        pass
 
     def is_set_profile_disallowed(self):
         """
@@ -9352,7 +9240,7 @@ class MembersSetProfilePhotoError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'set_profile_disallowed'
+        pass
 
     def is_photo_error(self):
         """
@@ -9360,7 +9248,7 @@ class MembersSetProfilePhotoError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'photo_error'
+        pass
 
     def is_other(self):
         """
@@ -9368,7 +9256,7 @@ class MembersSetProfilePhotoError(MemberSelectorError):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_photo_error(self):
         """
@@ -9376,12 +9264,10 @@ class MembersSetProfilePhotoError(MemberSelectorError):
 
         :rtype: account.SetProfilePhotoError
         """
-        if not self.is_photo_error():
-            raise AttributeError("tag 'photo_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSetProfilePhotoError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSetProfilePhotoError_validator = bv.Union(MembersSetProfilePhotoError)
 
@@ -9412,7 +9298,7 @@ class MembersSuspendError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'suspend_inactive_user'
+        pass
 
     def is_suspend_last_admin(self):
         """
@@ -9420,7 +9306,7 @@ class MembersSuspendError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'suspend_last_admin'
+        pass
 
     def is_team_license_limit(self):
         """
@@ -9428,10 +9314,10 @@ class MembersSuspendError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'team_license_limit'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersSuspendError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersSuspendError_validator = bv.Union(MembersSuspendError)
 
@@ -9470,7 +9356,7 @@ class MembersTransferFormerMembersFilesError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'user_data_is_being_transferred'
+        pass
 
     def is_user_not_removed(self):
         """
@@ -9478,7 +9364,7 @@ class MembersTransferFormerMembersFilesError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'user_not_removed'
+        pass
 
     def is_user_data_cannot_be_transferred(self):
         """
@@ -9486,7 +9372,7 @@ class MembersTransferFormerMembersFilesError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'user_data_cannot_be_transferred'
+        pass
 
     def is_user_data_already_transferred(self):
         """
@@ -9494,10 +9380,10 @@ class MembersTransferFormerMembersFilesError(MembersTransferFilesError):
 
         :rtype: bool
         """
-        return self._tag == 'user_data_already_transferred'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersTransferFormerMembersFilesError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersTransferFormerMembersFilesError_validator = bv.Union(MembersTransferFormerMembersFilesError)
 
@@ -9525,7 +9411,7 @@ class MembersUnsuspendArg(bb.Struct):
     user = bb.Attribute("user", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersUnsuspendArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersUnsuspendArg_validator = bv.Struct(MembersUnsuspendArg)
 
@@ -9552,7 +9438,7 @@ class MembersUnsuspendError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'unsuspend_non_suspended_member'
+        pass
 
     def is_team_license_limit(self):
         """
@@ -9560,10 +9446,10 @@ class MembersUnsuspendError(MembersDeactivateError):
 
         :rtype: bool
         """
-        return self._tag == 'team_license_limit'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MembersUnsuspendError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MembersUnsuspendError_validator = bv.Union(MembersUnsuspendError)
 
@@ -9602,7 +9488,7 @@ class MobileClientPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'iphone'
+        pass
 
     def is_ipad(self):
         """
@@ -9610,7 +9496,7 @@ class MobileClientPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'ipad'
+        pass
 
     def is_android(self):
         """
@@ -9618,7 +9504,7 @@ class MobileClientPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'android'
+        pass
 
     def is_windows_phone(self):
         """
@@ -9626,7 +9512,7 @@ class MobileClientPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'windows_phone'
+        pass
 
     def is_blackberry(self):
         """
@@ -9634,7 +9520,7 @@ class MobileClientPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'blackberry'
+        pass
 
     def is_other(self):
         """
@@ -9642,10 +9528,10 @@ class MobileClientPlatform(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MobileClientPlatform, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MobileClientPlatform_validator = bv.Union(MobileClientPlatform)
 
@@ -9719,7 +9605,7 @@ class MobileClientSession(DeviceSession):
     last_carrier = bb.Attribute("last_carrier", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MobileClientSession, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MobileClientSession_validator = bv.Struct(MobileClientSession)
 
@@ -9775,7 +9661,7 @@ class NamespaceMetadata(bb.Struct):
     team_member_id = bb.Attribute("team_member_id", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(NamespaceMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 NamespaceMetadata_validator = bv.Struct(NamespaceMetadata)
 
@@ -9809,7 +9695,7 @@ class NamespaceType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'app_folder'
+        pass
 
     def is_shared_folder(self):
         """
@@ -9817,7 +9703,7 @@ class NamespaceType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'shared_folder'
+        pass
 
     def is_team_folder(self):
         """
@@ -9825,7 +9711,7 @@ class NamespaceType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder'
+        pass
 
     def is_team_member_folder(self):
         """
@@ -9833,7 +9719,7 @@ class NamespaceType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_member_folder'
+        pass
 
     def is_other(self):
         """
@@ -9841,10 +9727,10 @@ class NamespaceType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(NamespaceType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 NamespaceType_validator = bv.Union(NamespaceType)
 
@@ -9875,7 +9761,7 @@ class RemoveCustomQuotaResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: RemoveCustomQuotaResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def invalid_user(cls, val):
@@ -9886,7 +9772,7 @@ class RemoveCustomQuotaResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: RemoveCustomQuotaResult
         """
-        return cls('invalid_user', val)
+        pass
 
     def is_success(self):
         """
@@ -9894,7 +9780,7 @@ class RemoveCustomQuotaResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_invalid_user(self):
         """
@@ -9902,7 +9788,7 @@ class RemoveCustomQuotaResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_user'
+        pass
 
     def is_other(self):
         """
@@ -9910,7 +9796,7 @@ class RemoveCustomQuotaResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -9920,9 +9806,7 @@ class RemoveCustomQuotaResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_invalid_user(self):
         """
@@ -9932,12 +9816,10 @@ class RemoveCustomQuotaResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_invalid_user():
-            raise AttributeError("tag 'invalid_user' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemoveCustomQuotaResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemoveCustomQuotaResult_validator = bv.Union(RemoveCustomQuotaResult)
 
@@ -9973,7 +9855,7 @@ class RemovedStatus(bb.Struct):
     is_disconnected = bb.Attribute("is_disconnected")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RemovedStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RemovedStatus_validator = bv.Struct(RemovedStatus)
 
@@ -10009,7 +9891,7 @@ class ResendSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: ResendSecondaryEmailResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def not_pending(cls, val):
@@ -10020,7 +9902,7 @@ class ResendSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: ResendSecondaryEmailResult
         """
-        return cls('not_pending', val)
+        pass
 
     @classmethod
     def rate_limited(cls, val):
@@ -10031,7 +9913,7 @@ class ResendSecondaryEmailResult(bb.Union):
         :param str val:
         :rtype: ResendSecondaryEmailResult
         """
-        return cls('rate_limited', val)
+        pass
 
     def is_success(self):
         """
@@ -10039,7 +9921,7 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_not_pending(self):
         """
@@ -10047,7 +9929,7 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_pending'
+        pass
 
     def is_rate_limited(self):
         """
@@ -10055,7 +9937,7 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'rate_limited'
+        pass
 
     def is_other(self):
         """
@@ -10063,7 +9945,7 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -10074,9 +9956,7 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_not_pending(self):
         """
@@ -10086,9 +9966,7 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_not_pending():
-            raise AttributeError("tag 'not_pending' not set")
-        return self._value
+        pass
 
     def get_rate_limited(self):
         """
@@ -10099,12 +9977,10 @@ class ResendSecondaryEmailResult(bb.Union):
 
         :rtype: str
         """
-        if not self.is_rate_limited():
-            raise AttributeError("tag 'rate_limited' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ResendSecondaryEmailResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ResendSecondaryEmailResult_validator = bv.Union(ResendSecondaryEmailResult)
 
@@ -10130,7 +10006,7 @@ class ResendVerificationEmailArg(bb.Struct):
     emails_to_resend = bb.Attribute("emails_to_resend")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ResendVerificationEmailArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ResendVerificationEmailArg_validator = bv.Struct(ResendVerificationEmailArg)
 
@@ -10155,7 +10031,7 @@ class ResendVerificationEmailResult(bb.Struct):
     results = bb.Attribute("results")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(ResendVerificationEmailResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 ResendVerificationEmailResult_validator = bv.Struct(ResendVerificationEmailResult)
 
@@ -10186,7 +10062,7 @@ class RevokeDesktopClientArg(DeviceSessionArg):
     delete_on_unlink = bb.Attribute("delete_on_unlink")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDesktopClientArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDesktopClientArg_validator = bv.Struct(RevokeDesktopClientArg)
 
@@ -10215,7 +10091,7 @@ class RevokeDeviceSessionArg(bb.Union):
         :param DeviceSessionArg val:
         :rtype: RevokeDeviceSessionArg
         """
-        return cls('web_session', val)
+        pass
 
     @classmethod
     def desktop_client(cls, val):
@@ -10226,7 +10102,7 @@ class RevokeDeviceSessionArg(bb.Union):
         :param RevokeDesktopClientArg val:
         :rtype: RevokeDeviceSessionArg
         """
-        return cls('desktop_client', val)
+        pass
 
     @classmethod
     def mobile_client(cls, val):
@@ -10237,7 +10113,7 @@ class RevokeDeviceSessionArg(bb.Union):
         :param DeviceSessionArg val:
         :rtype: RevokeDeviceSessionArg
         """
-        return cls('mobile_client', val)
+        pass
 
     def is_web_session(self):
         """
@@ -10245,7 +10121,7 @@ class RevokeDeviceSessionArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'web_session'
+        pass
 
     def is_desktop_client(self):
         """
@@ -10253,7 +10129,7 @@ class RevokeDeviceSessionArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'desktop_client'
+        pass
 
     def is_mobile_client(self):
         """
@@ -10261,7 +10137,7 @@ class RevokeDeviceSessionArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mobile_client'
+        pass
 
     def get_web_session(self):
         """
@@ -10271,9 +10147,7 @@ class RevokeDeviceSessionArg(bb.Union):
 
         :rtype: DeviceSessionArg
         """
-        if not self.is_web_session():
-            raise AttributeError("tag 'web_session' not set")
-        return self._value
+        pass
 
     def get_desktop_client(self):
         """
@@ -10283,9 +10157,7 @@ class RevokeDeviceSessionArg(bb.Union):
 
         :rtype: RevokeDesktopClientArg
         """
-        if not self.is_desktop_client():
-            raise AttributeError("tag 'desktop_client' not set")
-        return self._value
+        pass
 
     def get_mobile_client(self):
         """
@@ -10295,12 +10167,10 @@ class RevokeDeviceSessionArg(bb.Union):
 
         :rtype: DeviceSessionArg
         """
-        if not self.is_mobile_client():
-            raise AttributeError("tag 'mobile_client' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDeviceSessionArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDeviceSessionArg_validator = bv.Union(RevokeDeviceSessionArg)
 
@@ -10322,7 +10192,7 @@ class RevokeDeviceSessionBatchArg(bb.Struct):
     revoke_devices = bb.Attribute("revoke_devices")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDeviceSessionBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDeviceSessionBatchArg_validator = bv.Struct(RevokeDeviceSessionBatchArg)
 
@@ -10343,10 +10213,10 @@ class RevokeDeviceSessionBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDeviceSessionBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDeviceSessionBatchError_validator = bv.Union(RevokeDeviceSessionBatchError)
 
@@ -10368,7 +10238,7 @@ class RevokeDeviceSessionBatchResult(bb.Struct):
     revoke_devices_status = bb.Attribute("revoke_devices_status")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDeviceSessionBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDeviceSessionBatchResult_validator = bv.Struct(RevokeDeviceSessionBatchResult)
 
@@ -10397,7 +10267,7 @@ class RevokeDeviceSessionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'device_session_not_found'
+        pass
 
     def is_member_not_found(self):
         """
@@ -10405,7 +10275,7 @@ class RevokeDeviceSessionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_not_found'
+        pass
 
     def is_other(self):
         """
@@ -10413,10 +10283,10 @@ class RevokeDeviceSessionError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDeviceSessionError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDeviceSessionError_validator = bv.Union(RevokeDeviceSessionError)
 
@@ -10452,7 +10322,7 @@ class RevokeDeviceSessionStatus(bb.Struct):
     error_type = bb.Attribute("error_type", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeDeviceSessionStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeDeviceSessionStatus_validator = bv.Struct(RevokeDeviceSessionStatus)
 
@@ -10498,7 +10368,7 @@ class RevokeLinkedApiAppArg(bb.Struct):
     keep_app_folder = bb.Attribute("keep_app_folder")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeLinkedApiAppArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeLinkedApiAppArg_validator = bv.Struct(RevokeLinkedApiAppArg)
 
@@ -10520,7 +10390,7 @@ class RevokeLinkedApiAppBatchArg(bb.Struct):
     revoke_linked_app = bb.Attribute("revoke_linked_app")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeLinkedApiAppBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeLinkedApiAppBatchArg_validator = bv.Struct(RevokeLinkedApiAppBatchArg)
 
@@ -10544,10 +10414,10 @@ class RevokeLinkedAppBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeLinkedAppBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeLinkedAppBatchError_validator = bv.Union(RevokeLinkedAppBatchError)
 
@@ -10569,7 +10439,7 @@ class RevokeLinkedAppBatchResult(bb.Struct):
     revoke_linked_app_status = bb.Attribute("revoke_linked_app_status")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeLinkedAppBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeLinkedAppBatchResult_validator = bv.Struct(RevokeLinkedAppBatchResult)
 
@@ -10604,7 +10474,7 @@ class RevokeLinkedAppError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'app_not_found'
+        pass
 
     def is_member_not_found(self):
         """
@@ -10612,7 +10482,7 @@ class RevokeLinkedAppError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'member_not_found'
+        pass
 
     def is_app_folder_removal_not_supported(self):
         """
@@ -10620,7 +10490,7 @@ class RevokeLinkedAppError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'app_folder_removal_not_supported'
+        pass
 
     def is_other(self):
         """
@@ -10628,10 +10498,10 @@ class RevokeLinkedAppError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeLinkedAppError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeLinkedAppError_validator = bv.Union(RevokeLinkedAppError)
 
@@ -10666,7 +10536,7 @@ class RevokeLinkedAppStatus(bb.Struct):
     error_type = bb.Attribute("error_type", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RevokeLinkedAppStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RevokeLinkedAppStatus_validator = bv.Struct(RevokeLinkedAppStatus)
 
@@ -10692,7 +10562,7 @@ class SetCustomQuotaArg(bb.Struct):
     users_and_quotas = bb.Attribute("users_and_quotas")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetCustomQuotaArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetCustomQuotaArg_validator = bv.Struct(SetCustomQuotaArg)
 
@@ -10717,10 +10587,10 @@ class SetCustomQuotaError(CustomQuotaError):
 
         :rtype: bool
         """
-        return self._tag == 'some_users_are_excluded'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SetCustomQuotaError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SetCustomQuotaError_validator = bv.Union(SetCustomQuotaError)
 
@@ -10759,7 +10629,7 @@ class SharingAllowlistAddArgs(bb.Struct):
     emails = bb.Attribute("emails", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistAddArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistAddArgs_validator = bv.Struct(SharingAllowlistAddArgs)
 
@@ -10803,7 +10673,7 @@ class SharingAllowlistAddError(bb.Union):
         :param str val:
         :rtype: SharingAllowlistAddError
         """
-        return cls('malformed_entry', val)
+        pass
 
     @classmethod
     def entries_already_exist(cls, val):
@@ -10814,7 +10684,7 @@ class SharingAllowlistAddError(bb.Union):
         :param str val:
         :rtype: SharingAllowlistAddError
         """
-        return cls('entries_already_exist', val)
+        pass
 
     def is_malformed_entry(self):
         """
@@ -10822,7 +10692,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'malformed_entry'
+        pass
 
     def is_no_entries_provided(self):
         """
@@ -10830,7 +10700,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_entries_provided'
+        pass
 
     def is_too_many_entries_provided(self):
         """
@@ -10838,7 +10708,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_entries_provided'
+        pass
 
     def is_team_limit_reached(self):
         """
@@ -10846,7 +10716,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_limit_reached'
+        pass
 
     def is_unknown_error(self):
         """
@@ -10854,7 +10724,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown_error'
+        pass
 
     def is_entries_already_exist(self):
         """
@@ -10862,7 +10732,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'entries_already_exist'
+        pass
 
     def is_other(self):
         """
@@ -10870,7 +10740,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_malformed_entry(self):
         """
@@ -10880,9 +10750,7 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_malformed_entry():
-            raise AttributeError("tag 'malformed_entry' not set")
-        return self._value
+        pass
 
     def get_entries_already_exist(self):
         """
@@ -10892,12 +10760,10 @@ class SharingAllowlistAddError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_entries_already_exist():
-            raise AttributeError("tag 'entries_already_exist' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistAddError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistAddError_validator = bv.Union(SharingAllowlistAddError)
 
@@ -10916,7 +10782,7 @@ class SharingAllowlistAddResponse(bb.Struct):
         pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistAddResponse, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistAddResponse_validator = bv.Struct(SharingAllowlistAddResponse)
 
@@ -10942,7 +10808,7 @@ class SharingAllowlistListArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistListArg_validator = bv.Struct(SharingAllowlistListArg)
 
@@ -10970,7 +10836,7 @@ class SharingAllowlistListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistListContinueArg_validator = bv.Struct(SharingAllowlistListContinueArg)
 
@@ -10996,7 +10862,7 @@ class SharingAllowlistListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -11004,10 +10870,10 @@ class SharingAllowlistListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistListContinueError_validator = bv.Union(SharingAllowlistListContinueError)
 
@@ -11026,7 +10892,7 @@ class SharingAllowlistListError(bb.Struct):
         pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistListError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistListError_validator = bv.Struct(SharingAllowlistListError)
 
@@ -11084,7 +10950,7 @@ class SharingAllowlistListResponse(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistListResponse, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistListResponse_validator = bv.Struct(SharingAllowlistListResponse)
 
@@ -11120,7 +10986,7 @@ class SharingAllowlistRemoveArgs(bb.Struct):
     emails = bb.Attribute("emails", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistRemoveArgs, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistRemoveArgs_validator = bv.Struct(SharingAllowlistRemoveArgs)
 
@@ -11160,7 +11026,7 @@ class SharingAllowlistRemoveError(bb.Union):
         :param str val:
         :rtype: SharingAllowlistRemoveError
         """
-        return cls('malformed_entry', val)
+        pass
 
     @classmethod
     def entries_do_not_exist(cls, val):
@@ -11171,7 +11037,7 @@ class SharingAllowlistRemoveError(bb.Union):
         :param str val:
         :rtype: SharingAllowlistRemoveError
         """
-        return cls('entries_do_not_exist', val)
+        pass
 
     def is_malformed_entry(self):
         """
@@ -11179,7 +11045,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'malformed_entry'
+        pass
 
     def is_entries_do_not_exist(self):
         """
@@ -11187,7 +11053,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'entries_do_not_exist'
+        pass
 
     def is_no_entries_provided(self):
         """
@@ -11195,7 +11061,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_entries_provided'
+        pass
 
     def is_too_many_entries_provided(self):
         """
@@ -11203,7 +11069,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_entries_provided'
+        pass
 
     def is_unknown_error(self):
         """
@@ -11211,7 +11077,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unknown_error'
+        pass
 
     def is_other(self):
         """
@@ -11219,7 +11085,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_malformed_entry(self):
         """
@@ -11229,9 +11095,7 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_malformed_entry():
-            raise AttributeError("tag 'malformed_entry' not set")
-        return self._value
+        pass
 
     def get_entries_do_not_exist(self):
         """
@@ -11241,12 +11105,10 @@ class SharingAllowlistRemoveError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_entries_do_not_exist():
-            raise AttributeError("tag 'entries_do_not_exist' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistRemoveError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistRemoveError_validator = bv.Union(SharingAllowlistRemoveError)
 
@@ -11265,7 +11127,7 @@ class SharingAllowlistRemoveResponse(bb.Struct):
         pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SharingAllowlistRemoveResponse, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SharingAllowlistRemoveResponse_validator = bv.Struct(SharingAllowlistRemoveResponse)
 
@@ -11303,7 +11165,7 @@ class StorageBucket(bb.Struct):
     users = bb.Attribute("users")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(StorageBucket, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 StorageBucket_validator = bv.Struct(StorageBucket)
 
@@ -11333,7 +11195,7 @@ class TeamFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_team_folder_id'
+        pass
 
     def is_no_access(self):
         """
@@ -11341,7 +11203,7 @@ class TeamFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_access'
+        pass
 
     def is_other(self):
         """
@@ -11349,10 +11211,10 @@ class TeamFolderAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderAccessError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderAccessError_validator = bv.Union(TeamFolderAccessError)
 
@@ -11364,7 +11226,7 @@ class TeamFolderActivateError(BaseTeamFolderError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderActivateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderActivateError_validator = bv.Union(TeamFolderActivateError)
 
@@ -11389,7 +11251,7 @@ class TeamFolderIdArg(bb.Struct):
     team_folder_id = bb.Attribute("team_folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderIdArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderIdArg_validator = bv.Struct(TeamFolderIdArg)
 
@@ -11417,7 +11279,7 @@ class TeamFolderArchiveArg(TeamFolderIdArg):
     force_async_off = bb.Attribute("force_async_off")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderArchiveArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderArchiveArg_validator = bv.Struct(TeamFolderArchiveArg)
 
@@ -11429,7 +11291,7 @@ class TeamFolderArchiveError(BaseTeamFolderError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderArchiveError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderArchiveError_validator = bv.Union(TeamFolderArchiveError)
 
@@ -11456,7 +11318,7 @@ class TeamFolderArchiveJobStatus(async_.PollResultBase):
         :param TeamFolderMetadata val:
         :rtype: TeamFolderArchiveJobStatus
         """
-        return cls('complete', val)
+        pass
 
     @classmethod
     def failed(cls, val):
@@ -11467,7 +11329,7 @@ class TeamFolderArchiveJobStatus(async_.PollResultBase):
         :param TeamFolderArchiveError val:
         :rtype: TeamFolderArchiveJobStatus
         """
-        return cls('failed', val)
+        pass
 
     def is_complete(self):
         """
@@ -11475,7 +11337,7 @@ class TeamFolderArchiveJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def is_failed(self):
         """
@@ -11483,7 +11345,7 @@ class TeamFolderArchiveJobStatus(async_.PollResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'failed'
+        pass
 
     def get_complete(self):
         """
@@ -11494,9 +11356,7 @@ class TeamFolderArchiveJobStatus(async_.PollResultBase):
 
         :rtype: TeamFolderMetadata
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def get_failed(self):
         """
@@ -11507,12 +11367,10 @@ class TeamFolderArchiveJobStatus(async_.PollResultBase):
 
         :rtype: TeamFolderArchiveError
         """
-        if not self.is_failed():
-            raise AttributeError("tag 'failed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderArchiveJobStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderArchiveJobStatus_validator = bv.Union(TeamFolderArchiveJobStatus)
 
@@ -11532,7 +11390,7 @@ class TeamFolderArchiveLaunch(async_.LaunchResultBase):
         :param TeamFolderMetadata val:
         :rtype: TeamFolderArchiveLaunch
         """
-        return cls('complete', val)
+        pass
 
     def is_complete(self):
         """
@@ -11540,7 +11398,7 @@ class TeamFolderArchiveLaunch(async_.LaunchResultBase):
 
         :rtype: bool
         """
-        return self._tag == 'complete'
+        pass
 
     def get_complete(self):
         """
@@ -11548,12 +11406,10 @@ class TeamFolderArchiveLaunch(async_.LaunchResultBase):
 
         :rtype: TeamFolderMetadata
         """
-        if not self.is_complete():
-            raise AttributeError("tag 'complete' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderArchiveLaunch, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderArchiveLaunch_validator = bv.Union(TeamFolderArchiveLaunch)
 
@@ -11589,7 +11445,7 @@ class TeamFolderCreateArg(bb.Struct):
     sync_setting = bb.Attribute("sync_setting", nullable=True, user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderCreateArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderCreateArg_validator = bv.Struct(TeamFolderCreateArg)
 
@@ -11628,7 +11484,7 @@ class TeamFolderCreateError(bb.Union):
         :param files.SyncSettingsError val:
         :rtype: TeamFolderCreateError
         """
-        return cls('sync_settings_error', val)
+        pass
 
     def is_invalid_folder_name(self):
         """
@@ -11636,7 +11492,7 @@ class TeamFolderCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_folder_name'
+        pass
 
     def is_folder_name_already_used(self):
         """
@@ -11644,7 +11500,7 @@ class TeamFolderCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder_name_already_used'
+        pass
 
     def is_folder_name_reserved(self):
         """
@@ -11652,7 +11508,7 @@ class TeamFolderCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'folder_name_reserved'
+        pass
 
     def is_sync_settings_error(self):
         """
@@ -11660,7 +11516,7 @@ class TeamFolderCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'sync_settings_error'
+        pass
 
     def is_other(self):
         """
@@ -11668,7 +11524,7 @@ class TeamFolderCreateError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_sync_settings_error(self):
         """
@@ -11678,12 +11534,10 @@ class TeamFolderCreateError(bb.Union):
 
         :rtype: files.SyncSettingsError
         """
-        if not self.is_sync_settings_error():
-            raise AttributeError("tag 'sync_settings_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderCreateError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderCreateError_validator = bv.Union(TeamFolderCreateError)
 
@@ -11711,7 +11565,7 @@ class TeamFolderGetInfoItem(bb.Union):
         :param str val:
         :rtype: TeamFolderGetInfoItem
         """
-        return cls('id_not_found', val)
+        pass
 
     @classmethod
     def team_folder_metadata(cls, val):
@@ -11722,7 +11576,7 @@ class TeamFolderGetInfoItem(bb.Union):
         :param TeamFolderMetadata val:
         :rtype: TeamFolderGetInfoItem
         """
-        return cls('team_folder_metadata', val)
+        pass
 
     def is_id_not_found(self):
         """
@@ -11730,7 +11584,7 @@ class TeamFolderGetInfoItem(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'id_not_found'
+        pass
 
     def is_team_folder_metadata(self):
         """
@@ -11738,7 +11592,7 @@ class TeamFolderGetInfoItem(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_folder_metadata'
+        pass
 
     def get_id_not_found(self):
         """
@@ -11750,9 +11604,7 @@ class TeamFolderGetInfoItem(bb.Union):
 
         :rtype: str
         """
-        if not self.is_id_not_found():
-            raise AttributeError("tag 'id_not_found' not set")
-        return self._value
+        pass
 
     def get_team_folder_metadata(self):
         """
@@ -11762,12 +11614,10 @@ class TeamFolderGetInfoItem(bb.Union):
 
         :rtype: TeamFolderMetadata
         """
-        if not self.is_team_folder_metadata():
-            raise AttributeError("tag 'team_folder_metadata' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderGetInfoItem, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderGetInfoItem_validator = bv.Union(TeamFolderGetInfoItem)
 
@@ -11792,7 +11642,7 @@ class TeamFolderIdListArg(bb.Struct):
     team_folder_ids = bb.Attribute("team_folder_ids")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderIdListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderIdListArg_validator = bv.Struct(TeamFolderIdListArg)
 
@@ -11826,7 +11676,7 @@ class TeamFolderInvalidStatusError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'active'
+        pass
 
     def is_archived(self):
         """
@@ -11834,7 +11684,7 @@ class TeamFolderInvalidStatusError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'archived'
+        pass
 
     def is_archive_in_progress(self):
         """
@@ -11842,7 +11692,7 @@ class TeamFolderInvalidStatusError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'archive_in_progress'
+        pass
 
     def is_other(self):
         """
@@ -11850,10 +11700,10 @@ class TeamFolderInvalidStatusError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderInvalidStatusError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderInvalidStatusError_validator = bv.Union(TeamFolderInvalidStatusError)
 
@@ -11879,7 +11729,7 @@ class TeamFolderListArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderListArg_validator = bv.Struct(TeamFolderListArg)
 
@@ -11905,7 +11755,7 @@ class TeamFolderListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderListContinueArg_validator = bv.Struct(TeamFolderListContinueArg)
 
@@ -11931,7 +11781,7 @@ class TeamFolderListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def is_other(self):
         """
@@ -11939,10 +11789,10 @@ class TeamFolderListContinueError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderListContinueError_validator = bv.Union(TeamFolderListContinueError)
 
@@ -11964,7 +11814,7 @@ class TeamFolderListError(bb.Struct):
     access_error = bb.Attribute("access_error", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderListError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderListError_validator = bv.Struct(TeamFolderListError)
 
@@ -12016,7 +11866,7 @@ class TeamFolderListResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderListResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderListResult_validator = bv.Struct(TeamFolderListResult)
 
@@ -12091,7 +11941,7 @@ class TeamFolderMetadata(bb.Struct):
     content_sync_settings = bb.Attribute("content_sync_settings")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderMetadata, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderMetadata_validator = bv.Struct(TeamFolderMetadata)
 
@@ -12103,7 +11953,7 @@ class TeamFolderPermanentlyDeleteError(BaseTeamFolderError):
     """
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderPermanentlyDeleteError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderPermanentlyDeleteError_validator = bv.Union(TeamFolderPermanentlyDeleteError)
 
@@ -12130,7 +11980,7 @@ class TeamFolderRenameArg(TeamFolderIdArg):
     name = bb.Attribute("name")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderRenameArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderRenameArg_validator = bv.Struct(TeamFolderRenameArg)
 
@@ -12161,7 +12011,7 @@ class TeamFolderRenameError(BaseTeamFolderError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_folder_name'
+        pass
 
     def is_folder_name_already_used(self):
         """
@@ -12169,7 +12019,7 @@ class TeamFolderRenameError(BaseTeamFolderError):
 
         :rtype: bool
         """
-        return self._tag == 'folder_name_already_used'
+        pass
 
     def is_folder_name_reserved(self):
         """
@@ -12177,10 +12027,10 @@ class TeamFolderRenameError(BaseTeamFolderError):
 
         :rtype: bool
         """
-        return self._tag == 'folder_name_reserved'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderRenameError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderRenameError_validator = bv.Union(TeamFolderRenameError)
 
@@ -12214,7 +12064,7 @@ class TeamFolderStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'active'
+        pass
 
     def is_archived(self):
         """
@@ -12222,7 +12072,7 @@ class TeamFolderStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'archived'
+        pass
 
     def is_archive_in_progress(self):
         """
@@ -12230,7 +12080,7 @@ class TeamFolderStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'archive_in_progress'
+        pass
 
     def is_other(self):
         """
@@ -12238,10 +12088,10 @@ class TeamFolderStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderStatus_validator = bv.Union(TeamFolderStatus)
 
@@ -12267,7 +12117,7 @@ class TeamFolderTeamSharedDropboxError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'disallowed'
+        pass
 
     def is_other(self):
         """
@@ -12275,10 +12125,10 @@ class TeamFolderTeamSharedDropboxError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderTeamSharedDropboxError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderTeamSharedDropboxError_validator = bv.Union(TeamFolderTeamSharedDropboxError)
 
@@ -12317,7 +12167,7 @@ class TeamFolderUpdateSyncSettingsArg(TeamFolderIdArg):
     content_sync_settings = bb.Attribute("content_sync_settings", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderUpdateSyncSettingsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderUpdateSyncSettingsArg_validator = bv.Struct(TeamFolderUpdateSyncSettingsArg)
 
@@ -12341,7 +12191,7 @@ class TeamFolderUpdateSyncSettingsError(BaseTeamFolderError):
         :param files.SyncSettingsError val:
         :rtype: TeamFolderUpdateSyncSettingsError
         """
-        return cls('sync_settings_error', val)
+        pass
 
     def is_sync_settings_error(self):
         """
@@ -12349,7 +12199,7 @@ class TeamFolderUpdateSyncSettingsError(BaseTeamFolderError):
 
         :rtype: bool
         """
-        return self._tag == 'sync_settings_error'
+        pass
 
     def get_sync_settings_error(self):
         """
@@ -12359,12 +12209,10 @@ class TeamFolderUpdateSyncSettingsError(BaseTeamFolderError):
 
         :rtype: files.SyncSettingsError
         """
-        if not self.is_sync_settings_error():
-            raise AttributeError("tag 'sync_settings_error' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamFolderUpdateSyncSettingsError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamFolderUpdateSyncSettingsError_validator = bv.Union(TeamFolderUpdateSyncSettingsError)
 
@@ -12436,7 +12284,7 @@ class TeamGetInfoResult(bb.Struct):
     policies = bb.Attribute("policies", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamGetInfoResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamGetInfoResult_validator = bv.Struct(TeamGetInfoResult)
 
@@ -12472,7 +12320,7 @@ class TeamMemberInfo(bb.Struct):
     role = bb.Attribute("role", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberInfo, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberInfo_validator = bv.Struct(TeamMemberInfo)
 
@@ -12509,7 +12357,7 @@ class TeamMemberInfoV2(bb.Struct):
     roles = bb.Attribute("roles", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberInfoV2, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberInfoV2_validator = bv.Struct(TeamMemberInfoV2)
 
@@ -12538,7 +12386,7 @@ class TeamMemberInfoV2Result(bb.Struct):
     member_info = bb.Attribute("member_info", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberInfoV2Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberInfoV2Result_validator = bv.Struct(TeamMemberInfoV2Result)
 
@@ -12606,7 +12454,7 @@ class TeamMemberProfile(MemberProfile):
     member_folder_id = bb.Attribute("member_folder_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberProfile, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberProfile_validator = bv.Struct(TeamMemberProfile)
 
@@ -12654,7 +12502,7 @@ class TeamMemberRole(bb.Struct):
     description = bb.Attribute("description")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberRole, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberRole_validator = bv.Struct(TeamMemberRole)
 
@@ -12694,7 +12542,7 @@ class TeamMemberStatus(bb.Union):
         :param RemovedStatus val:
         :rtype: TeamMemberStatus
         """
-        return cls('removed', val)
+        pass
 
     def is_active(self):
         """
@@ -12702,7 +12550,7 @@ class TeamMemberStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'active'
+        pass
 
     def is_invited(self):
         """
@@ -12710,7 +12558,7 @@ class TeamMemberStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invited'
+        pass
 
     def is_suspended(self):
         """
@@ -12718,7 +12566,7 @@ class TeamMemberStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'suspended'
+        pass
 
     def is_removed(self):
         """
@@ -12726,7 +12574,7 @@ class TeamMemberStatus(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'removed'
+        pass
 
     def get_removed(self):
         """
@@ -12737,12 +12585,10 @@ class TeamMemberStatus(bb.Union):
 
         :rtype: RemovedStatus
         """
-        if not self.is_removed():
-            raise AttributeError("tag 'removed' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMemberStatus, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMemberStatus_validator = bv.Union(TeamMemberStatus)
 
@@ -12770,7 +12616,7 @@ class TeamMembershipType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'full'
+        pass
 
     def is_limited(self):
         """
@@ -12778,10 +12624,10 @@ class TeamMembershipType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'limited'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamMembershipType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamMembershipType_validator = bv.Union(TeamMembershipType)
 
@@ -12807,7 +12653,7 @@ class TeamNamespacesListArg(bb.Struct):
     limit = bb.Attribute("limit")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamNamespacesListArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamNamespacesListArg_validator = bv.Struct(TeamNamespacesListArg)
 
@@ -12833,7 +12679,7 @@ class TeamNamespacesListContinueArg(bb.Struct):
     cursor = bb.Attribute("cursor")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamNamespacesListContinueArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamNamespacesListContinueArg_validator = bv.Struct(TeamNamespacesListContinueArg)
 
@@ -12859,7 +12705,7 @@ class TeamNamespacesListError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_arg'
+        pass
 
     def is_other(self):
         """
@@ -12867,10 +12713,10 @@ class TeamNamespacesListError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamNamespacesListError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamNamespacesListError_validator = bv.Union(TeamNamespacesListError)
 
@@ -12893,10 +12739,10 @@ class TeamNamespacesListContinueError(TeamNamespacesListError):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_cursor'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamNamespacesListContinueError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamNamespacesListContinueError_validator = bv.Union(TeamNamespacesListContinueError)
 
@@ -12946,7 +12792,7 @@ class TeamNamespacesListResult(bb.Struct):
     has_more = bb.Attribute("has_more")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamNamespacesListResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamNamespacesListResult_validator = bv.Struct(TeamNamespacesListResult)
 
@@ -12982,7 +12828,7 @@ class TeamReportFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'temporary_error'
+        pass
 
     def is_many_reports_at_once(self):
         """
@@ -12990,7 +12836,7 @@ class TeamReportFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'many_reports_at_once'
+        pass
 
     def is_too_much_data(self):
         """
@@ -12998,7 +12844,7 @@ class TeamReportFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_much_data'
+        pass
 
     def is_other(self):
         """
@@ -13006,10 +12852,10 @@ class TeamReportFailureReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamReportFailureReason, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamReportFailureReason_validator = bv.Union(TeamReportFailureReason)
 
@@ -13045,7 +12891,7 @@ class TokenGetAuthenticatedAdminError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'mapping_not_found'
+        pass
 
     def is_admin_not_active(self):
         """
@@ -13053,7 +12899,7 @@ class TokenGetAuthenticatedAdminError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'admin_not_active'
+        pass
 
     def is_other(self):
         """
@@ -13061,10 +12907,10 @@ class TokenGetAuthenticatedAdminError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TokenGetAuthenticatedAdminError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TokenGetAuthenticatedAdminError_validator = bv.Union(TokenGetAuthenticatedAdminError)
 
@@ -13093,7 +12939,7 @@ class TokenGetAuthenticatedAdminResult(bb.Struct):
     admin_profile = bb.Attribute("admin_profile", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TokenGetAuthenticatedAdminResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TokenGetAuthenticatedAdminResult_validator = bv.Struct(TokenGetAuthenticatedAdminResult)
 
@@ -13127,7 +12973,7 @@ class UploadApiRateLimitValue(bb.Union):
         :param int val:
         :rtype: UploadApiRateLimitValue
         """
-        return cls('limit', val)
+        pass
 
     def is_unlimited(self):
         """
@@ -13135,7 +12981,7 @@ class UploadApiRateLimitValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unlimited'
+        pass
 
     def is_limit(self):
         """
@@ -13143,7 +12989,7 @@ class UploadApiRateLimitValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'limit'
+        pass
 
     def is_other(self):
         """
@@ -13151,7 +12997,7 @@ class UploadApiRateLimitValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_limit(self):
         """
@@ -13161,12 +13007,10 @@ class UploadApiRateLimitValue(bb.Union):
 
         :rtype: int
         """
-        if not self.is_limit():
-            raise AttributeError("tag 'limit' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UploadApiRateLimitValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UploadApiRateLimitValue_validator = bv.Union(UploadApiRateLimitValue)
 
@@ -13204,7 +13048,7 @@ class UserAddResult(bb.Union):
         :param UserSecondaryEmailsResult val:
         :rtype: UserAddResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def invalid_user(cls, val):
@@ -13215,7 +13059,7 @@ class UserAddResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: UserAddResult
         """
-        return cls('invalid_user', val)
+        pass
 
     @classmethod
     def unverified(cls, val):
@@ -13226,7 +13070,7 @@ class UserAddResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: UserAddResult
         """
-        return cls('unverified', val)
+        pass
 
     @classmethod
     def placeholder_user(cls, val):
@@ -13237,7 +13081,7 @@ class UserAddResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: UserAddResult
         """
-        return cls('placeholder_user', val)
+        pass
 
     def is_success(self):
         """
@@ -13245,7 +13089,7 @@ class UserAddResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_invalid_user(self):
         """
@@ -13253,7 +13097,7 @@ class UserAddResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_user'
+        pass
 
     def is_unverified(self):
         """
@@ -13261,7 +13105,7 @@ class UserAddResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'unverified'
+        pass
 
     def is_placeholder_user(self):
         """
@@ -13269,7 +13113,7 @@ class UserAddResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'placeholder_user'
+        pass
 
     def is_other(self):
         """
@@ -13277,7 +13121,7 @@ class UserAddResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -13288,9 +13132,7 @@ class UserAddResult(bb.Union):
 
         :rtype: UserSecondaryEmailsResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_invalid_user(self):
         """
@@ -13300,9 +13142,7 @@ class UserAddResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_invalid_user():
-            raise AttributeError("tag 'invalid_user' not set")
-        return self._value
+        pass
 
     def get_unverified(self):
         """
@@ -13312,9 +13152,7 @@ class UserAddResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_unverified():
-            raise AttributeError("tag 'unverified' not set")
-        return self._value
+        pass
 
     def get_placeholder_user(self):
         """
@@ -13324,12 +13162,10 @@ class UserAddResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_placeholder_user():
-            raise AttributeError("tag 'placeholder_user' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserAddResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserAddResult_validator = bv.Union(UserAddResult)
 
@@ -13362,7 +13198,7 @@ class UserCustomQuotaArg(bb.Struct):
     quota_gb = bb.Attribute("quota_gb")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserCustomQuotaArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserCustomQuotaArg_validator = bv.Struct(UserCustomQuotaArg)
 
@@ -13396,7 +13232,7 @@ class UserCustomQuotaResult(bb.Struct):
     quota_gb = bb.Attribute("quota_gb", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserCustomQuotaResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserCustomQuotaResult_validator = bv.Struct(UserCustomQuotaResult)
 
@@ -13426,7 +13262,7 @@ class UserDeleteEmailsResult(bb.Struct):
     results = bb.Attribute("results")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserDeleteEmailsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserDeleteEmailsResult_validator = bv.Struct(UserDeleteEmailsResult)
 
@@ -13460,7 +13296,7 @@ class UserDeleteResult(bb.Union):
         :param UserDeleteEmailsResult val:
         :rtype: UserDeleteResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def invalid_user(cls, val):
@@ -13471,7 +13307,7 @@ class UserDeleteResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: UserDeleteResult
         """
-        return cls('invalid_user', val)
+        pass
 
     def is_success(self):
         """
@@ -13479,7 +13315,7 @@ class UserDeleteResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_invalid_user(self):
         """
@@ -13487,7 +13323,7 @@ class UserDeleteResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_user'
+        pass
 
     def is_other(self):
         """
@@ -13495,7 +13331,7 @@ class UserDeleteResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -13506,9 +13342,7 @@ class UserDeleteResult(bb.Union):
 
         :rtype: UserDeleteEmailsResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_invalid_user(self):
         """
@@ -13518,12 +13352,10 @@ class UserDeleteResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_invalid_user():
-            raise AttributeError("tag 'invalid_user' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserDeleteResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserDeleteResult_validator = bv.Union(UserDeleteResult)
 
@@ -13553,7 +13385,7 @@ class UserResendEmailsResult(bb.Struct):
     results = bb.Attribute("results")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserResendEmailsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserResendEmailsResult_validator = bv.Struct(UserResendEmailsResult)
 
@@ -13587,7 +13419,7 @@ class UserResendResult(bb.Union):
         :param UserResendEmailsResult val:
         :rtype: UserResendResult
         """
-        return cls('success', val)
+        pass
 
     @classmethod
     def invalid_user(cls, val):
@@ -13598,7 +13430,7 @@ class UserResendResult(bb.Union):
         :param UserSelectorArg val:
         :rtype: UserResendResult
         """
-        return cls('invalid_user', val)
+        pass
 
     def is_success(self):
         """
@@ -13606,7 +13438,7 @@ class UserResendResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'success'
+        pass
 
     def is_invalid_user(self):
         """
@@ -13614,7 +13446,7 @@ class UserResendResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_user'
+        pass
 
     def is_other(self):
         """
@@ -13622,7 +13454,7 @@ class UserResendResult(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_success(self):
         """
@@ -13633,9 +13465,7 @@ class UserResendResult(bb.Union):
 
         :rtype: UserResendEmailsResult
         """
-        if not self.is_success():
-            raise AttributeError("tag 'success' not set")
-        return self._value
+        pass
 
     def get_invalid_user(self):
         """
@@ -13645,12 +13475,10 @@ class UserResendResult(bb.Union):
 
         :rtype: UserSelectorArg
         """
-        if not self.is_invalid_user():
-            raise AttributeError("tag 'invalid_user' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserResendResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserResendResult_validator = bv.Union(UserResendResult)
 
@@ -13683,7 +13511,7 @@ class UserSecondaryEmailsArg(bb.Struct):
     secondary_emails = bb.Attribute("secondary_emails")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserSecondaryEmailsArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserSecondaryEmailsArg_validator = bv.Struct(UserSecondaryEmailsArg)
 
@@ -13713,7 +13541,7 @@ class UserSecondaryEmailsResult(bb.Struct):
     results = bb.Attribute("results")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserSecondaryEmailsResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserSecondaryEmailsResult_validator = bv.Struct(UserSecondaryEmailsResult)
 
@@ -13738,7 +13566,7 @@ class UserSelectorArg(bb.Union):
         :param str val:
         :rtype: UserSelectorArg
         """
-        return cls('team_member_id', val)
+        pass
 
     @classmethod
     def external_id(cls, val):
@@ -13749,7 +13577,7 @@ class UserSelectorArg(bb.Union):
         :param str val:
         :rtype: UserSelectorArg
         """
-        return cls('external_id', val)
+        pass
 
     @classmethod
     def email(cls, val):
@@ -13760,7 +13588,7 @@ class UserSelectorArg(bb.Union):
         :param str val:
         :rtype: UserSelectorArg
         """
-        return cls('email', val)
+        pass
 
     def is_team_member_id(self):
         """
@@ -13768,7 +13596,7 @@ class UserSelectorArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_member_id'
+        pass
 
     def is_external_id(self):
         """
@@ -13776,7 +13604,7 @@ class UserSelectorArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'external_id'
+        pass
 
     def is_email(self):
         """
@@ -13784,7 +13612,7 @@ class UserSelectorArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'email'
+        pass
 
     def get_team_member_id(self):
         """
@@ -13792,9 +13620,7 @@ class UserSelectorArg(bb.Union):
 
         :rtype: str
         """
-        if not self.is_team_member_id():
-            raise AttributeError("tag 'team_member_id' not set")
-        return self._value
+        pass
 
     def get_external_id(self):
         """
@@ -13802,9 +13628,7 @@ class UserSelectorArg(bb.Union):
 
         :rtype: str
         """
-        if not self.is_external_id():
-            raise AttributeError("tag 'external_id' not set")
-        return self._value
+        pass
 
     def get_email(self):
         """
@@ -13812,12 +13636,10 @@ class UserSelectorArg(bb.Union):
 
         :rtype: str
         """
-        if not self.is_email():
-            raise AttributeError("tag 'email' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserSelectorArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserSelectorArg_validator = bv.Union(UserSelectorArg)
 
@@ -13848,7 +13670,7 @@ class UsersSelectorArg(bb.Union):
         :param list of [str] val:
         :rtype: UsersSelectorArg
         """
-        return cls('team_member_ids', val)
+        pass
 
     @classmethod
     def external_ids(cls, val):
@@ -13859,7 +13681,7 @@ class UsersSelectorArg(bb.Union):
         :param list of [str] val:
         :rtype: UsersSelectorArg
         """
-        return cls('external_ids', val)
+        pass
 
     @classmethod
     def emails(cls, val):
@@ -13870,7 +13692,7 @@ class UsersSelectorArg(bb.Union):
         :param list of [str] val:
         :rtype: UsersSelectorArg
         """
-        return cls('emails', val)
+        pass
 
     def is_team_member_ids(self):
         """
@@ -13878,7 +13700,7 @@ class UsersSelectorArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team_member_ids'
+        pass
 
     def is_external_ids(self):
         """
@@ -13886,7 +13708,7 @@ class UsersSelectorArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'external_ids'
+        pass
 
     def is_emails(self):
         """
@@ -13894,7 +13716,7 @@ class UsersSelectorArg(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'emails'
+        pass
 
     def get_team_member_ids(self):
         """
@@ -13904,9 +13726,7 @@ class UsersSelectorArg(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_team_member_ids():
-            raise AttributeError("tag 'team_member_ids' not set")
-        return self._value
+        pass
 
     def get_external_ids(self):
         """
@@ -13916,9 +13736,7 @@ class UsersSelectorArg(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_external_ids():
-            raise AttributeError("tag 'external_ids' not set")
-        return self._value
+        pass
 
     def get_emails(self):
         """
@@ -13928,12 +13746,10 @@ class UsersSelectorArg(bb.Union):
 
         :rtype: list of [str]
         """
-        if not self.is_emails():
-            raise AttributeError("tag 'emails' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UsersSelectorArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UsersSelectorArg_validator = bv.Union(UsersSelectorArg)
 

@@ -35,7 +35,7 @@ class AccessError(bb.Union):
         :param InvalidAccountTypeError val:
         :rtype: AccessError
         """
-        return cls('invalid_account_type', val)
+        pass
 
     @classmethod
     def paper_access_denied(cls, val):
@@ -46,7 +46,7 @@ class AccessError(bb.Union):
         :param PaperAccessError val:
         :rtype: AccessError
         """
-        return cls('paper_access_denied', val)
+        pass
 
     def is_invalid_account_type(self):
         """
@@ -54,7 +54,7 @@ class AccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_account_type'
+        pass
 
     def is_paper_access_denied(self):
         """
@@ -62,7 +62,7 @@ class AccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'paper_access_denied'
+        pass
 
     def is_other(self):
         """
@@ -70,7 +70,7 @@ class AccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_invalid_account_type(self):
         """
@@ -80,9 +80,7 @@ class AccessError(bb.Union):
 
         :rtype: InvalidAccountTypeError
         """
-        if not self.is_invalid_account_type():
-            raise AttributeError("tag 'invalid_account_type' not set")
-        return self._value
+        pass
 
     def get_paper_access_denied(self):
         """
@@ -92,12 +90,10 @@ class AccessError(bb.Union):
 
         :rtype: PaperAccessError
         """
-        if not self.is_paper_access_denied():
-            raise AttributeError("tag 'paper_access_denied' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AccessError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AccessError_validator = bv.Union(AccessError)
 
@@ -147,7 +143,7 @@ class AuthError(bb.Union):
         :param TokenScopeError val:
         :rtype: AuthError
         """
-        return cls('missing_scope', val)
+        pass
 
     def is_invalid_access_token(self):
         """
@@ -155,7 +151,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_access_token'
+        pass
 
     def is_invalid_select_user(self):
         """
@@ -163,7 +159,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_select_user'
+        pass
 
     def is_invalid_select_admin(self):
         """
@@ -171,7 +167,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_select_admin'
+        pass
 
     def is_user_suspended(self):
         """
@@ -179,7 +175,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_suspended'
+        pass
 
     def is_expired_access_token(self):
         """
@@ -187,7 +183,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'expired_access_token'
+        pass
 
     def is_missing_scope(self):
         """
@@ -195,7 +191,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'missing_scope'
+        pass
 
     def is_route_access_denied(self):
         """
@@ -203,7 +199,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'route_access_denied'
+        pass
 
     def is_other(self):
         """
@@ -211,7 +207,7 @@ class AuthError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_missing_scope(self):
         """
@@ -221,12 +217,10 @@ class AuthError(bb.Union):
 
         :rtype: TokenScopeError
         """
-        if not self.is_missing_scope():
-            raise AttributeError("tag 'missing_scope' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AuthError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AuthError_validator = bv.Union(AuthError)
 
@@ -256,7 +250,7 @@ class InvalidAccountTypeError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'endpoint'
+        pass
 
     def is_feature(self):
         """
@@ -264,7 +258,7 @@ class InvalidAccountTypeError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'feature'
+        pass
 
     def is_other(self):
         """
@@ -272,10 +266,10 @@ class InvalidAccountTypeError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(InvalidAccountTypeError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 InvalidAccountTypeError_validator = bv.Union(InvalidAccountTypeError)
 
@@ -304,7 +298,7 @@ class PaperAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'paper_disabled'
+        pass
 
     def is_not_paper_user(self):
         """
@@ -312,7 +306,7 @@ class PaperAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'not_paper_user'
+        pass
 
     def is_other(self):
         """
@@ -320,10 +314,10 @@ class PaperAccessError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperAccessError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperAccessError_validator = bv.Union(PaperAccessError)
 
@@ -361,7 +355,7 @@ class RateLimitError(bb.Struct):
     retry_after = bb.Attribute("retry_after")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RateLimitError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RateLimitError_validator = bv.Struct(RateLimitError)
 
@@ -391,7 +385,7 @@ class RateLimitReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_requests'
+        pass
 
     def is_too_many_write_operations(self):
         """
@@ -399,7 +393,7 @@ class RateLimitReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'too_many_write_operations'
+        pass
 
     def is_other(self):
         """
@@ -407,10 +401,10 @@ class RateLimitReason(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(RateLimitReason, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 RateLimitReason_validator = bv.Union(RateLimitReason)
 
@@ -446,7 +440,7 @@ class TokenFromOAuth1Arg(bb.Struct):
     oauth1_token_secret = bb.Attribute("oauth1_token_secret")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TokenFromOAuth1Arg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TokenFromOAuth1Arg_validator = bv.Struct(TokenFromOAuth1Arg)
 
@@ -476,7 +470,7 @@ class TokenFromOAuth1Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'invalid_oauth1_token_info'
+        pass
 
     def is_app_id_mismatch(self):
         """
@@ -484,7 +478,7 @@ class TokenFromOAuth1Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'app_id_mismatch'
+        pass
 
     def is_other(self):
         """
@@ -492,10 +486,10 @@ class TokenFromOAuth1Error(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TokenFromOAuth1Error, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TokenFromOAuth1Error_validator = bv.Union(TokenFromOAuth1Error)
 
@@ -521,7 +515,7 @@ class TokenFromOAuth1Result(bb.Struct):
     oauth2_token = bb.Attribute("oauth2_token")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TokenFromOAuth1Result, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TokenFromOAuth1Result_validator = bv.Struct(TokenFromOAuth1Result)
 
@@ -547,7 +541,7 @@ class TokenScopeError(bb.Struct):
     required_scope = bb.Attribute("required_scope")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TokenScopeError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TokenScopeError_validator = bv.Struct(TokenScopeError)
 

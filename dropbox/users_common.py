@@ -38,7 +38,7 @@ class AccountType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'basic'
+        pass
 
     def is_pro(self):
         """
@@ -46,7 +46,7 @@ class AccountType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'pro'
+        pass
 
     def is_business(self):
         """
@@ -54,10 +54,10 @@ class AccountType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'business'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(AccountType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 AccountType_validator = bv.Union(AccountType)
 

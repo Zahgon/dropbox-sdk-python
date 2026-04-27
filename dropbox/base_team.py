@@ -68,16 +68,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.ModifyTemplateError`
         """
-        arg = file_properties.AddTemplateArg(name,
-                                             description,
-                                             fields)
-        r = self.request(
-            file_properties.templates_add_for_team,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_templates_get_for_team(self,
                                                template_id):
@@ -96,14 +87,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.TemplateError`
         """
-        arg = file_properties.GetTemplateArg(template_id)
-        r = self.request(
-            file_properties.templates_get_for_team,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_templates_list_for_team(self):
         """
@@ -119,14 +103,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.TemplateError`
         """
-        arg = None
-        r = self.request(
-            file_properties.templates_list_for_team,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def file_properties_templates_remove_for_team(self,
                                                   template_id):
@@ -148,14 +125,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.TemplateError`
         """
-        arg = file_properties.RemoveTemplateArg(template_id)
-        r = self.request(
-            file_properties.templates_remove_for_team,
-            'file_properties',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def file_properties_templates_update_for_team(self,
                                                   template_id,
@@ -187,17 +157,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.file_properties.ModifyTemplateError`
         """
-        arg = file_properties.UpdateTemplateArg(template_id,
-                                                name,
-                                                description,
-                                                add_fields)
-        r = self.request(
-            file_properties.templates_update_for_team,
-            'file_properties',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in file_requests namespace
@@ -241,17 +201,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ListMemberDevicesError`
         """
-        arg = team.ListMemberDevicesArg(team_member_id,
-                                        include_web_sessions,
-                                        include_desktop_clients,
-                                        include_mobile_clients)
-        r = self.request(
-            team.devices_list_member_devices,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_devices_list_members_devices(self,
                                           cursor=None,
@@ -282,17 +232,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ListMembersDevicesError`
         """
-        arg = team.ListMembersDevicesArg(cursor,
-                                         include_web_sessions,
-                                         include_desktop_clients,
-                                         include_mobile_clients)
-        r = self.request(
-            team.devices_list_members_devices,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_devices_list_team_devices(self,
                                        cursor=None,
@@ -323,21 +263,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ListTeamDevicesError`
         """
-        warnings.warn(
-            'devices/list_team_devices is deprecated. Use devices/list_members_devices.',
-            DeprecationWarning,
-        )
-        arg = team.ListTeamDevicesArg(cursor,
-                                      include_web_sessions,
-                                      include_desktop_clients,
-                                      include_mobile_clients)
-        r = self.request(
-            team.devices_list_team_devices,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_devices_revoke_device_session(self,
                                            arg):
@@ -354,13 +280,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.RevokeDeviceSessionError`
         """
-        r = self.request(
-            team.devices_revoke_device_session,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_devices_revoke_device_session_batch(self,
                                                  revoke_devices):
@@ -377,14 +297,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.RevokeDeviceSessionBatchError`
         """
-        arg = team.RevokeDeviceSessionBatchArg(revoke_devices)
-        r = self.request(
-            team.devices_revoke_device_session_batch,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_features_get_values(self,
                                  features):
@@ -405,14 +318,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.FeaturesGetValuesBatchError`
         """
-        arg = team.FeaturesGetValuesBatchArg(features)
-        r = self.request(
-            team.features_get_values,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_get_info(self):
         """
@@ -423,14 +329,7 @@ class DropboxTeamBase(object):
 
         :rtype: :class:`dropbox.team.TeamGetInfoResult`
         """
-        arg = None
-        r = self.request(
-            team.get_info,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_create(self,
                            group_name,
@@ -458,17 +357,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupCreateError`
         """
-        arg = team.GroupCreateArg(group_name,
-                                  add_creator_as_owner,
-                                  group_external_id,
-                                  group_management_type)
-        r = self.request(
-            team.groups_create,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_delete(self,
                            arg):
@@ -490,13 +379,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupDeleteError`
         """
-        r = self.request(
-            team.groups_delete,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_get_info(self,
                              arg):
@@ -517,13 +400,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupsGetInfoError`
         """
-        r = self.request(
-            team.groups_get_info,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_job_status_get(self,
                                    async_job_id):
@@ -544,14 +421,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupsPollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            team.groups_job_status_get,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_list(self,
                          limit=1000):
@@ -564,14 +434,7 @@ class DropboxTeamBase(object):
         :param int limit: Number of results to return per call.
         :rtype: :class:`dropbox.team.GroupsListResult`
         """
-        arg = team.GroupsListArg(limit)
-        r = self.request(
-            team.groups_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_list_continue(self,
                                   cursor):
@@ -590,14 +453,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupsListContinueError`
         """
-        arg = team.GroupsListContinueArg(cursor)
-        r = self.request(
-            team.groups_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_members_add(self,
                                 group,
@@ -622,16 +478,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupMembersAddError`
         """
-        arg = team.GroupMembersAddArg(group,
-                                      members,
-                                      return_members)
-        r = self.request(
-            team.groups_members_add,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_members_list(self,
                                  group,
@@ -651,15 +498,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupSelectorError`
         """
-        arg = team.GroupsMembersListArg(group,
-                                        limit)
-        r = self.request(
-            team.groups_members_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_members_list_continue(self,
                                           cursor):
@@ -679,14 +518,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupsMembersListContinueError`
         """
-        arg = team.GroupsMembersListContinueArg(cursor)
-        r = self.request(
-            team.groups_members_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_members_remove(self,
                                    group,
@@ -713,16 +545,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupMembersRemoveError`
         """
-        arg = team.GroupMembersRemoveArg(group,
-                                         users,
-                                         return_members)
-        r = self.request(
-            team.groups_members_remove,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_members_set_access_type(self,
                                             group,
@@ -748,17 +571,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupMemberSetAccessTypeError`
         """
-        arg = team.GroupMembersSetAccessTypeArg(group,
-                                                user,
-                                                access_type,
-                                                return_members)
-        r = self.request(
-            team.groups_members_set_access_type,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_groups_update(self,
                            group,
@@ -790,18 +603,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.GroupUpdateError`
         """
-        arg = team.GroupUpdateArgs(group,
-                                   return_members,
-                                   new_group_name,
-                                   new_group_external_id,
-                                   new_group_management_type)
-        r = self.request(
-            team.groups_update,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_legal_holds_create_policy(self,
                                        name,
@@ -829,18 +631,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsPolicyCreateError`
         """
-        arg = team.LegalHoldsPolicyCreateArg(name,
-                                             members,
-                                             description,
-                                             start_date,
-                                             end_date)
-        r = self.request(
-            team.legal_holds_create_policy,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_legal_holds_get_policy(self,
                                     id):
@@ -858,14 +649,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsGetPolicyError`
         """
-        arg = team.LegalHoldsGetPolicyArg(id)
-        r = self.request(
-            team.legal_holds_get_policy,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_legal_holds_list_held_revisions(self,
                                              id):
@@ -884,14 +668,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsListHeldRevisionsError`
         """
-        arg = team.LegalHoldsListHeldRevisionsArg(id)
-        r = self.request(
-            team.legal_holds_list_held_revisions,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_legal_holds_list_held_revisions_continue(self,
                                                       id,
@@ -914,15 +691,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsListHeldRevisionsError`
         """
-        arg = team.LegalHoldsListHeldRevisionsContinueArg(id,
-                                                          cursor)
-        r = self.request(
-            team.legal_holds_list_held_revisions_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_legal_holds_list_policies(self,
                                        include_released=False):
@@ -941,14 +710,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsListPoliciesError`
         """
-        arg = team.LegalHoldsListPoliciesArg(include_released)
-        r = self.request(
-            team.legal_holds_list_policies,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_legal_holds_release_policy(self,
                                         id):
@@ -966,14 +728,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsPolicyReleaseError`
         """
-        arg = team.LegalHoldsPolicyReleaseArg(id)
-        r = self.request(
-            team.legal_holds_release_policy,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_legal_holds_update_policy(self,
                                        id,
@@ -998,17 +753,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.LegalHoldsPolicyUpdateError`
         """
-        arg = team.LegalHoldsPolicyUpdateArg(id,
-                                             name,
-                                             description,
-                                             members)
-        r = self.request(
-            team.legal_holds_update_policy,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_linked_apps_list_member_linked_apps(self,
                                                  team_member_id):
@@ -1026,14 +771,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ListMemberAppsError`
         """
-        arg = team.ListMemberAppsArg(team_member_id)
-        r = self.request(
-            team.linked_apps_list_member_linked_apps,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_linked_apps_list_members_linked_apps(self,
                                                   cursor=None):
@@ -1055,14 +793,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ListMembersAppsError`
         """
-        arg = team.ListMembersAppsArg(cursor)
-        r = self.request(
-            team.linked_apps_list_members_linked_apps,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_linked_apps_list_team_linked_apps(self,
                                                cursor=None):
@@ -1084,18 +815,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ListTeamAppsError`
         """
-        warnings.warn(
-            'linked_apps/list_team_linked_apps is deprecated. Use linked_apps/list_members_linked_apps.',
-            DeprecationWarning,
-        )
-        arg = team.ListTeamAppsArg(cursor)
-        r = self.request(
-            team.linked_apps_list_team_linked_apps,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_linked_apps_revoke_linked_app(self,
                                            app_id,
@@ -1119,16 +839,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.RevokeLinkedAppError`
         """
-        arg = team.RevokeLinkedApiAppArg(app_id,
-                                         team_member_id,
-                                         keep_app_folder)
-        r = self.request(
-            team.linked_apps_revoke_linked_app,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_linked_apps_revoke_linked_app_batch(self,
                                                  revoke_linked_app):
@@ -1146,14 +857,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.RevokeLinkedAppBatchError`
         """
-        arg = team.RevokeLinkedApiAppBatchArg(revoke_linked_app)
-        r = self.request(
-            team.linked_apps_revoke_linked_app_batch,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_excluded_users_add(self,
                                                     users=None):
@@ -1171,14 +875,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ExcludedUsersUpdateError`
         """
-        arg = team.ExcludedUsersUpdateArg(users)
-        r = self.request(
-            team.member_space_limits_excluded_users_add,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_excluded_users_list(self,
                                                      limit=1000):
@@ -1195,14 +892,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ExcludedUsersListError`
         """
-        arg = team.ExcludedUsersListArg(limit)
-        r = self.request(
-            team.member_space_limits_excluded_users_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_excluded_users_list_continue(self,
                                                               cursor):
@@ -1220,14 +910,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ExcludedUsersListContinueError`
         """
-        arg = team.ExcludedUsersListContinueArg(cursor)
-        r = self.request(
-            team.member_space_limits_excluded_users_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_excluded_users_remove(self,
                                                        users=None):
@@ -1245,14 +928,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ExcludedUsersUpdateError`
         """
-        arg = team.ExcludedUsersUpdateArg(users)
-        r = self.request(
-            team.member_space_limits_excluded_users_remove,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_get_custom_quota(self,
                                                   users):
@@ -1272,14 +948,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.CustomQuotaError`
         """
-        arg = team.CustomQuotaUsersArg(users)
-        r = self.request(
-            team.member_space_limits_get_custom_quota,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_remove_custom_quota(self,
                                                      users):
@@ -1300,14 +969,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.CustomQuotaError`
         """
-        arg = team.CustomQuotaUsersArg(users)
-        r = self.request(
-            team.member_space_limits_remove_custom_quota,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_member_space_limits_set_custom_quota(self,
                                                   users_and_quotas):
@@ -1329,14 +991,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.SetCustomQuotaError`
         """
-        arg = team.SetCustomQuotaArg(users_and_quotas)
-        r = self.request(
-            team.member_space_limits_set_custom_quota,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_add_v2(self,
                             new_members,
@@ -1361,15 +1016,7 @@ class DropboxTeamBase(object):
             of new members to be added to the team.
         :rtype: :class:`dropbox.team.MembersAddLaunchV2Result`
         """
-        arg = team.MembersAddV2Arg(new_members,
-                                   force_async)
-        r = self.request(
-            team.members_add_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_add(self,
                          new_members,
@@ -1394,15 +1041,7 @@ class DropboxTeamBase(object):
             new members to be added to the team.
         :rtype: :class:`dropbox.team.MembersAddLaunch`
         """
-        arg = team.MembersAddArg(new_members,
-                                 force_async)
-        r = self.request(
-            team.members_add,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_add_job_status_get_v2(self,
                                            async_job_id):
@@ -1422,14 +1061,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            team.members_add_job_status_get_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_add_job_status_get(self,
                                         async_job_id):
@@ -1449,14 +1081,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            team.members_add_job_status_get,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_delete_profile_photo_v2(self,
                                              user):
@@ -1475,14 +1100,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersDeleteProfilePhotoError`
         """
-        arg = team.MembersDeleteProfilePhotoArg(user)
-        r = self.request(
-            team.members_delete_profile_photo_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_delete_profile_photo(self,
                                           user):
@@ -1501,14 +1119,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersDeleteProfilePhotoError`
         """
-        arg = team.MembersDeleteProfilePhotoArg(user)
-        r = self.request(
-            team.members_delete_profile_photo,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_get_available_team_member_roles(self):
         """
@@ -1521,14 +1132,7 @@ class DropboxTeamBase(object):
 
         :rtype: :class:`dropbox.team.MembersGetAvailableTeamMemberRolesResult`
         """
-        arg = None
-        r = self.request(
-            team.members_get_available_team_member_roles,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_get_info_v2(self,
                                  members):
@@ -1549,14 +1153,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersGetInfoError`
         """
-        arg = team.MembersGetInfoV2Arg(members)
-        r = self.request(
-            team.members_get_info_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_get_info(self,
                               members):
@@ -1577,14 +1174,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersGetInfoError`
         """
-        arg = team.MembersGetInfoArgs(members)
-        r = self.request(
-            team.members_get_info,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_list_v2(self,
                              limit=1000,
@@ -1603,15 +1193,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersListError`
         """
-        arg = team.MembersListArg(limit,
-                                  include_removed)
-        r = self.request(
-            team.members_list_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_list(self,
                           limit=1000,
@@ -1630,15 +1212,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersListError`
         """
-        arg = team.MembersListArg(limit,
-                                  include_removed)
-        r = self.request(
-            team.members_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_list_continue_v2(self,
                                       cursor):
@@ -1658,14 +1232,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersListContinueError`
         """
-        arg = team.MembersListContinueArg(cursor)
-        r = self.request(
-            team.members_list_continue_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_list_continue(self,
                                    cursor):
@@ -1685,14 +1252,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersListContinueError`
         """
-        arg = team.MembersListContinueArg(cursor)
-        r = self.request(
-            team.members_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_move_former_member_files(self,
                                               user,
@@ -1720,16 +1280,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersTransferFormerMembersFilesError`
         """
-        arg = team.MembersDataTransferArg(user,
-                                          transfer_dest_id,
-                                          transfer_admin_id)
-        r = self.request(
-            team.members_move_former_member_files,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_move_former_member_files_job_status_check(self,
                                                                async_job_id):
@@ -1749,14 +1300,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            team.members_move_former_member_files_job_status_check,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_recover(self,
                              user):
@@ -1776,14 +1320,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersRecoverError`
         """
-        arg = team.MembersRecoverArg(user)
-        r = self.request(
-            team.members_recover,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_members_remove(self,
                             user,
@@ -1835,19 +1372,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersRemoveError`
         """
-        arg = team.MembersRemoveArg(user,
-                                    wipe_data,
-                                    transfer_dest_id,
-                                    transfer_admin_id,
-                                    keep_account,
-                                    retain_team_shares)
-        r = self.request(
-            team.members_remove,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_remove_job_status_get(self,
                                            async_job_id):
@@ -1867,14 +1392,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            team.members_remove_job_status_get,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_secondary_emails_add(self,
                                           new_secondary_emails):
@@ -1895,14 +1413,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.AddSecondaryEmailsError`
         """
-        arg = team.AddSecondaryEmailsArg(new_secondary_emails)
-        r = self.request(
-            team.members_secondary_emails_add,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_secondary_emails_delete(self,
                                              emails_to_delete):
@@ -1919,14 +1430,7 @@ class DropboxTeamBase(object):
             delete.
         :rtype: :class:`dropbox.team.DeleteSecondaryEmailsResult`
         """
-        arg = team.DeleteSecondaryEmailsArg(emails_to_delete)
-        r = self.request(
-            team.members_secondary_emails_delete,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_secondary_emails_resend_verification_emails(self,
                                                                  emails_to_resend):
@@ -1942,14 +1446,7 @@ class DropboxTeamBase(object):
             verification emails to.
         :rtype: :class:`dropbox.team.ResendVerificationEmailResult`
         """
-        arg = team.ResendVerificationEmailArg(emails_to_resend)
-        r = self.request(
-            team.members_secondary_emails_resend_verification_emails,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_send_welcome_email(self,
                                         arg):
@@ -1971,13 +1468,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSendWelcomeError`
         """
-        r = self.request(
-            team.members_send_welcome_email,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_members_set_admin_permissions_v2(self,
                                               user,
@@ -2000,15 +1491,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSetPermissions2Error`
         """
-        arg = team.MembersSetPermissions2Arg(user,
-                                             new_roles)
-        r = self.request(
-            team.members_set_admin_permissions_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_set_admin_permissions(self,
                                            user,
@@ -2030,15 +1513,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSetPermissionsError`
         """
-        arg = team.MembersSetPermissionsArg(user,
-                                            new_role)
-        r = self.request(
-            team.members_set_admin_permissions,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_set_profile_v2(self,
                                     user,
@@ -2070,20 +1545,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSetProfileError`
         """
-        arg = team.MembersSetProfileArg(user,
-                                        new_email,
-                                        new_external_id,
-                                        new_given_name,
-                                        new_surname,
-                                        new_persistent_id,
-                                        new_is_directory_restricted)
-        r = self.request(
-            team.members_set_profile_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_set_profile(self,
                                  user,
@@ -2115,20 +1577,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSetProfileError`
         """
-        arg = team.MembersSetProfileArg(user,
-                                        new_email,
-                                        new_external_id,
-                                        new_given_name,
-                                        new_surname,
-                                        new_persistent_id,
-                                        new_is_directory_restricted)
-        r = self.request(
-            team.members_set_profile,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_set_profile_photo_v2(self,
                                           user,
@@ -2150,15 +1599,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSetProfilePhotoError`
         """
-        arg = team.MembersSetProfilePhotoArg(user,
-                                             photo)
-        r = self.request(
-            team.members_set_profile_photo_v2,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_set_profile_photo(self,
                                        user,
@@ -2180,15 +1621,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSetProfilePhotoError`
         """
-        arg = team.MembersSetProfilePhotoArg(user,
-                                             photo)
-        r = self.request(
-            team.members_set_profile_photo,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_members_suspend(self,
                              user,
@@ -2209,15 +1642,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersSuspendError`
         """
-        arg = team.MembersDeactivateArg(user,
-                                        wipe_data)
-        r = self.request(
-            team.members_suspend,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_members_unsuspend(self,
                                user):
@@ -2237,14 +1662,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.MembersUnsuspendError`
         """
-        arg = team.MembersUnsuspendArg(user)
-        r = self.request(
-            team.members_unsuspend,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_namespaces_list(self,
                              limit=1000):
@@ -2266,14 +1684,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamNamespacesListError`
         """
-        arg = team.TeamNamespacesListArg(limit)
-        r = self.request(
-            team.namespaces_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_namespaces_list_continue(self,
                                       cursor):
@@ -2293,14 +1704,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamNamespacesListContinueError`
         """
-        arg = team.TeamNamespacesListContinueArg(cursor)
-        r = self.request(
-            team.namespaces_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_properties_template_add(self,
                                      name,
@@ -2318,20 +1722,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ModifyTemplateError`
         """
-        warnings.warn(
-            'properties/template/add is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.AddTemplateArg(name,
-                                             description,
-                                             fields)
-        r = self.request(
-            team.properties_template_add,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_properties_template_get(self,
                                      template_id):
@@ -2351,18 +1742,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TemplateError`
         """
-        warnings.warn(
-            'properties/template/get is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.GetTemplateArg(template_id)
-        r = self.request(
-            team.properties_template_get,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_properties_template_list(self):
         """
@@ -2378,18 +1758,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TemplateError`
         """
-        warnings.warn(
-            'properties/template/list is deprecated.',
-            DeprecationWarning,
-        )
-        arg = None
-        r = self.request(
-            team.properties_template_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_properties_template_update(self,
                                         template_id,
@@ -2418,21 +1787,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.ModifyTemplateError`
         """
-        warnings.warn(
-            'properties/template/update is deprecated.',
-            DeprecationWarning,
-        )
-        arg = file_properties.UpdateTemplateArg(template_id,
-                                                name,
-                                                description,
-                                                add_fields)
-        r = self.request(
-            team.properties_template_update,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_reports_get_activity(self,
                                   start_date=None,
@@ -2454,19 +1809,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.DateRangeError`
         """
-        warnings.warn(
-            'reports/get_activity is deprecated.',
-            DeprecationWarning,
-        )
-        arg = team.DateRange(start_date,
-                             end_date)
-        r = self.request(
-            team.reports_get_activity,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_reports_get_devices(self,
                                  start_date=None,
@@ -2488,19 +1831,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.DateRangeError`
         """
-        warnings.warn(
-            'reports/get_devices is deprecated.',
-            DeprecationWarning,
-        )
-        arg = team.DateRange(start_date,
-                             end_date)
-        r = self.request(
-            team.reports_get_devices,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_reports_get_membership(self,
                                     start_date=None,
@@ -2522,19 +1853,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.DateRangeError`
         """
-        warnings.warn(
-            'reports/get_membership is deprecated.',
-            DeprecationWarning,
-        )
-        arg = team.DateRange(start_date,
-                             end_date)
-        r = self.request(
-            team.reports_get_membership,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_reports_get_storage(self,
                                  start_date=None,
@@ -2556,19 +1875,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.DateRangeError`
         """
-        warnings.warn(
-            'reports/get_storage is deprecated.',
-            DeprecationWarning,
-        )
-        arg = team.DateRange(start_date,
-                             end_date)
-        r = self.request(
-            team.reports_get_storage,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_sharing_allowlist_add(self,
                                    domains=None,
@@ -2593,15 +1900,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.SharingAllowlistAddError`
         """
-        arg = team.SharingAllowlistAddArgs(domains,
-                                           emails)
-        r = self.request(
-            team.sharing_allowlist_add,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_sharing_allowlist_list(self,
                                     limit=1000):
@@ -2618,14 +1917,7 @@ class DropboxTeamBase(object):
         :param int limit: The number of entries to fetch at one time.
         :rtype: :class:`dropbox.team.SharingAllowlistListResponse`
         """
-        arg = team.SharingAllowlistListArg(limit)
-        r = self.request(
-            team.sharing_allowlist_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_sharing_allowlist_list_continue(self,
                                              cursor):
@@ -2645,14 +1937,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.SharingAllowlistListContinueError`
         """
-        arg = team.SharingAllowlistListContinueArg(cursor)
-        r = self.request(
-            team.sharing_allowlist_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_sharing_allowlist_remove(self,
                                       domains=None,
@@ -2677,15 +1962,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.SharingAllowlistRemoveError`
         """
-        arg = team.SharingAllowlistRemoveArgs(domains,
-                                              emails)
-        r = self.request(
-            team.sharing_allowlist_remove,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_activate(self,
                                   team_folder_id):
@@ -2699,14 +1976,7 @@ class DropboxTeamBase(object):
         :param str team_folder_id: The ID of the team folder.
         :rtype: :class:`dropbox.team.TeamFolderMetadata`
         """
-        arg = team.TeamFolderIdArg(team_folder_id)
-        r = self.request(
-            team.team_folder_activate,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_archive(self,
                                  team_folder_id,
@@ -2723,15 +1993,7 @@ class DropboxTeamBase(object):
             synchronously.
         :rtype: :class:`dropbox.team.TeamFolderArchiveLaunch`
         """
-        arg = team.TeamFolderArchiveArg(team_folder_id,
-                                        force_async_off)
-        r = self.request(
-            team.team_folder_archive,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_archive_check(self,
                                        async_job_id):
@@ -2750,14 +2012,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.PollError`
         """
-        arg = async_.PollArg(async_job_id)
-        r = self.request(
-            team.team_folder_archive_check,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_create(self,
                                 name,
@@ -2780,15 +2035,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamFolderCreateError`
         """
-        arg = team.TeamFolderCreateArg(name,
-                                       sync_setting)
-        r = self.request(
-            team.team_folder_create,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_get_info(self,
                                   team_folder_ids):
@@ -2802,14 +2049,7 @@ class DropboxTeamBase(object):
         :param List[str] team_folder_ids: The list of team folder IDs.
         :rtype: List[:class:`dropbox.team.TeamFolderGetInfoItem`]
         """
-        arg = team.TeamFolderIdListArg(team_folder_ids)
-        r = self.request(
-            team.team_folder_get_info,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_list(self,
                               limit=1000):
@@ -2826,14 +2066,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamFolderListError`
         """
-        arg = team.TeamFolderListArg(limit)
-        r = self.request(
-            team.team_folder_list,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_list_continue(self,
                                        cursor):
@@ -2853,14 +2086,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamFolderListContinueError`
         """
-        arg = team.TeamFolderListContinueArg(cursor)
-        r = self.request(
-            team.team_folder_list_continue,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_permanently_delete(self,
                                             team_folder_id):
@@ -2875,14 +2101,7 @@ class DropboxTeamBase(object):
         :param str team_folder_id: The ID of the team folder.
         :rtype: None
         """
-        arg = team.TeamFolderIdArg(team_folder_id)
-        r = self.request(
-            team.team_folder_permanently_delete,
-            'team',
-            arg,
-            None,
-        )
-        return None
+        pass
 
     def team_team_folder_rename(self,
                                 team_folder_id,
@@ -2901,15 +2120,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamFolderRenameError`
         """
-        arg = team.TeamFolderRenameArg(team_folder_id,
-                                       name)
-        r = self.request(
-            team.team_folder_rename,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_team_folder_update_sync_settings(self,
                                               team_folder_id,
@@ -2934,16 +2145,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TeamFolderUpdateSyncSettingsError`
         """
-        arg = team.TeamFolderUpdateSyncSettingsArg(team_folder_id,
-                                                   sync_setting,
-                                                   content_sync_settings)
-        r = self.request(
-            team.team_folder_update_sync_settings,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_token_get_authenticated_admin(self):
         """
@@ -2959,14 +2161,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team.TokenGetAuthenticatedAdminError`
         """
-        arg = None
-        r = self.request(
-            team.token_get_authenticated_admin,
-            'team',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in team_log namespace
@@ -3015,18 +2210,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team_log.GetTeamEventsError`
         """
-        arg = team_log.GetTeamEventsArg(limit,
-                                        account_id,
-                                        time,
-                                        category,
-                                        event_type)
-        r = self.request(
-            team_log.get_events,
-            'team_log',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     def team_log_get_events_continue(self,
                                      cursor):
@@ -3045,14 +2229,7 @@ class DropboxTeamBase(object):
         If this raises, ApiError will contain:
             :class:`dropbox.team_log.GetTeamEventsContinueError`
         """
-        arg = team_log.GetTeamEventsContinueArg(cursor)
-        r = self.request(
-            team_log.get_events_continue,
-            'team_log',
-            arg,
-            None,
-        )
-        return r
+        pass
 
     # ------------------------------------------
     # Routes in users namespace

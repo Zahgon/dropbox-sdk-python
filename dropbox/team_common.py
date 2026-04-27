@@ -41,7 +41,7 @@ class GroupManagementType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_managed'
+        pass
 
     def is_company_managed(self):
         """
@@ -49,7 +49,7 @@ class GroupManagementType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'company_managed'
+        pass
 
     def is_system_managed(self):
         """
@@ -57,7 +57,7 @@ class GroupManagementType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'system_managed'
+        pass
 
     def is_other(self):
         """
@@ -65,10 +65,10 @@ class GroupManagementType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupManagementType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupManagementType_validator = bv.Union(GroupManagementType)
 
@@ -132,7 +132,7 @@ class GroupSummary(bb.Struct):
     group_management_type = bb.Attribute("group_management_type", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupSummary, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupSummary_validator = bv.Struct(GroupSummary)
 
@@ -165,7 +165,7 @@ class GroupType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_user_managed(self):
         """
@@ -173,7 +173,7 @@ class GroupType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'user_managed'
+        pass
 
     def is_other(self):
         """
@@ -181,10 +181,10 @@ class GroupType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GroupType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GroupType_validator = bv.Union(GroupType)
 
@@ -222,7 +222,7 @@ class MemberSpaceLimitType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'off'
+        pass
 
     def is_alert_only(self):
         """
@@ -230,7 +230,7 @@ class MemberSpaceLimitType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'alert_only'
+        pass
 
     def is_stop_sync(self):
         """
@@ -238,7 +238,7 @@ class MemberSpaceLimitType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'stop_sync'
+        pass
 
     def is_other(self):
         """
@@ -246,10 +246,10 @@ class MemberSpaceLimitType(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(MemberSpaceLimitType, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 MemberSpaceLimitType_validator = bv.Union(MemberSpaceLimitType)
 
@@ -285,7 +285,7 @@ class TimeRange(bb.Struct):
     end_time = bb.Attribute("end_time", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TimeRange, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TimeRange_validator = bv.Struct(TimeRange)
 

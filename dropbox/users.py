@@ -89,7 +89,7 @@ class Account(bb.Struct):
     disabled = bb.Attribute("disabled")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Account, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Account_validator = bv.Struct(Account)
 
@@ -141,7 +141,7 @@ class BasicAccount(Account):
     team_member_id = bb.Attribute("team_member_id", nullable=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(BasicAccount, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 BasicAccount_validator = bv.Struct(BasicAccount)
 
@@ -172,7 +172,7 @@ class FileLockingValue(bb.Union):
         :param bool val:
         :rtype: FileLockingValue
         """
-        return cls('enabled', val)
+        pass
 
     def is_enabled(self):
         """
@@ -180,7 +180,7 @@ class FileLockingValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -188,7 +188,7 @@ class FileLockingValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_enabled(self):
         """
@@ -200,12 +200,10 @@ class FileLockingValue(bb.Union):
 
         :rtype: bool
         """
-        if not self.is_enabled():
-            raise AttributeError("tag 'enabled' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FileLockingValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FileLockingValue_validator = bv.Union(FileLockingValue)
 
@@ -316,7 +314,7 @@ class FullAccount(Account):
     root_info = bb.Attribute("root_info", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FullAccount, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FullAccount_validator = bv.Struct(FullAccount)
 
@@ -352,7 +350,7 @@ class Team(bb.Struct):
     name = bb.Attribute("name")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Team, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Team_validator = bv.Struct(Team)
 
@@ -393,7 +391,7 @@ class FullTeam(Team):
     office_addin_policy = bb.Attribute("office_addin_policy", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(FullTeam, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 FullTeam_validator = bv.Struct(FullTeam)
 
@@ -418,7 +416,7 @@ class GetAccountArg(bb.Struct):
     account_id = bb.Attribute("account_id")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetAccountArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetAccountArg_validator = bv.Struct(GetAccountArg)
 
@@ -444,7 +442,7 @@ class GetAccountBatchArg(bb.Struct):
     account_ids = bb.Attribute("account_ids")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetAccountBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetAccountBatchArg_validator = bv.Struct(GetAccountBatchArg)
 
@@ -472,7 +470,7 @@ class GetAccountBatchError(bb.Union):
         :param str val:
         :rtype: GetAccountBatchError
         """
-        return cls('no_account', val)
+        pass
 
     def is_no_account(self):
         """
@@ -480,7 +478,7 @@ class GetAccountBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_account'
+        pass
 
     def is_other(self):
         """
@@ -488,7 +486,7 @@ class GetAccountBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_no_account(self):
         """
@@ -499,12 +497,10 @@ class GetAccountBatchError(bb.Union):
 
         :rtype: str
         """
-        if not self.is_no_account():
-            raise AttributeError("tag 'no_account' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetAccountBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetAccountBatchError_validator = bv.Union(GetAccountBatchError)
 
@@ -530,7 +526,7 @@ class GetAccountError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'no_account'
+        pass
 
     def is_other(self):
         """
@@ -538,10 +534,10 @@ class GetAccountError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(GetAccountError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 GetAccountError_validator = bv.Union(GetAccountError)
 
@@ -567,7 +563,7 @@ class IndividualSpaceAllocation(bb.Struct):
     allocated = bb.Attribute("allocated")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(IndividualSpaceAllocation, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 IndividualSpaceAllocation_validator = bv.Struct(IndividualSpaceAllocation)
 
@@ -634,7 +630,7 @@ class Name(bb.Struct):
     abbreviated_name = bb.Attribute("abbreviated_name")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(Name, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 Name_validator = bv.Struct(Name)
 
@@ -666,7 +662,7 @@ class PaperAsFilesValue(bb.Union):
         :param bool val:
         :rtype: PaperAsFilesValue
         """
-        return cls('enabled', val)
+        pass
 
     def is_enabled(self):
         """
@@ -674,7 +670,7 @@ class PaperAsFilesValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'enabled'
+        pass
 
     def is_other(self):
         """
@@ -682,7 +678,7 @@ class PaperAsFilesValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_enabled(self):
         """
@@ -696,12 +692,10 @@ class PaperAsFilesValue(bb.Union):
 
         :rtype: bool
         """
-        if not self.is_enabled():
-            raise AttributeError("tag 'enabled' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(PaperAsFilesValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 PaperAsFilesValue_validator = bv.Union(PaperAsFilesValue)
 
@@ -732,7 +726,7 @@ class SpaceAllocation(bb.Union):
         :param IndividualSpaceAllocation val:
         :rtype: SpaceAllocation
         """
-        return cls('individual', val)
+        pass
 
     @classmethod
     def team(cls, val):
@@ -743,7 +737,7 @@ class SpaceAllocation(bb.Union):
         :param TeamSpaceAllocation val:
         :rtype: SpaceAllocation
         """
-        return cls('team', val)
+        pass
 
     def is_individual(self):
         """
@@ -751,7 +745,7 @@ class SpaceAllocation(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'individual'
+        pass
 
     def is_team(self):
         """
@@ -759,7 +753,7 @@ class SpaceAllocation(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'team'
+        pass
 
     def is_other(self):
         """
@@ -767,7 +761,7 @@ class SpaceAllocation(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_individual(self):
         """
@@ -777,9 +771,7 @@ class SpaceAllocation(bb.Union):
 
         :rtype: IndividualSpaceAllocation
         """
-        if not self.is_individual():
-            raise AttributeError("tag 'individual' not set")
-        return self._value
+        pass
 
     def get_team(self):
         """
@@ -789,12 +781,10 @@ class SpaceAllocation(bb.Union):
 
         :rtype: TeamSpaceAllocation
         """
-        if not self.is_team():
-            raise AttributeError("tag 'team' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SpaceAllocation, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SpaceAllocation_validator = bv.Union(SpaceAllocation)
 
@@ -830,7 +820,7 @@ class SpaceUsage(bb.Struct):
     allocation = bb.Attribute("allocation", user_defined=True)
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(SpaceUsage, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 SpaceUsage_validator = bv.Struct(SpaceUsage)
 
@@ -899,7 +889,7 @@ class TeamSpaceAllocation(bb.Struct):
     user_within_team_space_used_cached = bb.Attribute("user_within_team_space_used_cached")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(TeamSpaceAllocation, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 TeamSpaceAllocation_validator = bv.Struct(TeamSpaceAllocation)
 
@@ -931,7 +921,7 @@ class UserFeature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'paper_as_files'
+        pass
 
     def is_file_locking(self):
         """
@@ -939,7 +929,7 @@ class UserFeature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_locking'
+        pass
 
     def is_other(self):
         """
@@ -947,10 +937,10 @@ class UserFeature(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserFeature, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserFeature_validator = bv.Union(UserFeature)
 
@@ -976,7 +966,7 @@ class UserFeatureValue(bb.Union):
         :param PaperAsFilesValue val:
         :rtype: UserFeatureValue
         """
-        return cls('paper_as_files', val)
+        pass
 
     @classmethod
     def file_locking(cls, val):
@@ -987,7 +977,7 @@ class UserFeatureValue(bb.Union):
         :param FileLockingValue val:
         :rtype: UserFeatureValue
         """
-        return cls('file_locking', val)
+        pass
 
     def is_paper_as_files(self):
         """
@@ -995,7 +985,7 @@ class UserFeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'paper_as_files'
+        pass
 
     def is_file_locking(self):
         """
@@ -1003,7 +993,7 @@ class UserFeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'file_locking'
+        pass
 
     def is_other(self):
         """
@@ -1011,7 +1001,7 @@ class UserFeatureValue(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def get_paper_as_files(self):
         """
@@ -1019,9 +1009,7 @@ class UserFeatureValue(bb.Union):
 
         :rtype: PaperAsFilesValue
         """
-        if not self.is_paper_as_files():
-            raise AttributeError("tag 'paper_as_files' not set")
-        return self._value
+        pass
 
     def get_file_locking(self):
         """
@@ -1029,12 +1017,10 @@ class UserFeatureValue(bb.Union):
 
         :rtype: FileLockingValue
         """
-        if not self.is_file_locking():
-            raise AttributeError("tag 'file_locking' not set")
-        return self._value
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserFeatureValue, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserFeatureValue_validator = bv.Union(UserFeatureValue)
 
@@ -1061,7 +1047,7 @@ class UserFeaturesGetValuesBatchArg(bb.Struct):
     features = bb.Attribute("features")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserFeaturesGetValuesBatchArg, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserFeaturesGetValuesBatchArg_validator = bv.Struct(UserFeaturesGetValuesBatchArg)
 
@@ -1088,7 +1074,7 @@ class UserFeaturesGetValuesBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'empty_features_list'
+        pass
 
     def is_other(self):
         """
@@ -1096,10 +1082,10 @@ class UserFeaturesGetValuesBatchError(bb.Union):
 
         :rtype: bool
         """
-        return self._tag == 'other'
+        pass
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserFeaturesGetValuesBatchError, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserFeaturesGetValuesBatchError_validator = bv.Union(UserFeaturesGetValuesBatchError)
 
@@ -1121,7 +1107,7 @@ class UserFeaturesGetValuesBatchResult(bb.Struct):
     values = bb.Attribute("values")
 
     def _process_custom_annotations(self, annotation_type, field_path, processor):
-        super(UserFeaturesGetValuesBatchResult, self)._process_custom_annotations(annotation_type, field_path, processor)
+        pass
 
 UserFeaturesGetValuesBatchResult_validator = bv.Struct(UserFeaturesGetValuesBatchResult)
 
